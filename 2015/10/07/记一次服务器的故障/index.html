@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>记一次服务器的故障 - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+    <meta name="description" content="今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。
+ 喔唷，一下子就来精神了～（真是欠虐）
+国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。
+ 喔喔喔喔喔喔喔，我的热血开始沸腾了~
+然后查看服务器性能：CPU 19%，磁盘读">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="记一次服务器的故障">
+<meta property="og:url" content="http://consiiii.me/2015/10/07/记一次服务器的故障/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。
+ 喔唷，一下子就来精神了～（真是欠虐）
+国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。
+ 喔喔喔喔喔喔喔，我的热血开始沸腾了~
+然后查看服务器性能：CPU 19%，磁盘读">
+<meta property="og:updated_time" content="2015-10-07T16:34:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记一次服务器的故障">
+<meta name="twitter:description" content="今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。
+ 喔唷，一下子就来精神了～（真是欠虐）
+国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。
+ 喔喔喔喔喔喔喔，我的热血开始沸腾了~
+然后查看服务器性能：CPU 19%，磁盘读">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Consiiii</a>
+    </h1>
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3"
+
+style="background:url('/assets/images/bg_4.jpg')"
+
+>
+    
+        <div class="sidebar-profile">
+            <a href="/about">
+                
+                    <img class="sidebar-profile-picture" src="/assets/images/headicon.png"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Consiiii</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">动态</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/project"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-gift"></i>
+                    <span class="sidebar-button-desc">作品</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-user"></i>
+                    <span class="sidebar-button-desc">介绍</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/links"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-link"></i>
+                    <span class="sidebar-button-desc">Links</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            记一次服务器的故障
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Wed Oct 07 2015 23:58:51 GMT+0800">
+	
+		    10月 07, 2015
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/slots/">slots</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。<br>以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。</p>
+<p> 喔唷，一下子就来精神了～（真是欠虐）</p>
+<p>国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。</p>
+<p> 喔喔喔喔喔喔喔，我的热血开始沸腾了~</p>
+<p>然后查看服务器性能：CPU 19%，磁盘读写正常，网络性能20% 。<br>那感觉还是代码原因？但是代码没有动过，也重新部署了一份确认有效的代码，不应该呀。<br>于是写了个target.php放到服务器上，里面就一句话</p>
+<pre><code>target <span class="keyword">not</span> here.
+</code></pre><p>访问这个target.php,同样两分钟才有返回。<br>curl测试一下IP响应的时间，status 200 OK，但是一个网页的返回时间长达2分钟。</p>
+<p>给跪了。问身边朋友，提醒可能是线路原因。于是去找UCloud的客服，和客服Balabala了情况一堆，提到DNS解析云云。<br>绕了一圈最终是无果。</p>
+<p>我决定自己再去排查一下，到处捣鼓，发现一个奇怪的症状。<br>就是把根目录下的.htaccess文件给移走（我是改名字，效用相同），网站首页立马就能访问了。但是由于地址重写原因，其他页面访问不到。<br>加上.htaccess，网站又死了，两分钟才有返回。</p>
+<p>Google搜索“.htaccess 变慢”或者“.htaccess slow”没找到有效资料。无从下手，难道是apache的锅？<br>然而重启apache也没有用，而且这个htaccess已经用了那么久就都好好的，为什么就现在不行了呢？</p>
+<p>最后，<br>22:00左右的时候，重启啊什么的捣鼓下，网站好了。<br>嗯，就是这样，莫名其妙好了。</p>
+<p>我突然想到了，放假前weibo上盛传的那张仪式图（当时以为只是搞笑图片），放假前要做仪式大概是有根据的。</p>
+<p>朋友提到：“上线之前也要开个光。”</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/htaccess/">.htaccess</a> <a class="tag tag--primary tag--small t-link" href="/tags/Apache/">Apache</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/06/Swift笔记/" data-tooltip="Swift 笔记">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/06/Swift笔记/" data-tooltip="Swift 笔记">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png"/>
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/assets/images/bg_4.jpg');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/assets/js/profile/profile.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>

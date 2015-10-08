@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>程序员的鄙视链 - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+    <meta name="description" content="此文转载自https://vinta.ws/blog/695
+
+但是感觉被黑出翔了，哈哈哈哈哈
+
+最近这几年在世界各地突然吹起了一股全民写程序的风潮，连美国总统欧巴马都在写 JavaScript 了，但是身为一介靠写程序（以及在上班时间胡乱上网）来谋生的 developer（所谓的 developer 就是「软件工程师」的比较潮的说法），想要提醒那些想学习写程序的人一件重要的事：慎选你的第一个程序">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="程序员的鄙视链">
+<meta property="og:url" content="http://consiiii.me/2015/10/03/程序员的鄙视链/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="此文转载自https://vinta.ws/blog/695
+
+但是感觉被黑出翔了，哈哈哈哈哈
+
+最近这几年在世界各地突然吹起了一股全民写程序的风潮，连美国总统欧巴马都在写 JavaScript 了，但是身为一介靠写程序（以及在上班时间胡乱上网）来谋生的 developer（所谓的 developer 就是「软件工程师」的比较潮的说法），想要提醒那些想学习写程序的人一件重要的事：慎选你的第一个程序">
+<meta property="og:updated_time" content="2015-10-02T17:33:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序员的鄙视链">
+<meta name="twitter:description" content="此文转载自https://vinta.ws/blog/695
+
+但是感觉被黑出翔了，哈哈哈哈哈
+
+最近这几年在世界各地突然吹起了一股全民写程序的风潮，连美国总统欧巴马都在写 JavaScript 了，但是身为一介靠写程序（以及在上班时间胡乱上网）来谋生的 developer（所谓的 developer 就是「软件工程师」的比较潮的说法），想要提醒那些想学习写程序的人一件重要的事：慎选你的第一个程序">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Consiiii</a>
+    </h1>
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3"
+
+style="background:url('/assets/images/bg_4.jpg')"
+
+>
+    
+        <div class="sidebar-profile">
+            <a href="/about">
+                
+                    <img class="sidebar-profile-picture" src="/assets/images/headicon.png"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Consiiii</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">动态</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/project"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-gift"></i>
+                    <span class="sidebar-button-desc">作品</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-user"></i>
+                    <span class="sidebar-button-desc">介绍</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/links"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-link"></i>
+                    <span class="sidebar-button-desc">Links</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            程序员的鄙视链
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sat Oct 03 2015 00:39:56 GMT+0800">
+	
+		    10月 03, 2015
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Slots/">Slots</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p><strong>此文转载自<a href="https://vinta.ws/blog/695" target="_blank" rel="external">https://vinta.ws/blog/695</a></strong></p>
+<blockquote>
+<p>但是感觉被黑出翔了，哈哈哈哈哈</p>
+</blockquote>
+<p>最近这几年在世界各地突然吹起了一股全民写程序的风潮，连美国总统欧巴马都在写 JavaScript 了，但是身为一介靠写程序（以及在上班时间胡乱上网）来谋生的 developer（所谓的 developer 就是「软件工程师」的比较潮的说法），想要提醒那些想学习写程序的人一件重要的事：慎选你的第一个程序语言。</p>
+<p>在软件工程师（中国叫做「程序员」或「码农」）的圈子里，文人相轻的现象可是非常严重的，在程序设计的各个领域里都有着错综复杂的「鄙视链」。从程序语言、编辑器、平台到 { 是写在 if 的同一行还是下一行，不同阵营的人都习惯鄙视来鄙视去。而其中「你用什么程序语言？」更是大家最热衷的一条鄙视链，所以对于刚踏入程序设计领域的初学者来说，万一程序语言选得不好，可是会一开始就落入鄙视链的底层啊。</p>
+<p>软件工程师的鄙视链到底有多惨烈、多残酷呢？</p>
+<h1 id="程序语言篇">程序语言篇</h1><p>懂 Functional Programming 的工程师鄙视老是把设计模式挂在嘴边的工程师，老是把设计模式挂在嘴边的工程师鄙视会说「你这样写就不 OO 了啊」的工程师，会说「你这样写就不 OO 了啊」的工程师鄙视会说「哈？什么物件导向？不是把重复的 code 写成一个 function 就好了吗？」的工程师，会说「哈？什么物件导向？不是把重复的 code 写成一个 function 就好了吗？」的工程师鄙视把同一段 code 到处复制贴上的工程师，把同一段 code 到处复制贴上的工程师鄙视 PM。</p>
+<p>写静态语言的工程师鄙视写动态语言的工程师。</p>
+<p>写组合语言的工程师鄙视写 C 语言的工程师，C 语言工程师鄙视 C++ 工程师，C++ 工程师鄙视 Java 和 C# 工程师，Java 工程师和 C# 工程师则互相鄙视，而 C# 工程师又鄙视 Visual Basic 工程师和会把 C# 念成「C 井」的工程师，会把 C# 念成「C 井」的工程师则鄙视认为 HTML 是一种程序语言的设计师。</p>
+<p>用 Python 3 的工程师鄙视还在用 Python 2 的工程师，用 Python 2 的工程师鄙视遇到 UnicodeEncodeError 的工程师。</p>
+<p>写 iOS 的工程师鄙视写 Android 的工程师，写 Android 的工程师鄙视写 Windows Phone 的工程师。</p>
+<p>有 Swift 一年经验的工程师鄙视有 Objective-C 五年经验的工程师，写 Objective-C 的工程师鄙视用 PhoneGap 包装成 native app 的工程师。</p>
+<p>用 React.js 的工程师鄙视用 AngularJS 的工程师，用 AngularJS 的工程师鄙视用 jQuery 的工程师，用 jQuery 的工程师鄙视用 Vanilla JavaScript 的工程师，用 Vanilla JavaScript 的工程师鄙视 IE 的使用者。</p>
+<p>会用 debugger 的工程师鄙视用 assert 的工程师，用 assert 的工程师鄙视只会 print () 的工程师；用 console.log () 来 debug 的工程师鄙视用 alert () 来 debug 的工程师。</p>
+<p>写 Ruby on Rails 的工程师鄙视所有使用其他语言的工程师。</p>
+<p>什么？你说 Ruby？Ruby 只是 Ruby on Rails 的一套框架，才不是什么程序语言呢！</p>
+<p><strong>所有的工程师都鄙视 PHP 工程师。</strong></p>
+<h1 id="工具篇">工具篇</h1><p>用 text editor 的工程师鄙视用 IDE 的工程师。</p>
+<p>用 Vim 的工程师鄙视用 Emacs 的工程师，用 Emacs 的工程师鄙视用 Vim 的工程师，无论是用 Vim 或 Emacs 的工程师都鄙视所有用其他编辑器的工程师；用 Atom、Notepadd++、Sublime Text 的工程师鄙视用 Windows 记事本的工程师。</p>
+<p>用 Android Studio 或 IntelliJ IDEA 的工程师鄙视用 Eclipse 的工程师，用 Eclipse 的工程师鄙视用 NetBeans 的工程师。</p>
+<p>用 Git 或 Mercurial 的工程师鄙视用 Subversion 的工程师，用 Subversion 的工程师鄙视用 Dropbox 来做版本控制的工程师，用 Dropbox 来做版本控制的工程师鄙视根本不知道什么叫做版本控制的工程师。</p>
+<p>用 Zsh 的工程师鄙视用 Bash 的工程师，用 Bash 的工程师鄙视用 Cygwin 的工程师，用 Cygwin 的工程师鄙视用「命令提示字元」的工程师，用命令提示字元的工程师鄙视用 GUI 介面的工程师。</p>
+<p>用 IRC 的工程师鄙视用 HipChat 的工程师，用 HipChat 的工程师鄙视用 Slack 的设计师。</p>
+<p>用 reStructuredText 写文件的工程师鄙视用 Markdown 写文件的工程师，用 Markdown 写文件的工程师鄙视用 HTML 写文件的工程师，用 HTML 写文件的工程师鄙视不写文件的工程师，然后用 LaTeX 写文件的工程师鄙视所有工程师。</p>
+<p>用 Docker 来部署 server 的工程师鄙视用 Ansible 或 Puppet 来部署 server 的工程师，用 Ansible 或 Puppet 来部署 server 的工程师鄙视用 Fabric 来部署 server 的工程师，用 Fabric 来部署 server 的工程师鄙视手动 SSH 的工程师。</p>
+<h1 id="OS_篇">OS 篇</h1><p>用 Mac OS X 的工程师鄙视用 Linux 的工程师，用 Linux 的工程师鄙视用 Windows 的工程师。</p>
+<p>用 Debian 的工程师瞧不起用 Ubuntu 的工程师，用 Ubuntu 的工程师瞧不起用非 LTS 版本的 Ubuntu 的工程师。</p>
+<h1 id="硬件篇">硬件篇</h1><p>用 MacBook Pro Retina 的工程师鄙视用 MacBook Air 的工程师，用 MacBook Air 的工程师鄙视用 ThinkPad 的工程师，然后用 Raspberry Pi 的工程师鄙视用 MacBook Pro Retina 的工程师。</p>
+<p>用 Dvorak 键盘的工程师鄙视用 Mac 键盘的工程师，用 Mac 键盘的工程师鄙视用 QWERTY 键盘的工程师，用 QWERTY 键盘的工程师鄙视用手写板的设计师。</p>
+<p>坐 Aeron 椅子的工程师鄙视坐普通办公椅的工程师，坐普通办公椅的工程师鄙视跟他一样做普通办公椅的 PM，然后站着写程序的工程师鄙视坐 Aeron 椅子的工程师。</p>
+<h1 id="职场篇">职场篇</h1><p>搞硬件的工程师鄙视搞软件的工程师。</p>
+<p>写 OS 的工程师鄙视写 Web 的工程师，写 Web 的工程师鄙视写 desktop application 的工程师。</p>
+<p>后端工程师鄙视前端工程师。</p>
+<p>工程师跟设计师互相鄙视。</p>
+<p>信奉 Test-Driven Development 的工程师鄙视先写 code 再补 tests 的工程师，先写 code 再补 tests 的工程师鄙视不写 tests 的工程师，不写 tests 的工程师鄙视又他妈乱改需求的 PM。</p>
+<p>没有证照的工程师鄙视考了一堆证照的工程师。</p>
+<p>上班穿休闲服的工程师鄙视上班穿西装的工程师，上班穿西装的工程师鄙视上班穿系服的工程师。</p>
+<h1 id="结束语">结束语</h1><p>如果你看了以上这些惨绝人寰的鄙视链之后，仍然没有击倒你想要学习 coding 的心，那我必须提醒你一件最重要的事：先去交一个女朋友，再来学写程序；因为一旦你成为软件工程师之后，就交不到女朋友了。</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Slots/">Slots</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/03/一次因PHP中的数组语法造成的事件/"  data-tooltip="一次因PHP中的数组语法造成的事件">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/03/尽管被冷漠对待过，但也从此更加热爱生活/" data-tooltip="尽管被冷漠对待过，但也从此更加热爱生活">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/03/程序员的鄙视链/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/03/程序员的鄙视链/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/03/程序员的鄙视链/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/03/一次因PHP中的数组语法造成的事件/"  data-tooltip="一次因PHP中的数组语法造成的事件">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/03/尽管被冷漠对待过，但也从此更加热爱生活/" data-tooltip="尽管被冷漠对待过，但也从此更加热爱生活">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/03/程序员的鄙视链/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/03/程序员的鄙视链/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/03/程序员的鄙视链/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/03/程序员的鄙视链/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/03/程序员的鄙视链/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/03/程序员的鄙视链/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png"/>
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/assets/images/bg_4.jpg');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/assets/js/profile/profile.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>
