@@ -1,2 +1,0 @@
-# consiiiii
-Consiiii's blog
