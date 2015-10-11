@@ -12,25 +12,22 @@
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description" content="更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。
-找到的一个解决办法是；
-sudo gem install -n /usr/local/bin GEM_NAME_HERE
-话说难道不能直接替换ruby的源吗，感觉这样做不太科学（其实">
+    <meta name="description" content="更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。例如错误：
+ERROR:  While executing gem ... (Errno::EPERM)
+Operation not permitted - /usr/bin/sass">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="El Capitan下Sass命令无用的解决办法">
 <meta property="og:url" content="http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。
-找到的一个解决办法是；
-sudo gem install -n /usr/local/bin GEM_NAME_HERE
-话说难道不能直接替换ruby的源吗，感觉这样做不太科学（其实">
-<meta property="og:updated_time" content="2015-10-11T14:12:33.000Z">
+<meta property="og:description" content="更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。例如错误：
+ERROR:  While executing gem ... (Errno::EPERM)
+Operation not permitted - /usr/bin/sass">
+<meta property="og:updated_time" content="2015-10-11T14:22:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="El Capitan下Sass命令无用的解决办法">
-<meta name="twitter:description" content="更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。
-找到的一个解决办法是；
-sudo gem install -n /usr/local/bin GEM_NAME_HERE
-话说难道不能直接替换ruby的源吗，感觉这样做不太科学（其实">
+<meta name="twitter:description" content="更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。例如错误：
+ERROR:  While executing gem ... (Errno::EPERM)
+Operation not permitted - /usr/bin/sass">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -195,10 +192,13 @@ style="background:url('/assets/images/bg_4.jpg')"
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。<br>输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。</p>
-<p>找到的一个解决办法是；</p>
+            <p>更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。<br>输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。<br>例如错误：</p>
+<pre><code><span class="constant">ERROR:</span>  <span class="constant">While </span>executing gem ... (<span class="constant">Errno:</span><span class="symbol">:EPERM</span>)
+<span class="constant">Operation </span><span class="keyword">not</span> permitted - <span class="regexp">/usr/bin</span><span class="regexp">/sass</span>
+</code></pre><p>找到的一个解决办法是；</p>
 <pre><code>sudo gem <span class="operator"><span class="keyword">install</span> -<span class="keyword">n</span> /usr/<span class="keyword">local</span>/<span class="keyword">bin</span> GEM_NAME_HERE</span>
 </code></pre><p>话说难道不能直接替换ruby的源吗，感觉这样做不太科学（其实也感觉不方便）。<br>应该有一个变量地址记录着Ruby的地址的吧，但是“该怎么做”还没找到。</p>
+<p>—<br>找到一个解决的博文：<br><a href="https://medium.com/@lab.5721/os-x-el-capitan-10-11-%E5%AE%89%E8%A3%9Dsass%E5%A4%B1%E6%95%97%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95-3739ad67c553" target="_blank" rel="external">点击这里</a></p>
 
             
                 
