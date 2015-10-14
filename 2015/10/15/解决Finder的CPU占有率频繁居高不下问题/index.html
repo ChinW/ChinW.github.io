@@ -6,28 +6,28 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Consiiii">
-    <title>El Capitan下Sass命令无用的解决办法 - Consiiii</title>
+    <title>解决Finder的CPU占有率频繁居高不下问题 - Consiiii</title>
     <meta name="author" content="Consiiii">
     
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description" content="更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。例如错误：
-ERROR:  While executing gem ... (Errno::EPERM)
-Operation not permitted - /usr/bin/sass">
+    <meta name="description" content="症状：升级El Capitan后，Finder的CPU占有率经常居高不下，100%及以上，连接着Xcode，FF，Chrome也会经常暴增到100%及以上，打字都会卡，十分影响日常。
+周围：Google搜索有一些帖子反应这个问题，一个帖子里说Apple承认这是El的一个bug并且在修复了。
+我的解决办法：关机，开机，然后离开command+option+r+p.听到3声启动声音后松开，这招据说是a">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="El Capitan下Sass命令无用的解决办法">
-<meta property="og:url" content="http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/index.html">
+<meta property="og:title" content="解决Finder的CPU占有率频繁居高不下问题">
+<meta property="og:url" content="http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。例如错误：
-ERROR:  While executing gem ... (Errno::EPERM)
-Operation not permitted - /usr/bin/sass">
-<meta property="og:updated_time" content="2015-10-11T14:22:23.000Z">
+<meta property="og:description" content="症状：升级El Capitan后，Finder的CPU占有率经常居高不下，100%及以上，连接着Xcode，FF，Chrome也会经常暴增到100%及以上，打字都会卡，十分影响日常。
+周围：Google搜索有一些帖子反应这个问题，一个帖子里说Apple承认这是El的一个bug并且在修复了。
+我的解决办法：关机，开机，然后离开command+option+r+p.听到3声启动声音后松开，这招据说是a">
+<meta property="og:updated_time" content="2015-10-14T16:28:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="El Capitan下Sass命令无用的解决办法">
-<meta name="twitter:description" content="更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。例如错误：
-ERROR:  While executing gem ... (Errno::EPERM)
-Operation not permitted - /usr/bin/sass">
+<meta name="twitter:title" content="解决Finder的CPU占有率频繁居高不下问题">
+<meta name="twitter:description" content="症状：升级El Capitan后，Finder的CPU占有率经常居高不下，100%及以上，连接着Xcode，FF，Chrome也会经常暴增到100%及以上，打字都会卡，十分影响日常。
+周围：Google搜索有一些帖子反应这个问题，一个帖子里说Apple承认这是El的一个bug并且在修复了。
+我的解决办法：关机，开机，然后离开command+option+r+p.听到3声启动声音后松开，这招据说是a">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -171,19 +171,19 @@ style="background:url('/assets/images/bg_4.jpg')"
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            El Capitan下Sass命令无用的解决办法
+            解决Finder的CPU占有率频繁居高不下问题
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sun Oct 11 2015 22:07:24 GMT+0800">
+    <time itemprop="datePublished" content="Thu Oct 15 2015 00:21:00 GMT+0800">
 	
-		    10月 11, 2015
+		    10月 15, 2015
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Ruby/">Ruby</a>
+    <a class="category-link" href="/categories/Mac/">Mac</a>
 
 
     
@@ -192,13 +192,10 @@ style="background:url('/assets/images/bg_4.jpg')"
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。<br>输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。<br>例如错误：</p>
-<pre><code><span class="constant">ERROR:</span>  <span class="constant">While </span>executing gem ... (<span class="constant">Errno:</span><span class="symbol">:EPERM</span>)
-<span class="constant">Operation </span><span class="keyword">not</span> permitted - <span class="regexp">/usr/bin</span><span class="regexp">/sass</span>
-</code></pre><p>找到的一个解决办法是；</p>
-<pre><code>sudo gem <span class="operator"><span class="keyword">install</span> -<span class="keyword">n</span> /usr/<span class="keyword">local</span>/<span class="keyword">bin</span> GEM_NAME_HERE</span>
-</code></pre><p>话说难道不能直接替换ruby的源吗，感觉这样做不太科学（其实也感觉不方便）。<br>应该有一个变量地址记录着Ruby的地址的吧，但是“该怎么做”还没找到。</p>
-<p>—<br>找到一个解决的博文：<br><a href="https://medium.com/@lab.5721/os-x-el-capitan-10-11-%E5%AE%89%E8%A3%9Dsass%E5%A4%B1%E6%95%97%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95-3739ad67c553" target="_blank" rel="external">点击这里</a></p>
+            <p>症状：升级El Capitan后，Finder的CPU占有率经常居高不下，100%及以上，连接着Xcode，FF，Chrome也会经常暴增到100%及以上，打字都会卡，十分影响日常。</p>
+<p>周围：Google搜索有一些帖子反应这个问题，一个帖子里说Apple承认这是El的一个bug并且在修复了。</p>
+<p>我的解决办法：关机，开机，然后离开command+option+r+p.听到3声启动声音后松开，这招据说是apple客服传授的，用于重置PRAM和NVRAM。</p>
+<p>效果：开机快了好多，到现在为止finder不会再暴到100%了。</p>
 
             
                 
@@ -211,7 +208,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/El-Capitan/">El Capitan</a> <a class="tag tag--primary tag--small t-link" href="/tags/Ruby/">Ruby</a> <a class="tag tag--primary tag--small t-link" href="/tags/Sass/">Sass</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Mac/">Mac</a>
 
             </div>
         
@@ -220,7 +217,7 @@ style="background:url('/assets/images/bg_4.jpg')"
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/"  data-tooltip="解决Finder的CPU占有率频繁居高不下问题">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -228,7 +225,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/07/记一次服务器的故障/" data-tooltip="记一次服务器的故障">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/11/El-Capitan下Sass命令无用的解决办法/" data-tooltip="El Capitan下Sass命令无用的解决办法">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -243,17 +240,17 @@ style="background:url('/assets/images/bg_4.jpg')"
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -299,7 +296,7 @@ style="background:url('/assets/images/bg_4.jpg')"
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/"  data-tooltip="解决Finder的CPU占有率频繁居高不下问题">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -307,7 +304,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/07/记一次服务器的故障/" data-tooltip="记一次服务器的故障">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/11/El-Capitan下Sass命令无用的解决办法/" data-tooltip="El Capitan下Sass命令无用的解决办法">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -322,17 +319,17 @@ style="background:url('/assets/images/bg_4.jpg')"
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -358,17 +355,17 @@ style="background:url('/assets/images/bg_4.jpg')"
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
