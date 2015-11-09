@@ -6,25 +6,22 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Consiiii">
-    <title>The model used to open the store is incompatible with the one used to create the store - Consiiii</title>
+    <title>8个应该被知道的正则表达式 - Consiiii</title>
     <meta name="author" content="Consiiii">
     
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description" content="使用Core Data更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.
-删除app后，重新编辑就好了。">
+    <meta name="description" content="［翻译自http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149］正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所描述的一种”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="The model used to open the store is incompatible with the one used to create the store">
-<meta property="og:url" content="http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/index.html">
+<meta property="og:title" content="8个应该被知道的正则表达式">
+<meta property="og:url" content="http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="使用Core Data更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.
-删除app后，重新编辑就好了。">
-<meta property="og:updated_time" content="2015-10-17T01:49:28.000Z">
+<meta property="og:description" content="［翻译自http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149］正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所描述的一种”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该">
+<meta property="og:updated_time" content="2015-10-22T15:58:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The model used to open the store is incompatible with the one used to create the store">
-<meta name="twitter:description" content="使用Core Data更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.
-删除app后，重新编辑就好了。">
+<meta name="twitter:title" content="8个应该被知道的正则表达式">
+<meta name="twitter:description" content="［翻译自http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149］正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所描述的一种”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -168,19 +165,19 @@ style="background:url('/assets/images/bg_4.jpg')"
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            The model used to open the store is incompatible with the one used to create the store
+            8个应该被知道的正则表达式
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Oct 17 2015 09:47:18 GMT+0800">
+    <time itemprop="datePublished" content="Thu Oct 22 2015 23:21:37 GMT+0800">
 	
-		    10月 17, 2015
+		    10月 22, 2015
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Slots/">Slots</a>, <a class="category-link" href="/categories/Slots/Xcode/">Xcode</a>
+    <a class="category-link" href="/categories/regex/">regex</a>
 
 
     
@@ -189,8 +186,17 @@ style="background:url('/assets/images/bg_4.jpg')"
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>使用Core Data更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.</p>
-<p>删除app后，重新编辑就好了。</p>
+            <p>［翻译自<a href="http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149］" target="_blank" rel="external">http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149］</a><br>正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所描述的一种”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该知道的，8个正则表达式。</p>
+<p>#＃正则表达式的背景<br>维基百科是这样解释的：</p>
+<blockquote>
+<p>正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为regex、regexp或RE），计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。</p>
+</blockquote>
+<p>这段解释并没有真正的告诉我们太多关于它实际是何种表现形式。而我今天将要讲的，正是这些类似于\w,\s,\1，以及其它一些含义与“外观”（写出来的样子）不一样的正则表达式们。</p>
+<p>如果您愿意在阅读此篇文章之前去了解一下正则表达式，我建议您去看看<a href="http://www.multiurl.com/ga/regexdummies" target="_blank" rel="external">Regular Expressions for Dummies</a>。</p>
+<p>今天我们将要提及的8个正则表达式将能够让您匹配：用户名，密码，邮箱，16进制（如#fff,#000),slug,URL，IP地址，还有HTML标签。随着程度深入，这些表达式将会变得更容易让人迷惑。以下每一张放在开头的解释性图片，将很好的解释文章的内容，但是最后4个（正则表达式）通过阅读说明会更容易理解。</p>
+<p>记住正则表达式含义的关键点是它们几乎都是同时向前/向后搜索的。这句话将在我们谈到HTML标签的时候会更容易理解。</p>
+<p>注意：正则表达式中的分隔符是斜杠”/“。每一个匹配语句（以下也将翻译成匹配模式）开头和末尾都会跟着一个分隔符”/“。如果一个出线在表达式之内，那我们一定要通过反斜杠”\”将它转义，如：“\/”。</p>
+<p>##用户名<br>语句/模式：<br>/^[a-z0^9_-]{3,16}$/<br>描述：<br>…….<br>(继续翻译开坑中)</p>
 
             
                 
@@ -203,7 +209,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Slots/">Slots</a> <a class="tag tag--primary tag--small t-link" href="/tags/Xcode/">Xcode</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/regex/">regex</a>
 
             </div>
         
@@ -212,7 +218,7 @@ style="background:url('/assets/images/bg_4.jpg')"
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/22/8个应该被知道的正则表达式/"  data-tooltip="8个应该被知道的正则表达式">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/09/Experience-of-HackShanghai-2015/"  data-tooltip="Experience of HackShanghai 2015">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -220,7 +226,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/" data-tooltip="解决Finder的CPU占有率频繁居高不下问题">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/" data-tooltip="The model used to open the store is incompatible with the one used to create the store">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -235,17 +241,17 @@ style="background:url('/assets/images/bg_4.jpg')"
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -291,7 +297,7 @@ style="background:url('/assets/images/bg_4.jpg')"
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/22/8个应该被知道的正则表达式/"  data-tooltip="8个应该被知道的正则表达式">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/09/Experience-of-HackShanghai-2015/"  data-tooltip="Experience of HackShanghai 2015">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -299,7 +305,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/" data-tooltip="解决Finder的CPU占有率频繁居高不下问题">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/" data-tooltip="The model used to open the store is incompatible with the one used to create the store">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -314,17 +320,17 @@ style="background:url('/assets/images/bg_4.jpg')"
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -350,17 +356,17 @@ style="background:url('/assets/images/bg_4.jpg')"
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
