@@ -191,66 +191,14 @@ style="background:url('/assets/images/bg_4.jpg')"
                     
                         <p>
                             今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。
-##1.生成密钥对两种方法生成密钥对
-###使用OpenSSL
-生成RSA私钥
+1.生成密钥对两种方法生成密钥对
+使用OpenSSL生成RSA私钥
 genrsa -out rsa_private_key.pem 2048
-（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥<br>
+（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥转换成PKC<br>
                     
                     
                         
                             <a href="/2015/11/22/ssh登录主机/" class="postShorten-excerpt_link link ">Continue reading</a>
-                            
-                        
-                    
-                    
-                        </p>
-                    
-                </div>
-            </div>
-            
-        </article>
-    
-        
-        
-                <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting">
-        
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2015/11/13/Laravel-Notes/">Laravel Notes</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Nov 13 2015 23:57:08 GMT+0800">
-	
-		    11月 13, 2015
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/slots/">slots</a>
-
-
-    
-</div>
-                </div>
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    
-                        <p>
-                            
-创建数据库
- php artisan make:migration create_tasks_table –create=tasks
- php artisan migrate
-
-
-<br>
-                    
-                    
-                        
-                            <a href="/2015/11/13/Laravel-Notes/" class="postShorten-excerpt_link link ">Continue reading</a>
                             
                         
                     

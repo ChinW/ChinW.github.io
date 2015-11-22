@@ -13,30 +13,27 @@
     
     
     <meta name="description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。
-##1.生成密钥对两种方法生成密钥对
-###使用OpenSSL
-生成RSA私钥
+1.生成密钥对两种方法生成密钥对
+使用OpenSSL生成RSA私钥
 genrsa -out rsa_private_key.pem 2048
-（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥">
+（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥转换成PKC">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="ssh登录主机">
 <meta property="og:url" content="http://consiiii.me/2015/11/22/ssh登录主机/index.html">
 <meta property="og:site_name" content="Consiiii">
 <meta property="og:description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。
-##1.生成密钥对两种方法生成密钥对
-###使用OpenSSL
-生成RSA私钥
+1.生成密钥对两种方法生成密钥对
+使用OpenSSL生成RSA私钥
 genrsa -out rsa_private_key.pem 2048
-（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥">
-<meta property="og:updated_time" content="2015-11-22T05:39:04.000Z">
+（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥转换成PKC">
+<meta property="og:updated_time" content="2015-11-22T05:51:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh登录主机">
 <meta name="twitter:description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。
-##1.生成密钥对两种方法生成密钥对
-###使用OpenSSL
-生成RSA私钥
+1.生成密钥对两种方法生成密钥对
+使用OpenSSL生成RSA私钥
 genrsa -out rsa_private_key.pem 2048
-（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥">
+（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥转换成PKC">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -202,17 +199,15 @@ style="background:url('/assets/images/bg_4.jpg')"
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。</p>
-<p>##1.生成密钥对<br>两种方法生成密钥对</p>
-<p>###使用OpenSSL</p>
-<p>生成RSA私钥</p>
+<h2 id="1-生成密钥对">1.生成密钥对</h2><p>两种方法生成密钥对</p>
+<h3 id="使用OpenSSL">使用OpenSSL</h3><p>生成RSA私钥</p>
 <p><code>genrsa -out rsa_private_key.pem 2048</code></p>
 <p>（可选）使用<br><code>pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt</code><br>将RSA密钥转换成PKCS8格式，密码可以为空</p>
 <p>生成RSA公钥</p>
 <p><code>rsa -in rsa_private_key.pem -pubout -out rsa_public.pem</code></p>
-<p>###使用ssh-gen</p>
-<p><code>ssh-keygen -t [rsa|dsa]</code></p>
+<h3 id="使用ssh-gen">使用ssh-gen</h3><p><code>ssh-keygen -t [rsa|dsa]</code></p>
 <p>过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码<br>;如果想要的目的是免密码登录,密码请留空</p>
-<p>##2.将公钥拷贝到目标主机<br>将公钥拷贝到~/.ssh中，远程上传可以使用scp命令</p>
+<h2 id="2-将公钥拷贝到目标主机">2.将公钥拷贝到目标主机</h2><p>将公钥拷贝到~/.ssh中，远程上传可以使用scp命令</p>
 <p><code>scp -r your/target/file/path user@ip:your/remote/file/path/</code></p>
 <p>如果主机下已经有authorized_keys，注意不要覆盖改文件，没有的话主动创建文件</p>
 <p><code>touch ~/.ssh.authorized_keys</code></p>
@@ -220,12 +215,11 @@ style="background:url('/assets/images/bg_4.jpg')"
 <p><code>cat rsa_public_key.pem &gt;&gt; authorized.keys</code></p>
 <p>或者本地执行</p>
 <p><code>cat ~/.ssh/japan_rsa.pub | ssh root@45.32.248.65  &quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys&quot;</code></p>
-<p>##3.在本机添加标识<br>打开~/.ssh/config，没有的话就创建一个，书写格式为（替换[]中的内容为自己的配置）<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host <span class="string">[myHost]</span></span><br><span class="line">Hostname <span class="string">[123.123.123.123]</span></span><br><span class="line">Port <span class="string">[21]</span></span><br><span class="line">User <span class="string">[myUser]</span></span><br><span class="line">IdentityFile <span class="string">[ ~/.ssh/local_private_rsa]</span></span><br></pre></td></tr></table></figure></p>
-<p>##4.登录<br>使用 <code>ssh myHost</code> 进行登录</p>
-<p>##5.可能出现的问题</p>
-<ol>
+<h2 id="3-在本机添加标识">3.在本机添加标识</h2><p>打开~/.ssh/config，没有的话就创建一个，书写格式为（替换[]中的内容为自己的配置）<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host <span class="string">[myHost]</span></span><br><span class="line">Hostname <span class="string">[123.123.123.123]</span></span><br><span class="line">Port <span class="string">[21]</span></span><br><span class="line">User <span class="string">[myUser]</span></span><br><span class="line">IdentityFile <span class="string">[ ~/.ssh/local_private_rsa]</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="4-登录">4.登录</h2><p>使用 <code>ssh myHost</code> 进行登录</p>
+<h2 id="5-可能出现的问题">5.可能出现的问题</h2><ol>
 <li>如果出现出现<br> <code>Permissions 0644 for &#39;your/target/file&#39; are too open.</code><br> 把权限改成0600就好了</li>
-<li>OpenSSL 生成的密钥会出现<code>key_load_public: invalid format</code>导致无法登录.<br> OpenSSL声称的公钥和ssh-keygen生成的公钥的格式不一致，ssh-keygen生成公钥的格式是OK的。</li>
+<li>OpenSSL 生成的密钥会出现<code>key_load_public: invalid format</code>导致无法登录.<br> OpenSSL生成的公钥和ssh-keygen生成的公钥的格式不一致，ssh-keygen生成公钥的格式是OK的。</li>
 </ol>
 
             
@@ -256,7 +250,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/13/Laravel-Notes/" data-tooltip="Laravel Notes">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/09/Experience-of-HackShanghai-2015/" data-tooltip="Experience of HackShanghai 2015">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -335,7 +329,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/13/Laravel-Notes/" data-tooltip="Laravel Notes">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/09/Experience-of-HackShanghai-2015/" data-tooltip="Experience of HackShanghai 2015">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
