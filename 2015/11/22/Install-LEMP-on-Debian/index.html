@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>Install LEMP on Debian - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+    <meta name="description" content="本文流程来自https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7 ，并做了部分修改
+LEMP安装的教程有很多，但是自己也做了一遍并纪录下来。
+LEMPLEMP指Linux(L),MySQL(M),PHP(P),Nginx(E,发音eng">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Install LEMP on Debian">
+<meta property="og:url" content="http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="本文流程来自https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7 ，并做了部分修改
+LEMP安装的教程有很多，但是自己也做了一遍并纪录下来。
+LEMPLEMP指Linux(L),MySQL(M),PHP(P),Nginx(E,发音eng">
+<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/Screen%20Shot%202015-11-23%20at%2000.46.09.png">
+<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/Screen%20Shot%202015-11-22%20at%2015.54.15.png">
+<meta property="og:updated_time" content="2015-11-22T16:47:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Install LEMP on Debian">
+<meta name="twitter:description" content="本文流程来自https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7 ，并做了部分修改
+LEMP安装的教程有很多，但是自己也做了一遍并纪录下来。
+LEMPLEMP指Linux(L),MySQL(M),PHP(P),Nginx(E,发音eng">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Consiiii</a>
+    </h1>
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3"
+
+style="background:url('/assets/images/bg_4.jpg')"
+
+>
+    
+        <div class="sidebar-profile">
+            <a href="/about">
+                
+                    <img class="sidebar-profile-picture" src="/assets/images/headicon.png"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Consiiii</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">动态</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/project"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-gift"></i>
+                    <span class="sidebar-button-desc">作品</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-user"></i>
+                    <span class="sidebar-button-desc">介绍</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/links"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-link"></i>
+                    <span class="sidebar-button-desc">Links</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Install LEMP on Debian
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sun Nov 22 2015 14:05:23 GMT+0800">
+	
+		    11月 22, 2015
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/LEMP/">LEMP</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p><strong>本文流程来自<a href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7</a> ，并做了部分修改</strong></p>
+<p>LEMP安装的教程有很多，但是自己也做了一遍并纪录下来。</p>
+<h2 id="LEMP">LEMP</h2><p>LEMP指Linux(L),MySQL(M),PHP(P),Nginx(E,发音engine x).它和经典的LAMP不同的是把Apache替换成了Nignx.</p>
+<p>这篇文章主要纪录了如何去安装LEMP，以及一些相关的配置。</p>
+<h2 id="1-update_apt-get">1.update apt-get</h2><p>开始之前，我们总要更新一下机器上的版本纪录，以获得最新的软件。</p>
+<p><code>sudo apt-get update</code></p>
+<h2 id="2-apt-get_install_mysql-server">2.apt-get install mysql-server</h2><p>输入<br><code>sudo apt-get install mysql-server</code><br>，过程中会要求设置root密码；</p>
+<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/Screen%20Shot%202015-11-23%20at%2000.46.09.png" alt="mysql root password setting"></p>
+<p>当安装完成后，可以用这些命令来完成mysql启动向导。</p>
+<p><code>sudo mysql_install_db</code></p>
+<p>然后再用</p>
+<p><code>sudo /usr/bin/mysql_secure_installation</code></p>
+<p>这条命令进入的时候会要求输入root的密码，然后请仔细阅读每条说明（是否删除匿名帐号，是否删除test数据库等等），输入y/n以选择。</p>
+<h2 id="3-_apt-get_install_nginx">3. apt-get install nginx</h2><p>安装nginx</p>
+<p><code>sudo apt-get install nginx</code></p>
+<p>启动nginx</p>
+<p><code>sudo service nginx start</code></p>
+<p>OK!现在在浏览器中输入IP地址，看到以下类似的界面就说明成功了</p>
+<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/Screen%20Shot%202015-11-22%20at%2015.54.15.png" alt="nginx"></p>
+<blockquote>
+<p>使用ifconfig eth0 | grep inet | awk ‘{ print $2 }’可以看到VPS的IP地址</p>
+</blockquote>
+<h3 id="配置nginx">配置nginx</h3><p><code>sudo vim /etc/nginx/sites-available/default</code></p>
+<p>更改配置参考到如下</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"> [...]</span><br><span class="line">server &#123;</span><br><span class="line">        listen   <span class="number">80</span>;</span><br><span class="line">     </span><br><span class="line">		#root的地址页面文件所在位置</span><br><span class="line">        root /usr/share/nginx/www;</span><br><span class="line">        #不要忘记添加index.php</span><br><span class="line">        index index.php index.html index.htm;</span><br><span class="line">		  </span><br><span class="line">		#在这里定义IP或者自己的域名 </span><br><span class="line">        server_name example.com;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page <span class="number">404</span> /<span class="number">404</span>.html;</span><br><span class="line"></span><br><span class="line">        error_page <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span> /<span class="number">50</span>x.html;</span><br><span class="line">        location = /<span class="number">50</span>x.html &#123;</span><br><span class="line">              root /usr/share/nginx/www;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        # pass the PHP scripts to FastCGI server listening on /var/run/php5-fpm.sock</span><br><span class="line">        location ~ \.php$ &#123;</span><br><span class="line">                try_files <span class="variable">$uri</span> =<span class="number">404</span>;</span><br><span class="line">                fastcgi_pass unix:/var/run/php5-fpm.sock;</span><br><span class="line">                fastcgi_index index.php;</span><br><span class="line">                fastcgi_param SCRIPT_FILENAME <span class="variable">$document</span>_root<span class="variable">$fastcgi</span>_script_name;</span><br><span class="line">                include fastcgi_params;</span><br><span class="line">                </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
+<h2 id="4-apt-get_install_php5-fpm_php5-mysql">4.apt-get install php5-fpm php5-mysql</h2><p>安装php5 fpm<br><code>sudo apt-get install php5-fpm php5-mysql</code></p>
+<p>###配置</p>
+<ol>
+<li><p> 位置：/etc/php5/fpm/php.ini</p>
+<p> 操作：将<strong>cgi.fix_pathinfo = 1</strong> ,从<strong>1改成0</strong></p>
+<p> 说明：这一段代码可能是被注释的。cgi.fix_pathinfo＝1 时会有安全隐患。比如网站中有<a href="http://xx.com/a.jpg这样一个文件，那么构造http://xx.com/a.jpg/foo.php可以查看这个文件的二进制内容，这意味着可以构造一个实际是php代码的图片，去执行一些用户自定义的操作。具体可以参考：http://www.laruence.com/2010/05/20/1495.html" target="_blank" rel="external">http://xx.com/a.jpg这样一个文件，那么构造http://xx.com/a.jpg/foo.php可以查看这个文件的二进制内容，这意味着可以构造一个实际是php代码的图片，去执行一些用户自定义的操作。具体可以参考：http://www.laruence.com/2010/05/20/1495.html</a></p>
+</li>
+<li><p>位置：/etc/php5/fpm/pool.d/www.conf</p>
+<p> 操作：将<code>listen = 127.0.0.1:9000</code>更改成<code>listen = /var/run/php5-fpm.sock</code></p>
+<p> 说明：<strong>新版本中默认就是<code>listen = /var/run/php5-fpm.sock</code></strong>，所以那些不是这个值的情况下修改一下…</p>
+</li>
+</ol>
+<h2 id="5-接近完成，测试一下">5.接近完成，测试一下</h2><p>在html的目录下，创建一个info.php.写入：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line">	phpinfo();</span></span><br></pre></td></tr></table></figure>
+<p>顺便一下nginx</p>
+<p><code>sudo service nginx restart</code></p>
+<p>现在在浏览器中键入 your.domain.com/info.php</p>
+<p>看见phpinfo了！完成 : D</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/LEMP/">LEMP</a> <a class="tag tag--primary tag--small t-link" href="/tags/debian/">debian</a> <a class="tag tag--primary tag--small t-link" href="/tags/linux/">linux</a> <a class="tag tag--primary tag--small t-link" href="/tags/mysql/">mysql</a> <a class="tag tag--primary tag--small t-link" href="/tags/nginx/">nginx</a> <a class="tag tag--primary tag--small t-link" href="/tags/php/">php</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/22/ssh登录主机/" data-tooltip="ssh登录主机">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/22/ssh登录主机/" data-tooltip="ssh登录主机">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png"/>
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/assets/images/bg_4.jpg');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/assets/js/profile/profile.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>
