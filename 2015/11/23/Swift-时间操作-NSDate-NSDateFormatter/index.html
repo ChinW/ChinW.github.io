@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>Swift 时间操作:NSDate,NSDateFormatter - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+    <meta name="description" content="转载出处：https://code.csdn.net/snippets/627333
+
+NSDate
+
+123456789101112131415161718192021222324252627282930313233343536373839404142// 1、初始化// 初始化一个当前时刻对象var now = NSDate()// 初始化一个明天当前时刻对象var tomorrow = NS">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Swift 时间操作:NSDate,NSDateFormatter">
+<meta property="og:url" content="http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="转载出处：https://code.csdn.net/snippets/627333
+
+NSDate
+
+123456789101112131415161718192021222324252627282930313233343536373839404142// 1、初始化// 初始化一个当前时刻对象var now = NSDate()// 初始化一个明天当前时刻对象var tomorrow = NS">
+<meta property="og:updated_time" content="2015-11-23T11:53:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift 时间操作:NSDate,NSDateFormatter">
+<meta name="twitter:description" content="转载出处：https://code.csdn.net/snippets/627333
+
+NSDate
+
+123456789101112131415161718192021222324252627282930313233343536373839404142// 1、初始化// 初始化一个当前时刻对象var now = NSDate()// 初始化一个明天当前时刻对象var tomorrow = NS">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Consiiii</a>
+    </h1>
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3"
+
+style="background:url('/assets/images/bg_4.jpg')"
+
+>
+    
+        <div class="sidebar-profile">
+            <a href="/about">
+                
+                    <img class="sidebar-profile-picture" src="/assets/images/headicon.png"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Consiiii</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">动态</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/project"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-gift"></i>
+                    <span class="sidebar-button-desc">作品</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-user"></i>
+                    <span class="sidebar-button-desc">介绍</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/links"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-link"></i>
+                    <span class="sidebar-button-desc">Links</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Swift 时间操作:NSDate,NSDateFormatter
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Mon Nov 23 2015 19:50:26 GMT+0800">
+	
+		    11月 23, 2015
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Swift/">Swift</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>转载出处：<a href="https://code.csdn.net/snippets/627333" target="_blank" rel="external">https://code.csdn.net/snippets/627333</a></p>
+<ol>
+<li>NSDate</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、初始化</span></span><br><span class="line"><span class="comment">// 初始化一个当前时刻对象</span></span><br><span class="line"><span class="tag">var</span> now = <span class="function"><span class="title">NSDate</span><span class="params">()</span></span></span><br><span class="line"><span class="comment">// 初始化一个明天当前时刻对象</span></span><br><span class="line"><span class="tag">var</span> tomorrow = <span class="function"><span class="title">NSDate</span><span class="params">(timeIntervalSinceNow: <span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>)</span></span></span><br><span class="line"><span class="comment">// 初始化一个昨天当前时刻对象</span></span><br><span class="line"><span class="tag">var</span> yestoday = <span class="function"><span class="title">NSDate</span><span class="params">(timeInterval: -<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>, sinceDate: now)</span></span></span><br><span class="line"><span class="comment">// 初始化一个 2001-01-01 08:00:00 1小时后的时刻对象</span></span><br><span class="line"><span class="tag">var</span> date1 = <span class="function"><span class="title">NSDate</span><span class="params">(timeIntervalSinceReferenceDate: <span class="number">3600</span>)</span></span></span><br><span class="line"><span class="comment">// 初始化一个 1970-01-01 08:00:00 1小时后的时刻对象</span></span><br><span class="line"><span class="tag">var</span> date2 = <span class="function"><span class="title">NSDate</span><span class="params">(timeIntervalSince1970: <span class="number">3600</span>)</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、获取时间描述</span></span><br><span class="line"><span class="tag">var</span> dateDescription = now<span class="class">.description</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3、获取时间间隔</span></span><br><span class="line"><span class="comment">// 获取今天到明天的时间间隔</span></span><br><span class="line"><span class="tag">var</span> interval1 = tomorrow.<span class="function"><span class="title">timeIntervalSinceDate</span><span class="params">(now)</span></span></span><br><span class="line"><span class="comment">// 获取今天到明天的时间间隔</span></span><br><span class="line"><span class="tag">var</span> interval2 = tomorrow<span class="class">.timeIntervalSinceNow</span></span><br><span class="line"><span class="comment">// 获取 2001-01-01 08:00:00 到今天的时间间隔</span></span><br><span class="line"><span class="tag">var</span> interval3 = now<span class="class">.timeIntervalSinceReferenceDate</span></span><br><span class="line"><span class="comment">// 获取 1970-01-01 08:00:00 到今天的时间间隔</span></span><br><span class="line"><span class="tag">var</span> interval5 = now<span class="class">.timeIntervalSince1970</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4、随机返回一个不可能达到的未来时间、过去时间</span></span><br><span class="line">date1 = NSDate.<span class="function"><span class="title">distantFuture</span><span class="params">()</span></span> as NSDate</span><br><span class="line">date2 = NSDate.<span class="function"><span class="title">distantPast</span><span class="params">()</span></span> as NSDate</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5、时间相加</span></span><br><span class="line"><span class="comment">// 返回一个后天当前时刻对象（在明天基础上再加上一天的时间）</span></span><br><span class="line"><span class="tag">var</span> theDayAfterTomorrow = tomorrow.<span class="function"><span class="title">dateByAddingTimeInterval</span><span class="params">(<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>)</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 6、时间比较</span></span><br><span class="line"><span class="comment">// 比较两个时间对象是否相同返回布尔值（由于精度问题，isTheSameDate 为 false）</span></span><br><span class="line"><span class="tag">var</span> isTheSameDate = theDayAfterTomorrow.<span class="function"><span class="title">isEqualToDate</span><span class="params">(NSDate(timeInterval: <span class="number">2</span>*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>, sinceDate: now)</span></span>)</span><br><span class="line"><span class="comment">// 返回两个时间中较早的一个时间</span></span><br><span class="line"><span class="tag">var</span> earlierOne = now.<span class="function"><span class="title">earlierDate</span><span class="params">(tomorrow)</span></span></span><br><span class="line"><span class="comment">// 返回两个时间中较晚的一个时间</span></span><br><span class="line"><span class="tag">var</span> laterOne = now.<span class="function"><span class="title">laterDate</span><span class="params">(tomorrow)</span></span></span><br><span class="line"><span class="comment">// 比较两个时间对象是否相同并返回 NSComparisonResult 值</span></span><br><span class="line"><span class="tag">var</span> compareResult = now.<span class="function"><span class="title">compare</span><span class="params">(tomorrow)</span></span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>NSDateFormatter</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方式1：用已有日期格式进行转换</span></span><br><span class="line"><span class="tag">var</span> dateFormatter1 = <span class="function"><span class="title">NSDateFormatter</span><span class="params">()</span></span></span><br><span class="line">dateFormatter1<span class="class">.dateStyle</span> = NSDateFormatterStyle<span class="class">.MediumStyle</span></span><br><span class="line">dateFormatter1<span class="class">.timeStyle</span> = NSDateFormatterStyle<span class="class">.MediumStyle</span></span><br><span class="line"><span class="tag">var</span> now = <span class="function"><span class="title">NSDate</span><span class="params">()</span></span></span><br><span class="line"><span class="comment">// Date 转 String</span></span><br><span class="line"><span class="tag">var</span> nowString = dateFormatter1.<span class="function"><span class="title">stringFromDate</span><span class="params">(now)</span></span>      <span class="comment">// Mar 24, 2015, 9:00:00 PM</span></span><br><span class="line"><span class="comment">// String 转 Date</span></span><br><span class="line">now = dateFormatter1.<span class="function"><span class="title">dateFromString</span><span class="params">(nowString)</span></span>!</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式2：自定义日期格式进行转换</span></span><br><span class="line"><span class="tag">var</span> dateFormatter2 = <span class="function"><span class="title">NSDateFormatter</span><span class="params">()</span></span></span><br><span class="line">dateFormatter2<span class="class">.dateFormat</span> = <span class="string">"yyyy-MM-dd HH:mm:ss"</span></span><br><span class="line"><span class="comment">// Date 转 String</span></span><br><span class="line">nowString = dateFormatter2.<span class="function"><span class="title">stringFromDate</span><span class="params">(now)</span></span>          <span class="comment">// 2015-03-24 21:00:00</span></span><br><span class="line"><span class="comment">// String 转 Date</span></span><br><span class="line">now = dateFormatter2.<span class="function"><span class="title">dateFromString</span><span class="params">(nowString)</span></span>!</span><br></pre></td></tr></table></figure>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Swift/">Swift</a> <a class="tag tag--primary tag--small t-link" href="/tags/datetime/">datetime</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/22/Install-LEMP-on-Debian/" data-tooltip="Install LEMP on Debian">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/22/Install-LEMP-on-Debian/" data-tooltip="Install LEMP on Debian">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png"/>
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/assets/images/bg_4.jpg');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/assets/js/profile/profile.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>
