@@ -30,7 +30,7 @@ $array = array(1,2,3,4,5);
 但是[]中括号的表达方式需要PHP版本&amp;gt;=5.4.
 于是悲剧就出现在这里，在给学院做一个CMS的时候，本地测试正常后，放上空间一律返回403 Fobbiden错误（没开调试）。
 其实当时写的时候知道要注意以下版本的，但是当时由于烦躁就想着“">
-<meta property="og:updated_time" content="2015-10-03T01:40:53.000Z">
+<meta property="og:updated_time" content="2015-12-16T16:20:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一次因PHP中的数组语法造成的事件">
 <meta name="twitter:description" content="先说问题所在，PHP的数组可以有以下方式来表达.
@@ -211,10 +211,7 @@ style="background:url('/assets/images/bg_4.jpg')"
 </code></pre><p>但是[]中括号的表达方式需要<strong>PHP版本&gt;=5.4</strong>.</p>
 <p>于是悲剧就出现在这里，在给学院做一个CMS的时候，本地测试正常后，放上空间一律返回403 Fobbiden错误（没开调试）。</p>
 <p>其实当时写的时候知道要注意以下版本的，但是当时由于烦躁就想着“先用中括号吧，方便呢，服务器不支持的话，之后再改吧”。<br>结果时隔约两个星期后才开始放到服务器上(院校效率)，就已经忘记了这件事情。</p>
-<p>23333，ˊ_&gt;ˋ，就这样开始了排查之旅。发现是因为“［］”的时候（就因为两个字符！），心情是非常无奈的。</p>
-<p>想打下自己但又觉得也怪现在还有用5.4以下版本的服务器而不能怪自己。</p>
-<p>纠结了一下，最后还是打了自己一巴掌。</p>
-<p>终。</p>
+<p>纠结了一下，给自己打了一巴掌长长记性吧。</p>
 
             
                 
@@ -244,7 +241,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/03/程序员的鄙视链/" data-tooltip="程序员的鄙视链">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/03/程序员的鄙视链/" data-tooltip="Just_for_Fun_程序员的鄙视链">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -323,7 +320,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/03/程序员的鄙视链/" data-tooltip="程序员的鄙视链">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/03/程序员的鄙视链/" data-tooltip="Just_for_Fun_程序员的鄙视链">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
