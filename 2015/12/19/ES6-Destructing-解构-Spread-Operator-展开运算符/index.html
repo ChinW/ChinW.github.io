@@ -6,33 +6,28 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Consiiii">
-    <title>一创业比赛有感 - Consiiii</title>
+    <title> ES6: Destructing(解构) &amp; Spread Operator(展开运算符)  - Consiiii</title>
     <meta name="author" content="Consiiii">
     
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description" content="周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。
-能参加这个比赛完全是意料之外的事情，缘由是暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。
-本着学习和涨姿势的态度我来到了天津。
-概况比赛队伍一共有48支，本科生的除了我，个人印象还有一支来自于北京师范大学的与自行车相关的公益项目。其它的队伍大多已是职场人士多年，亦或是清北复交等">
+    <meta name="description" content="Destructing这个应该是翻译成“解构”吧ES6允许这样这样操作
+首先是对于Object
+1234var obj = &amp;#123; a:&quot;Hello&quot;, b:&quot;Hi&quot; &amp;#125; var &amp;#123;a,b&amp;#125; = obj //Bingo, now a = &quot;Hello&quot;, b = &quot;Hi&quot;var &amp;#123;a,c&amp;#125; = obj //Wrong, now a = &quot;He">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="一创业比赛有感">
-<meta property="og:url" content="http://consiiii.me/2015/12/06/一创业比赛有感/index.html">
+<meta property="og:title" content=" ES6: Destructing(解构) & Spread Operator(展开运算符) ">
+<meta property="og:url" content="http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。
-能参加这个比赛完全是意料之外的事情，缘由是暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。
-本着学习和涨姿势的态度我来到了天津。
-概况比赛队伍一共有48支，本科生的除了我，个人印象还有一支来自于北京师范大学的与自行车相关的公益项目。其它的队伍大多已是职场人士多年，亦或是清北复交等">
-<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2244.JPG">
-<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2194.JPG">
-<meta property="og:updated_time" content="2015-12-19T13:14:56.000Z">
+<meta property="og:description" content="Destructing这个应该是翻译成“解构”吧ES6允许这样这样操作
+首先是对于Object
+1234var obj = &amp;#123; a:&quot;Hello&quot;, b:&quot;Hi&quot; &amp;#125; var &amp;#123;a,b&amp;#125; = obj //Bingo, now a = &quot;Hello&quot;, b = &quot;Hi&quot;var &amp;#123;a,c&amp;#125; = obj //Wrong, now a = &quot;He">
+<meta property="og:updated_time" content="2015-12-19T13:10:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一创业比赛有感">
-<meta name="twitter:description" content="周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。
-能参加这个比赛完全是意料之外的事情，缘由是暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。
-本着学习和涨姿势的态度我来到了天津。
-概况比赛队伍一共有48支，本科生的除了我，个人印象还有一支来自于北京师范大学的与自行车相关的公益项目。其它的队伍大多已是职场人士多年，亦或是清北复交等">
+<meta name="twitter:title" content=" ES6: Destructing(解构) & Spread Operator(展开运算符) ">
+<meta name="twitter:description" content="Destructing这个应该是翻译成“解构”吧ES6允许这样这样操作
+首先是对于Object
+1234var obj = &amp;#123; a:&quot;Hello&quot;, b:&quot;Hi&quot; &amp;#125; var &amp;#123;a,b&amp;#125; = obj //Bingo, now a = &quot;Hello&quot;, b = &quot;Hi&quot;var &amp;#123;a,c&amp;#125; = obj //Wrong, now a = &quot;He">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -176,19 +171,19 @@ style="background:url('/assets/images/bg_4.jpg')"
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            一创业比赛有感
+             ES6: Destructing(解构) &amp; Spread Operator(展开运算符) 
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sun Dec 06 2015 19:02:57 GMT+0800">
+    <time itemprop="datePublished" content="Sat Dec 19 2015 21:09:36 GMT+0800">
 	
-		    12月 06, 2015
+		    12月 19, 2015
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Competition/">Competition</a>
+    <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
 
 
     
@@ -197,25 +192,14 @@ style="background:url('/assets/images/bg_4.jpg')"
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。</p>
-<p>能参加这个比赛完全是意料之外的事情，缘由是暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。</p>
-<p>本着学习和涨姿势的态度我来到了天津。</p>
-<h2 id="概况">概况</h2><p>比赛队伍一共有48支，本科生的除了我，个人印象还有一支来自于北京师范大学的与自行车相关的公益项目。其它的队伍大多已是职场人士多年，亦或是清北复交等名校背景的创始人, 亦或是某领域专家博士等…</p>
-<p>比赛的目的是决出20强，去录制CCTV的一个创业类型的电视节目(猜测大概就是现场比拼之类的吧)。其实这次复赛中也已经看到了CCTV的编导在不停地摄像。</p>
-<h2 id="行程">行程</h2><p>12-03日，下午先是一个创业训练营，由梁青(现中科纳新总经理，曾任联想之星副总裁)来给我们做一个相关的要点讲座，不得不说，内容是关于创业的一些坑啦，股权啦等经验的分享。紧接着是一个欢迎晚宴。</p>
-<p>12-04日，是为期一整天的现场演示, 分三个赛场, 每个赛场三位评审. 关于作品和想象中的差不多，大多有一些“互联网＋”项目, 带着互联网就起飞了, 做内容啦，做平台之类的。在我的赛场上也看到一些有相当纯技术的项目. 例如名为“浩恒征途”的无人机项目，是来自北航的团队做的，现场带了个体型较大的工程机来，起到了震慑能力.</p>
-<p>另外，还有一个叫做CIRI的语音系统 (不知道我这么理解对不对) 让我印象深刻, 当我第一眼看到这个词的时候想到的是Siri.</p>
-<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2244.JPG" alt="photos"></p>
-<h2 id="我的参赛项目">我的参赛项目</h2><p>最后关于我的参赛项目，其实是一个技术工作室。与上述参赛队伍比起来 (融资几百几千万/名人名师背景/亦或海归背景等），不得不承认完全是一个草根作品，真是相形见绌（因此才提及“出乎意料”）。</p>
-<p>不过来都来了，演讲顺序是最后一个的我，还是（假装）自信地讲完我们的idea。意料之外的是下来之后得到了数位评委以及创业前辈们的肯定并且加了我的一些联系方式（虽然我觉得可能并没有啥用，但毕竟是给了，权当做一种鼓励吧 ）.</p>
-<blockquote>
-<p>插曲：赛前晚上，由于举办方希望参赛者在指定App上宣传自己的项目(让大家点赞，投票之类的)，出于参赛者都有点反感，以及自己不想发什么朋友圈求赞，于是抓包看看有没有漏洞。结果没几分钟就发现了=_= ，然后录制了一个快速刷票的视频作为演讲的佐料演示了下，23333.</p>
-</blockquote>
-<p>最后，没有进入20强，止步于一个优胜奖。</p>
-<h2 id="返程">返程</h2><p>创业是为了什么呢？</p>
-<p>现在的我只要能够做自己的喜欢事就好了。我只是做了一点微小的工作，在学校里侥幸有了一个工作室罢了。</p>
-<p>附北京末班地铁照一张，大家都在玩手机，我无聊到在看他们玩手机. </p>
-<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2194.JPG" alt="subway"></p>
+            <h2 id="Destructing">Destructing</h2><p>这个应该是翻译成“解构”吧<br>ES6允许这样这样操作</p>
+<p>首先是对于Object</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; a:<span class="string">"Hello"</span>, b:<span class="string">"Hi"</span> &#125; </span><br><span class="line"><span class="keyword">var</span> &#123;a,b&#125; = obj <span class="comment">//Bingo, now a = "Hello", b = "Hi"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> &#123;a,c&#125; = obj <span class="comment">//Wrong, now a = "Hello", c = undefined</span></span><br></pre></td></tr></table></figure>
+<p>对于数组，效果类同</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="string">"Hello"</span>, <span class="string">"Hi"</span> ]</span><br><span class="line"><span class="keyword">var</span> [a,b] = arr <span class="comment">//Bingo, now a = "Hello", b = "Hi"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> [a,c] = arr <span class="comment">//Also correct, now a = "Hello", b = "Hi"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Spread_Operator">Spread Operator</h2><p>翻译为“展开运算符”, 语法是三个点:  <strong>…</strong></p>
+<p>这是一个仅针对Array有效的运算符，作用为在那些需要同时调用多个参数/元素 的地方提供语法便利</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x,y,z</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x+y+z</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])) <span class="comment">//6</span></span><br><span class="line"><span class="built_in">console</span>.log(sum(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])) <span class="comment">//6</span></span><br><span class="line"><span class="built_in">console</span>.log(sum(...[<span class="number">1</span>,,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])) <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> doSomething = <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> sum(..args)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(doSomething(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])) <span class="comment">//6</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对Object是否有效呢？</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123; a:<span class="string">"A"</span>, b:<span class="string">"B"</span>, c:<span class="string">"C"</span>, d:<span class="string">"D"</span>, e:<span class="string">"E"</span> &#125;</span><br><span class="line"><span class="keyword">var</span> &#123;a,b,...others&#125; = obj <span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
 
             
                 
@@ -228,7 +212,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Competition/">Competition</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/ES6/">ES6</a> <a class="tag tag--primary tag--small t-link" href="/tags/JavaScript/">JavaScript</a>
 
             </div>
         
@@ -237,7 +221,7 @@ style="background:url('/assets/images/bg_4.jpg')"
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/10/高盛笔试后记/"  data-tooltip="高盛笔试后记">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -245,7 +229,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/" data-tooltip="Swift 时间操作:NSDate,NSDateFormatter">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/10/高盛笔试后记/" data-tooltip="高盛笔试后记">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -260,17 +244,17 @@ style="background:url('/assets/images/bg_4.jpg')"
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/12/06/一创业比赛有感/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/12/06/一创业比赛有感/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/12/06/一创业比赛有感/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -316,7 +300,7 @@ style="background:url('/assets/images/bg_4.jpg')"
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/10/高盛笔试后记/"  data-tooltip="高盛笔试后记">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -324,7 +308,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/" data-tooltip="Swift 时间操作:NSDate,NSDateFormatter">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/10/高盛笔试后记/" data-tooltip="高盛笔试后记">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -339,17 +323,17 @@ style="background:url('/assets/images/bg_4.jpg')"
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/12/06/一创业比赛有感/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/12/06/一创业比赛有感/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/12/06/一创业比赛有感/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -375,17 +359,17 @@ style="background:url('/assets/images/bg_4.jpg')"
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/12/06/一创业比赛有感/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/12/06/一创业比赛有感/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/12/06/一创业比赛有感/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
