@@ -12,16 +12,37 @@
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
-    <meta name="description" content="［翻译自http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149］正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所描述的一种”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该">
+    <meta name="description" content="翻译自此处
+正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不太好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所谓的”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该知道的，8个正则表达式。
+正则表达式的背景维基百科：
+
+正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expres">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="8个应该被知道的正则表达式">
 <meta property="og:url" content="http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="［翻译自http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149］正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所描述的一种”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该">
-<meta property="og:updated_time" content="2015-10-22T15:58:06.000Z">
+<meta property="og:description" content="翻译自此处
+正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不太好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所谓的”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该知道的，8个正则表达式。
+正则表达式的背景维基百科：
+
+正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expres">
+<meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/username.jpg">
+<meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/password.jpg">
+<meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/hex-copy.jpg">
+<meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/slug.jpg">
+<meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/email.jpg">
+<meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/url.jpg">
+<meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/ip.jpg">
+<meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/htmltag.jpg">
+<meta property="og:image" content="http://consiiii.me/img.jpg">
+<meta property="og:updated_time" content="2016-01-04T14:11:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8个应该被知道的正则表达式">
-<meta name="twitter:description" content="［翻译自http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149］正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所描述的一种”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该">
+<meta name="twitter:description" content="翻译自此处
+正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不太好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所谓的”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该知道的，8个正则表达式。
+正则表达式的背景维基百科：
+
+正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expres">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -177,7 +198,7 @@ style="background:url('/assets/images/bg_4.jpg')"
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/regex/">regex</a>
+    <a class="category-link" href="/categories/Regex/">Regex</a>
 
 
     
@@ -186,17 +207,73 @@ style="background:url('/assets/images/bg_4.jpg')"
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>［翻译自<a href="http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149］" target="_blank" rel="external">http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149］</a><br>正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所描述的一种”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该知道的，8个正则表达式。</p>
-<p>#＃正则表达式的背景<br>维基百科是这样解释的：</p>
+            <p><a href="http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149" target="_blank" rel="external">翻译自此处</a></p>
+<p>正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不太好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所谓的”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该知道的，8个正则表达式。</p>
+<h2 id="正则表达式的背景">正则表达式的背景</h2><p>维基百科：</p>
 <blockquote>
 <p>正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为regex、regexp或RE），计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。</p>
 </blockquote>
 <p>这段解释并没有真正的告诉我们太多关于它实际是何种表现形式。而我今天将要讲的，正是这些类似于\w,\s,\1，以及其它一些含义与“外观”（写出来的样子）不一样的正则表达式们。</p>
-<p>如果您愿意在阅读此篇文章之前去了解一下正则表达式，我建议您去看看<a href="http://www.multiurl.com/ga/regexdummies" target="_blank" rel="external">Regular Expressions for Dummies</a>。</p>
-<p>今天我们将要提及的8个正则表达式将能够让您匹配：用户名，密码，邮箱，16进制（如#fff,#000),slug,URL，IP地址，还有HTML标签。随着程度深入，这些表达式将会变得更容易让人迷惑。以下每一张放在开头的解释性图片，将很好的解释文章的内容，但是最后4个（正则表达式）通过阅读说明会更容易理解。</p>
+<p>如果您愿意在阅读此篇文章之前去了解一下正则表达式，建议去看看<a href="http://www.multiurl.com/ga/regexdummies" target="_blank" rel="external">Regular Expressions for Dummies</a>。</p>
+<p>今天我们将要提及的8个正则表达式将能够让您匹配：用户名，密码，邮箱，16进制（如#fff,#000), slug, URL，IP地址，还有HTML标签。随着程度深入，这些表达式将会变得更容易让人迷惑。以下每一张放在开头的解释性图片，将很好的解释文章的内容，但是最后4个（正则表达式）通过阅读说明会更容易理解。</p>
 <p>记住正则表达式含义的关键点是它们几乎都是同时向前/向后搜索的。这句话将在我们谈到HTML标签的时候会更容易理解。</p>
 <p>注意：正则表达式中的分隔符是斜杠”/“。每一个匹配语句（以下也将翻译成匹配模式）开头和末尾都会跟着一个分隔符”/“。如果一个出线在表达式之内，那我们一定要通过反斜杠”\”将它转义，如：“\/”。</p>
-<p>##用户名<br>语句/模式：<br>/^[a-z0^9_-]{3,16}$/<br>描述：<br>…….<br>(继续翻译开坑中)</p>
+<h2 id="1-_匹配用户名">1. 匹配用户名</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/username.jpg" alt="Matching a username"></p>
+<h5 id="匹配模式：">匹配模式：</h5><p><code>/^[a-z0^9_-]{3,16}$/</code></p>
+<h5 id="解释：">解释：</h5><p>让我们告诉解析器字符串的开头(通过使用<strong>^</strong>)后面跟随着的是小写字母(a-z), 数字(0-9), 一个下划线，或者一个连字符。接着，{3,16}确保字符串应当有至少3个这样的字符，而且不超过16个。最后，字符串抵达尾部($).</p>
+<h5 id="匹配">匹配</h5><p>my-us3r_n4m3</p>
+<h5 id="不匹配">不匹配</h5><p>th1s1s-wayt00_l0ngt0beausername (因为太长了)</p>
+<h2 id="2-_匹配密码">2. 匹配密码</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/password.jpg" alt="Mathing a Password"></p>
+<h5 id="匹配模式：-1">匹配模式：</h5><p><code>/^[a-z0-9_-]{6,18}$/</code></p>
+<h5 id="解释：-1">解释：</h5><p>匹配密码和匹配用户名非常相似。唯一的不同是这里要6到18位字母/数字/下划线/或者连字符，而不是3到16位。</p>
+<h5 id="匹配-1">匹配</h5><p>myp4ssw0rd</p>
+<h5 id="不匹配-1">不匹配</h5><p>mypa$$w0rd (因为包含了$字符)</p>
+<h2 id="3-_匹配16进制数">3. 匹配16进制数</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/hex-copy.jpg" alt="Maching a Hex Value"></p>
+<h5 id="匹配模式：-2">匹配模式：</h5><p><code>/^#?([a-f0-9]{6}|[a-f0-9]{3})$/</code></p>
+<h5 id="解释：-2">解释：</h5><p>通过符号 ^ 来告诉解析器字符串从哪里开始。然后 ＃ 是可选的，因为它后面跟着一个问号（译者注：?代表0个获1个）。问号告诉解释器，其前面的字符（这里是一个＃）是可选的，但是问号是“贪婪的”，如果这里有匹配的字符，问号就会去获取字符。接下来，在第一组里(第一组圆括号)，我们实现了两种不同的状况。第一个是a－f之间的小写字符或数字，要求出现6次。垂线（｜）告诉我们，或者这里是a－f之间的小写字母或数字出现3次（译者注：这是16进制的简写）。最后，我们用$来结束字符串。</p>
+<p>我在这里把6个字符的要求放在前面的原因是因为，像是解释器会捕获#ffffff这样的16进制书。如果这里是相反的情况，把三个字符放在前面，那么么解释器只会拿走#fff而不会捕获其它的3个f。</p>
+<h5 id="匹配-2">匹配</h5><p>#a3c113</p>
+<p>#333</p>
+<p>#f66h23 (匹配#f66)</p>
+<h5 id="不匹配-2">不匹配</h5><p>#4h82f4 (#4h8不匹配)</p>
+<h2 id="4-_匹配Slug">4. 匹配Slug</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/slug.jpg" alt="Matching a &quot;Slug&quot;"></p>
+<h5 id="匹配模式：-3">匹配模式：</h5><p><code>/^[a-z0-9-]+$/</code></p>
+<h5 id="解释：-3">解释：</h5><p>如果您曾经操作过mod_rewrite以及URL美化，那您会需要去使用正则表达式的。我们让解释器去找到字符串的头(^)，其后跟随着一个或多个(通过使用+)字符，数字，或连字符。最后，我们想要找到的字符串到这里就立刻结束（$）.</p>
+<h5 id="匹配-3">匹配</h5><p>my-title-here</p>
+<h5 id="不匹配-3">不匹配</h5><p>my_title_here (包含下划线)</p>
+<h2 id="5-_匹配邮件">5. 匹配邮件</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/email.jpg" alt="Matching a Email"></p>
+<h5 id="匹配模式：-4">匹配模式：</h5><p><code>/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/</code></p>
+<h5 id="解释：-4">解释：</h5><p>先让解释器找到字符串的头(^)。然后里面第一组，我们匹配一个或多个小写字母，数字，下划线，点，或者破折号。我转义了“.”，因为一个没有转义的“.”代表着任何字符（译者注：\. 将 “.” 转义，以匹配字符意义上的”.” ）。在这个分组后面必须直接跟着一个“@”。接下来域名必须匹配上这样的规则：1个或多个小写字母，数字，下划线，点或者破折号。借着又是一个（转义的）“.”，后面跟着2到6位的小写字母或者”.”。我限制2到6位是因为有国家的顶级域名这种东西(.ny.us 或者 .co.uk)。最后，我们要求字符串到此结束($)。</p>
+<h5 id="匹配-4">匹配</h5><p>john@doe.com</p>
+<h5 id="不匹配-4">不匹配</h5><p>john@doe.something (顶级域名太长了)</p>
+<h2 id="6-_匹配URL">6. 匹配URL</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/url.jpg" alt="Matching a URL"></p>
+<h5 id="匹配模式：-5">匹配模式：</h5><p><code>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</code></p>
+<h5 id="解释：-5">解释：</h5><p>This regex is almost like taking the ending part of the above regex, slapping it between “http://“ and some file structure at the end. It sounds a lot simpler than it really is. To start off, we search for the beginning of the line with the caret.</p>
+<p>The first capturing group is all option. It allows the URL to begin with “http://“, “https://“, or neither of them. I have a question mark after the s to allow URL’s that have http or https. In order to make this entire group optional, I just added a question mark to the end of it.</p>
+<p>Next is the domain name: one or more numbers, letters, dots, or hypens followed by another dot then two to six letters or dots. The following section is the optional files and directories. Inside the group, we want to match any number of forward slashes, letters, numbers, underscores, spaces, dots, or hyphens. Then we say that this group can be matched as many times as we want. Pretty much this allows multiple directories to be matched along with a file at the end. I have used the star instead of the question mark because the star says zero or more, not zero or one. If a question mark was to be used there, only one file/directory would be able to be matched.</p>
+<p>Then a trailing slash is matched, but it can be optional. Finally we end with the end of the line.</p>
+<h5 id="匹配-5">匹配</h5><p><a href="http://net.tutsplus.com/about" target="_blank" rel="external">http://net.tutsplus.com/about</a></p>
+<h5 id="不匹配-5">不匹配</h5><p><a href="http://google.com/some/file!.html" target="_blank" rel="external">http://google.com/some/file!.html</a> (contains an exclamation point)</p>
+<h2 id="7-_匹配IP地址">7. 匹配IP地址</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/ip.jpg" alt="Matching an IP Address"></p>
+<h5 id="匹配模式：-6">匹配模式：</h5><p><code>/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/</code></p>
+<h5 id="解释：-6">解释：</h5><p>Now, I’m not going to lie, I didn’t write this regex; I got it from <a href="http://www.regular-expressions.info/regexbuddy/ipaccurate.html" target="_blank" rel="external">here</a>. Now, that doesn’t mean that I can’t rip it apart character for character.</p>
+<p>The first capture group really isn’t a captured group because</p>
+<p>1</p>
+<p>was placed inside which tells the parser to not capture this group (more on this in the last regex). We also want this non-captured group to be repeated three times — the {3} at the end of the group. This group contains another group, a subgroup, and a literal dot. The parser looks for a match in the subgroup then a dot to move on.</p>
+<p>The subgroup is also another non-capture group. It’s just a bunch of character sets (things inside brackets): the string “25” followed by a number between 0 and 5; or the string “2” and a number between 0 and 4 and any number; or an optional zero or one followed by two numbers, with the second being optional.</p>
+<p>After we match three of those, it’s onto the next non-capturing group. This one wants: the string “25” followed by a number between 0 and 5; or the string “2” with a number between 0 and 4 and another number at the end; or an optional zero or one followed by two numbers, with the second being optional.</p>
+<p>We end this confusing regex with the end of the string.</p>
+<h5 id="匹配-6">匹配</h5><p>73.60.124.136 (no, that is not my IP address :P)</p>
+<h5 id="不匹配-6">不匹配</h5><p>256.60.124.136 (the first group must be “25” and a number between zero and five)</p>
+<h2 id="8-_匹配HTML标签">8. 匹配HTML标签</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/htmltag.jpg" alt="Matching an HTML Tag"></p>
+<h5 id="匹配模式：-7">匹配模式：</h5><p><code>/^&lt;([a-z]+)([^&lt;]+)*(?:&gt;(.*)&lt;\/\1&gt;|\s+\/&gt;)$/</code></p>
+<h5 id="解释：-7">解释：</h5><p>One of the more useful regexes on the list. It matches any HTML tag with the content inside. As usually, we begin with the start of the line.</p>
+<p>First comes the tag’s name. It must be one or more letters long. This is the first capture group, it comes in handy when we have to grab the closing tag. The next thing are the tag’s attributes. This is any character but a greater than sign (&gt;). Since this is optional, but I want to match more than one character, the star is used. The plus sign makes up the attribute and value, and the star says as many attributes as you want.</p>
+<p>Next comes the third non-capture group. Inside, it will contain either a greater than sign, some content, and a closing tag; or some spaces, a forward slash, and a greater than sign. The first option looks for a greater than sign followed by any number of characters, and the closing tag. \1 is used which represents the content that was captured in the first capturing group. In this case it was the tag’s name. Now, if that couldn’t be matched we want to look for a self closing tag (like an img, br, or hr tag). This needs to have one or more spaces followed by “/&gt;”.</p>
+<p>The regex is ended with the end of the line.</p>
+<h5 id="匹配-7">匹配</h5><p><a href="http://net.tutsplus.com/" target="_blank" rel="external">Nettuts+</a></p>
+<h5 id="不匹配-7">不匹配</h5><p><img src="img.jpg" alt="My image>"> (attributes can’t contain greater than signs)</p>
+<h2 id="结论">结论</h2><p>I hope that you have grasped the ideas behind regular expressions a little bit better. Hopefully you’ll be using these regexes in future projects! Many times you won’t need to decipher a regex character by character, but sometimes if you do this it helps you learn. Just remember, don’t be afraid of regular expressions, they might not seem it, but they make your life a lot easier. Just try and pull out a tag’s name from a string without regular expressions! ;)</p>
 
             
                 
@@ -209,7 +286,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/regex/">regex</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Regex/">Regex</a>
 
             </div>
         
