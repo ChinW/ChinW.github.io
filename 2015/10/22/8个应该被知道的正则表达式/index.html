@@ -34,8 +34,7 @@
 <meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/url.jpg">
 <meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/ip.jpg">
 <meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/htmltag.jpg">
-<meta property="og:image" content="http://consiiii.me/img.jpg">
-<meta property="og:updated_time" content="2016-01-04T14:11:25.000Z">
+<meta property="og:updated_time" content="2016-01-09T07:54:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8个应该被知道的正则表达式">
 <meta name="twitter:description" content="翻译自此处
@@ -247,33 +246,37 @@ style="background:url('/assets/images/bg_4.jpg')"
 <h5 id="匹配-4">匹配</h5><p>john@doe.com</p>
 <h5 id="不匹配-4">不匹配</h5><p>john@doe.something (顶级域名太长了)</p>
 <h2 id="6-_匹配URL">6. 匹配URL</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/url.jpg" alt="Matching a URL"></p>
-<h5 id="匹配模式：-5">匹配模式：</h5><p><code>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</code></p>
-<h5 id="解释：-5">解释：</h5><p>This regex is almost like taking the ending part of the above regex, slapping it between “http://“ and some file structure at the end. It sounds a lot simpler than it really is. To start off, we search for the beginning of the line with the caret.</p>
-<p>The first capturing group is all option. It allows the URL to begin with “http://“, “https://“, or neither of them. I have a question mark after the s to allow URL’s that have http or https. In order to make this entire group optional, I just added a question mark to the end of it.</p>
-<p>Next is the domain name: one or more numbers, letters, dots, or hypens followed by another dot then two to six letters or dots. The following section is the optional files and directories. Inside the group, we want to match any number of forward slashes, letters, numbers, underscores, spaces, dots, or hyphens. Then we say that this group can be matched as many times as we want. Pretty much this allows multiple directories to be matched along with a file at the end. I have used the star instead of the question mark because the star says zero or more, not zero or one. If a question mark was to be used there, only one file/directory would be able to be matched.</p>
-<p>Then a trailing slash is matched, but it can be optional. Finally we end with the end of the line.</p>
+<h5 id="匹配模式">匹配模式</h5><p><code>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</code><br>(译者注：在最后一个分组内原文允许匹配空格，但URL中的空格一般在表示时通常会使用urlencode一类的来转义成“+“一类的)</p>
+<h5 id="解释">解释</h5><p>这个正则非常像是拿走了上面正则的结尾部分，最后将它们组合于一些文件结构和“ http:// ”之间。它其实比看起来要简单一些。在开始匹配之前，我们先搜寻用脱字符(^)来搜寻一行的开始。</p>
+<p>第一个要捕捉的部分全部都是可选的。它允许URL以“ http:// ”开头，亦或以“ https:// ”开头，亦或都不使用上述两种。在这之后我设置了一个问号，它告诉URL去匹配https或者http.为了使整个分组可选，需要在末尾再添加一个问号。</p>
+<p>截下来匹配域名：<strong>一个或多个数字/字母/点/连字符</strong>。域名后面跟随着一个点，之后是2-6个字母或点。接下来这部分为可选的文件／目录结构。在这个部分中，需要匹配任意数量的 <strong>斜杠/字母/下划线/点/连字符</strong> 。只要我们需要，这个部分可以匹配任意多次数。多重结构都会被匹配，但是最后以一个文件作为结尾。我在这里使用了”<em>“而不是问号，因为”</em>“表示0或多个，而不是表示0或1个（译者注：问号表示0或1个）。如果问号被用在这里，那么将会只有一个文件/目录能够被匹配上。</p>
+<p>接着一个反斜杠”/“可以被匹配，但这是可选的。最后我们结束字符串。</p>
 <h5 id="匹配-5">匹配</h5><p><a href="http://net.tutsplus.com/about" target="_blank" rel="external">http://net.tutsplus.com/about</a></p>
-<h5 id="不匹配-5">不匹配</h5><p><a href="http://google.com/some/file!.html" target="_blank" rel="external">http://google.com/some/file!.html</a> (contains an exclamation point)</p>
+<h5 id="不匹配-5">不匹配</h5><p><a href="http://google.com/some/file!.html" target="_blank" rel="external">http://google.com/some/file!.html</a> (包含感叹号)</p>
 <h2 id="7-_匹配IP地址">7. 匹配IP地址</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/ip.jpg" alt="Matching an IP Address"></p>
-<h5 id="匹配模式：-6">匹配模式：</h5><p><code>/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/</code></p>
-<h5 id="解释：-6">解释：</h5><p>Now, I’m not going to lie, I didn’t write this regex; I got it from <a href="http://www.regular-expressions.info/regexbuddy/ipaccurate.html" target="_blank" rel="external">here</a>. Now, that doesn’t mean that I can’t rip it apart character for character.</p>
-<p>The first capture group really isn’t a captured group because</p>
-<p>1</p>
-<p>was placed inside which tells the parser to not capture this group (more on this in the last regex). We also want this non-captured group to be repeated three times — the {3} at the end of the group. This group contains another group, a subgroup, and a literal dot. The parser looks for a match in the subgroup then a dot to move on.</p>
-<p>The subgroup is also another non-capture group. It’s just a bunch of character sets (things inside brackets): the string “25” followed by a number between 0 and 5; or the string “2” and a number between 0 and 4 and any number; or an optional zero or one followed by two numbers, with the second being optional.</p>
-<p>After we match three of those, it’s onto the next non-capturing group. This one wants: the string “25” followed by a number between 0 and 5; or the string “2” with a number between 0 and 4 and another number at the end; or an optional zero or one followed by two numbers, with the second being optional.</p>
-<p>We end this confusing regex with the end of the string.</p>
-<h5 id="匹配-6">匹配</h5><p>73.60.124.136 (no, that is not my IP address :P)</p>
-<h5 id="不匹配-6">不匹配</h5><p>256.60.124.136 (the first group must be “25” and a number between zero and five)</p>
+<h5 id="匹配模式：-5">匹配模式：</h5><p><code>/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/</code></p>
+<h5 id="解释：-5">解释：</h5><p>我不准备说谎，我没有写这个正则，我从<a href="http://www.regular-expressions.info/regexbuddy/ipaccurate.html" target="_blank" rel="external">这里</a>得到了它。现在，这不代表我不能逐字逐句地分析它。</p>
+<p>这第一个要求捕获的分组其实不是一个被捕获的分组（原文：The first capture group really isn’t a captured group），因为</p>
+<p><code>(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)</code></p>
+<p>“?:”告诉解释器不要去捕获这个分组（更多内容在最后一个正则表达式会说明)。通过把”{3}”放在这个组别的后面，我们还要求了这个不被捕获的分组需重复3次。这个组别包含了一个子组，和一个”.”。解释器会去尝试匹配子组及”.”，然后继续。</p>
+<p>这个子组是又一个非捕获组。它只是一堆在括号中的字符集：</p>
+<ol>
+<li>字符串“25”后面需要跟随0-5之间的数字；</li>
+<li>或字符“2”后面要跟着0-4，然后是一位任意数字；</li>
+<li>或是一个可选0和1，后面跟着两位数字，其中第二位是可选的。</li>
+</ol>
+<p>最后我们结束匹配这个让人头晕的正则表达式。</p>
+<h5 id="匹配-6">匹配</h5><p>73.60.124.136 </p>
+<h5 id="不匹配-6">不匹配</h5><p>256.60.124.136 (第一个分组得在0-255之间)</p>
 <h2 id="8-_匹配HTML标签">8. 匹配HTML标签</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/htmltag.jpg" alt="Matching an HTML Tag"></p>
-<h5 id="匹配模式：-7">匹配模式：</h5><p><code>/^&lt;([a-z]+)([^&lt;]+)*(?:&gt;(.*)&lt;\/\1&gt;|\s+\/&gt;)$/</code></p>
-<h5 id="解释：-7">解释：</h5><p>One of the more useful regexes on the list. It matches any HTML tag with the content inside. As usually, we begin with the start of the line.</p>
-<p>First comes the tag’s name. It must be one or more letters long. This is the first capture group, it comes in handy when we have to grab the closing tag. The next thing are the tag’s attributes. This is any character but a greater than sign (&gt;). Since this is optional, but I want to match more than one character, the star is used. The plus sign makes up the attribute and value, and the star says as many attributes as you want.</p>
-<p>Next comes the third non-capture group. Inside, it will contain either a greater than sign, some content, and a closing tag; or some spaces, a forward slash, and a greater than sign. The first option looks for a greater than sign followed by any number of characters, and the closing tag. \1 is used which represents the content that was captured in the first capturing group. In this case it was the tag’s name. Now, if that couldn’t be matched we want to look for a self closing tag (like an img, br, or hr tag). This needs to have one or more spaces followed by “/&gt;”.</p>
-<p>The regex is ended with the end of the line.</p>
-<h5 id="匹配-7">匹配</h5><p><a href="http://net.tutsplus.com/" target="_blank" rel="external">Nettuts+</a></p>
-<h5 id="不匹配-7">不匹配</h5><p><img src="img.jpg" alt="My image>"> (attributes can’t contain greater than signs)</p>
-<h2 id="结论">结论</h2><p>I hope that you have grasped the ideas behind regular expressions a little bit better. Hopefully you’ll be using these regexes in future projects! Many times you won’t need to decipher a regex character by character, but sometimes if you do this it helps you learn. Just remember, don’t be afraid of regular expressions, they might not seem it, but they make your life a lot easier. Just try and pull out a tag’s name from a string without regular expressions! ;)</p>
+<h5 id="匹配模式：-6">匹配模式：</h5><p><code>/^&lt;([a-z]+)([^&lt;]+)*(?:&gt;(.*)&lt;\/\1&gt;|\s+\/&gt;)$/</code></p>
+<h5 id="解释：-6">解释：</h5><p>这是这个列表中又一个更有用的正则表达式。它匹配任何HTML标签还有其中的内容，我们用一行的开头来开始匹配。</p>
+<p>第一个要匹配的是标签的名字。它必须是1或多个字符。这是一个捕获组，这东西在我们捕获闭标签时相当有用。截下来是标签的属性。它是除符号&gt;外的任意字符。因为这是可选的，但我又需要匹配上多个字符串，所以使用了符号*。加号的使用能匹配属性和值(译者注：加号代表一个或多个)，星号 * 则能表示任意数量的属性。</p>
+<p>接下里第三个是非捕获组。里面包含了一个大于号(&gt;)，一些文本内容，和一个闭标签；或是一些空格，一个反斜杠(/),\1用来表示捕获的内容要在一个捕获分组内。在这种情况下它是标签的名字。现在，如果这里不能匹配，我们就需要寻找一个自关闭标签（像是img,br,或者hr标签）。这需要有一个或多个空格，其后跟随着 “/&gt;”。</p>
+<p>正则表达式结束于行末。</p>
+<h5 id="匹配-7">匹配</h5><p><code>&lt;a href=&quot;http://net.tutsplus.com/&quot;&gt;Nettuts+&lt;/a&gt;</code></p>
+<h5 id="不匹配-7">不匹配</h5><p><code>&lt;img src=&quot;img.jpg&quot; alt=&quot;My image&gt;&quot; /&gt;</code> (属性中不能包含大符号)</p>
+<h2 id="结论">结论</h2><p>希望您能领略到正则表达式背后的一些想法和思维。愿您能在未来的项目中使用这些正则表达式！很多时候您不必一个字符一个字符地去解读正则表达式，但是有时这样做能帮助您去学习到一些东西。请记住：不要害怕正则表达式，它们不如所看到的那样（晦涩难懂），它们反而能让您的生活变得更加简单。请尝试不使用正则表达式来从字符串中抓取标签的名字把！ ;)</p>
 
             
                 
