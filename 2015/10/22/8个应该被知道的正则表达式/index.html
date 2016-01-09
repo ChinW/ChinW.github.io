@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/url.jpg">
 <meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/ip.jpg">
 <meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/htmltag.jpg">
-<meta property="og:updated_time" content="2016-01-09T07:54:49.000Z">
+<meta property="og:updated_time" content="2016-01-09T15:25:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8个应该被知道的正则表达式">
 <meta name="twitter:description" content="翻译自此处
@@ -212,14 +212,14 @@ style="background:url('/assets/images/bg_4.jpg')"
 <blockquote>
 <p>正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为regex、regexp或RE），计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。</p>
 </blockquote>
-<p>这段解释并没有真正的告诉我们太多关于它实际是何种表现形式。而我今天将要讲的，正是这些类似于\w,\s,\1，以及其它一些含义与“外观”（写出来的样子）不一样的正则表达式们。</p>
-<p>如果您愿意在阅读此篇文章之前去了解一下正则表达式，建议去看看<a href="http://www.multiurl.com/ga/regexdummies" target="_blank" rel="external">Regular Expressions for Dummies</a>。</p>
-<p>今天我们将要提及的8个正则表达式将能够让您匹配：用户名，密码，邮箱，16进制（如#fff,#000), slug, URL，IP地址，还有HTML标签。随着程度深入，这些表达式将会变得更容易让人迷惑。以下每一张放在开头的解释性图片，将很好的解释文章的内容，但是最后4个（正则表达式）通过阅读说明会更容易理解。</p>
+<p>这段解释并没有真正告诉我们太多关于它实际上是以何种表现形式的。而我今天将要讲的，正是这形如\w,\s,\1，以及其它一些含义与“外表”看起来不那么一样的正则表达式。</p>
+<p>如果您愿意在阅读此篇文章之前去了解一下正则表达式，建议看看<a href="http://www.multiurl.com/ga/regexdummies" target="_blank" rel="external">Regular Expressions for Dummies</a>。</p>
+<p>我们将要提及的8个正则表达式将能够让您学习如何去匹配：用户名, 密码, 邮箱, 16进制（如#fff, #000), Slug, URL, IP地址, 还有HTML标签。随着程度深入，这些表达式将会变得更容易让人头晕。以下每一张放在开头的解释性图片，将很好的解释文章的内容，但是最后4个（正则表达式）通过阅读说明会更容易理解。</p>
 <p>记住正则表达式含义的关键点是它们几乎都是同时向前/向后搜索的。这句话将在我们谈到HTML标签的时候会更容易理解。</p>
 <p>注意：正则表达式中的分隔符是斜杠”/“。每一个匹配语句（以下也将翻译成匹配模式）开头和末尾都会跟着一个分隔符”/“。如果一个出线在表达式之内，那我们一定要通过反斜杠”\”将它转义，如：“\/”。</p>
 <h2 id="1-_匹配用户名">1. 匹配用户名</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/username.jpg" alt="Matching a username"></p>
 <h5 id="匹配模式：">匹配模式：</h5><p><code>/^[a-z0^9_-]{3,16}$/</code></p>
-<h5 id="解释：">解释：</h5><p>让我们告诉解析器字符串的开头(通过使用<strong>^</strong>)后面跟随着的是小写字母(a-z), 数字(0-9), 一个下划线，或者一个连字符。接着，{3,16}确保字符串应当有至少3个这样的字符，而且不超过16个。最后，字符串抵达尾部($).</p>
+<h5 id="解释：">解释：</h5><p>让我们告诉解析器字符串的开头(通过使用<strong>^</strong>)后面跟随着的是<strong>小写字母(a-z)/数字(0-9)/下划线/下划线</strong>。接着，<strong>{3,16}</strong>确保字符串应当有至少3个这样的字符，而且不超过16个。最后，字符串抵达尾部($).</p>
 <h5 id="匹配">匹配</h5><p>my-us3r_n4m3</p>
 <h5 id="不匹配">不匹配</h5><p>th1s1s-wayt00_l0ngt0beausername (因为太长了)</p>
 <h2 id="2-_匹配密码">2. 匹配密码</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/password.jpg" alt="Mathing a Password"></p>
@@ -229,20 +229,20 @@ style="background:url('/assets/images/bg_4.jpg')"
 <h5 id="不匹配-1">不匹配</h5><p>mypa$$w0rd (因为包含了$字符)</p>
 <h2 id="3-_匹配16进制数">3. 匹配16进制数</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/hex-copy.jpg" alt="Maching a Hex Value"></p>
 <h5 id="匹配模式：-2">匹配模式：</h5><p><code>/^#?([a-f0-9]{6}|[a-f0-9]{3})$/</code></p>
-<h5 id="解释：-2">解释：</h5><p>通过符号 ^ 来告诉解析器字符串从哪里开始。然后 ＃ 是可选的，因为它后面跟着一个问号（译者注：?代表0个获1个）。问号告诉解释器，其前面的字符（这里是一个＃）是可选的，但是问号是“贪婪的”，如果这里有匹配的字符，问号就会去获取字符。接下来，在第一组里(第一组圆括号)，我们实现了两种不同的状况。第一个是a－f之间的小写字符或数字，要求出现6次。垂线（｜）告诉我们，或者这里是a－f之间的小写字母或数字出现3次（译者注：这是16进制的简写）。最后，我们用$来结束字符串。</p>
-<p>我在这里把6个字符的要求放在前面的原因是因为，像是解释器会捕获#ffffff这样的16进制书。如果这里是相反的情况，把三个字符放在前面，那么么解释器只会拿走#fff而不会捕获其它的3个f。</p>
+<h5 id="解释：-2">解释：</h5><p><strong>符号^</strong>告诉解析器字符串从哪里开始。然后<strong>＃</strong>是可选的，因为它后面跟着一个问号（译者注：?代表0个获1个）。<strong>问号?</strong>告诉解释器，其前面的字符（这里是一个＃）是可选的，但是问号是“贪婪的”，如果这里有匹配的字符，问号就会去获取字符。接下来，在第一组里(第一组圆括号)，我们实现了两种不同的处理方式。第一个是a－f之间的小写字符或数字，要求出现6次。<strong>垂线｜</strong>告诉我们，或者这里是a－f之间的小写字母或数字出现3次（译者注：这是16进制的简写）。最后，我们用$来结束字符串。</p>
+<p>在这里把6个字符的要求放在前面的原因是因为，像是解释器会捕获#ffffff这样的16进制书。如果这里是相反的情况，把三个字符放在前面，那么么解释器只会拿走#fff而不会捕获其它的3个f。</p>
 <h5 id="匹配-2">匹配</h5><p>#a3c113</p>
 <p>#333</p>
 <p>#f66h23 (匹配#f66)</p>
 <h5 id="不匹配-2">不匹配</h5><p>#4h82f4 (#4h8不匹配)</p>
 <h2 id="4-_匹配Slug">4. 匹配Slug</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/slug.jpg" alt="Matching a &quot;Slug&quot;"></p>
 <h5 id="匹配模式：-3">匹配模式：</h5><p><code>/^[a-z0-9-]+$/</code></p>
-<h5 id="解释：-3">解释：</h5><p>如果您曾经操作过mod_rewrite以及URL美化，那您会需要去使用正则表达式的。我们让解释器去找到字符串的头(^)，其后跟随着一个或多个(通过使用+)字符，数字，或连字符。最后，我们想要找到的字符串到这里就立刻结束（$）.</p>
+<h5 id="解释：-3">解释：</h5><p>如果您曾经操作过mod_rewrite以及URL美化，那您会需要去使用正则表达式的。我们让解释器去找到字符串的头(^)，其后跟随着<strong>一个或多个字符/数字/连字符</strong>。最后，我们想要找到的字符串到这里就立刻结束（$）.</p>
 <h5 id="匹配-3">匹配</h5><p>my-title-here</p>
 <h5 id="不匹配-3">不匹配</h5><p>my_title_here (包含下划线)</p>
 <h2 id="5-_匹配邮件">5. 匹配邮件</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/email.jpg" alt="Matching a Email"></p>
 <h5 id="匹配模式：-4">匹配模式：</h5><p><code>/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/</code></p>
-<h5 id="解释：-4">解释：</h5><p>先让解释器找到字符串的头(^)。然后里面第一组，我们匹配一个或多个小写字母，数字，下划线，点，或者破折号。我转义了“.”，因为一个没有转义的“.”代表着任何字符（译者注：\. 将 “.” 转义，以匹配字符意义上的”.” ）。在这个分组后面必须直接跟着一个“@”。接下来域名必须匹配上这样的规则：1个或多个小写字母，数字，下划线，点或者破折号。借着又是一个（转义的）“.”，后面跟着2到6位的小写字母或者”.”。我限制2到6位是因为有国家的顶级域名这种东西(.ny.us 或者 .co.uk)。最后，我们要求字符串到此结束($)。</p>
+<h5 id="解释：-4">解释：</h5><p>先让解释器找到字符串的头(^)。然后里面第一组，我们匹配<strong>一个或多个小写字母/数字/下划线/点/破折号</strong>。我转义了“.”，因为一个没有转义的“.”代表着任何字符（译者注：\. 将 “.” 转义，以匹配字符意义上的”.” ）。在这个分组后面必须直接跟着一个“@”。接下来域名必须匹配上这样的规则：1个或多个小写字母，数字，下划线，点或者破折号。借着又是一个（转义的）“.”，后面跟着2到6位的小写字母或者”.”。限制2到6位是因为有国家的顶级域名这种东西(.ny.us 或者 .co.uk)。最后，我们要求字符串到此结束($)。</p>
 <h5 id="匹配-4">匹配</h5><p>john@doe.com</p>
 <h5 id="不匹配-4">不匹配</h5><p>john@doe.something (顶级域名太长了)</p>
 <h2 id="6-_匹配URL">6. 匹配URL</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/url.jpg" alt="Matching a URL"></p>
