@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/url.jpg">
 <meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/ip.jpg">
 <meta property="og:image" content="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/htmltag.jpg">
-<meta property="og:updated_time" content="2016-01-09T15:25:19.000Z">
+<meta property="og:updated_time" content="2016-01-15T14:32:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8个应该被知道的正则表达式">
 <meta name="twitter:description" content="翻译自此处
@@ -224,20 +224,20 @@ style="background:url('/assets/images/bg_4.jpg')"
 <h5 id="不匹配">不匹配</h5><p>th1s1s-wayt00_l0ngt0beausername (因为太长了)</p>
 <h2 id="2-_匹配密码">2. 匹配密码</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/password.jpg" alt="Mathing a Password"></p>
 <h5 id="匹配模式：-1">匹配模式：</h5><p><code>/^[a-z0-9_-]{6,18}$/</code></p>
-<h5 id="解释：-1">解释：</h5><p>匹配密码和匹配用户名非常相似。唯一的不同是这里要6到18位字母/数字/下划线/或者连字符，而不是3到16位。</p>
+<h5 id="解释：-1">解释：</h5><p>匹配密码和匹配用户名非常相似。唯一的不同是这里要<strong>6到18位字母/数字/下划线/或者连字符</strong>，而不是3到16位。</p>
 <h5 id="匹配-1">匹配</h5><p>myp4ssw0rd</p>
 <h5 id="不匹配-1">不匹配</h5><p>mypa$$w0rd (因为包含了$字符)</p>
 <h2 id="3-_匹配16进制数">3. 匹配16进制数</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/hex-copy.jpg" alt="Maching a Hex Value"></p>
 <h5 id="匹配模式：-2">匹配模式：</h5><p><code>/^#?([a-f0-9]{6}|[a-f0-9]{3})$/</code></p>
-<h5 id="解释：-2">解释：</h5><p><strong>符号^</strong>告诉解析器字符串从哪里开始。然后<strong>＃</strong>是可选的，因为它后面跟着一个问号（译者注：?代表0个获1个）。<strong>问号?</strong>告诉解释器，其前面的字符（这里是一个＃）是可选的，但是问号是“贪婪的”，如果这里有匹配的字符，问号就会去获取字符。接下来，在第一组里(第一组圆括号)，我们实现了两种不同的处理方式。第一个是a－f之间的小写字符或数字，要求出现6次。<strong>垂线｜</strong>告诉我们，或者这里是a－f之间的小写字母或数字出现3次（译者注：这是16进制的简写）。最后，我们用$来结束字符串。</p>
-<p>在这里把6个字符的要求放在前面的原因是因为，像是解释器会捕获#ffffff这样的16进制书。如果这里是相反的情况，把三个字符放在前面，那么么解释器只会拿走#fff而不会捕获其它的3个f。</p>
+<h5 id="解释：-2">解释：</h5><p><strong>符号^</strong>告诉解析器字符串从哪里开始。是否匹配<strong>＃</strong>是可选的，因为它后面跟着一个问号（译者注：?代表0个获1个）。<strong>问号?</strong>告诉解释器，它前面的字符（这里是一个＃）是可选的。注意问号是“贪婪的”，这意味着如果这里有匹配的字符，问号就会去获取字符。接下来，在第一组里(第一组圆括号)，我们实现了两种不同的处理方式。第一个是a－f之间的小写字符或数字，要求出现6次。<strong>垂线｜</strong>告诉我们，或者这里是a－f之间的小写字母或数字出现3次（译者注：这是16进制的简写）。最后，我们用$来结束字符串。</p>
+<p>这里把<strong>“匹配6个字符的要求”</strong>放在前面的原因是，解释器先去会捕获#ffffff这样的16进制数。如果反一下，把<strong>“三个字符的要求”</strong>放在前面，那么么解释器只会拿走#fff而不会捕获其它的3个f。</p>
 <h5 id="匹配-2">匹配</h5><p>#a3c113</p>
 <p>#333</p>
 <p>#f66h23 (匹配#f66)</p>
 <h5 id="不匹配-2">不匹配</h5><p>#4h82f4 (#4h8不匹配)</p>
 <h2 id="4-_匹配Slug">4. 匹配Slug</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/slug.jpg" alt="Matching a &quot;Slug&quot;"></p>
 <h5 id="匹配模式：-3">匹配模式：</h5><p><code>/^[a-z0-9-]+$/</code></p>
-<h5 id="解释：-3">解释：</h5><p>如果您曾经操作过mod_rewrite以及URL美化，那您会需要去使用正则表达式的。我们让解释器去找到字符串的头(^)，其后跟随着<strong>一个或多个字符/数字/连字符</strong>。最后，我们想要找到的字符串到这里就立刻结束（$）.</p>
+<h5 id="解释：-3">解释：</h5><p>如果您曾经使用过mod_rewrite以及URL美化，那您大概是会使用正则表达式的。先让解释器去找到字符串的头(^)，其后匹配<strong>一个或多个字符/数字/连字符</strong>。最后，需要匹配到的字符串到这此结束（$）.</p>
 <h5 id="匹配-3">匹配</h5><p>my-title-here</p>
 <h5 id="不匹配-3">不匹配</h5><p>my_title_here (包含下划线)</p>
 <h2 id="5-_匹配邮件">5. 匹配邮件</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/email.jpg" alt="Matching a Email"></p>
@@ -247,7 +247,7 @@ style="background:url('/assets/images/bg_4.jpg')"
 <h5 id="不匹配-4">不匹配</h5><p>john@doe.something (顶级域名太长了)</p>
 <h2 id="6-_匹配URL">6. 匹配URL</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/url.jpg" alt="Matching a URL"></p>
 <h5 id="匹配模式">匹配模式</h5><p><code>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</code><br>(译者注：在最后一个分组内原文允许匹配空格，但URL中的空格一般在表示时通常会使用urlencode一类的来转义成“+“一类的)</p>
-<h5 id="解释">解释</h5><p>这个正则非常像是拿走了上面正则的结尾部分，最后将它们组合于一些文件结构和“ http:// ”之间。它其实比看起来要简单一些。在开始匹配之前，我们先搜寻用脱字符(^)来搜寻一行的开始。</p>
+<h5 id="解释">解释</h5><p>这个正则超像是上面所写的表达式们的杂烩形式，不过是将它们组合于一些文件结构和“ http:// ”之间罢了。其实它比看起来的样子要简单。在开始匹配之前，我们照例先搜寻用脱字符(^)来搜寻一行的开始。</p>
 <p>第一个要捕捉的部分全部都是可选的。它允许URL以“ http:// ”开头，亦或以“ https:// ”开头，亦或都不使用上述两种。在这之后我设置了一个问号，它告诉URL去匹配https或者http.为了使整个分组可选，需要在末尾再添加一个问号。</p>
 <p>截下来匹配域名：<strong>一个或多个数字/字母/点/连字符</strong>。域名后面跟随着一个点，之后是2-6个字母或点。接下来这部分为可选的文件／目录结构。在这个部分中，需要匹配任意数量的 <strong>斜杠/字母/下划线/点/连字符</strong> 。只要我们需要，这个部分可以匹配任意多次数。多重结构都会被匹配，但是最后以一个文件作为结尾。我在这里使用了”<em>“而不是问号，因为”</em>“表示0或多个，而不是表示0或1个（译者注：问号表示0或1个）。如果问号被用在这里，那么将会只有一个文件/目录能够被匹配上。</p>
 <p>接着一个反斜杠”/“可以被匹配，但这是可选的。最后我们结束字符串。</p>
@@ -255,8 +255,8 @@ style="background:url('/assets/images/bg_4.jpg')"
 <h5 id="不匹配-5">不匹配</h5><p><a href="http://google.com/some/file!.html" target="_blank" rel="external">http://google.com/some/file!.html</a> (包含感叹号)</p>
 <h2 id="7-_匹配IP地址">7. 匹配IP地址</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/ip.jpg" alt="Matching an IP Address"></p>
 <h5 id="匹配模式：-5">匹配模式：</h5><p><code>/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/</code></p>
-<h5 id="解释：-5">解释：</h5><p>我不准备说谎，我没有写这个正则，我从<a href="http://www.regular-expressions.info/regexbuddy/ipaccurate.html" target="_blank" rel="external">这里</a>得到了它。现在，这不代表我不能逐字逐句地分析它。</p>
-<p>这第一个要求捕获的分组其实不是一个被捕获的分组（原文：The first capture group really isn’t a captured group），因为</p>
+<h5 id="解释：-5">解释：</h5><p>我不准备说谎，我没有写这个正则，而是从<a href="http://www.regular-expressions.info/regexbuddy/ipaccurate.html" target="_blank" rel="external">这里</a>得到了它。但这不代表我现在不能逐字逐句地分析它。</p>
+<p>第一个要求捕获的分组其实不是一个被捕获的分组（原文：The first capture group really isn’t a captured group），因为</p>
 <p><code>(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)</code></p>
 <p>“?:”告诉解释器不要去捕获这个分组（更多内容在最后一个正则表达式会说明)。通过把”{3}”放在这个组别的后面，我们还要求了这个不被捕获的分组需重复3次。这个组别包含了一个子组，和一个”.”。解释器会去尝试匹配子组及”.”，然后继续。</p>
 <p>这个子组是又一个非捕获组。它只是一堆在括号中的字符集：</p>
@@ -270,13 +270,14 @@ style="background:url('/assets/images/bg_4.jpg')"
 <h5 id="不匹配-6">不匹配</h5><p>256.60.124.136 (第一个分组得在0-255之间)</p>
 <h2 id="8-_匹配HTML标签">8. 匹配HTML标签</h2><p><img src="https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/htmltag.jpg" alt="Matching an HTML Tag"></p>
 <h5 id="匹配模式：-6">匹配模式：</h5><p><code>/^&lt;([a-z]+)([^&lt;]+)*(?:&gt;(.*)&lt;\/\1&gt;|\s+\/&gt;)$/</code></p>
-<h5 id="解释：-6">解释：</h5><p>这是这个列表中又一个更有用的正则表达式。它匹配任何HTML标签还有其中的内容，我们用一行的开头来开始匹配。</p>
+<h5 id="解释：-6">解释：</h5><p>又一个有用的正则表达式！它匹配任何HTML标签还有其中的内容，我们用一行的开头来开始匹配。</p>
 <p>第一个要匹配的是标签的名字。它必须是1或多个字符。这是一个捕获组，这东西在我们捕获闭标签时相当有用。截下来是标签的属性。它是除符号&gt;外的任意字符。因为这是可选的，但我又需要匹配上多个字符串，所以使用了符号*。加号的使用能匹配属性和值(译者注：加号代表一个或多个)，星号 * 则能表示任意数量的属性。</p>
 <p>接下里第三个是非捕获组。里面包含了一个大于号(&gt;)，一些文本内容，和一个闭标签；或是一些空格，一个反斜杠(/),\1用来表示捕获的内容要在一个捕获分组内。在这种情况下它是标签的名字。现在，如果这里不能匹配，我们就需要寻找一个自关闭标签（像是img,br,或者hr标签）。这需要有一个或多个空格，其后跟随着 “/&gt;”。</p>
 <p>正则表达式结束于行末。</p>
 <h5 id="匹配-7">匹配</h5><p><code>&lt;a href=&quot;http://net.tutsplus.com/&quot;&gt;Nettuts+&lt;/a&gt;</code></p>
 <h5 id="不匹配-7">不匹配</h5><p><code>&lt;img src=&quot;img.jpg&quot; alt=&quot;My image&gt;&quot; /&gt;</code> (属性中不能包含大符号)</p>
-<h2 id="结论">结论</h2><p>希望您能领略到正则表达式背后的一些想法和思维。愿您能在未来的项目中使用这些正则表达式！很多时候您不必一个字符一个字符地去解读正则表达式，但是有时这样做能帮助您去学习到一些东西。请记住：不要害怕正则表达式，它们不如所看到的那样（晦涩难懂），它们反而能让您的生活变得更加简单。请尝试不使用正则表达式来从字符串中抓取标签的名字把！ ;)</p>
+<h2 id="结论">结论</h2><p>希望您能领略到正则表达式背后的一些想法和思维。愿您能在未来的项目中使用这些正则表达式！很多时候您不必一个字符一个字符地去解读正则表达式，但是有时这样做能帮助您去学习到一些东西。请记住：不要害怕正则表达式，它们不如所看到的那样（晦涩难懂），它们反而能让您的生活变得更加简单。</p>
+<p>要不要尝试下不使用正则表达式来从字符串中抓取标签的名字呢！ ;)</p>
 
             
                 
