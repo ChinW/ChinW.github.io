@@ -12,6 +12,8 @@
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
     <meta name="description" content="今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。
 国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。
 然后查看服务器性能：CPU 19%，磁盘读写正常，网络性能20% 。那感觉还是代码原因？但是代码没有动过，也重新部署了一份">
@@ -40,10 +42,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
 </head>
@@ -62,8 +64,6 @@
     
 </header>
             <nav id="sidebar" data-behavior="3"
-
-style="background:url('/assets/images/bg_4.jpg')"
 
 >
     
@@ -157,6 +157,21 @@ style="background:url('/assets/images/bg_4.jpg')"
         
     </ul>
     
+
+<div id="rectangles">
+    <li class="rect1"></li>
+    <li class="rect2"></li>
+    <li class="rect3"></li>
+    <li class="rect4"></li>
+    <li class="rect5"></li>
+    <li class="rect6"></li>
+    <li class="rect7"></li>
+    <li class="rect8"></li>
+    <li class="rect9"></li>
+    <li class="rect10"></li>
+
+</div>
+
 </nav>
 
             
@@ -195,7 +210,7 @@ style="background:url('/assets/images/bg_4.jpg')"
             <p>今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。<br>以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。</p>
 <p>国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。</p>
 <p>然后查看服务器性能：CPU 19%，磁盘读写正常，网络性能20% 。<br>那感觉还是代码原因？但是代码没有动过，也重新部署了一份确认有效的代码，不应该呀。<br>于是写了个target.php放到服务器上，里面就一句话</p>
-<pre><code>target <span class="keyword">not</span> here.
+<pre><code>target not here.
 </code></pre><p>访问这个target.php,同样两分钟才有返回。<br>curl测试一下IP响应的时间，status 200 OK，但是一个网页的返回时间长达2分钟。</p>
 <p>给跪了。问身边朋友，提醒可能是线路原因。于是去找UCloud的客服，和客服Balabala了情况一堆，提到DNS解析云云。<br>绕了一圈最终是无果。</p>
 <p>我决定自己再去排查一下，到处捣鼓，发现一个奇怪的症状。<br>就是把根目录下的.htaccess文件给移走（我是改名字，效用相同），网站首页立马就能访问了。但是由于地址重写原因，其他页面访问不到。<br>加上.htaccess，网站又死了，两分钟才有返回。</p>
@@ -412,13 +427,13 @@ style="background:url('/assets/images/bg_4.jpg')"
     </div>
 </div>
 
-        <!-- <div id="cover" style="background-image:url('/assets/images/bg_4.jpg');"></div> -->
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     <script type="text/javascript">

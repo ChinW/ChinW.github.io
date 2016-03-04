@@ -12,6 +12,8 @@
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
     <meta name="description" content="先说问题所在，PHP的数组可以有以下方式来表达.
 $array = [1,2,3,4,5];
 亦或
@@ -52,10 +54,10 @@ $array = array(1,2,3,4,5);
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
 </head>
@@ -74,8 +76,6 @@ $array = array(1,2,3,4,5);
     
 </header>
             <nav id="sidebar" data-behavior="3"
-
-style="background:url('/assets/images/bg_4.jpg')"
 
 >
     
@@ -169,6 +169,21 @@ style="background:url('/assets/images/bg_4.jpg')"
         
     </ul>
     
+
+<div id="rectangles">
+    <li class="rect1"></li>
+    <li class="rect2"></li>
+    <li class="rect3"></li>
+    <li class="rect4"></li>
+    <li class="rect5"></li>
+    <li class="rect6"></li>
+    <li class="rect7"></li>
+    <li class="rect8"></li>
+    <li class="rect9"></li>
+    <li class="rect10"></li>
+
+</div>
+
 </nav>
 
             
@@ -205,9 +220,9 @@ style="background:url('/assets/images/bg_4.jpg')"
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>先说问题所在，<br>PHP的数组可以有以下方式来表达.</p>
-<pre><code>$<span class="built_in">array</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];
+<pre><code>$array = [1,2,3,4,5];
 </code></pre><p>亦或</p>
-<pre><code>$<span class="built_in">array</span> = <span class="built_in">array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);
+<pre><code>$array = array(1,2,3,4,5);
 </code></pre><p>但是[]中括号的表达方式需要<strong>PHP版本&gt;=5.4</strong>.</p>
 <p>于是悲剧就出现在这里，在给学院做一个CMS的时候，本地测试正常后，放上空间一律返回403 Fobbiden错误（没开调试）。</p>
 <p>其实当时写的时候知道要注意以下版本的，但是当时由于烦躁就想着“先用中括号吧，方便呢，服务器不支持的话，之后再改吧”。<br>结果时隔约两个星期后才开始放到服务器上(院校效率)，就已经忘记了这件事情。</p>
@@ -421,13 +436,13 @@ style="background:url('/assets/images/bg_4.jpg')"
     </div>
 </div>
 
-        <!-- <div id="cover" style="background-image:url('/assets/images/bg_4.jpg');"></div> -->
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     <script type="text/javascript">

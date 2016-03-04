@@ -12,6 +12,8 @@
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
     <meta name="description" content="Destructing这个应该是翻译成“解构”吧ES6允许这样这样操作
 首先是对于Object
 1234var obj = &amp;#123; a:&quot;Hello&quot;, b:&quot;Hi&quot; &amp;#125; var &amp;#123;a,b&amp;#125; = obj //Bingo, now a = &quot;Hello&quot;, b = &quot;Hi&quot;var &amp;#123;a,c&amp;#125; = obj //Wrong, now a = &quot;He">
@@ -40,10 +42,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
 </head>
@@ -62,8 +64,6 @@
     
 </header>
             <nav id="sidebar" data-behavior="3"
-
-style="background:url('/assets/images/bg_4.jpg')"
 
 >
     
@@ -157,6 +157,21 @@ style="background:url('/assets/images/bg_4.jpg')"
         
     </ul>
     
+
+<div id="rectangles">
+    <li class="rect1"></li>
+    <li class="rect2"></li>
+    <li class="rect3"></li>
+    <li class="rect4"></li>
+    <li class="rect5"></li>
+    <li class="rect6"></li>
+    <li class="rect7"></li>
+    <li class="rect8"></li>
+    <li class="rect9"></li>
+    <li class="rect10"></li>
+
+</div>
+
 </nav>
 
             
@@ -192,12 +207,12 @@ style="background:url('/assets/images/bg_4.jpg')"
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h2 id="Destructing">Destructing</h2><p>这个应该是翻译成“解构”吧<br>ES6允许这样这样操作</p>
+            <h2 id="Destructing"><a href="#Destructing" class="headerlink" title="Destructing"></a>Destructing</h2><p>这个应该是翻译成“解构”吧<br>ES6允许这样这样操作</p>
 <p>首先是对于Object</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; a:<span class="string">"Hello"</span>, b:<span class="string">"Hi"</span> &#125; </span><br><span class="line"><span class="keyword">var</span> &#123;a,b&#125; = obj <span class="comment">//Bingo, now a = "Hello", b = "Hi"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> &#123;a,c&#125; = obj <span class="comment">//Wrong, now a = "Hello", c = undefined</span></span><br></pre></td></tr></table></figure>
 <p>对于数组，效果类同</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="string">"Hello"</span>, <span class="string">"Hi"</span> ]</span><br><span class="line"><span class="keyword">var</span> [a,b] = arr <span class="comment">//Bingo, now a = "Hello", b = "Hi"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> [a,c] = arr <span class="comment">//Also correct, now a = "Hello", b = "Hi"</span></span><br></pre></td></tr></table></figure>
-<h2 id="Spread_Operator">Spread Operator</h2><p>翻译为“展开运算符”, 语法是三个点:  <strong>…</strong></p>
+<h2 id="Spread-Operator"><a href="#Spread-Operator" class="headerlink" title="Spread Operator"></a>Spread Operator</h2><p>翻译为“展开运算符”, 语法是三个点:  <strong>…</strong></p>
 <p>这是一个仅针对Array有效的运算符，作用为在那些需要同时调用多个参数/元素 的地方提供语法便利</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x,y,z</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x+y+z</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])) <span class="comment">//6</span></span><br><span class="line"><span class="built_in">console</span>.log(sum(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])) <span class="comment">//6</span></span><br><span class="line"><span class="built_in">console</span>.log(sum(...[<span class="number">1</span>,,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])) <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> doSomething = <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> sum(..args)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(doSomething(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])) <span class="comment">//6</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对Object是否有效呢？</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123; a:<span class="string">"A"</span>, b:<span class="string">"B"</span>, c:<span class="string">"C"</span>, d:<span class="string">"D"</span>, e:<span class="string">"E"</span> &#125;</span><br><span class="line"><span class="keyword">var</span> &#123;a,b,...others&#125; = obj <span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
 
@@ -221,7 +236,7 @@ style="background:url('/assets/images/bg_4.jpg')"
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/29/LiveReload gulp-connect和gulp-webserver不严谨的比较/"  data-tooltip="LiveReload：gulp-connect和gulp-webserver不严谨的比较">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/04/Icon-Redesign-Imitation/"  data-tooltip="Icon Redesign &amp; Imitation">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -300,7 +315,7 @@ style="background:url('/assets/images/bg_4.jpg')"
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/29/LiveReload gulp-connect和gulp-webserver不严谨的比较/"  data-tooltip="LiveReload：gulp-connect和gulp-webserver不严谨的比较">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/04/Icon-Redesign-Imitation/"  data-tooltip="Icon Redesign &amp; Imitation">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -409,13 +424,13 @@ style="background:url('/assets/images/bg_4.jpg')"
     </div>
 </div>
 
-        <!-- <div id="cover" style="background-image:url('/assets/images/bg_4.jpg');"></div> -->
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     <script type="text/javascript">

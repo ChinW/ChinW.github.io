@@ -12,6 +12,8 @@
         <link rel="icon" href="/assets/images/favicon.ico">
     
     
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
     <meta name="description" content="更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。例如错误：
 ERROR:  While executing gem ... (Errno::EPERM)
 Operation not permitted - /usr/bin/sass">
@@ -40,10 +42,10 @@ Operation not permitted - /usr/bin/sass">
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
 </head>
@@ -62,8 +64,6 @@ Operation not permitted - /usr/bin/sass">
     
 </header>
             <nav id="sidebar" data-behavior="3"
-
-style="background:url('/assets/images/bg_4.jpg')"
 
 >
     
@@ -157,6 +157,21 @@ style="background:url('/assets/images/bg_4.jpg')"
         
     </ul>
     
+
+<div id="rectangles">
+    <li class="rect1"></li>
+    <li class="rect2"></li>
+    <li class="rect3"></li>
+    <li class="rect4"></li>
+    <li class="rect5"></li>
+    <li class="rect6"></li>
+    <li class="rect7"></li>
+    <li class="rect8"></li>
+    <li class="rect9"></li>
+    <li class="rect10"></li>
+
+</div>
+
 </nav>
 
             
@@ -193,10 +208,10 @@ style="background:url('/assets/images/bg_4.jpg')"
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。<br>输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。<br>例如错误：</p>
-<pre><code><span class="constant">ERROR:</span>  <span class="constant">While </span>executing gem ... (<span class="constant">Errno:</span><span class="symbol">:EPERM</span>)
-<span class="constant">Operation </span><span class="keyword">not</span> permitted - <span class="regexp">/usr/bin</span><span class="regexp">/sass</span>
+<pre><code>ERROR:  While executing gem ... (Errno::EPERM)
+Operation not permitted - /usr/bin/sass
 </code></pre><p>找到的一个解决办法是；</p>
-<pre><code>sudo gem <span class="operator"><span class="keyword">install</span> -<span class="keyword">n</span> /usr/<span class="keyword">local</span>/<span class="keyword">bin</span> GEM_NAME_HERE</span>
+<pre><code>sudo gem install -n /usr/local/bin GEM_NAME_HERE
 </code></pre><p>话说难道不能直接替换ruby的源吗，感觉这样做不太科学（其实也感觉不方便）。<br>应该有一个变量地址记录着Ruby的地址的吧，但是“该怎么做”还没找到。</p>
 <p>—<br>找到一个解决的博文：<br><a href="https://medium.com/@lab.5721/os-x-el-capitan-10-11-%E5%AE%89%E8%A3%9Dsass%E5%A4%B1%E6%95%97%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95-3739ad67c553" target="_blank" rel="external">点击这里</a></p>
 
@@ -408,13 +423,13 @@ style="background:url('/assets/images/bg_4.jpg')"
     </div>
 </div>
 
-        <!-- <div id="cover" style="background-image:url('/assets/images/bg_4.jpg');"></div> -->
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     <script type="text/javascript">

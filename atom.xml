@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Consiiii</title>
+  <subtitle>Continue BREAK</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://consiiii.me/"/>
+  <updated>2016-02-01T05:14:41.000Z</updated>
+  <id>http://consiiii.me/</id>
+  
+  <author>
+    <name>Consiiii</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Doodle in Canvas</title>
+    <link href="http://consiiii.me/2016/01/24/Doodle-in-Canvas/"/>
+    <id>http://consiiii.me/2016/01/24/Doodle-in-Canvas/</id>
+    <published>2016-01-24T06:02:59.000Z</published>
+    <updated>2016-02-01T05:14:41.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Canvas涂鸦，想通过Grid来做出一些不一样的效果，现在我也不知道弄出了什么。&lt;/p&gt;
+&lt;p&gt;Inspired from &lt;a href=&quot;https://github.com/suffick/Tearable-Cloth&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;您可以&lt;a href=&quot;https://github.com/ChinW/GridEffect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;从Github上得到它的源码&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;1-收缩&quot;&gt;&lt;a href=&quot;#1-收缩&quot; class=&quot;headerlink&quot; title=&quot;1. 收缩&quot;&gt;&lt;/a&gt;1. 收缩&lt;/h2&gt;&lt;p&gt;第一张 gif 较大(3M)。 &lt;a href=&quot;http://consiiii.me/project/DoodleInCanvas/Shrink/index.html&quot;&gt;Check Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_shrink.gif&quot; alt=&quot;Shrink1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_shrink2.gif&quot; alt=&quot;Shrink2&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2-十字&quot;&gt;&lt;a href=&quot;#2-十字&quot; class=&quot;headerlink&quot; title=&quot;2. 十字&quot;&gt;&lt;/a&gt;2. 十字&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://consiiii.me/project/DoodleInCanvas/Cross/index.html&quot;&gt;Check Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_cross.gif&quot; alt=&quot;Cross&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3-波动&quot;&gt;&lt;a href=&quot;#3-波动&quot; class=&quot;headerlink&quot; title=&quot;3. 波动&quot;&gt;&lt;/a&gt;3. 波动&lt;/h2&gt;&lt;p&gt;波动过程 &lt;a href=&quot;http://consiiii.me/project/DoodleInCanvas/Wave/Type1/index.html&quot;&gt;Check Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_wave.gif&quot; alt=&quot;Wave1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;再模仿一下恢复的过程 &lt;a href=&quot;http://consiiii.me/project/DoodleInCanvas/Wave/Type2/index.html&quot;&gt;Check Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_wave3.gif&quot; alt=&quot;Wave3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;渲染上色 &lt;a href=&quot;http://consiiii.me/project/DoodleInCanvas/Wave/Type3/index.html&quot;&gt;Check Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_wave4.gif&quot; alt=&quot;Wave4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;加上一点音乐 &lt;a href=&quot;http://consiiii.me/project/DoodleInCanvas/Wave/Type4_Visualizer_Player/index.html&quot;&gt;Check Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_visulizer_player.png&quot; alt=&quot;Wave5&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Canvas涂鸦，想通过Grid来做出一些不一样的效果，现在我也不知道弄出了什么。&lt;/p&gt;
+&lt;p&gt;Inspired from &lt;a href=&quot;https://github.com/suffick/Tearable-Cloth&quot; target=&quot;_blank&quot; rel=&quot;e
+    
+    </summary>
+    
+      <category term="Canvas" scheme="http://consiiii.me/categories/Canvas/"/>
+    
+    
+      <category term="Canvas" scheme="http://consiiii.me/tags/Canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高盛面试后记</title>
+    <link href="http://consiiii.me/2016/01/22/%E9%AB%98%E7%9B%9B%E9%9D%A2%E8%AF%95%E5%90%8E%E8%AE%B0/"/>
+    <id>http://consiiii.me/2016/01/22/高盛面试后记/</id>
+    <published>2016-01-22T11:36:42.000Z</published>
+    <updated>2016-03-02T17:55:57.000Z</updated>
+    
+    <content type="html">&lt;p&gt;将头发梳成大人模样，再穿一身帅气西装。&lt;/p&gt;
+&lt;p&gt;继&lt;a href=&quot;http://consiiii.me/2015/12/10/%E9%AB%98%E7%9B%9B%E7%AC%94%E8%AF%95%E5%90%8E%E8%AE%B0/&quot;&gt;笔试&lt;/a&gt;后，在1月5日天还没亮就去了上海，准备参加高盛的最终面。面试分为行为面试和技术面试两轮，45min/轮，另外是全英文。&lt;/p&gt;
+&lt;p&gt;我想题目换成中文是不难的，可在英文口语下，我显得有些捉急。But anyway, 我还是像开了“仿佛母语是英语”的模式去努力回答。两场下来，感觉把普通情况下两个月的量都说完了…&lt;/p&gt;
+&lt;p&gt;在我离开后正准备上地铁时，突然重新接到高盛那边来的电话，对方表示如果我还在附近的话，希望我能在回去一趟再聊聊看。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;火速前进！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;于是在大约12：30返回后，到14：40左右算是结束了面试。额外的面试内容没有固定在哪个方向上，我认为是想多了解一下。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;大约过了一个星期，得到了确认offer的邮件！！！😄太棒了！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;将头发梳成大人模样，再穿一身帅气西装。&lt;/p&gt;
+&lt;p&gt;继&lt;a href=&quot;http://consiiii.me/2015/12/10/%E9%AB%98%E7%9B%9B%E7%AC%94%E8%AF%95%E5%90%8E%E8%AE%B0/&quot;&gt;笔试&lt;/a&gt;后，在1月5日
+    
+    </summary>
+    
+      <category term="Interview" scheme="http://consiiii.me/categories/Interview/"/>
+    
+    
+      <category term="Interview" scheme="http://consiiii.me/tags/Interview/"/>
+    
+      <category term="GoldmanSachs" scheme="http://consiiii.me/tags/GoldmanSachs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CMS中存放文章内容的Content字段类型</title>
+    <link href="http://consiiii.me/2016/01/15/CMS%E4%B8%AD%E5%AD%98%E6%94%BE%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E7%9A%84Content%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://consiiii.me/2016/01/15/CMS中存放文章内容的Content字段类型/</id>
+    <published>2016-01-15T14:00:28.000Z</published>
+    <updated>2016-01-15T14:33:32.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h2&gt;&lt;p&gt;今天学校里的老师让我帮忙看看学校内站点发文章时为什么文章保存后自动被截取一部分：一张很长的表格，复制到富文本编辑器中后，点击“发布文章”后查看（过程没有出现执行错误），只出现了部分内容。&lt;/p&gt;
+&lt;h2 id=&quot;操作&quot;&gt;&lt;a href=&quot;#操作&quot; class=&quot;headerlink&quot; title=&quot;操作&quot;&gt;&lt;/a&gt;操作&lt;/h2&gt;&lt;p&gt;检查后发现CMS的数据库（用的是MySQL），其保存文章的字段Content的类型是TEXT。&lt;/p&gt;
+&lt;p&gt;关于TEXT一类相关的属性对比如下 &lt;a href=&quot;http://blog.sina.com.cn/s/blog_4f925fc30102edg8.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;资料来源&lt;/a&gt;：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;类型&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;范围&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Char(N) [binary]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;N=1~255 个字元 。binary ：分辨大小写&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;固定长度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;VarChar(N) [binary]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;N=1~255 个字元 。binary ：分辨大小写&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;可变长度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;TinyBlob&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;最大长度255个字元(2^8-1)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;TinyText&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;最大长度255个字元(2^8-1)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Text&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;最大长度65535个字元(2^16-1)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;MediumBlob&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;最大长度 16777215 个字元(2^24-1)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;MediumText&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;最大长度 16777215 个字元(2^24-1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;LongBlob&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;最大长度4294967295个字元 (2^32-1)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;LongText&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;最大长度4294967295个字元 (2^32-1)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h2&gt;&lt;p&gt;将Content的类型改为MediumText(或以上级别)后功能执行正常。&lt;/p&gt;
+&lt;h2 id=&quot;讨论&quot;&gt;&lt;a href=&quot;#讨论&quot; class=&quot;headerlink&quot; title=&quot;讨论&quot;&gt;&lt;/a&gt;讨论&lt;/h2&gt;&lt;p&gt;由于学校内CMS用的一般都是富文本编辑器，存储在数据库中时还会保存成HTML格式的文本，其中一般含有大量的HTML标记，因此存储在Content字段中的字数要远超其显示的字符数。因此上述老师保存一段长表格，会被截取。&lt;/p&gt;
+&lt;p&gt;然而:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;MySQL在执行这个某个字段的值会被截断的插入／更新语句时不会提示错误（我在Console中测试过，没有错误反馈）。&lt;/li&gt;
+&lt;li&gt;感觉不仅时学校内使用的CMS，很多CMS站点中关于Conetent的字段类型也都是TEXT类型的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;非常感谢您的阅读。如果错误，欢迎在评论中指正！&lt;/strong&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h2&gt;&lt;p&gt;今天学校里的老师让我帮忙看看学校内站点发文章时为什么文章保存后自动被截取一部分：一张很长的表格，复制到富文本编辑器中后，点击“发布文章”后查
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://consiiii.me/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://consiiii.me/tags/MySQL/"/>
+    
+      <category term="CMS" scheme="http://consiiii.me/tags/CMS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Icon Redesign &amp; Imitation</title>
+    <link href="http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/"/>
+    <id>http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/</id>
+    <published>2016-01-04T11:03:17.000Z</published>
+    <updated>2016-01-09T07:55:14.000Z</updated>
+    
+    <content type="html">&lt;p&gt;利用闲暇的时间，努力去模仿，或者重新设计已经存在的图标。&lt;/p&gt;
+&lt;h3 id=&quot;Day-1-Ivy&quot;&gt;&lt;a href=&quot;#Day-1-Ivy&quot; class=&quot;headerlink&quot; title=&quot;Day 1: Ivy&quot;&gt;&lt;/a&gt;Day 1: Ivy&lt;/h3&gt;&lt;p&gt;160104: Ivy 是Google出品的一个计算器。&lt;/p&gt;
+&lt;p&gt;Mine:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_d1_ivy.png&quot; alt=&quot;Ivy Mock&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Original:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_ivy-google-calculator-03.png&quot; alt=&quot;Ivy&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Day-2-Plane&quot;&gt;&lt;a href=&quot;#Day-2-Plane&quot; class=&quot;headerlink&quot; title=&quot;Day 2: Plane&quot;&gt;&lt;/a&gt;Day 2: Plane&lt;/h3&gt;&lt;p&gt;160105: &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_d2_plane.png&quot; alt=&quot;Plane&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Day-3-Happy-Sun&quot;&gt;&lt;a href=&quot;#Day-3-Happy-Sun&quot; class=&quot;headerlink&quot; title=&quot;Day 3: Happy Sun&quot;&gt;&lt;/a&gt;Day 3: Happy Sun&lt;/h3&gt;&lt;p&gt;160109:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_d3_sun.png&quot; alt=&quot;Happy_Sun&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;利用闲暇的时间，努力去模仿，或者重新设计已经存在的图标。&lt;/p&gt;
+&lt;h3 id=&quot;Day-1-Ivy&quot;&gt;&lt;a href=&quot;#Day-1-Ivy&quot; class=&quot;headerlink&quot; title=&quot;Day 1: Ivy&quot;&gt;&lt;/a&gt;Day 1: Ivy&lt;/h3&gt;&lt;p&gt;1601
+    
+    </summary>
+    
+      <category term="Icon" scheme="http://consiiii.me/categories/Icon/"/>
+    
+    
+      <category term="Icon" scheme="http://consiiii.me/tags/Icon/"/>
+    
+      <category term="Design" scheme="http://consiiii.me/tags/Design/"/>
+    
+  </entry>
+  
+  <entry>
+    <title> ES6: Destructing(解构) &amp; Spread Operator(展开运算符) </title>
+    <link href="http://consiiii.me/2015/12/19/ES6-Destructing-%E8%A7%A3%E6%9E%84-Spread-Operator-%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/</id>
+    <published>2015-12-19T13:09:36.000Z</published>
+    <updated>2015-12-19T13:10:44.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Destructing&quot;&gt;&lt;a href=&quot;#Destructing&quot; class=&quot;headerlink&quot; title=&quot;Destructing&quot;&gt;&lt;/a&gt;Destructing&lt;/h2&gt;&lt;p&gt;这个应该是翻译成“解构”吧&lt;br&gt;ES6允许这样这样操作&lt;/p&gt;
+&lt;p&gt;首先是对于Object&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123; a:&lt;span class=&quot;string&quot;&gt;&quot;Hello&quot;&lt;/span&gt;, b:&lt;span class=&quot;string&quot;&gt;&quot;Hi&quot;&lt;/span&gt; &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &amp;#123;a,b&amp;#125; = obj &lt;span class=&quot;comment&quot;&gt;//Bingo, now a = &quot;Hello&quot;, b = &quot;Hi&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &amp;#123;a,c&amp;#125; = obj &lt;span class=&quot;comment&quot;&gt;//Wrong, now a = &quot;Hello&quot;, c = undefined&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;对于数组，效果类同&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = [ &lt;span class=&quot;string&quot;&gt;&quot;Hello&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;Hi&quot;&lt;/span&gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; [a,b] = arr &lt;span class=&quot;comment&quot;&gt;//Bingo, now a = &quot;Hello&quot;, b = &quot;Hi&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; [a,c] = arr &lt;span class=&quot;comment&quot;&gt;//Also correct, now a = &quot;Hello&quot;, b = &quot;Hi&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Spread-Operator&quot;&gt;&lt;a href=&quot;#Spread-Operator&quot; class=&quot;headerlink&quot; title=&quot;Spread Operator&quot;&gt;&lt;/a&gt;Spread Operator&lt;/h2&gt;&lt;p&gt;翻译为“展开运算符”, 语法是三个点:  &lt;strong&gt;…&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是一个仅针对Array有效的运算符，作用为在那些需要同时调用多个参数/元素 的地方提供语法便利&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sum&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x,y,z&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x+y+z&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(sum(...[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;])) &lt;span class=&quot;comment&quot;&gt;//6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(sum(...[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;])) &lt;span class=&quot;comment&quot;&gt;//6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(sum(...[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;])) &lt;span class=&quot;comment&quot;&gt;//NaN&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; doSomething = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;...args&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; sum(..args)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(doSomething(...[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;])) &lt;span class=&quot;comment&quot;&gt;//6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//对Object是否有效呢？&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123; a:&lt;span class=&quot;string&quot;&gt;&quot;A&quot;&lt;/span&gt;, b:&lt;span class=&quot;string&quot;&gt;&quot;B&quot;&lt;/span&gt;, c:&lt;span class=&quot;string&quot;&gt;&quot;C&quot;&lt;/span&gt;, d:&lt;span class=&quot;string&quot;&gt;&quot;D&quot;&lt;/span&gt;, e:&lt;span class=&quot;string&quot;&gt;&quot;E&quot;&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &amp;#123;a,b,...others&amp;#125; = obj &lt;span class=&quot;comment&quot;&gt;//报错&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Destructing&quot;&gt;&lt;a href=&quot;#Destructing&quot; class=&quot;headerlink&quot; title=&quot;Destructing&quot;&gt;&lt;/a&gt;Destructing&lt;/h2&gt;&lt;p&gt;这个应该是翻译成“解构”吧&lt;br&gt;ES6允许这样这样操作&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://consiiii.me/categories/JavaScript/"/>
+    
+    
+      <category term="ES6" scheme="http://consiiii.me/tags/ES6/"/>
+    
+      <category term="JavaScript" scheme="http://consiiii.me/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高盛笔试后记</title>
+    <link href="http://consiiii.me/2015/12/10/%E9%AB%98%E7%9B%9B%E7%AC%94%E8%AF%95%E5%90%8E%E8%AE%B0/"/>
+    <id>http://consiiii.me/2015/12/10/高盛笔试后记/</id>
+    <published>2015-12-10T11:03:43.000Z</published>
+    <updated>2016-01-22T12:24:43.000Z</updated>
+    
+    <content type="html">&lt;p&gt;昨天去了上海参加了高盛暑期技术岗位的笔试，收获到一些经验。&lt;/p&gt;
+&lt;p&gt;笔试时间为90min，分为A，B两个部分。&lt;/p&gt;
+&lt;h2 id=&quot;Section-A&quot;&gt;&lt;a href=&quot;#Section-A&quot; class=&quot;headerlink&quot; title=&quot;Section A&quot;&gt;&lt;/a&gt;Section A&lt;/h2&gt;&lt;p&gt;三道简答题，总时间为20min，时间到了之后会收走，感觉像考英语一样。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;写代码,可以使用任何自己擅长的语言；&lt;/li&gt;
+&lt;li&gt;针对一个团队协作问题，表述自己的方案；&lt;/li&gt;
+&lt;li&gt;书写一个技术要点的详细过程，可以尽可能的详细。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;个人表示时间不太够，我在第三题上写了太多.&lt;/p&gt;
+&lt;h2 id=&quot;Section-B&quot;&gt;&lt;a href=&quot;#Section-B&quot; class=&quot;headerlink&quot; title=&quot;Section B&quot;&gt;&lt;/a&gt;Section B&lt;/h2&gt;&lt;p&gt;一百道选择题，总时间70min, 写在答题纸上（真的像考英语了吧）。&lt;/p&gt;
+&lt;p&gt;题目涉及的范围非常广，从C, C++, Java 等, 到 HTML, JS, CSS等前端知识, 再到算法,数据结构, 计算机周边知识，然后再到股票,智商题, 可以认为是应有尽有吧。范围这么广，自己熟悉的领域能回答上应该没啥问题，但剩下的也就是看知识面了。&lt;/p&gt;
+&lt;p&gt;规矩是答对+2分，打错-1分，但是不回答的话不会扣分。工作人员也提醒道：“如果不会的话可以不要回答，曾经有人是负分的“. 这个规矩大概是防止猜题吧。&lt;/p&gt;
+&lt;p&gt;我把会写的全填上之后，就来看了下股票和智商题，还依稀记得一个有意思的，大意如下，仅供娱乐：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;发生了一个犯罪事件，先有3个嫌疑人，已知无辜的人说真话，罪犯说假话，且若有罪犯，
+只可能是一个人。
+现在A说B是无辜的，B说C无辜的，C在喃喃自语，听不懂他说什么。
+嫌疑人可能是：
+1. A        2. B        3. C        4.None of them
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;p&gt;这次面试也算是对自己的一个查漏补缺，嗯，继续努力～&lt;/p&gt;
+&lt;p&gt;PS: 签到的时候看了下名单,清一色复旦上交同济南京等重点, 让我有点压力的说…&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨天去了上海参加了高盛暑期技术岗位的笔试，收获到一些经验。&lt;/p&gt;
+&lt;p&gt;笔试时间为90min，分为A，B两个部分。&lt;/p&gt;
+&lt;h2 id=&quot;Section-A&quot;&gt;&lt;a href=&quot;#Section-A&quot; class=&quot;headerlink&quot; title=&quot;Section 
+    
+    </summary>
+    
+      <category term="Interview" scheme="http://consiiii.me/categories/Interview/"/>
+    
+    
+      <category term="Interview" scheme="http://consiiii.me/tags/Interview/"/>
+    
+      <category term="GoldmanSachs" scheme="http://consiiii.me/tags/GoldmanSachs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一创业比赛有感</title>
+    <link href="http://consiiii.me/2015/12/06/%E4%B8%80%E5%88%9B%E4%B8%9A%E6%AF%94%E8%B5%9B%E6%9C%89%E6%84%9F/"/>
+    <id>http://consiiii.me/2015/12/06/一创业比赛有感/</id>
+    <published>2015-12-06T11:02:57.000Z</published>
+    <updated>2015-12-29T14:13:43.000Z</updated>
+    
+    <content type="html">&lt;p&gt;周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。&lt;/p&gt;
+&lt;p&gt;能参加这个比赛完全是意料之外的事情，缘由是暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。&lt;/p&gt;
+&lt;p&gt;本着学习和涨姿势的态度我来到了天津。&lt;/p&gt;
+&lt;h2 id=&quot;概况&quot;&gt;&lt;a href=&quot;#概况&quot; class=&quot;headerlink&quot; title=&quot;概况&quot;&gt;&lt;/a&gt;概况&lt;/h2&gt;&lt;p&gt;比赛队伍一共有48支，本科生的除了我，个人印象还有一支来自于北京师范大学的与自行车相关的公益项目。其它的队伍大多已是职场人士多年，亦或是清北复交等名校背景的创始人, 亦或是某领域专家博士等…&lt;/p&gt;
+&lt;p&gt;比赛的目的是决出20强，去录制CCTV的一个创业类型的电视节目(猜测大概就是现场比拼之类的吧)。其实这次复赛中也已经看到了CCTV的编导在不停地摄像。&lt;/p&gt;
+&lt;h2 id=&quot;行程&quot;&gt;&lt;a href=&quot;#行程&quot; class=&quot;headerlink&quot; title=&quot;行程&quot;&gt;&lt;/a&gt;行程&lt;/h2&gt;&lt;p&gt;12-03日，下午先是一个创业训练营，由梁青(现中科纳新总经理，曾任联想之星副总裁)来给我们做一个相关的要点讲座，不得不说，内容是关于创业的一些坑啦，股权啦等经验的分享。紧接着是一个欢迎晚宴。&lt;/p&gt;
+&lt;p&gt;12-04日，是为期一整天的现场演示, 分三个赛场, 每个赛场三位评审. 关于作品和想象中的差不多，大多有一些“互联网＋”项目, 带着互联网就起飞了, 做内容啦，做平台之类的。在我的赛场上也看到一些有相当纯技术的项目. 例如名为“浩恒征途”的无人机项目，是来自北航的团队做的，现场带了个体型较大的工程机来，起到了震慑能力.&lt;/p&gt;
+&lt;p&gt;另外，还有一个叫做CIRI的语音系统 (不知道我这么理解对不对) 让我印象深刻, 当我第一眼看到这个词的时候想到的是Siri.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2244.JPG&quot; alt=&quot;photos&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;我的参赛项目&quot;&gt;&lt;a href=&quot;#我的参赛项目&quot; class=&quot;headerlink&quot; title=&quot;我的参赛项目&quot;&gt;&lt;/a&gt;我的参赛项目&lt;/h2&gt;&lt;p&gt;最后关于我的参赛项目，其实是一个技术工作室。与上述参赛队伍比起来 (融资几百几千万/名人名师背景/亦或海归背景等），不得不承认完全是一个草根作品，真是相形见绌（因此才提及“出乎意料”）。&lt;/p&gt;
+&lt;p&gt;不过来都来了，演讲顺序是最后一个的我，还是（假装）自信地讲完我们的idea。意料之外的是下来之后得到了数位评委以及创业前辈们的肯定并且加了我的一些联系方式（虽然我觉得可能并没有啥用，但毕竟是给了，权当做一种鼓励吧 ）.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;插曲：赛前晚上，由于举办方希望参赛者在指定App上宣传自己的项目(让大家点赞，投票之类的)，出于参赛者都有点反感，以及自己不想发什么朋友圈求赞，于是抓包看看有没有漏洞。结果没几分钟就发现了=_= ，然后录制了一个快速刷票的视频作为演讲的佐料演示了下，23333.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最后，没有进入20强，止步于一个优胜奖。&lt;/p&gt;
+&lt;h2 id=&quot;返程&quot;&gt;&lt;a href=&quot;#返程&quot; class=&quot;headerlink&quot; title=&quot;返程&quot;&gt;&lt;/a&gt;返程&lt;/h2&gt;&lt;p&gt;创业是为了什么呢？&lt;/p&gt;
+&lt;p&gt;现在的我只要能够做自己的喜欢事就好了。我只是做了一点微小的工作(我蛤了…)，在学校里侥幸有了一个工作室罢了。&lt;/p&gt;
+&lt;p&gt;附北京末班地铁照一张，大家都在玩手机，我无聊到在看他们玩手机. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2194.JPG&quot; alt=&quot;subway&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。&lt;/p&gt;
+&lt;p&gt;能参加这个比赛完全是意料之外的事情，缘由是暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。&lt;/p&gt;
+&lt;p&gt;本着学习和涨姿势的态度我来到了天津
+    
+    </summary>
+    
+      <category term="Competition" scheme="http://consiiii.me/categories/Competition/"/>
+    
+    
+      <category term="Competition" scheme="http://consiiii.me/tags/Competition/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swift 时间操作:NSDate,NSDateFormatter</title>
+    <link href="http://consiiii.me/2015/11/23/Swift-%E6%97%B6%E9%97%B4%E6%93%8D%E4%BD%9C-NSDate-NSDateFormatter/"/>
+    <id>http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/</id>
+    <published>2015-11-23T11:50:26.000Z</published>
+    <updated>2015-11-23T11:53:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;转载出处：&lt;a href=&quot;https://code.csdn.net/snippets/627333&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://code.csdn.net/snippets/627333&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;NSDate&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 1、初始化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 初始化一个当前时刻对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; now = NSDate()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 初始化一个明天当前时刻对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; tomorrow = NSDate(timeIntervalSinceNow: &lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 初始化一个昨天当前时刻对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; yestoday = NSDate(timeInterval: -&lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;, sinceDate: now)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 初始化一个 2001-01-01 08:00:00 1小时后的时刻对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; date1 = NSDate(timeIntervalSinceReferenceDate: &lt;span class=&quot;number&quot;&gt;3600&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 初始化一个 1970-01-01 08:00:00 1小时后的时刻对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; date2 = NSDate(timeIntervalSince1970: &lt;span class=&quot;number&quot;&gt;3600&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 2、获取时间描述&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; dateDescription = now&lt;span class=&quot;selector-class&quot;&gt;.description&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 3、获取时间间隔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取今天到明天的时间间隔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; interval1 = tomorrow.timeIntervalSinceDate(now)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取今天到明天的时间间隔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; interval2 = tomorrow&lt;span class=&quot;selector-class&quot;&gt;.timeIntervalSinceNow&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取 2001-01-01 08:00:00 到今天的时间间隔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; interval3 = now&lt;span class=&quot;selector-class&quot;&gt;.timeIntervalSinceReferenceDate&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取 1970-01-01 08:00:00 到今天的时间间隔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; interval5 = now&lt;span class=&quot;selector-class&quot;&gt;.timeIntervalSince1970&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 4、随机返回一个不可能达到的未来时间、过去时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date1 = NSDate.distantFuture() as NSDate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date2 = NSDate.distantPast() as NSDate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 5、时间相加&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 返回一个后天当前时刻对象（在明天基础上再加上一天的时间）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; theDayAfterTomorrow = tomorrow.dateByAddingTimeInterval(&lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 6、时间比较&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 比较两个时间对象是否相同返回布尔值（由于精度问题，isTheSameDate 为 false）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; isTheSameDate = theDayAfterTomorrow.isEqualToDate(NSDate(timeInterval: &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;, sinceDate: now))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 返回两个时间中较早的一个时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; earlierOne = now.earlierDate(tomorrow)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 返回两个时间中较晚的一个时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; laterOne = now.laterDate(tomorrow)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 比较两个时间对象是否相同并返回 NSComparisonResult 值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; compareResult = now.compare(tomorrow)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;NSDateFormatter&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 方式1：用已有日期格式进行转换&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; dateFormatter1 = NSDateFormatter()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dateFormatter1&lt;span class=&quot;selector-class&quot;&gt;.dateStyle&lt;/span&gt; = NSDateFormatterStyle&lt;span class=&quot;selector-class&quot;&gt;.MediumStyle&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dateFormatter1&lt;span class=&quot;selector-class&quot;&gt;.timeStyle&lt;/span&gt; = NSDateFormatterStyle&lt;span class=&quot;selector-class&quot;&gt;.MediumStyle&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; now = NSDate()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Date 转 String&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; nowString = dateFormatter1.stringFromDate(now)      &lt;span class=&quot;comment&quot;&gt;// Mar 24, 2015, 9:00:00 PM&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// String 转 Date&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;now = dateFormatter1.dateFromString(nowString)!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 方式2：自定义日期格式进行转换&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; dateFormatter2 = NSDateFormatter()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dateFormatter2&lt;span class=&quot;selector-class&quot;&gt;.dateFormat&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;yyyy-MM-dd HH:mm:ss&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Date 转 String&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;nowString = dateFormatter2.stringFromDate(now)          &lt;span class=&quot;comment&quot;&gt;// 2015-03-24 21:00:00&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// String 转 Date&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;now = dateFormatter2.dateFromString(nowString)!&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;转载出处：&lt;a href=&quot;https://code.csdn.net/snippets/627333&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://code.csdn.net/snippets/627333&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;l
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://consiiii.me/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://consiiii.me/tags/Swift/"/>
+    
+      <category term="datetime" scheme="http://consiiii.me/tags/datetime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Install LEMP on Debian</title>
+    <link href="http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/"/>
+    <id>http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/</id>
+    <published>2015-11-22T06:05:23.000Z</published>
+    <updated>2015-11-22T16:49:28.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;本文流程来自&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7&lt;/a&gt; ，并做了部分修改&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;LEMP安装的教程有很多，但是自己也做了一遍并纪录下来。&lt;/p&gt;
+&lt;h2 id=&quot;LEMP&quot;&gt;&lt;a href=&quot;#LEMP&quot; class=&quot;headerlink&quot; title=&quot;LEMP&quot;&gt;&lt;/a&gt;LEMP&lt;/h2&gt;&lt;p&gt;LEMP指Linux(L),MySQL(M),PHP(P),Nginx(E,发音engine x).它和经典的LAMP不同的是把Apache替换成了Nignx.&lt;/p&gt;
+&lt;p&gt;这篇文章主要纪录了如何去安装LEMP，以及一些相关的配置。&lt;/p&gt;
+&lt;h2 id=&quot;1-update-apt-get&quot;&gt;&lt;a href=&quot;#1-update-apt-get&quot; class=&quot;headerlink&quot; title=&quot;1.update apt-get&quot;&gt;&lt;/a&gt;1.update apt-get&lt;/h2&gt;&lt;p&gt;开始之前，我们总要更新一下机器上的版本纪录，以获得最新的软件。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2-apt-get-install-mysql-server&quot;&gt;&lt;a href=&quot;#2-apt-get-install-mysql-server&quot; class=&quot;headerlink&quot; title=&quot;2.apt-get install mysql-server&quot;&gt;&lt;/a&gt;2.apt-get install mysql-server&lt;/h2&gt;&lt;p&gt;输入&lt;br&gt;&lt;code&gt;sudo apt-get install mysql-server&lt;/code&gt;&lt;br&gt;，过程中会要求设置root密码；&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/Screen%20Shot%202015-11-23%20at%2000.46.09.png&quot; alt=&quot;mysql root password setting&quot;&gt;&lt;/p&gt;
+&lt;p&gt;当安装完成后，可以用这些命令来完成mysql启动向导。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo mysql_install_db&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后再用&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo /usr/bin/mysql_secure_installation&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这条命令进入的时候会要求输入root的密码，然后请仔细阅读每条说明（是否删除匿名帐号，是否删除test数据库等等），输入y/n以选择。&lt;/p&gt;
+&lt;h2 id=&quot;3-apt-get-install-nginx&quot;&gt;&lt;a href=&quot;#3-apt-get-install-nginx&quot; class=&quot;headerlink&quot; title=&quot;3. apt-get install nginx&quot;&gt;&lt;/a&gt;3. apt-get install nginx&lt;/h2&gt;&lt;p&gt;安装nginx&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get install nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;启动nginx&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo service nginx start&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;OK!现在在浏览器中输入IP地址，看到以下类似的界面就说明成功了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/Screen%20Shot%202015-11-22%20at%2015.54.15.png&quot; alt=&quot;nginx&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用ifconfig eth0 | grep inet | awk ‘{ print $2 }’可以看到VPS的IP地址&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;配置nginx&quot;&gt;&lt;a href=&quot;#配置nginx&quot; class=&quot;headerlink&quot; title=&quot;配置nginx&quot;&gt;&lt;/a&gt;配置nginx&lt;/h3&gt;&lt;p&gt;&lt;code&gt;sudo vim /etc/nginx/sites-available/default&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;更改配置参考到如下&lt;/p&gt;
+&lt;figure class=&quot;highlight xquery&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt; [...]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen   &lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		#root的地址页面文件所在位置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        root /usr/share/nginx/www;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        #不要忘记添加index.php&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        index index.php index.html index.htm;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		#在这里定义IP或者自己的域名 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        server_name example.com;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                try_files $uri $uri/ /index.html;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        error_page &lt;span class=&quot;number&quot;&gt;404&lt;/span&gt; /&lt;span class=&quot;number&quot;&gt;404&lt;/span&gt;.html;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        error_page &lt;span class=&quot;number&quot;&gt;500&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;502&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;503&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;504&lt;/span&gt; /&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;x.html;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location = /&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;x.html &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              root /usr/share/nginx/www;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        # pass the PHP scripts to FastCGI server listening on /var/run/php5-fpm.sock&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location ~ \.php$ &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                try_files $uri =&lt;span class=&quot;number&quot;&gt;404&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                fastcgi_pass unix:/var/run/php5-fpm.sock;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                fastcgi_index index.php;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                include fastcgi_params;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[...]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;4-apt-get-install-php5-fpm-php5-mysql&quot;&gt;&lt;a href=&quot;#4-apt-get-install-php5-fpm-php5-mysql&quot; class=&quot;headerlink&quot; title=&quot;4.apt-get install php5-fpm php5-mysql&quot;&gt;&lt;/a&gt;4.apt-get install php5-fpm php5-mysql&lt;/h2&gt;&lt;p&gt;安装php5 fpm&lt;br&gt;&lt;code&gt;sudo apt-get install php5-fpm php5-mysql&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt; 位置：/etc/php5/fpm/php.ini&lt;/p&gt;
+&lt;p&gt; 操作：将&lt;strong&gt;cgi.fix_pathinfo = 1&lt;/strong&gt; ,从&lt;strong&gt;1改成0&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 说明：这一段代码可能是被注释的。cgi.fix_pathinfo＝1 时会有安全隐患。比如网站中有&lt;a href=&quot;http://xx.com/a.jpg这样一个文件，那么构造http://xx.com/a.jpg/foo.php可以查看这个文件的二进制内容，这意味着可以构造一个实际是php代码的图片，去执行一些用户自定义的操作。具体可以参考：http://www.laruence.com/2010/05/20/1495.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xx.com/a.jpg这样一个文件，那么构造http://xx.com/a.jpg/foo.php可以查看这个文件的二进制内容，这意味着可以构造一个实际是php代码的图片，去执行一些用户自定义的操作。具体可以参考：http://www.laruence.com/2010/05/20/1495.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;位置：/etc/php5/fpm/pool.d/www.conf&lt;/p&gt;
+&lt;p&gt; 操作：将&lt;code&gt;listen = 127.0.0.1:9000&lt;/code&gt;更改成&lt;code&gt;listen = /var/run/php5-fpm.sock&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt; 说明：&lt;strong&gt;新版本中默认就是&lt;code&gt;listen = /var/run/php5-fpm.sock&lt;/code&gt;&lt;/strong&gt;，所以那些不是这个值的情况下修改一下…&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;5-接近完成，测试一下&quot;&gt;&lt;a href=&quot;#5-接近完成，测试一下&quot; class=&quot;headerlink&quot; title=&quot;5.接近完成，测试一下&quot;&gt;&lt;/a&gt;5.接近完成，测试一下&lt;/h2&gt;&lt;p&gt;在html的目录下，创建一个info.php.写入：&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	phpinfo();&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;顺便一下nginx&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo service nginx restart&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;现在在浏览器中键入 your.domain.com/info.php&lt;/p&gt;
+&lt;p&gt;看见phpinfo了！完成 : D&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;本文流程来自&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7&quot; targ
+    
+    </summary>
+    
+      <category term="LEMP" scheme="http://consiiii.me/categories/LEMP/"/>
+    
+    
+      <category term="LEMP" scheme="http://consiiii.me/tags/LEMP/"/>
+    
+      <category term="nginx" scheme="http://consiiii.me/tags/nginx/"/>
+    
+      <category term="php" scheme="http://consiiii.me/tags/php/"/>
+    
+      <category term="debian" scheme="http://consiiii.me/tags/debian/"/>
+    
+      <category term="linux" scheme="http://consiiii.me/tags/linux/"/>
+    
+      <category term="mysql" scheme="http://consiiii.me/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssh登录主机</title>
+    <link href="http://consiiii.me/2015/11/22/ssh%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA/"/>
+    <id>http://consiiii.me/2015/11/22/ssh登录主机/</id>
+    <published>2015-11-22T04:03:44.000Z</published>
+    <updated>2015-11-22T05:51:42.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。&lt;/p&gt;
+&lt;h2 id=&quot;1-生成密钥对&quot;&gt;&lt;a href=&quot;#1-生成密钥对&quot; class=&quot;headerlink&quot; title=&quot;1.生成密钥对&quot;&gt;&lt;/a&gt;1.生成密钥对&lt;/h2&gt;&lt;p&gt;两种方法生成密钥对&lt;/p&gt;
+&lt;h3 id=&quot;使用OpenSSL&quot;&gt;&lt;a href=&quot;#使用OpenSSL&quot; class=&quot;headerlink&quot; title=&quot;使用OpenSSL&quot;&gt;&lt;/a&gt;使用OpenSSL&lt;/h3&gt;&lt;p&gt;生成RSA私钥&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;genrsa -out rsa_private_key.pem 2048&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;（可选）使用&lt;br&gt;&lt;code&gt;pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt&lt;/code&gt;&lt;br&gt;将RSA密钥转换成PKCS8格式，密码可以为空&lt;/p&gt;
+&lt;p&gt;生成RSA公钥&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rsa -in rsa_private_key.pem -pubout -out rsa_public.pem&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;使用ssh-gen&quot;&gt;&lt;a href=&quot;#使用ssh-gen&quot; class=&quot;headerlink&quot; title=&quot;使用ssh-gen&quot;&gt;&lt;/a&gt;使用ssh-gen&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ssh-keygen -t [rsa|dsa]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码&lt;br&gt;;如果想要的目的是免密码登录,密码请留空&lt;/p&gt;
+&lt;h2 id=&quot;2-将公钥拷贝到目标主机&quot;&gt;&lt;a href=&quot;#2-将公钥拷贝到目标主机&quot; class=&quot;headerlink&quot; title=&quot;2.将公钥拷贝到目标主机&quot;&gt;&lt;/a&gt;2.将公钥拷贝到目标主机&lt;/h2&gt;&lt;p&gt;将公钥拷贝到~/.ssh中，远程上传可以使用scp命令&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;scp -r your/target/file/path user@ip:your/remote/file/path/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果主机下已经有authorized_keys，注意不要覆盖改文件，没有的话主动创建文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;touch ~/.ssh.authorized_keys&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后执行&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cat rsa_public_key.pem &amp;gt;&amp;gt; authorized.keys&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;或者本地执行&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cat ~/.ssh/japan_rsa.pub | ssh root@45.32.248.65  &amp;quot;mkdir -p ~/.ssh &amp;amp;&amp;amp; cat &amp;gt;&amp;gt;  ~/.ssh/authorized_keys&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3-在本机添加标识&quot;&gt;&lt;a href=&quot;#3-在本机添加标识&quot; class=&quot;headerlink&quot; title=&quot;3.在本机添加标识&quot;&gt;&lt;/a&gt;3.在本机添加标识&lt;/h2&gt;&lt;p&gt;打开~/.ssh/config，没有的话就创建一个，书写格式为（替换[]中的内容为自己的配置）&lt;br&gt;&lt;figure class=&quot;highlight accesslog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Host &lt;span class=&quot;string&quot;&gt;[myHost]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hostname &lt;span class=&quot;string&quot;&gt;[123.123.123.123]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Port &lt;span class=&quot;string&quot;&gt;[21]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;User &lt;span class=&quot;string&quot;&gt;[myUser]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IdentityFile &lt;span class=&quot;string&quot;&gt;[ ~/.ssh/local_private_rsa]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;4-登录&quot;&gt;&lt;a href=&quot;#4-登录&quot; class=&quot;headerlink&quot; title=&quot;4.登录&quot;&gt;&lt;/a&gt;4.登录&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;ssh myHost&lt;/code&gt; 进行登录&lt;/p&gt;
+&lt;h2 id=&quot;5-可能出现的问题&quot;&gt;&lt;a href=&quot;#5-可能出现的问题&quot; class=&quot;headerlink&quot; title=&quot;5.可能出现的问题&quot;&gt;&lt;/a&gt;5.可能出现的问题&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;如果出现出现&lt;br&gt; &lt;code&gt;Permissions 0644 for &amp;#39;your/target/file&amp;#39; are too open.&lt;/code&gt;&lt;br&gt; 把权限改成0600就好了&lt;/li&gt;
+&lt;li&gt;OpenSSL 生成的密钥会出现&lt;code&gt;key_load_public: invalid format&lt;/code&gt;导致无法登录.&lt;br&gt; OpenSSL生成的公钥和ssh-keygen生成的公钥的格式不一致，ssh-keygen生成公钥的格式是OK的。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。&lt;/p&gt;
+&lt;h2 id=&quot;1-生成密钥对&quot;&gt;&lt;a href=&quot;#1-生成密钥对&quot; class=&quot;headerlink&quot; title=&quot;1.生成密钥对&quot;&gt;&lt;/a&gt;1.生成密钥对&lt;/h2&gt;&lt;p&gt;两种
+    
+    </summary>
+    
+      <category term="ssh" scheme="http://consiiii.me/categories/ssh/"/>
+    
+    
+      <category term="ssh" scheme="http://consiiii.me/tags/ssh/"/>
+    
+      <category term="remote login" scheme="http://consiiii.me/tags/remote-login/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Experience of HackShanghai 2015</title>
+    <link href="http://consiiii.me/2015/11/09/Experience-of-HackShanghai-2015/"/>
+    <id>http://consiiii.me/2015/11/09/Experience-of-HackShanghai-2015/</id>
+    <published>2015-11-09T15:03:41.000Z</published>
+    <updated>2015-12-16T16:19:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;2015年10月5日请假去了上海准备7,8日的hackShanghai 2015，并非常幸运的最后获得了第三名。但最大的收获是认识了三位有趣又厉害的伙伴：&lt;/p&gt;
+&lt;p&gt;英国老叔叔（队长，现实是一个非常很萌的学姐)&lt;/p&gt;
+&lt;p&gt;SandyHaaa(优雅的女子，英语非常好)&lt;/p&gt;
+&lt;p&gt;wanghu205(迷之声线).&lt;/p&gt;
+&lt;h2 id=&quot;开始&quot;&gt;&lt;a href=&quot;#开始&quot; class=&quot;headerlink&quot; title=&quot;开始&quot;&gt;&lt;/a&gt;开始&lt;/h2&gt;&lt;p&gt;由于我们被选入比赛时都是单身状态(没有组队进入比赛)，因此赛前互不认识。&lt;/p&gt;
+&lt;p&gt;在进入了hackshanghai的选手圈后，我便在群内安静的找大腿抱。终于，“老叔叔”带着一个吊炸天的头像出现了，以下子被吸引住。当听到老叔叔说找队友时，立即求其好友。&lt;/p&gt;
+&lt;p&gt;之后老叔叔又依次找来了wanghu205，SandyHaaa。&lt;br&gt;5日晚上，我们群内提出各种idea，SandyHaaa的想法是本次“Know Video”的雏形。&lt;/p&gt;
+&lt;p&gt;过程遇到一个难以平衡的问题就是我们四个擅长的工作都不相同，交叉的领域似乎也不多。于是在”做什么“”怎么做“的问题上变得有些苦手。&lt;/p&gt;
+&lt;p&gt;最后我们干脆取名“上海游击队”,有点自嘲的意味但是同时气氛也变得轻松。&lt;/p&gt;
+&lt;p&gt;讨论断断续续持续到了次日（6日）下午近两点，最终敲定了Know Video的概念。&lt;/p&gt;
+&lt;h2 id=&quot;过程&quot;&gt;&lt;a href=&quot;#过程&quot; class=&quot;headerlink&quot; title=&quot;过程&quot;&gt;&lt;/a&gt;过程&lt;/h2&gt;&lt;p&gt;由于这是一个Chrome插件，于是前端的知识还算有些用处，我就突然变成了主力……&lt;/p&gt;
+&lt;p&gt;调配工作与资源分享时，曾尝试使用一些在线资料写作工具，后来因为网络太不稳定放弃了（除了我，科学上网是有好处的，哈哈哈)&lt;/p&gt;
+&lt;p&gt;至于网络曾坏到什么地步就是我在分享ss时，队友的网络下载900k+的ss都成了问题,ORZ&lt;/p&gt;
+&lt;p&gt;(很无奈最后我没分享成功，因为VPS搭建了好久我并不确定密码是多少，在试了好一些之后貌似都错了呢…)&lt;/p&gt;
+&lt;p&gt;接着就是不停的看文档，代码，文档，代码，升级成为肝船少年郎。&lt;/p&gt;
+&lt;p&gt;PS：话说队长说我写代码的时候脸都是黑的，她不开心，于是老是黑我！我天生长这样不行嘛！(╯°Д°）╯︵ /(.□ . )&lt;/p&gt;
+&lt;p&gt;然后就是代码到黎明～&lt;/p&gt;
+&lt;p&gt;wanghu205非常棒的给我们队拿来了许多零食，而我在他去交流的时候后面到处看&amp;gt;_&amp;lt;。&lt;/p&gt;
+&lt;p&gt;半夜&lt;br&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/2.pic_hd_1.jpg&quot; alt=&quot;http://7xngrd.com1.z0.glb.clouddn.com/2.pic_hd_1.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;清晨&lt;br&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/1.pic_hd_1.jpg&quot; alt=&quot;http://7xngrd.com1.z0.glb.clouddn.com/1.pic_hd_1.jpg&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;准备演讲&quot;&gt;&lt;a href=&quot;#准备演讲&quot; class=&quot;headerlink&quot; title=&quot;准备演讲&quot;&gt;&lt;/a&gt;准备演讲&lt;/h2&gt;&lt;p&gt;次日上午6点左右，我的工作基本上完成了，所需要的效果差不多已经达到。&lt;/p&gt;
+&lt;p&gt;接下来就是开始愉快的准备演讲，没我太多事啦.&lt;/p&gt;
+&lt;p&gt;准备PPT，稿子等，SandyHaaa,wanghu205跟外国人聊天泰然自若的样子，我就只能在旁边站着看看…称自己英语不好的队长也是balabala一堆….我这个弱渣英语完全插不上话呀混蛋～T_T (决心好好练习口语)&lt;/p&gt;
+&lt;p&gt;抽了个空闲，一起去游荡/围观其它人的作品，很自然地受到了刺激……&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://img0.imgtn.bdimg.com/it/u=3884272796,358266646&amp;amp;fm=21&amp;amp;gp=0.jpg&quot; alt=&quot;Shocked&quot;&gt;&lt;/p&gt;
+&lt;p&gt;怎么感觉好多都是和硬件联动的…..&amp;gt;_&amp;lt; &lt;/p&gt;
+&lt;p&gt;演示是5分钟限制，建议是3分钟演讲＋2分钟QA。&lt;br&gt;第一场演示进去时好紧张，SandyHaaa流畅的演讲真是太赞，演示后评委笑了～有了“Instresting”的声音（我当作是褒义)，队伍松了一口气。&lt;/p&gt;
+&lt;h2 id=&quot;结果&quot;&gt;&lt;a href=&quot;#结果&quot; class=&quot;headerlink&quot; title=&quot;结果&quot;&gt;&lt;/a&gt;结果&lt;/h2&gt;&lt;p&gt;在吃晚餐的时候听到进入Top9时！不敢置信但是又很开心（真实表里不一啊).&lt;br&gt;（队长在吃晚餐时给别人拿鸡块，一定是好人有好报)&lt;/p&gt;
+&lt;p&gt;一翻角逐后最终获得第三名，非常开心。&lt;/p&gt;
+&lt;p&gt;几位伙伴因为一个原因聚在了一起，竟然因此得到了第三名，这样的经历实在是太可贵且记忆深刻！&lt;/p&gt;
+&lt;p&gt;比赛自此结束，分别也来的很快。&lt;/p&gt;
+&lt;p&gt;最后的最后，夜晚，当我们走出NYU SH，都认为一定会再聚。&lt;/p&gt;
+&lt;p&gt;谢谢三位伙伴～&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/IMG_1982.JPG&quot; alt=&quot;留念&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2015年10月5日请假去了上海准备7,8日的hackShanghai 2015，并非常幸运的最后获得了第三名。但最大的收获是认识了三位有趣又厉害的伙伴：&lt;/p&gt;
+&lt;p&gt;英国老叔叔（队长，现实是一个非常很萌的学姐)&lt;/p&gt;
+&lt;p&gt;SandyHaaa(优雅的女子，英语非常好)
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>8个应该被知道的正则表达式</title>
+    <link href="http://consiiii.me/2015/10/22/8%E4%B8%AA%E5%BA%94%E8%AF%A5%E8%A2%AB%E7%9F%A5%E9%81%93%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/</id>
+    <published>2015-10-22T15:21:37.000Z</published>
+    <updated>2016-01-15T14:32:21.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;翻译自此处&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不太好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所谓的”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该知道的，8个正则表达式。&lt;/p&gt;
+&lt;h2 id=&quot;正则表达式的背景&quot;&gt;&lt;a href=&quot;#正则表达式的背景&quot; class=&quot;headerlink&quot; title=&quot;正则表达式的背景&quot;&gt;&lt;/a&gt;正则表达式的背景&lt;/h2&gt;&lt;p&gt;维基百科：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为regex、regexp或RE），计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这段解释并没有真正告诉我们太多关于它实际上是以何种表现形式的。而我今天将要讲的，正是这形如\w,\s,\1，以及其它一些含义与“外表”看起来不那么一样的正则表达式。&lt;/p&gt;
+&lt;p&gt;如果您愿意在阅读此篇文章之前去了解一下正则表达式，建议看看&lt;a href=&quot;http://www.multiurl.com/ga/regexdummies&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Regular Expressions for Dummies&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;我们将要提及的8个正则表达式将能够让您学习如何去匹配：用户名, 密码, 邮箱, 16进制（如#fff, #000), Slug, URL, IP地址, 还有HTML标签。随着程度深入，这些表达式将会变得更容易让人头晕。以下每一张放在开头的解释性图片，将很好的解释文章的内容，但是最后4个（正则表达式）通过阅读说明会更容易理解。&lt;/p&gt;
+&lt;p&gt;记住正则表达式含义的关键点是它们几乎都是同时向前/向后搜索的。这句话将在我们谈到HTML标签的时候会更容易理解。&lt;/p&gt;
+&lt;p&gt;注意：正则表达式中的分隔符是斜杠”/“。每一个匹配语句（以下也将翻译成匹配模式）开头和末尾都会跟着一个分隔符”/“。如果一个出线在表达式之内，那我们一定要通过反斜杠”\”将它转义，如：“\/”。&lt;/p&gt;
+&lt;h2 id=&quot;1-匹配用户名&quot;&gt;&lt;a href=&quot;#1-匹配用户名&quot; class=&quot;headerlink&quot; title=&quot;1. 匹配用户名&quot;&gt;&lt;/a&gt;1. 匹配用户名&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/username.jpg&quot; alt=&quot;Matching a username&quot;&gt;&lt;/p&gt;
+&lt;h5 id=&quot;匹配模式：&quot;&gt;&lt;a href=&quot;#匹配模式：&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^[a-z0^9_-]{3,16}$/&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;解释：&quot;&gt;&lt;a href=&quot;#解释：&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;让我们告诉解析器字符串的开头(通过使用&lt;strong&gt;^&lt;/strong&gt;)后面跟随着的是&lt;strong&gt;小写字母(a-z)/数字(0-9)/下划线/下划线&lt;/strong&gt;。接着，&lt;strong&gt;{3,16}&lt;/strong&gt;确保字符串应当有至少3个这样的字符，而且不超过16个。最后，字符串抵达尾部($).&lt;/p&gt;
+&lt;h5 id=&quot;匹配&quot;&gt;&lt;a href=&quot;#匹配&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;my-us3r_n4m3&lt;/p&gt;
+&lt;h5 id=&quot;不匹配&quot;&gt;&lt;a href=&quot;#不匹配&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;th1s1s-wayt00_l0ngt0beausername (因为太长了)&lt;/p&gt;
+&lt;h2 id=&quot;2-匹配密码&quot;&gt;&lt;a href=&quot;#2-匹配密码&quot; class=&quot;headerlink&quot; title=&quot;2. 匹配密码&quot;&gt;&lt;/a&gt;2. 匹配密码&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/password.jpg&quot; alt=&quot;Mathing a Password&quot;&gt;&lt;/p&gt;
+&lt;h5 id=&quot;匹配模式：-1&quot;&gt;&lt;a href=&quot;#匹配模式：-1&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^[a-z0-9_-]{6,18}$/&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;解释：-1&quot;&gt;&lt;a href=&quot;#解释：-1&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;匹配密码和匹配用户名非常相似。唯一的不同是这里要&lt;strong&gt;6到18位字母/数字/下划线/或者连字符&lt;/strong&gt;，而不是3到16位。&lt;/p&gt;
+&lt;h5 id=&quot;匹配-1&quot;&gt;&lt;a href=&quot;#匹配-1&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;myp4ssw0rd&lt;/p&gt;
+&lt;h5 id=&quot;不匹配-1&quot;&gt;&lt;a href=&quot;#不匹配-1&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;mypa$$w0rd (因为包含了$字符)&lt;/p&gt;
+&lt;h2 id=&quot;3-匹配16进制数&quot;&gt;&lt;a href=&quot;#3-匹配16进制数&quot; class=&quot;headerlink&quot; title=&quot;3. 匹配16进制数&quot;&gt;&lt;/a&gt;3. 匹配16进制数&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/hex-copy.jpg&quot; alt=&quot;Maching a Hex Value&quot;&gt;&lt;/p&gt;
+&lt;h5 id=&quot;匹配模式：-2&quot;&gt;&lt;a href=&quot;#匹配模式：-2&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^#?([a-f0-9]{6}|[a-f0-9]{3})$/&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;解释：-2&quot;&gt;&lt;a href=&quot;#解释：-2&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;符号^&lt;/strong&gt;告诉解析器字符串从哪里开始。是否匹配&lt;strong&gt;＃&lt;/strong&gt;是可选的，因为它后面跟着一个问号（译者注：?代表0个获1个）。&lt;strong&gt;问号?&lt;/strong&gt;告诉解释器，它前面的字符（这里是一个＃）是可选的。注意问号是“贪婪的”，这意味着如果这里有匹配的字符，问号就会去获取字符。接下来，在第一组里(第一组圆括号)，我们实现了两种不同的处理方式。第一个是a－f之间的小写字符或数字，要求出现6次。&lt;strong&gt;垂线｜&lt;/strong&gt;告诉我们，或者这里是a－f之间的小写字母或数字出现3次（译者注：这是16进制的简写）。最后，我们用$来结束字符串。&lt;/p&gt;
+&lt;p&gt;这里把&lt;strong&gt;“匹配6个字符的要求”&lt;/strong&gt;放在前面的原因是，解释器先去会捕获#ffffff这样的16进制数。如果反一下，把&lt;strong&gt;“三个字符的要求”&lt;/strong&gt;放在前面，那么么解释器只会拿走#fff而不会捕获其它的3个f。&lt;/p&gt;
+&lt;h5 id=&quot;匹配-2&quot;&gt;&lt;a href=&quot;#匹配-2&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;#a3c113&lt;/p&gt;
+&lt;p&gt;#333&lt;/p&gt;
+&lt;p&gt;#f66h23 (匹配#f66)&lt;/p&gt;
+&lt;h5 id=&quot;不匹配-2&quot;&gt;&lt;a href=&quot;#不匹配-2&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;#4h82f4 (#4h8不匹配)&lt;/p&gt;
+&lt;h2 id=&quot;4-匹配Slug&quot;&gt;&lt;a href=&quot;#4-匹配Slug&quot; class=&quot;headerlink&quot; title=&quot;4. 匹配Slug&quot;&gt;&lt;/a&gt;4. 匹配Slug&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/slug.jpg&quot; alt=&quot;Matching a &amp;quot;Slug&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;h5 id=&quot;匹配模式：-3&quot;&gt;&lt;a href=&quot;#匹配模式：-3&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^[a-z0-9-]+$/&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;解释：-3&quot;&gt;&lt;a href=&quot;#解释：-3&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;如果您曾经使用过mod_rewrite以及URL美化，那您大概是会使用正则表达式的。先让解释器去找到字符串的头(^)，其后匹配&lt;strong&gt;一个或多个字符/数字/连字符&lt;/strong&gt;。最后，需要匹配到的字符串到这此结束（$）.&lt;/p&gt;
+&lt;h5 id=&quot;匹配-3&quot;&gt;&lt;a href=&quot;#匹配-3&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;my-title-here&lt;/p&gt;
+&lt;h5 id=&quot;不匹配-3&quot;&gt;&lt;a href=&quot;#不匹配-3&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;my_title_here (包含下划线)&lt;/p&gt;
+&lt;h2 id=&quot;5-匹配邮件&quot;&gt;&lt;a href=&quot;#5-匹配邮件&quot; class=&quot;headerlink&quot; title=&quot;5. 匹配邮件&quot;&gt;&lt;/a&gt;5. 匹配邮件&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/email.jpg&quot; alt=&quot;Matching a Email&quot;&gt;&lt;/p&gt;
+&lt;h5 id=&quot;匹配模式：-4&quot;&gt;&lt;a href=&quot;#匹配模式：-4&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;解释：-4&quot;&gt;&lt;a href=&quot;#解释：-4&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;先让解释器找到字符串的头(^)。然后里面第一组，我们匹配&lt;strong&gt;一个或多个小写字母/数字/下划线/点/破折号&lt;/strong&gt;。我转义了“.”，因为一个没有转义的“.”代表着任何字符（译者注：\. 将 “.” 转义，以匹配字符意义上的”.” ）。在这个分组后面必须直接跟着一个“@”。接下来域名必须匹配上这样的规则：1个或多个小写字母，数字，下划线，点或者破折号。借着又是一个（转义的）“.”，后面跟着2到6位的小写字母或者”.”。限制2到6位是因为有国家的顶级域名这种东西(.ny.us 或者 .co.uk)。最后，我们要求字符串到此结束($)。&lt;/p&gt;
+&lt;h5 id=&quot;匹配-4&quot;&gt;&lt;a href=&quot;#匹配-4&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;john@doe.com&lt;/p&gt;
+&lt;h5 id=&quot;不匹配-4&quot;&gt;&lt;a href=&quot;#不匹配-4&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;john@doe.something (顶级域名太长了)&lt;/p&gt;
+&lt;h2 id=&quot;6-匹配URL&quot;&gt;&lt;a href=&quot;#6-匹配URL&quot; class=&quot;headerlink&quot; title=&quot;6. 匹配URL&quot;&gt;&lt;/a&gt;6. 匹配URL&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/url.jpg&quot; alt=&quot;Matching a URL&quot;&gt;&lt;/p&gt;
+&lt;h5 id=&quot;匹配模式&quot;&gt;&lt;a href=&quot;#匹配模式&quot; class=&quot;headerlink&quot; title=&quot;匹配模式&quot;&gt;&lt;/a&gt;匹配模式&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/&lt;/code&gt;&lt;br&gt;(译者注：在最后一个分组内原文允许匹配空格，但URL中的空格一般在表示时通常会使用urlencode一类的来转义成“+“一类的)&lt;/p&gt;
+&lt;h5 id=&quot;解释&quot;&gt;&lt;a href=&quot;#解释&quot; class=&quot;headerlink&quot; title=&quot;解释&quot;&gt;&lt;/a&gt;解释&lt;/h5&gt;&lt;p&gt;这个正则超像是上面所写的表达式们的杂烩形式，不过是将它们组合于一些文件结构和“ http:// ”之间罢了。其实它比看起来的样子要简单。在开始匹配之前，我们照例先搜寻用脱字符(^)来搜寻一行的开始。&lt;/p&gt;
+&lt;p&gt;第一个要捕捉的部分全部都是可选的。它允许URL以“ http:// ”开头，亦或以“ https:// ”开头，亦或都不使用上述两种。在这之后我设置了一个问号，它告诉URL去匹配https或者http.为了使整个分组可选，需要在末尾再添加一个问号。&lt;/p&gt;
+&lt;p&gt;截下来匹配域名：&lt;strong&gt;一个或多个数字/字母/点/连字符&lt;/strong&gt;。域名后面跟随着一个点，之后是2-6个字母或点。接下来这部分为可选的文件／目录结构。在这个部分中，需要匹配任意数量的 &lt;strong&gt;斜杠/字母/下划线/点/连字符&lt;/strong&gt; 。只要我们需要，这个部分可以匹配任意多次数。多重结构都会被匹配，但是最后以一个文件作为结尾。我在这里使用了”&lt;em&gt;“而不是问号，因为”&lt;/em&gt;“表示0或多个，而不是表示0或1个（译者注：问号表示0或1个）。如果问号被用在这里，那么将会只有一个文件/目录能够被匹配上。&lt;/p&gt;
+&lt;p&gt;接着一个反斜杠”/“可以被匹配，但这是可选的。最后我们结束字符串。&lt;/p&gt;
+&lt;h5 id=&quot;匹配-5&quot;&gt;&lt;a href=&quot;#匹配-5&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;&lt;a href=&quot;http://net.tutsplus.com/about&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://net.tutsplus.com/about&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&quot;不匹配-5&quot;&gt;&lt;a href=&quot;#不匹配-5&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;&lt;a href=&quot;http://google.com/some/file!.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://google.com/some/file!.html&lt;/a&gt; (包含感叹号)&lt;/p&gt;
+&lt;h2 id=&quot;7-匹配IP地址&quot;&gt;&lt;a href=&quot;#7-匹配IP地址&quot; class=&quot;headerlink&quot; title=&quot;7. 匹配IP地址&quot;&gt;&lt;/a&gt;7. 匹配IP地址&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/ip.jpg&quot; alt=&quot;Matching an IP Address&quot;&gt;&lt;/p&gt;
+&lt;h5 id=&quot;匹配模式：-5&quot;&gt;&lt;a href=&quot;#匹配模式：-5&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;解释：-5&quot;&gt;&lt;a href=&quot;#解释：-5&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;我不准备说谎，我没有写这个正则，而是从&lt;a href=&quot;http://www.regular-expressions.info/regexbuddy/ipaccurate.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;得到了它。但这不代表我现在不能逐字逐句地分析它。&lt;/p&gt;
+&lt;p&gt;第一个要求捕获的分组其实不是一个被捕获的分组（原文：The first capture group really isn’t a captured group），因为&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;“?:”告诉解释器不要去捕获这个分组（更多内容在最后一个正则表达式会说明)。通过把”{3}”放在这个组别的后面，我们还要求了这个不被捕获的分组需重复3次。这个组别包含了一个子组，和一个”.”。解释器会去尝试匹配子组及”.”，然后继续。&lt;/p&gt;
+&lt;p&gt;这个子组是又一个非捕获组。它只是一堆在括号中的字符集：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;字符串“25”后面需要跟随0-5之间的数字；&lt;/li&gt;
+&lt;li&gt;或字符“2”后面要跟着0-4，然后是一位任意数字；&lt;/li&gt;
+&lt;li&gt;或是一个可选0和1，后面跟着两位数字，其中第二位是可选的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最后我们结束匹配这个让人头晕的正则表达式。&lt;/p&gt;
+&lt;h5 id=&quot;匹配-6&quot;&gt;&lt;a href=&quot;#匹配-6&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;73.60.124.136 &lt;/p&gt;
+&lt;h5 id=&quot;不匹配-6&quot;&gt;&lt;a href=&quot;#不匹配-6&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;256.60.124.136 (第一个分组得在0-255之间)&lt;/p&gt;
+&lt;h2 id=&quot;8-匹配HTML标签&quot;&gt;&lt;a href=&quot;#8-匹配HTML标签&quot; class=&quot;headerlink&quot; title=&quot;8. 匹配HTML标签&quot;&gt;&lt;/a&gt;8. 匹配HTML标签&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/htmltag.jpg&quot; alt=&quot;Matching an HTML Tag&quot;&gt;&lt;/p&gt;
+&lt;h5 id=&quot;匹配模式：-6&quot;&gt;&lt;a href=&quot;#匹配模式：-6&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^&amp;lt;([a-z]+)([^&amp;lt;]+)*(?:&amp;gt;(.*)&amp;lt;\/\1&amp;gt;|\s+\/&amp;gt;)$/&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;解释：-6&quot;&gt;&lt;a href=&quot;#解释：-6&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;又一个有用的正则表达式！它匹配任何HTML标签还有其中的内容，我们用一行的开头来开始匹配。&lt;/p&gt;
+&lt;p&gt;第一个要匹配的是标签的名字。它必须是1或多个字符。这是一个捕获组，这东西在我们捕获闭标签时相当有用。截下来是标签的属性。它是除符号&amp;gt;外的任意字符。因为这是可选的，但我又需要匹配上多个字符串，所以使用了符号*。加号的使用能匹配属性和值(译者注：加号代表一个或多个)，星号 * 则能表示任意数量的属性。&lt;/p&gt;
+&lt;p&gt;接下里第三个是非捕获组。里面包含了一个大于号(&amp;gt;)，一些文本内容，和一个闭标签；或是一些空格，一个反斜杠(/),\1用来表示捕获的内容要在一个捕获分组内。在这种情况下它是标签的名字。现在，如果这里不能匹配，我们就需要寻找一个自关闭标签（像是img,br,或者hr标签）。这需要有一个或多个空格，其后跟随着 “/&amp;gt;”。&lt;/p&gt;
+&lt;p&gt;正则表达式结束于行末。&lt;/p&gt;
+&lt;h5 id=&quot;匹配-7&quot;&gt;&lt;a href=&quot;#匹配-7&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;http://net.tutsplus.com/&amp;quot;&amp;gt;Nettuts+&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;不匹配-7&quot;&gt;&lt;a href=&quot;#不匹配-7&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;img.jpg&amp;quot; alt=&amp;quot;My image&amp;gt;&amp;quot; /&amp;gt;&lt;/code&gt; (属性中不能包含大符号)&lt;/p&gt;
+&lt;h2 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;希望您能领略到正则表达式背后的一些想法和思维。愿您能在未来的项目中使用这些正则表达式！很多时候您不必一个字符一个字符地去解读正则表达式，但是有时这样做能帮助您去学习到一些东西。请记住：不要害怕正则表达式，它们不如所看到的那样（晦涩难懂），它们反而能让您的生活变得更加简单。&lt;/p&gt;
+&lt;p&gt;要不要尝试下不使用正则表达式来从字符串中抓取标签的名字呢！ ;)&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;翻译自此处&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Regex" scheme="http://consiiii.me/categories/Regex/"/>
+    
+    
+      <category term="Regex" scheme="http://consiiii.me/tags/Regex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The model used to open the store is incompatible with the one used to create the store</title>
+    <link href="http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/"/>
+    <id>http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/</id>
+    <published>2015-10-17T01:47:18.000Z</published>
+    <updated>2015-10-17T01:49:28.000Z</updated>
+    
+    <content type="html">&lt;p&gt;使用Core Data更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.&lt;/p&gt;
+&lt;p&gt;删除app后，重新编辑就好了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用Core Data更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.&lt;/p&gt;
+&lt;p&gt;删除app后，重新编辑就好了。&lt;
+    
+    </summary>
+    
+      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
+    
+      <category term="Xcode" scheme="http://consiiii.me/categories/Slots/Xcode/"/>
+    
+    
+      <category term="Xcode" scheme="http://consiiii.me/tags/Xcode/"/>
+    
+      <category term="Slots" scheme="http://consiiii.me/tags/Slots/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决Finder的CPU占有率频繁居高不下问题</title>
+    <link href="http://consiiii.me/2015/10/15/%E8%A7%A3%E5%86%B3Finder%E7%9A%84CPU%E5%8D%A0%E6%9C%89%E7%8E%87%E9%A2%91%E7%B9%81%E5%B1%85%E9%AB%98%E4%B8%8D%E4%B8%8B%E9%97%AE%E9%A2%98/"/>
+    <id>http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/</id>
+    <published>2015-10-14T16:21:00.000Z</published>
+    <updated>2015-10-14T16:28:03.000Z</updated>
+    
+    <content type="html">&lt;p&gt;症状：升级El Capitan后，Finder的CPU占有率经常居高不下，100%及以上，连接着Xcode，FF，Chrome也会经常暴增到100%及以上，打字都会卡，十分影响日常。&lt;/p&gt;
+&lt;p&gt;周围：Google搜索有一些帖子反应这个问题，一个帖子里说Apple承认这是El的一个bug并且在修复了。&lt;/p&gt;
+&lt;p&gt;我的解决办法：关机，开机，然后离开command+option+r+p.听到3声启动声音后松开，这招据说是apple客服传授的，用于重置PRAM和NVRAM。&lt;/p&gt;
+&lt;p&gt;效果：开机快了好多，到现在为止finder不会再暴到100%了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;症状：升级El Capitan后，Finder的CPU占有率经常居高不下，100%及以上，连接着Xcode，FF，Chrome也会经常暴增到100%及以上，打字都会卡，十分影响日常。&lt;/p&gt;
+&lt;p&gt;周围：Google搜索有一些帖子反应这个问题，一个帖子里说Apple承认这是
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://consiiii.me/categories/Mac/"/>
+    
+    
+      <category term="Mac" scheme="http://consiiii.me/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>El Capitan下Sass命令无用的解决办法</title>
+    <link href="http://consiiii.me/2015/10/11/El-Capitan%E4%B8%8BSass%E5%91%BD%E4%BB%A4%E6%97%A0%E7%94%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/</id>
+    <published>2015-10-11T14:07:24.000Z</published>
+    <updated>2015-10-11T14:22:23.000Z</updated>
+    
+    <content type="html">&lt;p&gt;更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。&lt;br&gt;输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。&lt;br&gt;例如错误：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ERROR:  While executing gem ... (Errno::EPERM)
+Operation not permitted - /usr/bin/sass
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;找到的一个解决办法是；&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo gem install -n /usr/local/bin GEM_NAME_HERE
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;话说难道不能直接替换ruby的源吗，感觉这样做不太科学（其实也感觉不方便）。&lt;br&gt;应该有一个变量地址记录着Ruby的地址的吧，但是“该怎么做”还没找到。&lt;/p&gt;
+&lt;p&gt;—&lt;br&gt;找到一个解决的博文：&lt;br&gt;&lt;a href=&quot;https://medium.com/@lab.5721/os-x-el-capitan-10-11-%E5%AE%89%E8%A3%9Dsass%E5%A4%B1%E6%95%97%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95-3739ad67c553&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击这里&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。&lt;br&gt;输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。&lt;br&gt;例如错误：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+    
+    </summary>
+    
+      <category term="Ruby" scheme="http://consiiii.me/categories/Ruby/"/>
+    
+    
+      <category term="Sass" scheme="http://consiiii.me/tags/Sass/"/>
+    
+      <category term="El Capitan" scheme="http://consiiii.me/tags/El-Capitan/"/>
+    
+      <category term="Ruby" scheme="http://consiiii.me/tags/Ruby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次服务器的故障</title>
+    <link href="http://consiiii.me/2015/10/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%95%85%E9%9A%9C/"/>
+    <id>http://consiiii.me/2015/10/07/记一次服务器的故障/</id>
+    <published>2015-10-07T15:58:51.000Z</published>
+    <updated>2015-12-16T16:13:37.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。&lt;br&gt;以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。&lt;/p&gt;
+&lt;p&gt;国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。&lt;/p&gt;
+&lt;p&gt;然后查看服务器性能：CPU 19%，磁盘读写正常，网络性能20% 。&lt;br&gt;那感觉还是代码原因？但是代码没有动过，也重新部署了一份确认有效的代码，不应该呀。&lt;br&gt;于是写了个target.php放到服务器上，里面就一句话&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;target not here.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;访问这个target.php,同样两分钟才有返回。&lt;br&gt;curl测试一下IP响应的时间，status 200 OK，但是一个网页的返回时间长达2分钟。&lt;/p&gt;
+&lt;p&gt;给跪了。问身边朋友，提醒可能是线路原因。于是去找UCloud的客服，和客服Balabala了情况一堆，提到DNS解析云云。&lt;br&gt;绕了一圈最终是无果。&lt;/p&gt;
+&lt;p&gt;我决定自己再去排查一下，到处捣鼓，发现一个奇怪的症状。&lt;br&gt;就是把根目录下的.htaccess文件给移走（我是改名字，效用相同），网站首页立马就能访问了。但是由于地址重写原因，其他页面访问不到。&lt;br&gt;加上.htaccess，网站又死了，两分钟才有返回。&lt;/p&gt;
+&lt;p&gt;Google搜索“.htaccess 变慢”或者“.htaccess slow”没找到有效资料。无从下手，难道是apache的锅？&lt;br&gt;然而重启apache也没有用，而且这个htaccess已经用了那么久就都好好的，为什么就现在不行了呢？&lt;/p&gt;
+&lt;p&gt;最后，&lt;br&gt;22:00左右的时候，重启啊什么的捣鼓下，网站好了。&lt;br&gt;嗯，就是这样，莫名其妙好了。&lt;/p&gt;
+&lt;p&gt;我突然想到朋友说什么“上线之前也要开个光。”&lt;/p&gt;
+&lt;p&gt;嘛，水平还不够。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。&lt;br&gt;以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。&lt;/p&gt;
+&lt;p&gt;国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，
+    
+    </summary>
+    
+      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
+    
+    
+      <category term=".htaccess" scheme="http://consiiii.me/tags/htaccess/"/>
+    
+      <category term="Apache" scheme="http://consiiii.me/tags/Apache/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一次因PHP中的数组语法造成的事件</title>
+    <link href="http://consiiii.me/2015/10/03/%E4%B8%80%E6%AC%A1%E5%9B%A0PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84%E8%AF%AD%E6%B3%95%E9%80%A0%E6%88%90%E7%9A%84%E4%BA%8B%E4%BB%B6/"/>
+    <id>http://consiiii.me/2015/10/03/一次因PHP中的数组语法造成的事件/</id>
+    <published>2015-10-02T17:18:03.000Z</published>
+    <updated>2015-12-16T16:20:10.000Z</updated>
+    
+    <content type="html">&lt;p&gt;先说问题所在，&lt;br&gt;PHP的数组可以有以下方式来表达.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$array = [1,2,3,4,5];
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;亦或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$array = array(1,2,3,4,5);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;但是[]中括号的表达方式需要&lt;strong&gt;PHP版本&amp;gt;=5.4&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;于是悲剧就出现在这里，在给学院做一个CMS的时候，本地测试正常后，放上空间一律返回403 Fobbiden错误（没开调试）。&lt;/p&gt;
+&lt;p&gt;其实当时写的时候知道要注意以下版本的，但是当时由于烦躁就想着“先用中括号吧，方便呢，服务器不支持的话，之后再改吧”。&lt;br&gt;结果时隔约两个星期后才开始放到服务器上(院校效率)，就已经忘记了这件事情。&lt;/p&gt;
+&lt;p&gt;纠结了一下，给自己打了一巴掌长长记性吧。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;先说问题所在，&lt;br&gt;PHP的数组可以有以下方式来表达.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$array = [1,2,3,4,5];
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;亦或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$array = array(1,2,3,4,5);
+&lt;/code&gt;&lt;/p
+    
+    </summary>
+    
+      <category term="Tech" scheme="http://consiiii.me/categories/Tech/"/>
+    
+    
+      <category term="Tech" scheme="http://consiiii.me/tags/Tech/"/>
+    
+      <category term="PHP" scheme="http://consiiii.me/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Just_for_Fun_程序员的鄙视链</title>
+    <link href="http://consiiii.me/2015/10/03/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E9%84%99%E8%A7%86%E9%93%BE/"/>
+    <id>http://consiiii.me/2015/10/03/程序员的鄙视链/</id>
+    <published>2015-10-02T16:39:56.000Z</published>
+    <updated>2015-12-16T16:22:05.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;此文转载自&lt;a href=&quot;https://vinta.ws/blog/695&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://vinta.ws/blog/695&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;但是感觉被黑出翔了，哈哈哈哈哈&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近这几年在世界各地突然吹起了一股全民写程序的风潮，连美国总统欧巴马都在写 JavaScript 了，但是身为一介靠写程序（以及在上班时间胡乱上网）来谋生的 developer（所谓的 developer 就是「软件工程师」的比较潮的说法），想要提醒那些想学习写程序的人一件重要的事：慎选你的第一个程序语言。&lt;/p&gt;
+&lt;p&gt;在软件工程师（中国叫做「程序员」或「码农」）的圈子里，文人相轻的现象可是非常严重的，在程序设计的各个领域里都有着错综复杂的「鄙视链」。从程序语言、编辑器、平台到 { 是写在 if 的同一行还是下一行，不同阵营的人都习惯鄙视来鄙视去。而其中「你用什么程序语言？」更是大家最热衷的一条鄙视链，所以对于刚踏入程序设计领域的初学者来说，万一程序语言选得不好，可是会一开始就落入鄙视链的底层啊。&lt;/p&gt;
+&lt;p&gt;软件工程师的鄙视链到底有多惨烈、多残酷呢？&lt;/p&gt;
+&lt;h1 id=&quot;程序语言篇&quot;&gt;&lt;a href=&quot;#程序语言篇&quot; class=&quot;headerlink&quot; title=&quot;程序语言篇&quot;&gt;&lt;/a&gt;程序语言篇&lt;/h1&gt;&lt;p&gt;懂 Functional Programming 的工程师鄙视老是把设计模式挂在嘴边的工程师，老是把设计模式挂在嘴边的工程师鄙视会说「你这样写就不 OO 了啊」的工程师，会说「你这样写就不 OO 了啊」的工程师鄙视会说「哈？什么物件导向？不是把重复的 code 写成一个 function 就好了吗？」的工程师，会说「哈？什么物件导向？不是把重复的 code 写成一个 function 就好了吗？」的工程师鄙视把同一段 code 到处复制贴上的工程师，把同一段 code 到处复制贴上的工程师鄙视 PM。&lt;/p&gt;
+&lt;p&gt;写静态语言的工程师鄙视写动态语言的工程师。&lt;/p&gt;
+&lt;p&gt;写组合语言的工程师鄙视写 C 语言的工程师，C 语言工程师鄙视 C++ 工程师，C++ 工程师鄙视 Java 和 C# 工程师，Java 工程师和 C# 工程师则互相鄙视，而 C# 工程师又鄙视 Visual Basic 工程师和会把 C# 念成「C 井」的工程师，会把 C# 念成「C 井」的工程师则鄙视认为 HTML 是一种程序语言的设计师。&lt;/p&gt;
+&lt;p&gt;用 Python 3 的工程师鄙视还在用 Python 2 的工程师，用 Python 2 的工程师鄙视遇到 UnicodeEncodeError 的工程师。&lt;/p&gt;
+&lt;p&gt;写 iOS 的工程师鄙视写 Android 的工程师，写 Android 的工程师鄙视写 Windows Phone 的工程师。&lt;/p&gt;
+&lt;p&gt;有 Swift 一年经验的工程师鄙视有 Objective-C 五年经验的工程师，写 Objective-C 的工程师鄙视用 PhoneGap 包装成 native app 的工程师。&lt;/p&gt;
+&lt;p&gt;用 React.js 的工程师鄙视用 AngularJS 的工程师，用 AngularJS 的工程师鄙视用 jQuery 的工程师，用 jQuery 的工程师鄙视用 Vanilla JavaScript 的工程师，用 Vanilla JavaScript 的工程师鄙视 IE 的使用者。&lt;/p&gt;
+&lt;p&gt;会用 debugger 的工程师鄙视用 assert 的工程师，用 assert 的工程师鄙视只会 print () 的工程师；用 console.log () 来 debug 的工程师鄙视用 alert () 来 debug 的工程师。&lt;/p&gt;
+&lt;p&gt;写 Ruby on Rails 的工程师鄙视所有使用其他语言的工程师。&lt;/p&gt;
+&lt;p&gt;什么？你说 Ruby？Ruby 只是 Ruby on Rails 的一套框架，才不是什么程序语言呢！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;所有的工程师都鄙视 PHP 工程师。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;工具篇&quot;&gt;&lt;a href=&quot;#工具篇&quot; class=&quot;headerlink&quot; title=&quot;工具篇&quot;&gt;&lt;/a&gt;工具篇&lt;/h1&gt;&lt;p&gt;用 text editor 的工程师鄙视用 IDE 的工程师。&lt;/p&gt;
+&lt;p&gt;用 Vim 的工程师鄙视用 Emacs 的工程师，用 Emacs 的工程师鄙视用 Vim 的工程师，无论是用 Vim 或 Emacs 的工程师都鄙视所有用其他编辑器的工程师；用 Atom、Notepadd++、Sublime Text 的工程师鄙视用 Windows 记事本的工程师。&lt;/p&gt;
+&lt;p&gt;用 Android Studio 或 IntelliJ IDEA 的工程师鄙视用 Eclipse 的工程师，用 Eclipse 的工程师鄙视用 NetBeans 的工程师。&lt;/p&gt;
+&lt;p&gt;用 Git 或 Mercurial 的工程师鄙视用 Subversion 的工程师，用 Subversion 的工程师鄙视用 Dropbox 来做版本控制的工程师，用 Dropbox 来做版本控制的工程师鄙视根本不知道什么叫做版本控制的工程师。&lt;/p&gt;
+&lt;p&gt;用 Zsh 的工程师鄙视用 Bash 的工程师，用 Bash 的工程师鄙视用 Cygwin 的工程师，用 Cygwin 的工程师鄙视用「命令提示字元」的工程师，用命令提示字元的工程师鄙视用 GUI 介面的工程师。&lt;/p&gt;
+&lt;p&gt;用 IRC 的工程师鄙视用 HipChat 的工程师，用 HipChat 的工程师鄙视用 Slack 的设计师。&lt;/p&gt;
+&lt;p&gt;用 reStructuredText 写文件的工程师鄙视用 Markdown 写文件的工程师，用 Markdown 写文件的工程师鄙视用 HTML 写文件的工程师，用 HTML 写文件的工程师鄙视不写文件的工程师，然后用 LaTeX 写文件的工程师鄙视所有工程师。&lt;/p&gt;
+&lt;p&gt;用 Docker 来部署 server 的工程师鄙视用 Ansible 或 Puppet 来部署 server 的工程师，用 Ansible 或 Puppet 来部署 server 的工程师鄙视用 Fabric 来部署 server 的工程师，用 Fabric 来部署 server 的工程师鄙视手动 SSH 的工程师。&lt;/p&gt;
+&lt;h1 id=&quot;OS-篇&quot;&gt;&lt;a href=&quot;#OS-篇&quot; class=&quot;headerlink&quot; title=&quot;OS 篇&quot;&gt;&lt;/a&gt;OS 篇&lt;/h1&gt;&lt;p&gt;用 Mac OS X 的工程师鄙视用 Linux 的工程师，用 Linux 的工程师鄙视用 Windows 的工程师。&lt;/p&gt;
+&lt;p&gt;用 Debian 的工程师瞧不起用 Ubuntu 的工程师，用 Ubuntu 的工程师瞧不起用非 LTS 版本的 Ubuntu 的工程师。&lt;/p&gt;
+&lt;h1 id=&quot;硬件篇&quot;&gt;&lt;a href=&quot;#硬件篇&quot; class=&quot;headerlink&quot; title=&quot;硬件篇&quot;&gt;&lt;/a&gt;硬件篇&lt;/h1&gt;&lt;p&gt;用 MacBook Pro Retina 的工程师鄙视用 MacBook Air 的工程师，用 MacBook Air 的工程师鄙视用 ThinkPad 的工程师，然后用 Raspberry Pi 的工程师鄙视用 MacBook Pro Retina 的工程师。&lt;/p&gt;
+&lt;p&gt;用 Dvorak 键盘的工程师鄙视用 Mac 键盘的工程师，用 Mac 键盘的工程师鄙视用 QWERTY 键盘的工程师，用 QWERTY 键盘的工程师鄙视用手写板的设计师。&lt;/p&gt;
+&lt;p&gt;坐 Aeron 椅子的工程师鄙视坐普通办公椅的工程师，坐普通办公椅的工程师鄙视跟他一样做普通办公椅的 PM，然后站着写程序的工程师鄙视坐 Aeron 椅子的工程师。&lt;/p&gt;
+&lt;h1 id=&quot;职场篇&quot;&gt;&lt;a href=&quot;#职场篇&quot; class=&quot;headerlink&quot; title=&quot;职场篇&quot;&gt;&lt;/a&gt;职场篇&lt;/h1&gt;&lt;p&gt;搞硬件的工程师鄙视搞软件的工程师。&lt;/p&gt;
+&lt;p&gt;写 OS 的工程师鄙视写 Web 的工程师，写 Web 的工程师鄙视写 desktop application 的工程师。&lt;/p&gt;
+&lt;p&gt;后端工程师鄙视前端工程师。&lt;/p&gt;
+&lt;p&gt;工程师跟设计师互相鄙视。&lt;/p&gt;
+&lt;p&gt;信奉 Test-Driven Development 的工程师鄙视先写 code 再补 tests 的工程师，先写 code 再补 tests 的工程师鄙视不写 tests 的工程师，不写 tests 的工程师鄙视又他妈乱改需求的 PM。&lt;/p&gt;
+&lt;p&gt;没有证照的工程师鄙视考了一堆证照的工程师。&lt;/p&gt;
+&lt;p&gt;上班穿休闲服的工程师鄙视上班穿西装的工程师，上班穿西装的工程师鄙视上班穿系服的工程师。&lt;/p&gt;
+&lt;h1 id=&quot;结束语&quot;&gt;&lt;a href=&quot;#结束语&quot; class=&quot;headerlink&quot; title=&quot;结束语&quot;&gt;&lt;/a&gt;结束语&lt;/h1&gt;&lt;p&gt;如果你看了以上这些惨绝人寰的鄙视链之后，仍然没有击倒你想要学习 coding 的心，那我必须提醒你一件最重要的事：先去交一个女朋友，再来学写程序；因为一旦你成为软件工程师之后，就交不到女朋友了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;此文转载自&lt;a href=&quot;https://vinta.ws/blog/695&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://vinta.ws/blog/695&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
+    
+    
+      <category term="Slots" scheme="http://consiiii.me/tags/Slots/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>尽管被冷漠对待过，但也从此更加热爱生活</title>
+    <link href="http://consiiii.me/2015/10/03/%E5%B0%BD%E7%AE%A1%E8%A2%AB%E5%86%B7%E6%BC%A0%E5%AF%B9%E5%BE%85%E8%BF%87%EF%BC%8C%E4%BD%86%E4%B9%9F%E4%BB%8E%E6%AD%A4%E6%9B%B4%E5%8A%A0%E7%83%AD%E7%88%B1%E7%94%9F%E6%B4%BB/"/>
+    <id>http://consiiii.me/2015/10/03/尽管被冷漠对待过，但也从此更加热爱生活/</id>
+    <published>2015-10-02T16:36:07.000Z</published>
+    <updated>2015-12-16T16:20:23.000Z</updated>
+    
+    <content type="html">&lt;p&gt;尽管被冷漠对待过，但也从此更加热爱生活&lt;br&gt;愿诸君都珍爱生命&lt;/p&gt;
+&lt;p&gt;让我矫情一下，谢谢&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;尽管被冷漠对待过，但也从此更加热爱生活&lt;br&gt;愿诸君都珍爱生命&lt;/p&gt;
+&lt;p&gt;让我矫情一下，谢谢&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
+    
+    
+      <category term="Slots" scheme="http://consiiii.me/tags/Slots/"/>
+    
+  </entry>
+  
+</feed>
