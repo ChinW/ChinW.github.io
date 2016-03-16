@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2016-02-01T05:14:41.000Z</updated>
+  <updated>2016-03-16T08:54:56.000Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -14,6 +14,152 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://consiiii.me/2016/03/16/%E4%BD%BF%E7%94%A8PHP%E5%B0%86WORD%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90PDF/"/>
+    <id>http://consiiii.me/2016/03/16/使用PHP将WORD文件转换成PDF/</id>
+    <published>2016-03-16T08:36:30.000Z</published>
+    <updated>2016-03-16T08:54:56.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;使用PHP将WORD文件转换成PDF&quot;&gt;&lt;a href=&quot;#使用PHP将WORD文件转换成PDF&quot; class=&quot;headerlink&quot; title=&quot;使用PHP将WORD文件转换成PDF&quot;&gt;&lt;/a&gt;使用PHP将WORD文件转换成PDF&lt;/h2&gt;&lt;h2 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h2&gt;&lt;p&gt;用户上传DOC，DOCX等文件格式后，能够在线查看到文件的内容。&lt;/p&gt;
+&lt;h2 id=&quot;想法&quot;&gt;&lt;a href=&quot;#想法&quot; class=&quot;headerlink&quot; title=&quot;想法&quot;&gt;&lt;/a&gt;想法&lt;/h2&gt;&lt;p&gt;WORD文件内容是富文本，可以转换成HTML格式后表现出来，或者转换成PDF格式，然后通过pdf.js来实现在线阅读。&lt;/p&gt;
+&lt;h2 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h2&gt;&lt;p&gt;由于后端环境是Windows，脚本语言为PHP， 因此可以使用PHP的COM组件来调用OpenOffice 或者 MS Word 来实现该格式转换问题。&lt;/p&gt;
+&lt;h3 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h3&gt;&lt;h4 id=&quot;1-安装OpenOffice-或者-MS-Word-程序&quot;&gt;&lt;a href=&quot;#1-安装OpenOffice-或者-MS-Word-程序&quot; class=&quot;headerlink&quot; title=&quot;1. 安装OpenOffice 或者 MS Word 程序&quot;&gt;&lt;/a&gt;1. 安装OpenOffice 或者 MS Word 程序&lt;/h4&gt;&lt;p&gt;OpenOffice可以&lt;a href=&quot;https://www.openoffice.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;在这里下载&lt;/a&gt;。&lt;/p&gt;
+&lt;h4 id=&quot;2-打开COM&quot;&gt;&lt;a href=&quot;#2-打开COM&quot; class=&quot;headerlink&quot; title=&quot;2. 打开COM&quot;&gt;&lt;/a&gt;2. 打开COM&lt;/h4&gt;&lt;p&gt;注意：COM组件只试用于Windows版本下的PHP，需要PHP5及.Net runtime.&lt;/p&gt;
+&lt;p&gt;PHP 5.3.15/5.4.5 需在&lt;code&gt;php.ini&lt;/code&gt;手动打开&lt;code&gt;php_com_dotnet.dll&lt;/code&gt;，此前版本默认已经打开。&lt;/p&gt;
+&lt;p&gt;另外，您可能还需要打开&lt;code&gt;com.allow_dcom&lt;/code&gt;, 具体配置如下:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;extension=php_com_dotnet.dll&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[COM]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;; allow Distributed-COM calls&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;; http:&lt;span class=&quot;comment&quot;&gt;//php.net/com.allow-dcom&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;com.allow_dcom = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;; autoregister constants &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; a components typlib on com_load()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;; http:&lt;span class=&quot;comment&quot;&gt;//php.net/com.autoregister-typelib&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;com.autoregister_typelib = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;使用MS-Word来转换&quot;&gt;&lt;a href=&quot;#使用MS-Word来转换&quot; class=&quot;headerlink&quot; title=&quot;使用MS Word来转换&quot;&gt;&lt;/a&gt;使用MS Word来转换&lt;/h3&gt;&lt;p&gt;PHP代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $word = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; COM(&lt;span class=&quot;string&quot;&gt;&quot;word.application&quot;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;die&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;Unable to instanciate Word&quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Strat...\n&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// set it to 1 to see the MS Word window (the actual opening of the document)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $word-&amp;gt;Visible = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// recommend to set to 0, disables alerts like &quot;Do you want MS Word to be the default .. etc&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $word-&amp;gt;DisplayAlerts = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// open the word 2007-2013 document &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $word-&amp;gt;Documents-&amp;gt;Open(realpath(&lt;span class=&quot;string&quot;&gt;&quot;in.docx&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// save it as word 2003&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// $word-&amp;gt;ActiveDocument-&amp;gt;SaveAs(&#39;newdocument.pdf&#39;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// convert word 2007-2013 to PDF&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $word-&amp;gt;ActiveDocument-&amp;gt;ExportAsFixedFormat(&lt;span class=&quot;string&quot;&gt;&quot;F:\\Tools\\Program Handle\\WAMP\\www\\wordConvertor\\output.pdf&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;17&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// quit the Word process&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $word-&amp;gt;Quit(&lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// clean up&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;unset&lt;/span&gt;($word);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Done!&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;Exception&lt;/span&gt; $e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;Caught exception: &#39;&lt;/span&gt;,  $e-&amp;gt;getMessage(), &lt;span class=&quot;string&quot;&gt;&quot;\n&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果您遇到以下类似的错误, 并确认MS Word已经安装好：&lt;/p&gt;
+&lt;figure class=&quot;highlight vhdl&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;PHP Fatal error: Uncaught exception &lt;span class=&quot;symbol&quot;&gt;&#39;com_exception&lt;/span&gt;&#39; &lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; message &lt;span class=&quot;symbol&quot;&gt;&#39;Source&lt;/span&gt;: Microsoft Word&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Description: This command &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; available because no document &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;open&lt;/span&gt;.&#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;请尝试这样解决（建议先尝试方法二）：&lt;/p&gt;
+&lt;p&gt;方法一：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;开始&lt;/li&gt;
+&lt;li&gt;Win+R 运行&lt;/li&gt;
+&lt;li&gt;输入 &lt;code&gt;dcomcnfg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Press OK&lt;/li&gt;
+&lt;li&gt;展开 Component Services&lt;/li&gt;
+&lt;li&gt;展开 Computers&lt;/li&gt;
+&lt;li&gt;右键 My Computer，点击”Properties” &lt;/li&gt;
+&lt;li&gt;Default Properties选项卡&lt;/li&gt;
+&lt;li&gt;确认勾选Enable COM Internet Services on this computer 和Enable Distributed COM&lt;/li&gt;
+&lt;li&gt;设置 Default Authentication Level 为 Default&lt;/li&gt;
+&lt;li&gt;设置 Default Impersonation Level 为 Identify&lt;/li&gt;
+&lt;li&gt;COM Security tab 选项卡&lt;/li&gt;
+&lt;li&gt;Access Permissions area, 点击 Edit Limits…&lt;/li&gt;
+&lt;li&gt;确认ANONYMOUS LOGIN 下允许 remote access&lt;/li&gt;
+&lt;li&gt;点击 Add…&lt;/li&gt;
+&lt;li&gt;在 “Enter object names to select” 文本框内输入 “Everyone”&lt;/li&gt;
+&lt;li&gt;允许Everyone 有 Local Access 和 Remote Access&lt;/li&gt;
+&lt;li&gt;点击确认&lt;/li&gt;
+&lt;li&gt;同样在Access Permissions 区域，点击&lt;code&gt;Edit Default&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;确认允许 SELF and SYSTEM 有 remote access&lt;/li&gt;
+&lt;li&gt;点击 &lt;code&gt;Add...&lt;/code&gt;重复步骤 16 and 17&lt;/li&gt;
+&lt;li&gt;点击确认&lt;/li&gt;
+&lt;li&gt;在Launch and Activation Permissions区域下点击&lt;code&gt;Edit Limits...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;确认允许Administrator user 有 remote launch 和 remote activation的权限&lt;/li&gt;
+&lt;li&gt;如果Everyone用户组在这里不存在，请重复步骤16，17&lt;/li&gt;
+&lt;li&gt;允许Everyone group有local launch, remote launch, local activation,和 remote activation权限.&lt;/li&gt;
+&lt;li&gt;点击确认&lt;/li&gt;
+&lt;li&gt;同样在Launch and Activation Permissions区域下，点击&lt;code&gt;Edit Default...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;确认Administrator, INTERACTIVE, 和 SYSTEM用户组有 remote launch 和 remote activation 的权利.&lt;/li&gt;
+&lt;li&gt;重复步骤16 和 17 以创建Everyone用户组&lt;/li&gt;
+&lt;li&gt;允许Everyone group有local launch, remote launch, local activation,和 remote activation权限.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_dcomcnfg_1.png&quot; alt=&quot;ci_dcomcnfg_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;同时，确认&lt;code&gt;php.ini&lt;/code&gt;中的&lt;code&gt;com.allow_dcom&lt;/code&gt;已经打开。重启后再试，如果问题依旧，请继续以下步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;依次点击Console Root -&amp;gt; Component Services -&amp;gt; Computers -&amp;gt; My Computer -&amp;gt; DCOM Config, 在此处找到&lt;code&gt;Microsoft Word 97 - 2003 Document&lt;/code&gt;(如果没有找到，请尝试方法二).&lt;/li&gt;
+&lt;li&gt;右键属性.&lt;/li&gt;
+&lt;li&gt;Security 选项卡中确认&lt;code&gt;Launch and Activation Permissions&lt;/code&gt;，&lt;code&gt;Access Permissions&lt;/code&gt;，&lt;code&gt;Configuration permissions&lt;/code&gt;已经勾选为&lt;code&gt;Default&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;在&lt;code&gt;Identity&lt;/code&gt;选项卡中选择&lt;code&gt;The interactive user&lt;/code&gt;或者指定一个Admin用户, 通常它可能是&lt;code&gt;The launching user&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;方法二：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Win + R 打开运行；&lt;/li&gt;
+&lt;li&gt;输入&lt;code&gt;mmc -32&lt;/code&gt; ，按下OK；&lt;/li&gt;
+&lt;li&gt;在新弹出的窗口中点击 File -&amp;gt; Add/Remove Sanp-in （或者Ctrl + M）；&lt;/li&gt;
+&lt;li&gt;在新窗口中的左侧找到Component Services, 添加，确认；&lt;/li&gt;
+&lt;li&gt;依次点击Console Root -&amp;gt; Component Services -&amp;gt; Computers -&amp;gt; My Computer -&amp;gt; DCOM Config, 在此处找到&lt;code&gt;Microsoft Word 97 - 2003 Document&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;右键&lt;code&gt;Microsoft Word 97 - 2003 Document&lt;/code&gt;，选择&lt;code&gt;Property&lt;/code&gt;, 在&lt;code&gt;Identity&lt;/code&gt;选项卡中选择&lt;code&gt;The interactive user&lt;/code&gt;或者指定一个Admin用户, 通常它可能是&lt;code&gt;The launching user&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_dcomcnfg_2.png&quot; alt=&quot;ci_dcomcnfg_2&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;使用OpenOffice来转换&quot;&gt;&lt;a href=&quot;#使用OpenOffice来转换&quot; class=&quot;headerlink&quot; title=&quot;使用OpenOffice来转换&quot;&gt;&lt;/a&gt;使用OpenOffice来转换&lt;/h3&gt;&lt;h3 id=&quot;启动OpenOffice服务&quot;&gt;&lt;a href=&quot;#启动OpenOffice服务&quot; class=&quot;headerlink&quot; title=&quot;启动OpenOffice服务&quot;&gt;&lt;/a&gt;启动OpenOffice服务&lt;/h3&gt;&lt;p&gt;两种方式，方式一比较简便。&lt;/p&gt;
+&lt;p&gt;确认是否已经开启参考以下命令来获取回复：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;netstat -nao|findstr -c&amp;quot;:8100&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;其中8100应该改为您自行设定OpenOffice服务端口。&lt;/p&gt;
+&lt;h4 id=&quot;方式一&quot;&gt;&lt;a href=&quot;#方式一&quot; class=&quot;headerlink&quot; title=&quot;方式一&quot;&gt;&lt;/a&gt;方式一&lt;/h4&gt;&lt;p&gt;假设您的OpenOffce安装在&lt;code&gt;C:\Program Files (x86)\OpenOffice 4\program\soffice.exe&lt;/code&gt;,在CMD中输入以下命令：&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&quot;C:&lt;span class=&quot;tag&quot;&gt;\&lt;span class=&quot;name&quot;&gt;Program&lt;/span&gt;&lt;/span&gt; Files (x86)&lt;span class=&quot;tag&quot;&gt;\&lt;span class=&quot;name&quot;&gt;OpenOffice&lt;/span&gt;&lt;/span&gt; 4&lt;span class=&quot;tag&quot;&gt;\&lt;span class=&quot;name&quot;&gt;program&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;\&lt;span class=&quot;name&quot;&gt;soffice&lt;/span&gt;&lt;/span&gt;.exe&quot; -headless -accept=&quot;socket,host=127.0.0.1,port=8100;urp;&quot; -nofirststartwizard&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;方式二&quot;&gt;&lt;a href=&quot;#方式二&quot; class=&quot;headerlink&quot; title=&quot;方式二&quot;&gt;&lt;/a&gt;方式二&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;创建文件夹在该路径上 C:\utils， 把&lt;a href=&quot;https://www.getfilecloud.com/supportdocs/download/attachments/8161082/srvany.exe?version=1&amp;amp;modificationDate=1386351001000&amp;amp;api=v2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;srvany.exe&lt;/a&gt;复制到里面去. 该文件从&lt;a href=&quot;https://www.microsoft.com/en-gb/download/details.aspx?id=17657&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Windows Server 2003 Resource Kit&lt;/a&gt;提取.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开CMD（管理员模式）. 运行一下命令.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight mipsasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;C:\Windows\system32&amp;gt;&lt;span class=&quot;keyword&quot;&gt;sc &lt;/span&gt;create &lt;span class=&quot;string&quot;&gt;&quot;ooservice&quot;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;binPath= &lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;\&quot;C:\Utils\srvany.exe\&quot;&quot;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;DisplayName= &lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;OpenOffice Server&quot;&lt;/span&gt; start= auto&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[&lt;span class=&quot;keyword&quot;&gt;SC] &lt;/span&gt;CreateService SUCCESS&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;打开注册表编辑器(Win + R, 输入regedit).  寻找到HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\ooservice. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;创建一个新的 key，名为 &lt;code&gt;Parameters&lt;/code&gt;. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在&lt;code&gt;Parameters&lt;/code&gt; 这个Key中, 创建一个名为 &lt;code&gt;Application&lt;/code&gt;的String，其值如下：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight stata&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;C:\Program Files (x86)\OpenOffice 4\program\soffice.exe&quot;&lt;/span&gt; -headless -accept=&lt;span class=&quot;string&quot;&gt;&quot;socket,host=127.0.0.1,port=8100;urp;&quot;&lt;/span&gt; -nofirststartwizard&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Note&lt;/span&gt;: &lt;span class=&quot;keyword&quot;&gt;Update&lt;/span&gt; path to &lt;span class=&quot;keyword&quot;&gt;open&lt;/span&gt; office &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; necessary.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;最后您的注册表大概类似于这个样子:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.getfilecloud.com/supportdocs/download/attachments/8161082/image2013-12-6%2011%3A32%3A29.png?version=1&amp;amp;modificationDate=1386351001000&amp;amp;api=v2&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在&lt;code&gt;Control Panel&lt;/code&gt; -&amp;gt; &lt;code&gt;Administrative Tools&lt;/code&gt; -&amp;gt; &lt;code&gt;Services&lt;/code&gt; 中找到&lt;code&gt;Open Office Server&lt;/code&gt;并开启.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用上述的netstat -nao|findstr -c”:8100”命令确认是否已经开启.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;成功后回复如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight accesslog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;C:\Windows\system32&amp;gt;netstat -nao|findstr -c&lt;span class=&quot;string&quot;&gt;&quot;:8100&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  TCP    &lt;span class=&quot;number&quot;&gt;127.0.0.1:8100&lt;/span&gt;         &lt;span class=&quot;number&quot;&gt;0.0.0.0:0&lt;/span&gt;              LISTENING       &lt;span class=&quot;number&quot;&gt;6016&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;PHP代码&quot;&gt;&lt;a href=&quot;#PHP代码&quot; class=&quot;headerlink&quot; title=&quot;PHP代码&quot;&gt;&lt;/a&gt;PHP代码&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;MakePropertyValue&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($name, $value,$osm)&lt;/span&gt;&lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $oStruct = $osm-&amp;gt;Bridge_GetStruct(&lt;span class=&quot;string&quot;&gt;&quot;com.sun.star.beans.PropertyValue&quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $oStruct-&amp;gt;Name = $name; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $oStruct-&amp;gt;Value = $value; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $oStruct; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;word2pdf&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($doc_url, $output_url)&lt;/span&gt;&lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// Invoke the OpenOffice.org service manager &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $osm = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; COM(&lt;span class=&quot;string&quot;&gt;&quot;com.sun.star.ServiceManager&quot;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;die&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&quot;Please be sure that OpenOffice.org is installed.\n&quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// Set the application to remain hidden to avoid flashing the document onscreen &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $args = &lt;span class=&quot;keyword&quot;&gt;array&lt;/span&gt;(MakePropertyValue(&lt;span class=&quot;string&quot;&gt;&quot;Hidden&quot;&lt;/span&gt;,&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;,$osm)); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// Launch the desktop &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $top = $osm-&amp;gt;createInstance(&lt;span class=&quot;string&quot;&gt;&quot;com.sun.star.frame.Desktop&quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// Load the .doc file, and pass in the &quot;Hidden&quot; property from above &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $oWriterDoc = $top-&amp;gt;loadComponentFromURL($doc_url,&lt;span class=&quot;string&quot;&gt;&quot;_blank&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, $args); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// Set up the arguments for the PDF output &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $export_args = &lt;span class=&quot;keyword&quot;&gt;array&lt;/span&gt;(MakePropertyValue(&lt;span class=&quot;string&quot;&gt;&quot;FilterName&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;writer_pdf_Export&quot;&lt;/span&gt;,$osm)); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// Write out the PDF &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $oWriterDoc-&amp;gt;storeToURL($output_url,$export_args); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $oWriterDoc-&amp;gt;close(&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Strat...\n&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $doc_file = &lt;span class=&quot;string&quot;&gt;&#39;file:///F:/Tools/Program Handle/WAMP/www/wordConvertor/in.docx&#39;&lt;/span&gt; ; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   $output_file = &lt;span class=&quot;string&quot;&gt;&#39;file:///F:/Tools/Program Handle/WAMP/www/wordConvertor/out.pdf&#39;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   word2pdf($doc_file, $output_file); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Done!&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;Exception&lt;/span&gt; $e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;Caught exception: &#39;&lt;/span&gt;,  $e-&amp;gt;getMessage(), &lt;span class=&quot;string&quot;&gt;&quot;\n&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;问题及注意&quot;&gt;&lt;a href=&quot;#问题及注意&quot; class=&quot;headerlink&quot; title=&quot;问题及注意&quot;&gt;&lt;/a&gt;问题及注意&lt;/h2&gt;&lt;h3 id=&quot;1-程序长时间卡在new-COM-quot-com-XXXXX-quot-这一行&quot;&gt;&lt;a href=&quot;#1-程序长时间卡在new-COM-quot-com-XXXXX-quot-这一行&quot; class=&quot;headerlink&quot; title=&quot;1.程序长时间卡在new COM(&amp;quot;com.XXXXX&amp;quot;)这一行&quot;&gt;&lt;/a&gt;1.程序长时间卡在&lt;code&gt;new COM(&amp;quot;com.XXXXX&amp;quot;)&lt;/code&gt;这一行&lt;/h3&gt;&lt;p&gt;由于实际上是调用MS WORD或者OpenOffice来完成的功能，因此调试时，可以利用任务管理器查看相关进程，防止因为错误的代码/环境重复打开多个进程而得不到关闭，导致后面的测试也出错。&lt;/p&gt;
+&lt;p&gt;此外，还可以调短&lt;code&gt;php.ini&lt;/code&gt;中的&lt;code&gt;max_execution_time&lt;/code&gt;，个人感觉3s内无响应就该去再做检查了.&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.getfilecloud.com/supportdocs/display/cloud/Running+Openoffice+as+a+service+in+Windows&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.getfilecloud.com/supportdocs/display/cloud/Running+Openoffice+as+a+service+in+Windows&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.figured-it-out.com/figured-out.php?sid=24&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.figured-it-out.com/figured-out.php?sid=24&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/12104775/cant-open-word-doc-with-com-in-php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/12104775/cant-open-word-doc-with-com-in-php&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;使用PHP将WORD文件转换成PDF&quot;&gt;&lt;a href=&quot;#使用PHP将WORD文件转换成PDF&quot; class=&quot;headerlink&quot; title=&quot;使用PHP将WORD文件转换成PDF&quot;&gt;&lt;/a&gt;使用PHP将WORD文件转换成PDF&lt;/h2&gt;&lt;h2 id=&quot;目
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery 3中的新特性</title>
+    <link href="http://consiiii.me/2016/03/05/jQuery-3%E4%B8%AD%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    <id>http://consiiii.me/2016/03/05/jQuery-3中的新特性/</id>
+    <published>2016-03-05T15:13:05.000Z</published>
+    <updated>2016-03-05T15:16:31.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://developer.telerik.com/featured/whats-new-in-jquery-3/?utm_source=javascriptweekly&amp;amp;utm_medium=email&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;翻译: Kunr        校对:Consiiii&lt;/p&gt;
+&lt;p&gt;jQuery风靡Web世界以来已有十年之久，并且能坚持这么久是有非常好的原因。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://developer.telerik.com/featured/whats-new-in-jquery-3/?utm_source=javascriptweekly&amp;amp;utm_medium=email&quot; target=&quot;_blank&quot; r
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Doodle in Canvas</title>
@@ -860,32 +1006,6 @@ Operation not permitted - /usr/bin/sass
       &lt;p&gt;&lt;strong&gt;此文转载自&lt;a href=&quot;https://vinta.ws/blog/695&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://vinta.ws/blog/695&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;
-    
-    </summary>
-    
-      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
-    
-    
-      <category term="Slots" scheme="http://consiiii.me/tags/Slots/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>尽管被冷漠对待过，但也从此更加热爱生活</title>
-    <link href="http://consiiii.me/2015/10/03/%E5%B0%BD%E7%AE%A1%E8%A2%AB%E5%86%B7%E6%BC%A0%E5%AF%B9%E5%BE%85%E8%BF%87%EF%BC%8C%E4%BD%86%E4%B9%9F%E4%BB%8E%E6%AD%A4%E6%9B%B4%E5%8A%A0%E7%83%AD%E7%88%B1%E7%94%9F%E6%B4%BB/"/>
-    <id>http://consiiii.me/2015/10/03/尽管被冷漠对待过，但也从此更加热爱生活/</id>
-    <published>2015-10-02T16:36:07.000Z</published>
-    <updated>2015-12-16T16:20:23.000Z</updated>
-    
-    <content type="html">&lt;p&gt;尽管被冷漠对待过，但也从此更加热爱生活&lt;br&gt;愿诸君都珍爱生命&lt;/p&gt;
-&lt;p&gt;让我矫情一下，谢谢&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;尽管被冷漠对待过，但也从此更加热爱生活&lt;br&gt;愿诸君都珍爱生命&lt;/p&gt;
-&lt;p&gt;让我矫情一下，谢谢&lt;/p&gt;
-
     
     </summary>
     
