@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>PHP：将Word转换成PDF - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="目的用户上传DOC，DOCX等文件格式后，能够在线查看到文件的内容。
+想法WORD文件内容是富文本，可以转换成HTML格式后表现出来，或者转换成PDF格式，然后通过pdf.js来实现在线阅读。
+实现由于后端环境是Windows，脚本语言为PHP， 因此可以使用PHP的COM组件来调用OpenOffice 或者 MS Word 来实现该格式转换问题。
+准备1. 安装OpenOffice 或者 MS">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="PHP：将Word转换成PDF">
+<meta property="og:url" content="http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="目的用户上传DOC，DOCX等文件格式后，能够在线查看到文件的内容。
+想法WORD文件内容是富文本，可以转换成HTML格式后表现出来，或者转换成PDF格式，然后通过pdf.js来实现在线阅读。
+实现由于后端环境是Windows，脚本语言为PHP， 因此可以使用PHP的COM组件来调用OpenOffice 或者 MS Word 来实现该格式转换问题。
+准备1. 安装OpenOffice 或者 MS">
+<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_dcomcnfg_1.png">
+<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_dcomcnfg_2.png">
+<meta property="og:image" content="https://www.getfilecloud.com/supportdocs/download/attachments/8161082/image2013-12-6%2011%3A32%3A29.png?version=1&modificationDate=1386351001000&api=v2">
+<meta property="og:updated_time" content="2016-03-16T09:08:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP：将Word转换成PDF">
+<meta name="twitter:description" content="目的用户上传DOC，DOCX等文件格式后，能够在线查看到文件的内容。
+想法WORD文件内容是富文本，可以转换成HTML格式后表现出来，或者转换成PDF格式，然后通过pdf.js来实现在线阅读。
+实现由于后端环境是Windows，脚本语言为PHP， 因此可以使用PHP的COM组件来调用OpenOffice 或者 MS Word 来实现该格式转换问题。
+准备1. 安装OpenOffice 或者 MS">
+<meta name="twitter:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_dcomcnfg_1.png">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Consiiii</a>
+    </h1>
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3"
+
+>
+    
+        <div class="sidebar-profile">
+            <a href="/about">
+                
+                    <img class="sidebar-profile-picture" src="/assets/images/headicon.png"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Consiiii</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">动态</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/project"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-gift"></i>
+                    <span class="sidebar-button-desc">作品</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-user"></i>
+                    <span class="sidebar-button-desc">介绍</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/links"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-link"></i>
+                    <span class="sidebar-button-desc">Links</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+
+<div id="rectangles">
+    <li class="rect1"></li>
+    <li class="rect2"></li>
+    <li class="rect3"></li>
+    <li class="rect4"></li>
+    <li class="rect5"></li>
+    <li class="rect6"></li>
+    <li class="rect7"></li>
+    <li class="rect8"></li>
+    <li class="rect9"></li>
+    <li class="rect10"></li>
+
+</div>
+
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            PHP：将Word转换成PDF
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Wed Mar 16 2016 17:08:03 GMT+0800">
+	
+		    3月 16, 2016
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/PHP/">PHP</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>用户上传DOC，DOCX等文件格式后，能够在线查看到文件的内容。</p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>WORD文件内容是富文本，可以转换成HTML格式后表现出来，或者转换成PDF格式，然后通过pdf.js来实现在线阅读。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>由于后端环境是Windows，脚本语言为PHP， 因此可以使用PHP的COM组件来调用OpenOffice 或者 MS Word 来实现该格式转换问题。</p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><h4 id="1-安装OpenOffice-或者-MS-Word-程序"><a href="#1-安装OpenOffice-或者-MS-Word-程序" class="headerlink" title="1. 安装OpenOffice 或者 MS Word 程序"></a>1. 安装OpenOffice 或者 MS Word 程序</h4><p>OpenOffice可以<a href="https://www.openoffice.org/" target="_blank" rel="external">在这里下载</a>。</p>
+<h4 id="2-打开COM"><a href="#2-打开COM" class="headerlink" title="2. 打开COM"></a>2. 打开COM</h4><p>注意：COM组件只试用于Windows版本下的PHP，需要PHP5及.Net runtime.</p>
+<p>PHP 5.3.15/5.4.5 需在<code>php.ini</code>手动打开<code>php_com_dotnet.dll</code>，此前版本默认已经打开。</p>
+<p>另外，您可能还需要打开<code>com.allow_dcom</code>, 具体配置如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">extension=php_com_dotnet.dll</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">[COM]</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">; allow Distributed-COM calls</span><br><span class="line">; http:<span class="comment">//php.net/com.allow-dcom</span></span><br><span class="line">com.allow_dcom = <span class="literal">true</span> </span><br><span class="line"></span><br><span class="line">; autoregister constants <span class="keyword">of</span> a components typlib on com_load()</span><br><span class="line">; http:<span class="comment">//php.net/com.autoregister-typelib</span></span><br><span class="line">com.autoregister_typelib = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用MS-Word来转换"><a href="#使用MS-Word来转换" class="headerlink" title="使用MS Word来转换"></a>使用MS Word来转换</h3><p>PHP代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">   $word = <span class="keyword">new</span> COM(<span class="string">"word.application"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to instanciate Word"</span>); </span><br><span class="line">   <span class="keyword">echo</span> <span class="string">"Strat...\n"</span>;</span><br><span class="line">   <span class="comment">// set it to 1 to see the MS Word window (the actual opening of the document)</span></span><br><span class="line">   $word-&gt;Visible = <span class="number">0</span>;</span><br><span class="line">   <span class="comment">// recommend to set to 0, disables alerts like "Do you want MS Word to be the default .. etc"</span></span><br><span class="line">   $word-&gt;DisplayAlerts = <span class="number">0</span>;</span><br><span class="line">   <span class="comment">// open the word 2007-2013 document </span></span><br><span class="line">   $word-&gt;Documents-&gt;Open(realpath(<span class="string">"in.docx"</span>));</span><br><span class="line">   <span class="comment">// save it as word 2003</span></span><br><span class="line">   <span class="comment">// $word-&gt;ActiveDocument-&gt;SaveAs('newdocument.pdf');</span></span><br><span class="line">   <span class="comment">// convert word 2007-2013 to PDF</span></span><br><span class="line">   $word-&gt;ActiveDocument-&gt;ExportAsFixedFormat(<span class="string">"F:\\Tools\\Program Handle\\WAMP\\www\\wordConvertor\\output.pdf"</span>, <span class="number">17</span>, <span class="keyword">false</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="number">2</span>, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>);</span><br><span class="line">   <span class="comment">// quit the Word process</span></span><br><span class="line">   $word-&gt;Quit(<span class="keyword">false</span>);</span><br><span class="line">   <span class="comment">// clean up</span></span><br><span class="line">   <span class="keyword">unset</span>($word);</span><br><span class="line">   <span class="keyword">echo</span> <span class="string">"Done!"</span>;</span><br><span class="line">&#125;<span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'Caught exception: '</span>,  $e-&gt;getMessage(), <span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果您遇到以下类似的错误, 并确认MS Word已经安装好：</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PHP Fatal error: Uncaught exception <span class="symbol">'com_exception</span>' <span class="keyword">with</span> message <span class="symbol">'Source</span>: Microsoft Word</span><br><span class="line">Description: This command <span class="keyword">is</span> <span class="keyword">not</span> available because no document <span class="keyword">is</span> <span class="keyword">open</span>.'</span><br></pre></td></tr></table></figure>
+<p>请尝试这样解决（建议先尝试方法二）：</p>
+<p>方法一：</p>
+<ol>
+<li>开始</li>
+<li>Win+R 运行</li>
+<li>输入 <code>dcomcnfg</code></li>
+<li>Press OK</li>
+<li>展开 Component Services</li>
+<li>展开 Computers</li>
+<li>右键 My Computer，点击”Properties” </li>
+<li>Default Properties选项卡</li>
+<li>确认勾选Enable COM Internet Services on this computer 和Enable Distributed COM</li>
+<li>设置 Default Authentication Level 为 Default</li>
+<li>设置 Default Impersonation Level 为 Identify</li>
+<li>COM Security tab 选项卡</li>
+<li>Access Permissions area, 点击 Edit Limits…</li>
+<li>确认ANONYMOUS LOGIN 下允许 remote access</li>
+<li>点击 Add…</li>
+<li>在 “Enter object names to select” 文本框内输入 “Everyone”</li>
+<li>允许Everyone 有 Local Access 和 Remote Access</li>
+<li>点击确认</li>
+<li>同样在Access Permissions 区域，点击<code>Edit Default</code></li>
+<li>确认允许 SELF and SYSTEM 有 remote access</li>
+<li>点击 <code>Add...</code>重复步骤 16 and 17</li>
+<li>点击确认</li>
+<li>在Launch and Activation Permissions区域下点击<code>Edit Limits...</code></li>
+<li>确认允许Administrator user 有 remote launch 和 remote activation的权限</li>
+<li>如果Everyone用户组在这里不存在，请重复步骤16，17</li>
+<li>允许Everyone group有local launch, remote launch, local activation,和 remote activation权限.</li>
+<li>点击确认</li>
+<li>同样在Launch and Activation Permissions区域下，点击<code>Edit Default...</code></li>
+<li>确认Administrator, INTERACTIVE, 和 SYSTEM用户组有 remote launch 和 remote activation 的权利.</li>
+<li>重复步骤16 和 17 以创建Everyone用户组</li>
+<li>允许Everyone group有local launch, remote launch, local activation,和 remote activation权限.</li>
+</ol>
+<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_dcomcnfg_1.png" alt="ci_dcomcnfg_1"></p>
+<p>同时，确认<code>php.ini</code>中的<code>com.allow_dcom</code>已经打开。重启后再试，如果问题依旧，请继续以下步骤：</p>
+<ol>
+<li>依次点击Console Root -&gt; Component Services -&gt; Computers -&gt; My Computer -&gt; DCOM Config, 在此处找到<code>Microsoft Word 97 - 2003 Document</code>(如果没有找到，请尝试方法二).</li>
+<li>右键属性.</li>
+<li>Security 选项卡中确认<code>Launch and Activation Permissions</code>，<code>Access Permissions</code>，<code>Configuration permissions</code>已经勾选为<code>Default</code>.</li>
+<li>在<code>Identity</code>选项卡中选择<code>The interactive user</code>或者指定一个Admin用户, 通常它可能是<code>The launching user</code>.</li>
+</ol>
+<p>方法二：</p>
+<ol>
+<li>Win + R 打开运行；</li>
+<li>输入<code>mmc -32</code> ，按下OK；</li>
+<li>在新弹出的窗口中点击 File -&gt; Add/Remove Sanp-in （或者Ctrl + M）；</li>
+<li>在新窗口中的左侧找到Component Services, 添加，确认；</li>
+<li>依次点击Console Root -&gt; Component Services -&gt; Computers -&gt; My Computer -&gt; DCOM Config, 在此处找到<code>Microsoft Word 97 - 2003 Document</code>.</li>
+<li>右键<code>Microsoft Word 97 - 2003 Document</code>，选择<code>Property</code>, 在<code>Identity</code>选项卡中选择<code>The interactive user</code>或者指定一个Admin用户, 通常它可能是<code>The launching user</code>.</li>
+</ol>
+<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_dcomcnfg_2.png" alt="ci_dcomcnfg_2"></p>
+<h3 id="使用OpenOffice来转换"><a href="#使用OpenOffice来转换" class="headerlink" title="使用OpenOffice来转换"></a>使用OpenOffice来转换</h3><h3 id="启动OpenOffice服务"><a href="#启动OpenOffice服务" class="headerlink" title="启动OpenOffice服务"></a>启动OpenOffice服务</h3><p>两种方式，方式一比较简便。</p>
+<p>确认是否已经开启参考以下命令来获取回复：</p>
+<p><code>netstat -nao|findstr -c&quot;:8100&quot;</code></p>
+<p>其中8100应该改为您自行设定OpenOffice服务端口。</p>
+<h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>假设您的OpenOffce安装在<code>C:\Program Files (x86)\OpenOffice 4\program\soffice.exe</code>,在CMD中输入以下命令：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"C:<span class="tag">\<span class="name">Program</span></span> Files (x86)<span class="tag">\<span class="name">OpenOffice</span></span> 4<span class="tag">\<span class="name">program</span></span><span class="tag">\<span class="name">soffice</span></span>.exe" -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard</span><br></pre></td></tr></table></figure>
+<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><ol>
+<li><p>创建文件夹在该路径上 C:\utils， 把<a href="https://www.getfilecloud.com/supportdocs/download/attachments/8161082/srvany.exe?version=1&amp;modificationDate=1386351001000&amp;api=v2" target="_blank" rel="external">srvany.exe</a>复制到里面去. 该文件从<a href="https://www.microsoft.com/en-gb/download/details.aspx?id=17657" target="_blank" rel="external">Windows Server 2003 Resource Kit</a>提取.</p>
+</li>
+<li><p>打开CMD（管理员模式）. 运行一下命令.</p>
+</li>
+</ol>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\system32&gt;<span class="keyword">sc </span>create <span class="string">"ooservice"</span> <span class="keyword">binPath= </span><span class="string">"\"C:\Utils\srvany.exe\""</span> <span class="keyword">DisplayName= </span><span class="string">"OpenOffice Server"</span> start= auto</span><br><span class="line"></span><br><span class="line">[<span class="keyword">SC] </span>CreateService SUCCESS</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>打开注册表编辑器(Win + R, 输入regedit).  寻找到HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\ooservice. </p>
+</li>
+<li><p>创建一个新的 key，名为 <code>Parameters</code>. </p>
+</li>
+<li><p>在<code>Parameters</code> 这个Key中, 创建一个名为 <code>Application</code>的String，其值如下：</p>
+</li>
+</ol>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"C:\Program Files (x86)\OpenOffice 4\program\soffice.exe"</span> -headless -accept=<span class="string">"socket,host=127.0.0.1,port=8100;urp;"</span> -nofirststartwizard</span><br><span class="line"><span class="keyword">Note</span>: <span class="keyword">Update</span> path to <span class="keyword">open</span> office <span class="keyword">as</span> necessary.</span><br></pre></td></tr></table></figure>
+<ol>
+<li>最后您的注册表大概类似于这个样子:</li>
+</ol>
+<p><img src="https://www.getfilecloud.com/supportdocs/download/attachments/8161082/image2013-12-6%2011%3A32%3A29.png?version=1&amp;modificationDate=1386351001000&amp;api=v2" alt=""></p>
+<ol>
+<li><p>在<code>Control Panel</code> -&gt; <code>Administrative Tools</code> -&gt; <code>Services</code> 中找到<code>Open Office Server</code>并开启.</p>
+</li>
+<li><p>使用上述的netstat -nao|findstr -c”:8100”命令确认是否已经开启.</p>
+</li>
+</ol>
+<p>成功后回复如下：</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\system32&gt;netstat -nao|findstr -c<span class="string">":8100"</span></span><br><span class="line"></span><br><span class="line">  TCP    <span class="number">127.0.0.1:8100</span>         <span class="number">0.0.0.0:0</span>              LISTENING       <span class="number">6016</span></span><br></pre></td></tr></table></figure>
+<h3 id="PHP代码"><a href="#PHP代码" class="headerlink" title="PHP代码"></a>PHP代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MakePropertyValue</span><span class="params">($name, $value,$osm)</span></span>&#123; </span><br><span class="line">   $oStruct = $osm-&gt;Bridge_GetStruct(<span class="string">"com.sun.star.beans.PropertyValue"</span>); </span><br><span class="line">   $oStruct-&gt;Name = $name; </span><br><span class="line">   $oStruct-&gt;Value = $value; </span><br><span class="line">   <span class="keyword">return</span> $oStruct; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">word2pdf</span><span class="params">($doc_url, $output_url)</span></span>&#123; </span><br><span class="line">   <span class="comment">// Invoke the OpenOffice.org service manager </span></span><br><span class="line">   $osm = <span class="keyword">new</span> COM(<span class="string">"com.sun.star.ServiceManager"</span>) <span class="keyword">or</span> <span class="keyword">die</span> (<span class="string">"Please be sure that OpenOffice.org is installed.\n"</span>); </span><br><span class="line">   <span class="comment">// Set the application to remain hidden to avoid flashing the document onscreen </span></span><br><span class="line">   $args = <span class="keyword">array</span>(MakePropertyValue(<span class="string">"Hidden"</span>,<span class="keyword">true</span>,$osm)); </span><br><span class="line">   <span class="comment">// Launch the desktop </span></span><br><span class="line">   $top = $osm-&gt;createInstance(<span class="string">"com.sun.star.frame.Desktop"</span>); </span><br><span class="line">   <span class="comment">// Load the .doc file, and pass in the "Hidden" property from above </span></span><br><span class="line">   $oWriterDoc = $top-&gt;loadComponentFromURL($doc_url,<span class="string">"_blank"</span>, <span class="number">0</span>, $args); </span><br><span class="line">   <span class="comment">// Set up the arguments for the PDF output </span></span><br><span class="line">   $export_args = <span class="keyword">array</span>(MakePropertyValue(<span class="string">"FilterName"</span>,<span class="string">"writer_pdf_Export"</span>,$osm)); </span><br><span class="line">   <span class="comment">// Write out the PDF </span></span><br><span class="line">   $oWriterDoc-&gt;storeToURL($output_url,$export_args); </span><br><span class="line">   $oWriterDoc-&gt;close(<span class="keyword">true</span>); </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">   <span class="keyword">echo</span> <span class="string">"Strat...\n"</span>;</span><br><span class="line">   $doc_file = <span class="string">'file:///F:/Tools/Program Handle/WAMP/www/wordConvertor/in.docx'</span> ; </span><br><span class="line">   $output_file = <span class="string">'file:///F:/Tools/Program Handle/WAMP/www/wordConvertor/out.pdf'</span>; </span><br><span class="line">   word2pdf($doc_file, $output_file); </span><br><span class="line">   <span class="keyword">echo</span> <span class="string">"Done!"</span>;</span><br><span class="line">&#125;<span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'Caught exception: '</span>,  $e-&gt;getMessage(), <span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="问题及注意"><a href="#问题及注意" class="headerlink" title="问题及注意"></a>问题及注意</h2><h3 id="1-程序长时间卡在new-COM-quot-com-XXXXX-quot-这一行"><a href="#1-程序长时间卡在new-COM-quot-com-XXXXX-quot-这一行" class="headerlink" title="1.程序长时间卡在new COM(&quot;com.XXXXX&quot;)这一行"></a>1.程序长时间卡在<code>new COM(&quot;com.XXXXX&quot;)</code>这一行</h3><p>由于实际上是调用MS WORD或者OpenOffice来完成的功能，因此调试时，可以利用任务管理器查看相关进程，防止因为错误的代码/环境重复打开多个进程而得不到关闭，导致后面的测试也出错。</p>
+<p>此外，还可以调短<code>php.ini</code>中的<code>max_execution_time</code>，个人感觉3s内无响应就该去再做检查了.</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.getfilecloud.com/supportdocs/display/cloud/Running+Openoffice+as+a+service+in+Windows" target="_blank" rel="external">https://www.getfilecloud.com/supportdocs/display/cloud/Running+Openoffice+as+a+service+in+Windows</a></p>
+<p><a href="http://www.figured-it-out.com/figured-out.php?sid=24" target="_blank" rel="external">http://www.figured-it-out.com/figured-out.php?sid=24</a></p>
+<p><a href="http://stackoverflow.com/questions/12104775/cant-open-word-doc-with-com-in-php" target="_blank" rel="external">http://stackoverflow.com/questions/12104775/cant-open-word-doc-with-com-in-php</a></p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/PHP/">PHP</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/03/05/jQuery-3中的新特性/" data-tooltip="jQuery 3中的新特性">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/03/05/jQuery-3中的新特性/" data-tooltip="jQuery 3中的新特性">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png"/>
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>

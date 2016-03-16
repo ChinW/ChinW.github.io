@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2016-03-16T08:54:56.000Z</updated>
+  <updated>2016-03-16T09:08:36.000Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://consiiii.me/2016/03/16/%E4%BD%BF%E7%94%A8PHP%E5%B0%86WORD%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90PDF/"/>
-    <id>http://consiiii.me/2016/03/16/使用PHP将WORD文件转换成PDF/</id>
-    <published>2016-03-16T08:36:30.000Z</published>
-    <updated>2016-03-16T08:54:56.000Z</updated>
+    <title>PHP：将Word转换成PDF</title>
+    <link href="http://consiiii.me/2016/03/16/PHP%EF%BC%9A%E5%B0%86Word%E8%BD%AC%E6%8D%A2%E6%88%90PDF/"/>
+    <id>http://consiiii.me/2016/03/16/PHP：将Word转换成PDF/</id>
+    <published>2016-03-16T09:08:03.000Z</published>
+    <updated>2016-03-16T09:08:36.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;使用PHP将WORD文件转换成PDF&quot;&gt;&lt;a href=&quot;#使用PHP将WORD文件转换成PDF&quot; class=&quot;headerlink&quot; title=&quot;使用PHP将WORD文件转换成PDF&quot;&gt;&lt;/a&gt;使用PHP将WORD文件转换成PDF&lt;/h2&gt;&lt;h2 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h2&gt;&lt;p&gt;用户上传DOC，DOCX等文件格式后，能够在线查看到文件的内容。&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h2&gt;&lt;p&gt;用户上传DOC，DOCX等文件格式后，能够在线查看到文件的内容。&lt;/p&gt;
 &lt;h2 id=&quot;想法&quot;&gt;&lt;a href=&quot;#想法&quot; class=&quot;headerlink&quot; title=&quot;想法&quot;&gt;&lt;/a&gt;想法&lt;/h2&gt;&lt;p&gt;WORD文件内容是富文本，可以转换成HTML格式后表现出来，或者转换成PDF格式，然后通过pdf.js来实现在线阅读。&lt;/p&gt;
 &lt;h2 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h2&gt;&lt;p&gt;由于后端环境是Windows，脚本语言为PHP， 因此可以使用PHP的COM组件来调用OpenOffice 或者 MS Word 来实现该格式转换问题。&lt;/p&gt;
 &lt;h3 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h3&gt;&lt;h4 id=&quot;1-安装OpenOffice-或者-MS-Word-程序&quot;&gt;&lt;a href=&quot;#1-安装OpenOffice-或者-MS-Word-程序&quot; class=&quot;headerlink&quot; title=&quot;1. 安装OpenOffice 或者 MS Word 程序&quot;&gt;&lt;/a&gt;1. 安装OpenOffice 或者 MS Word 程序&lt;/h4&gt;&lt;p&gt;OpenOffice可以&lt;a href=&quot;https://www.openoffice.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;在这里下载&lt;/a&gt;。&lt;/p&gt;
@@ -131,10 +131,15 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;使用PHP将WORD文件转换成PDF&quot;&gt;&lt;a href=&quot;#使用PHP将WORD文件转换成PDF&quot; class=&quot;headerlink&quot; title=&quot;使用PHP将WORD文件转换成PDF&quot;&gt;&lt;/a&gt;使用PHP将WORD文件转换成PDF&lt;/h2&gt;&lt;h2 id=&quot;目
+      &lt;h2 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h2&gt;&lt;p&gt;用户上传DOC，DOCX等文件格式后，能够在线查看到文件的内容。&lt;/p&gt;
+&lt;h2 id=&quot;想法&quot;&gt;&lt;a href=&quot;#想法&quot; class=&quot;
     
     </summary>
     
+      <category term="PHP" scheme="http://consiiii.me/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://consiiii.me/tags/PHP/"/>
     
   </entry>
   
@@ -947,9 +952,9 @@ Operation not permitted - /usr/bin/sass
       <category term="Tech" scheme="http://consiiii.me/categories/Tech/"/>
     
     
-      <category term="Tech" scheme="http://consiiii.me/tags/Tech/"/>
-    
       <category term="PHP" scheme="http://consiiii.me/tags/PHP/"/>
+    
+      <category term="Tech" scheme="http://consiiii.me/tags/Tech/"/>
     
   </entry>
   
