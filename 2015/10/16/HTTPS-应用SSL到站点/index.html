@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Consiiii">
-    <title>The model used to open the store is incompatible with the one used to create the store - Consiiii</title>
+    <title>HTTPS: 应用SSL到Nginx站点 - Consiiii</title>
     <meta name="author" content="Consiiii">
     
         <link rel="icon" href="/assets/images/favicon.ico">
@@ -14,19 +14,25 @@
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="使用Core Data更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.
-删除app后，重新编辑就好了。">
+    <meta name="description" content="通过提交CSR一些可靠的第三方SSL签发机构，得到颁发的CRT文件，我们可以将自己的站点实现上HTTPS访问。
+一些可靠的第三方SSL签发机构在文末列出。
+1. 使用OpenSSL生成Key和CSRopenssl req -nodes -newkey rsa:2048 -keyout example.key -out example.csr
+该命令生成一个2048位的Key文件和CSR文件。如果您">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="The model used to open the store is incompatible with the one used to create the store">
-<meta property="og:url" content="http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/index.html">
+<meta property="og:title" content="HTTPS: 应用SSL到Nginx站点">
+<meta property="og:url" content="http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="使用Core Data更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.
-删除app后，重新编辑就好了。">
-<meta property="og:updated_time" content="2015-10-17T01:49:28.000Z">
+<meta property="og:description" content="通过提交CSR一些可靠的第三方SSL签发机构，得到颁发的CRT文件，我们可以将自己的站点实现上HTTPS访问。
+一些可靠的第三方SSL签发机构在文末列出。
+1. 使用OpenSSL生成Key和CSRopenssl req -nodes -newkey rsa:2048 -keyout example.key -out example.csr
+该命令生成一个2048位的Key文件和CSR文件。如果您">
+<meta property="og:updated_time" content="2016-03-16T12:29:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The model used to open the store is incompatible with the one used to create the store">
-<meta name="twitter:description" content="使用Core Data更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.
-删除app后，重新编辑就好了。">
+<meta name="twitter:title" content="HTTPS: 应用SSL到Nginx站点">
+<meta name="twitter:description" content="通过提交CSR一些可靠的第三方SSL签发机构，得到颁发的CRT文件，我们可以将自己的站点实现上HTTPS访问。
+一些可靠的第三方SSL签发机构在文末列出。
+1. 使用OpenSSL生成Key和CSRopenssl req -nodes -newkey rsa:2048 -keyout example.key -out example.csr
+该命令生成一个2048位的Key文件和CSR文件。如果您">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -180,19 +186,19 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            The model used to open the store is incompatible with the one used to create the store
+            HTTPS: 应用SSL到Nginx站点
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Oct 17 2015 09:47:18 GMT+0800">
+    <time itemprop="datePublished" content="Fri Oct 16 2015 19:10:05 GMT+0800">
 	
-		    10月 17, 2015
+		    10月 16, 2015
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Slots/">Slots</a>, <a class="category-link" href="/categories/Slots/Xcode/">Xcode</a>
+    <a class="category-link" href="/categories/SSL/">SSL</a>
 
 
     
@@ -201,8 +207,38 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>使用Core Data更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.</p>
-<p>删除app后，重新编辑就好了。</p>
+            <p>通过提交CSR一些可靠的第三方SSL签发机构，得到颁发的CRT文件，我们可以将自己的站点实现上HTTPS访问。</p>
+<p>一些可靠的第三方SSL签发机构在文末列出。</p>
+<h2 id="1-使用OpenSSL生成Key和CSR"><a href="#1-使用OpenSSL生成Key和CSR" class="headerlink" title="1. 使用OpenSSL生成Key和CSR"></a>1. 使用OpenSSL生成Key和CSR</h2><p><code>openssl req -nodes -newkey rsa:2048 -keyout example.key -out example.csr</code></p>
+<p>该命令生成一个2048位的Key文件和CSR文件。如果您的服务器性能足够，也可以使用4096位。不选择1024位是因为（简单来说）现在的计算机性能越来越好，其算法被破解的难度大大降低了。</p>
+<p>生成私钥时会向您询问一些信息，其中：</p>
+<p><code>Common Name (e.g. server FQDN or YOUR name) []: YOUR INPUT</code>一项在此处填写的是域名，因为我们在给网站应用上HTTPS。</p>
+<h2 id="2-获取CRT文件"><a href="#2-获取CRT文件" class="headerlink" title="2. 获取CRT文件"></a>2. 获取CRT文件</h2><p>通过您信赖的第三方CA机构（文末列出了一些第三方机构），提供CSR文件，其一般会给您颁发一个CRT文件。现在，您一共有了三个文件：<code>example.key</code>, <code>example.csr</code>, <code>example.crt</code></p>
+<h2 id="3-在服务区上配置"><a href="#3-在服务区上配置" class="headerlink" title="3. 在服务区上配置"></a>3. 在服务区上配置</h2><p>首先将key和crt上传至服务器任意一个目录下，这里假设您上传至了<code>/etc/ssl/private/</code>.</p>
+<p>然后修改Nginx配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        listen [::]:80;</span><br><span class="line"></span><br><span class="line">        listen 443 ssl default_server;</span><br><span class="line">        listen [::]:443 ssl default_server;</span><br><span class="line">        </span><br><span class="line">        ....</span><br><span class="line">        </span><br><span class="line">        #ssl on; </span><br><span class="line">        ssl_certificate /etc/ssl/private/example.crt;</span><br><span class="line">        ssl_certificate_key /etc/ssl/private/example.key;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ALL:!DH:!EXPORT:!RC4:+HIGH:+MEDIUM:!LOW:!aNULL:!eNULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>保存并退出, 重启Nginx，访问<a href="https://example.com即可查看到效果啦！" target="_blank" rel="external">https://example.com即可查看到效果啦！</a></p>
+<p>可以使用<code>nginx -t &amp;&amp; nginx -s reload</code>来检测语法并且重启，或者直接使用<code>killall -HUP nginx</code>来平滑启动nginx。</p>
+<p>如果取消注释<code>ssl on</code>，那么<strong>在没有其他措施的情况下</strong>，正常访问<a href="http://example.com，会显示错误：" target="_blank" rel="external">http://example.com，会显示错误：</a></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">The</span> plain <span class="type">HTTP</span> request was sent to <span class="type">HTTPS</span> <span class="keyword">port</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-可靠第三方SSL签发机构"><a href="#4-可靠第三方SSL签发机构" class="headerlink" title="4. 可靠第三方SSL签发机构"></a>4. 可靠第三方SSL签发机构</h2><p><strong>此处信息摘自于<a href="https://s.how/nginx-ssl/" target="_blank" rel="external">此处</a></strong></p>
+<hr>
+<blockquote>
+<p>目前一般市面上针对中小站长和企业的 SSL 证书颁发机构有：</p>
+<p><a href="https://www.startssl.com/" target="_blank" rel="external">StartSSL</a></p>
+<p><a href="https://www.comodo.com/" target="_blank" rel="external">Comodo</a> / 子品牌 <a href="https://www.positivessl.com/" target="_blank" rel="external">Positive SSL</a></p>
+<p><a href="https://www.globalsign.com/en/" target="_blank" rel="external">GlobalSign</a> / 子品牌 <a href="https://www.alphassl.com/" target="_blank" rel="external">AlphaSSL</a></p>
+<p><a href="https://www.geotrust.com/" target="_blank" rel="external">GeoTrust</a>/ 子品牌 <a href="https://www.rapidssl.com/" target="_blank" rel="external">RapidSSL</a></p>
+<p>其中 Postivie SSL、AlphaSSL、RapidSSL 等都是子品牌，一般都是三级四级证书，所以你会需要增加 CA 证书链到你的 CRT 文件里。</p>
+<p>以 Comodo Positive SSL 为例，需要串联 CA 证书，假设你的域名是 example.com</p>
+<p>那么，串联的命令是</p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat example_com<span class="selector-class">.crt</span> COMODORSADomainValidationSecureServerCA<span class="selector-class">.crt</span> COMODORSAAddTrustCA<span class="selector-class">.crt</span> AddTrustExternalCARoot<span class="selector-class">.crt</span> &gt; example_com<span class="selector-class">.signed</span><span class="selector-class">.crt</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在 Nginx 配置里使用 example_com.signed.crt 即可</p>
+<p>如果是一般常见的 AplhaSSL 泛域名证书，他们是不会发给你 CA 证书链的，那么在你的 CRT 文件后面需要加入 AlphaSSL 的 CA 证书链</p>
+<p><a href="https://www.alphassl.com/support/install-root-certificate.html" target="_blank" rel="external">AlphaSSL Intermediate CA</a></p>
+</blockquote>
 
             
                 
@@ -215,7 +251,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Slots/">Slots</a> <a class="tag tag--primary tag--small t-link" href="/tags/Xcode/">Xcode</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/HTTPS/">HTTPS</a> <a class="tag tag--primary tag--small t-link" href="/tags/Nginx/">Nginx</a> <a class="tag tag--primary tag--small t-link" href="/tags/SSL/">SSL</a>
 
             </div>
         
@@ -224,7 +260,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/22/8个应该被知道的正则表达式/"  data-tooltip="8个应该被知道的正则表达式">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/"  data-tooltip="The model used to open the store is incompatible with the one used to create the store">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -232,7 +268,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/16/HTTPS-应用SSL到站点/" data-tooltip="HTTPS: 应用SSL到Nginx站点">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/" data-tooltip="解决Finder的CPU占有率频繁居高不下问题">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -247,17 +283,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -303,7 +339,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/22/8个应该被知道的正则表达式/"  data-tooltip="8个应该被知道的正则表达式">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/"  data-tooltip="The model used to open the store is incompatible with the one used to create the store">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -311,7 +347,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/16/HTTPS-应用SSL到站点/" data-tooltip="HTTPS: 应用SSL到Nginx站点">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/" data-tooltip="解决Finder的CPU占有率频繁居高不下问题">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -326,17 +362,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -362,17 +398,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
