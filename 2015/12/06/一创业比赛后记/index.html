@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Consiiii">
-    <title>记一次服务器的故障 - Consiiii</title>
+    <title>一创业比赛后记 - Consiiii</title>
     <meta name="author" content="Consiiii">
     
         <link rel="icon" href="/assets/images/favicon.ico">
@@ -14,22 +14,28 @@
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。
-国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。
-然后查看服务器性能：CPU 19%，磁盘读写正常，网络性能20% 。那感觉还是代码原因？但是代码没有动过，也重新部署了一份">
+    <meta name="description" content="周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。
+能参加这个比赛完全是意料之外的事情，缘由是暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。
+本着学习和涨姿势的态度我来到了天津。
+概况比赛队伍一共有48支，本科生的除了我，个人印象还有一支来自于北京师范大学的与自行车相关的公益项目。其它的队伍大多已是职场人士多年，亦或是清北复交等">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="记一次服务器的故障">
-<meta property="og:url" content="http://consiiii.me/2015/10/07/记一次服务器的故障/index.html">
+<meta property="og:title" content="一创业比赛后记">
+<meta property="og:url" content="http://consiiii.me/2015/12/06/一创业比赛后记/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。
-国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。
-然后查看服务器性能：CPU 19%，磁盘读写正常，网络性能20% 。那感觉还是代码原因？但是代码没有动过，也重新部署了一份">
-<meta property="og:updated_time" content="2015-12-16T16:13:37.000Z">
+<meta property="og:description" content="周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。
+能参加这个比赛完全是意料之外的事情，缘由是暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。
+本着学习和涨姿势的态度我来到了天津。
+概况比赛队伍一共有48支，本科生的除了我，个人印象还有一支来自于北京师范大学的与自行车相关的公益项目。其它的队伍大多已是职场人士多年，亦或是清北复交等">
+<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2244.JPG">
+<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2194.JPG">
+<meta property="og:updated_time" content="2016-03-16T09:22:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记一次服务器的故障">
-<meta name="twitter:description" content="今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。
-国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。
-然后查看服务器性能：CPU 19%，磁盘读写正常，网络性能20% 。那感觉还是代码原因？但是代码没有动过，也重新部署了一份">
+<meta name="twitter:title" content="一创业比赛后记">
+<meta name="twitter:description" content="周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。
+能参加这个比赛完全是意料之外的事情，缘由是暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。
+本着学习和涨姿势的态度我来到了天津。
+概况比赛队伍一共有48支，本科生的除了我，个人印象还有一支来自于北京师范大学的与自行车相关的公益项目。其它的队伍大多已是职场人士多年，亦或是清北复交等">
+<meta name="twitter:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2244.JPG">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -183,19 +189,19 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            记一次服务器的故障
+            一创业比赛后记
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Oct 07 2015 23:58:51 GMT+0800">
+    <time itemprop="datePublished" content="Sun Dec 06 2015 19:02:57 GMT+0800">
 	
-		    10月 07, 2015
+		    12月 06, 2015
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Slots/">Slots</a>
+    <a class="category-link" href="/categories/Competition/">Competition</a>
 
 
     
@@ -204,17 +210,25 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。<br>以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。</p>
-<p>国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。</p>
-<p>然后查看服务器性能：CPU 19%，磁盘读写正常，网络性能20% 。<br>那感觉还是代码原因？但是代码没有动过，也重新部署了一份确认有效的代码，不应该呀。<br>于是写了个target.php放到服务器上，里面就一句话</p>
-<pre><code>target not here.
-</code></pre><p>访问这个target.php,同样两分钟才有返回。<br>curl测试一下IP响应的时间，status 200 OK，但是一个网页的返回时间长达2分钟。</p>
-<p>给跪了。问身边朋友，提醒可能是线路原因。于是去找UCloud的客服，和客服Balabala了情况一堆，提到DNS解析云云。<br>绕了一圈最终是无果。</p>
-<p>我决定自己再去排查一下，到处捣鼓，发现一个奇怪的症状。<br>就是把根目录下的.htaccess文件给移走（我是改名字，效用相同），网站首页立马就能访问了。但是由于地址重写原因，其他页面访问不到。<br>加上.htaccess，网站又死了，两分钟才有返回。</p>
-<p>Google搜索“.htaccess 变慢”或者“.htaccess slow”没找到有效资料。无从下手，难道是apache的锅？<br>然而重启apache也没有用，而且这个htaccess已经用了那么久就都好好的，为什么就现在不行了呢？</p>
-<p>最后，<br>22:00左右的时候，重启啊什么的捣鼓下，网站好了。<br>嗯，就是这样，莫名其妙好了。</p>
-<p>我突然想到朋友说什么“上线之前也要开个光。”</p>
-<p>嘛，水平还不够。</p>
+            <p>周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。</p>
+<p>能参加这个比赛完全是意料之外的事情，缘由是暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。</p>
+<p>本着学习和涨姿势的态度我来到了天津。</p>
+<h2 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h2><p>比赛队伍一共有48支，本科生的除了我，个人印象还有一支来自于北京师范大学的与自行车相关的公益项目。其它的队伍大多已是职场人士多年，亦或是清北复交等名校背景的创始人, 亦或是某领域专家博士等…</p>
+<p>比赛的目的是决出20强，去录制CCTV的一个创业类型的电视节目(猜测大概就是现场比拼之类的吧)。其实这次复赛中也已经看到了CCTV的编导在不停地摄像。</p>
+<h2 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h2><p>12-03日，下午先是一个创业训练营，由梁青(现中科纳新总经理，曾任联想之星副总裁)来给我们做一个相关的要点讲座，不得不说，内容是关于创业的一些坑啦，股权啦等经验的分享。紧接着是一个欢迎晚宴。</p>
+<p>12-04日，是为期一整天的现场演示, 分三个赛场, 每个赛场三位评审. 关于作品和想象中的差不多，大多有一些“互联网＋”项目, 带着互联网就起飞了, 做内容啦，做平台之类的。在我的赛场上也看到一些有相当纯技术的项目. 例如名为“浩恒征途”的无人机项目，是来自北航的团队做的，现场带了个体型较大的工程机来，起到了震慑能力.</p>
+<p>另外，还有一个叫做CIRI的语音系统 (不知道我这么理解对不对) 让我印象深刻, 当我第一眼看到这个词的时候想到的是Siri.</p>
+<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2244.JPG" alt="photos"></p>
+<h2 id="我的参赛项目"><a href="#我的参赛项目" class="headerlink" title="我的参赛项目"></a>我的参赛项目</h2><p>最后关于我的参赛项目，其实是一个技术工作室。与上述参赛队伍比起来 (融资几百几千万/名人名师背景/亦或海归背景等），不得不承认完全是一个草根作品，真是相形见绌（因此才提及“出乎意料”）。</p>
+<p>不过来都来了，演讲顺序是最后一个的我，还是（假装）自信地讲完我们的idea。意料之外的是下来之后得到了数位评委以及创业前辈们的肯定并且加了我的一些联系方式（虽然我觉得可能并没有啥用，但毕竟是给了，权当做一种鼓励吧 ）.</p>
+<blockquote>
+<p>插曲：赛前晚上，由于举办方希望参赛者在指定App上宣传自己的项目(让大家点赞，投票之类的)，出于参赛者都有点反感，以及自己不想发什么朋友圈求赞，于是抓包看看有没有漏洞。结果没几分钟就发现了=_= ，然后录制了一个快速刷票的视频作为演讲的佐料演示了下，23333.</p>
+</blockquote>
+<p>最后，没有进入20强，止步于一个优胜奖。</p>
+<h2 id="返程"><a href="#返程" class="headerlink" title="返程"></a>返程</h2><p>创业是为了什么呢？</p>
+<p>现在的我只要能够做自己的喜欢事就好了。我只是做了一点微小的工作(我蛤了…)，在学校里侥幸有了一个工作室罢了。</p>
+<p>附北京末班地铁照一张，大家都在玩手机，我无聊到在看他们玩手机. </p>
+<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2194.JPG" alt="subway"></p>
 
             
                 
@@ -227,7 +241,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/htaccess/">.htaccess</a> <a class="tag tag--primary tag--small t-link" href="/tags/Apache/">Apache</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Competition/">Competition</a>
 
             </div>
         
@@ -236,7 +250,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/11/El-Capitan下Sass命令无用的解决办法/"  data-tooltip="El Capitan下Sass命令无用的解决办法">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/10/高盛笔试后记/"  data-tooltip="高盛笔试后记">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -244,7 +258,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/03/PHP中的短数组语法[]与array()/" data-tooltip="PHP中的短数组语法[]与array()">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/" data-tooltip="Swift 时间操作:NSDate,NSDateFormatter">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -259,17 +273,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/12/06/一创业比赛后记/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/12/06/一创业比赛后记/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/12/06/一创业比赛后记/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -315,7 +329,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/11/El-Capitan下Sass命令无用的解决办法/"  data-tooltip="El Capitan下Sass命令无用的解决办法">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/10/高盛笔试后记/"  data-tooltip="高盛笔试后记">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -323,7 +337,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/03/PHP中的短数组语法[]与array()/" data-tooltip="PHP中的短数组语法[]与array()">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/" data-tooltip="Swift 时间操作:NSDate,NSDateFormatter">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -338,17 +352,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/12/06/一创业比赛后记/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/12/06/一创业比赛后记/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/12/06/一创业比赛后记/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -374,17 +388,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/12/06/一创业比赛后记/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/12/06/一创业比赛后记/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/10/07/记一次服务器的故障/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/12/06/一创业比赛后记/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>

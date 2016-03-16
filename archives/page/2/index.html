@@ -564,7 +564,7 @@ Operation not permitted - /usr/bin/sass<br>
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2015/10/03/一次因PHP中的数组语法造成的事件/">一次因PHP中的数组语法造成的事件</a>
+                                <a class="link-unstyled" href="/2015/10/03/PHP中的短数组语法[]与array()/">PHP中的短数组语法[]与array()</a>
                         
                     </h1>
                     <div class="postShorten-meta">
@@ -576,7 +576,7 @@ Operation not permitted - /usr/bin/sass<br>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Tech/">Tech</a>
+    <a class="category-link" href="/categories/PHP/">PHP</a>
 
 
     
@@ -585,17 +585,17 @@ Operation not permitted - /usr/bin/sass<br>
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     
                         <p>
-                            先说问题所在，PHP的数组可以有以下方式来表达.
+                            PHP的数组可以有以下方式来表达.
 $array = [1,2,3,4,5];
 亦或
 $array = array(1,2,3,4,5);
 但是[]中括号的表达方式需要PHP版本&gt;=5.4.
-于是悲剧就出现在这里，在给学院做一个CMS的时候，本地测试正常后，放上空间一律返回403 Fobbiden错误（没开调试）。
-其实当时写的时候知道要注意以下版本的，但是当时由于烦躁就想着“<br>
+在给学院做一个CMS的时候，本地测试正常后，放上空间一律返回403 Fobbiden错误（调试关闭）。
+究其原因是不清楚服务器版本，而写的时候比较想着方便先用中括号，写完之后过了两周才上传，有点淡忘此事<br>
                     
                     
                         
-                            <a href="/2015/10/03/一次因PHP中的数组语法造成的事件/" class="postShorten-excerpt_link link ">Continue reading</a>
+                            <a href="/2015/10/03/PHP中的短数组语法[]与array()/" class="postShorten-excerpt_link link ">Continue reading</a>
                             
                         
                     
