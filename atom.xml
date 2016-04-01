@@ -537,37 +537,31 @@
     <link href="http://consiiii.me/2015/11/22/SSH%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA/"/>
     <id>http://consiiii.me/2015/11/22/SSH登录主机/</id>
     <published>2015-11-22T04:03:44.000Z</published>
-    <updated>2016-03-20T05:32:55.000Z</updated>
+    <updated>2016-04-01T05:37:49.000Z</updated>
     
     <content type="html">&lt;p&gt;今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。&lt;/p&gt;
-&lt;h2 id=&quot;1-生成密钥对&quot;&gt;&lt;a href=&quot;#1-生成密钥对&quot; class=&quot;headerlink&quot; title=&quot;1.生成密钥对&quot;&gt;&lt;/a&gt;1.生成密钥对&lt;/h2&gt;&lt;p&gt;两种方法生成密钥对&lt;/p&gt;
-&lt;h3 id=&quot;使用OpenSSL&quot;&gt;&lt;a href=&quot;#使用OpenSSL&quot; class=&quot;headerlink&quot; title=&quot;使用OpenSSL&quot;&gt;&lt;/a&gt;使用OpenSSL&lt;/h3&gt;&lt;p&gt;生成RSA私钥&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;genrsa -out rsa_private_key.pem 2048&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;（可选）使用&lt;br&gt;&lt;code&gt;pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt&lt;/code&gt;&lt;br&gt;将RSA密钥转换成PKCS8格式，密码可以为空&lt;/p&gt;
-&lt;p&gt;生成RSA公钥&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;rsa -in rsa_private_key.pem -pubout -out rsa_public.pem&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;使用ssh-gen&quot;&gt;&lt;a href=&quot;#使用ssh-gen&quot; class=&quot;headerlink&quot; title=&quot;使用ssh-gen&quot;&gt;&lt;/a&gt;使用ssh-gen&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ssh-keygen -t [rsa|dsa]&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-生成密钥对&quot;&gt;&lt;a href=&quot;#1-生成密钥对&quot; class=&quot;headerlink&quot; title=&quot;1.生成密钥对&quot;&gt;&lt;/a&gt;1.生成密钥对&lt;/h2&gt;&lt;h3 id=&quot;使用ssh-gen&quot;&gt;&lt;a href=&quot;#使用ssh-gen&quot; class=&quot;headerlink&quot; title=&quot;使用ssh-gen&quot;&gt;&lt;/a&gt;使用ssh-gen&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ssh-keygen -t [rsa|dsa]&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码&lt;br&gt;;如果想要的目的是免密码登录,密码请留空&lt;/p&gt;
 &lt;h2 id=&quot;2-将公钥拷贝到目标主机&quot;&gt;&lt;a href=&quot;#2-将公钥拷贝到目标主机&quot; class=&quot;headerlink&quot; title=&quot;2.将公钥拷贝到目标主机&quot;&gt;&lt;/a&gt;2.将公钥拷贝到目标主机&lt;/h2&gt;&lt;p&gt;将公钥拷贝到~/.ssh中，远程上传可以使用scp命令&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;scp -r your/target/file/path user@ip:your/remote/file/path/&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如果主机下已经有authorized_keys，注意不要覆盖改文件，没有的话主动创建文件&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;touch ~/.ssh.authorized_keys&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;touch ~/.ssh/authorized_keys&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;然后执行&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cat rsa_public_key.pem &amp;gt;&amp;gt; authorized.keys&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cat rsa.pub &amp;gt;&amp;gt; authorized_keys&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;或者本地执行&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cat ~/.ssh/japan_rsa.pub | ssh root@45.32.248.65  &amp;quot;mkdir -p ~/.ssh &amp;amp;&amp;amp; cat &amp;gt;&amp;gt;  ~/.ssh/authorized_keys&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;3-在本机添加标识&quot;&gt;&lt;a href=&quot;#3-在本机添加标识&quot; class=&quot;headerlink&quot; title=&quot;3.在本机添加标识&quot;&gt;&lt;/a&gt;3.在本机添加标识&lt;/h2&gt;&lt;p&gt;打开~/.ssh/config，没有的话就创建一个，书写格式为（替换[]中的内容为自己的配置）&lt;br&gt;&lt;figure class=&quot;highlight accesslog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Host &lt;span class=&quot;string&quot;&gt;[myHost]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hostname &lt;span class=&quot;string&quot;&gt;[123.123.123.123]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Port &lt;span class=&quot;string&quot;&gt;[21]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;User &lt;span class=&quot;string&quot;&gt;[myUser]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IdentityFile &lt;span class=&quot;string&quot;&gt;[ ~/.ssh/local_private_rsa]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cat ~/.ssh/rsa.pub | ssh root@xx.xxx.xxx.xx  &amp;quot;mkdir -p ~/.ssh &amp;amp;&amp;amp; cat &amp;gt;&amp;gt;  ~/.ssh/authorized_keys&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3-在本机添加标识&quot;&gt;&lt;a href=&quot;#3-在本机添加标识&quot; class=&quot;headerlink&quot; title=&quot;3.在本机添加标识&quot;&gt;&lt;/a&gt;3.在本机添加标识&lt;/h2&gt;&lt;p&gt;打开~/.ssh/config，没有的话就创建一个，书写格式为（替换[]中的内容为自己的配置）&lt;/p&gt;
+&lt;figure class=&quot;highlight accesslog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Host &lt;span class=&quot;string&quot;&gt;[myHost]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hostname &lt;span class=&quot;string&quot;&gt;[123.123.123.123]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Port &lt;span class=&quot;string&quot;&gt;[21]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;User &lt;span class=&quot;string&quot;&gt;[myUser]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IdentityFile &lt;span class=&quot;string&quot;&gt;[ ~/.ssh/local_private_rsa]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;4-登录&quot;&gt;&lt;a href=&quot;#4-登录&quot; class=&quot;headerlink&quot; title=&quot;4.登录&quot;&gt;&lt;/a&gt;4.登录&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;ssh myHost&lt;/code&gt; 进行登录&lt;/p&gt;
 &lt;h2 id=&quot;5-可能出现的问题&quot;&gt;&lt;a href=&quot;#5-可能出现的问题&quot; class=&quot;headerlink&quot; title=&quot;5.可能出现的问题&quot;&gt;&lt;/a&gt;5.可能出现的问题&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;如果出现出现&lt;br&gt; &lt;code&gt;Permissions 0644 for &amp;#39;your/target/file&amp;#39; are too open.&lt;/code&gt;&lt;br&gt; 把权限改成0600就好了&lt;/li&gt;
-&lt;li&gt;OpenSSL 生成的密钥会出现&lt;code&gt;key_load_public: invalid format&lt;/code&gt;导致无法登录.&lt;br&gt; OpenSSL生成的公钥和ssh-keygen生成的公钥的格式不一致，ssh-keygen生成公钥的格式是OK的。&lt;/li&gt;
 &lt;/ol&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。&lt;/p&gt;
-&lt;h2 id=&quot;1-生成密钥对&quot;&gt;&lt;a href=&quot;#1-生成密钥对&quot; class=&quot;headerlink&quot; title=&quot;1.生成密钥对&quot;&gt;&lt;/a&gt;1.生成密钥对&lt;/h2&gt;&lt;p&gt;两种
+&lt;h2 id=&quot;1-生成密钥对&quot;&gt;&lt;a href=&quot;#1-生成密钥对&quot; class=&quot;headerlink&quot; title=&quot;1.生成密钥对&quot;&gt;&lt;/a&gt;1.生成密钥对&lt;/h2&gt;&lt;h3 i
     
     </summary>
     

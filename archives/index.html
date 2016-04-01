@@ -662,10 +662,10 @@ LEMPLEMP指Linux(L),MySQL(M),PHP(P),Nginx(E,发音eng<br>
                     
                         <p>
                             今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。
-1.生成密钥对两种方法生成密钥对
-使用OpenSSL生成RSA私钥
-genrsa -out rsa_private_key.pem 2048
-（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥转换成PKC<br>
+1.生成密钥对使用ssh-genssh-keygen -t [rsa|dsa]
+过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码;如果想要的目的是免密码登录,密码请留空
+2.将公钥拷贝到目标主机将公钥拷贝到~/.ssh中，远程上传可以使用scp命令
+scp -r your/target<br>
                     
                     
                         
