@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>SSH登录主机 - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。
+1.生成密钥对两种方法生成密钥对
+使用OpenSSL生成RSA私钥
+genrsa -out rsa_private_key.pem 2048
+（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥转换成PKC">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="SSH登录主机">
+<meta property="og:url" content="http://consiiii.me/2015/11/22/SSH登录主机/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。
+1.生成密钥对两种方法生成密钥对
+使用OpenSSL生成RSA私钥
+genrsa -out rsa_private_key.pem 2048
+（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥转换成PKC">
+<meta property="og:updated_time" content="2016-03-20T05:32:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSH登录主机">
+<meta name="twitter:description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。
+1.生成密钥对两种方法生成密钥对
+使用OpenSSL生成RSA私钥
+genrsa -out rsa_private_key.pem 2048
+（可选）使用pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt将RSA密钥转换成PKC">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Consiiii</a>
+    </h1>
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3"
+
+>
+    
+        <div class="sidebar-profile">
+            <a href="/about">
+                
+                    <img class="sidebar-profile-picture" src="/assets/images/headicon.png"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Consiiii</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">动态</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/project"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-gift"></i>
+                    <span class="sidebar-button-desc">作品</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-user"></i>
+                    <span class="sidebar-button-desc">介绍</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/links"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-link"></i>
+                    <span class="sidebar-button-desc">Links</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+
+<div id="rectangles">
+    <li class="rect1"></li>
+    <li class="rect2"></li>
+    <li class="rect3"></li>
+    <li class="rect4"></li>
+    <li class="rect5"></li>
+    <li class="rect6"></li>
+    <li class="rect7"></li>
+    <li class="rect8"></li>
+    <li class="rect9"></li>
+    <li class="rect10"></li>
+
+</div>
+
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            SSH登录主机
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sun Nov 22 2015 12:03:44 GMT+0800">
+	
+		    11月 22, 2015
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/ssh/">ssh</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。</p>
+<h2 id="1-生成密钥对"><a href="#1-生成密钥对" class="headerlink" title="1.生成密钥对"></a>1.生成密钥对</h2><p>两种方法生成密钥对</p>
+<h3 id="使用OpenSSL"><a href="#使用OpenSSL" class="headerlink" title="使用OpenSSL"></a>使用OpenSSL</h3><p>生成RSA私钥</p>
+<p><code>genrsa -out rsa_private_key.pem 2048</code></p>
+<p>（可选）使用<br><code>pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt</code><br>将RSA密钥转换成PKCS8格式，密码可以为空</p>
+<p>生成RSA公钥</p>
+<p><code>rsa -in rsa_private_key.pem -pubout -out rsa_public.pem</code></p>
+<h3 id="使用ssh-gen"><a href="#使用ssh-gen" class="headerlink" title="使用ssh-gen"></a>使用ssh-gen</h3><p><code>ssh-keygen -t [rsa|dsa]</code></p>
+<p>过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码<br>;如果想要的目的是免密码登录,密码请留空</p>
+<h2 id="2-将公钥拷贝到目标主机"><a href="#2-将公钥拷贝到目标主机" class="headerlink" title="2.将公钥拷贝到目标主机"></a>2.将公钥拷贝到目标主机</h2><p>将公钥拷贝到~/.ssh中，远程上传可以使用scp命令</p>
+<p><code>scp -r your/target/file/path user@ip:your/remote/file/path/</code></p>
+<p>如果主机下已经有authorized_keys，注意不要覆盖改文件，没有的话主动创建文件</p>
+<p><code>touch ~/.ssh.authorized_keys</code></p>
+<p>然后执行</p>
+<p><code>cat rsa_public_key.pem &gt;&gt; authorized.keys</code></p>
+<p>或者本地执行</p>
+<p><code>cat ~/.ssh/japan_rsa.pub | ssh root@45.32.248.65  &quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys&quot;</code></p>
+<h2 id="3-在本机添加标识"><a href="#3-在本机添加标识" class="headerlink" title="3.在本机添加标识"></a>3.在本机添加标识</h2><p>打开~/.ssh/config，没有的话就创建一个，书写格式为（替换[]中的内容为自己的配置）<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host <span class="string">[myHost]</span></span><br><span class="line">Hostname <span class="string">[123.123.123.123]</span></span><br><span class="line">Port <span class="string">[21]</span></span><br><span class="line">User <span class="string">[myUser]</span></span><br><span class="line">IdentityFile <span class="string">[ ~/.ssh/local_private_rsa]</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="4-登录"><a href="#4-登录" class="headerlink" title="4.登录"></a>4.登录</h2><p>使用 <code>ssh myHost</code> 进行登录</p>
+<h2 id="5-可能出现的问题"><a href="#5-可能出现的问题" class="headerlink" title="5.可能出现的问题"></a>5.可能出现的问题</h2><ol>
+<li>如果出现出现<br> <code>Permissions 0644 for &#39;your/target/file&#39; are too open.</code><br> 把权限改成0600就好了</li>
+<li>OpenSSL 生成的密钥会出现<code>key_load_public: invalid format</code>导致无法登录.<br> OpenSSL生成的公钥和ssh-keygen生成的公钥的格式不一致，ssh-keygen生成公钥的格式是OK的。</li>
+</ol>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/remote-login/">remote login</a> <a class="tag tag--primary tag--small t-link" href="/tags/ssh/">ssh</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/22/Install-LEMP-on-Debian/"  data-tooltip="Install LEMP on Debian">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/09/Experience-of-HackShanghai-2015/" data-tooltip="Experience of HackShanghai 2015">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/22/Install-LEMP-on-Debian/"  data-tooltip="Install LEMP on Debian">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/09/Experience-of-HackShanghai-2015/" data-tooltip="Experience of HackShanghai 2015">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png"/>
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>
