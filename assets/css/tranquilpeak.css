@@ -538,7 +538,7 @@ blockquote {
   height: 100%;
   position: fixed;
   top: 0;
-  background: linear-gradient(45deg, #F57F17 1%, #f7953e 64%, #f9b579 97%);
+  background: linear-gradient(45deg, #212121 1%, #353535 64%, #545454 97%);
   overflow: auto;
   overflow-x: hidden;
   z-index: 20;
@@ -1092,11 +1092,11 @@ blockquote {
     border: 1px solid #309639; }
 
 .btn--primary {
-  color: #F57F17 !important;
-  border: 1px solid #F57F17; }
+  color: #212121 !important;
+  border: 1px solid #212121; }
   .btn--primary:hover {
-    color: #b85a08 !important;
-    border: 1px solid #b85a08; }
+    color: black !important;
+    border: 1px solid black; }
 
 .btn--danger {
   color: #f5311d !important;
@@ -1156,12 +1156,12 @@ a.category--success,
 
 a.category--primary,
 .category--primary {
-  color: #F57F17 !important;
-  border: 1px solid #F57F17; }
+  color: #212121 !important;
+  border: 1px solid #212121; }
   a.category--primary:hover,
   .category--primary:hover {
-    color: #b85a08 !important;
-    border: 1px solid #b85a08;
+    color: black !important;
+    border: 1px solid black;
     text-decoration: none; }
 
 a.category--danger,
@@ -2193,12 +2193,12 @@ a.tag--success,
 
 a.tag--primary,
 .tag--primary {
-  color: #F57F17 !important;
-  border: 1px solid #F57F17; }
+  color: #212121 !important;
+  border: 1px solid #212121; }
   a.tag--primary:hover,
   .tag--primary:hover {
-    color: #b85a08 !important;
-    border: 1px solid #b85a08;
+    color: black !important;
+    border: 1px solid black;
     text-decoration: none; }
 
 a.tag--danger,
@@ -2454,7 +2454,7 @@ a.tag--small,
     height: 50px;
     bottom: -10%;
     position: absolute;
-    background: #f9b579;
+    background: #545454;
     opacity: 0.5;
     max-height: 100px;
     animation: scrollUp 20s infinite ease-out;
