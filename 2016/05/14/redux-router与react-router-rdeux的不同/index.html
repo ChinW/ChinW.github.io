@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Consiiii">
-    <title>Icon Redesign &amp; Imitation - Consiiii</title>
+    <title>redux-router与react-router-rdeux的不同 - Consiiii</title>
     <meta name="author" content="Consiiii">
     
         <link rel="icon" href="/assets/images/favicon.ico">
@@ -14,45 +14,19 @@
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="利用闲暇的时间，努力去模仿，或者重新设计已经存在的图标。
-Day 1: Ivy160104: Ivy 是Google出品的一个计算器。
-Mine:
-
-Original:
-
-Day 2: Plane160105: 
-
-Day 3: Happy Sun160109:">
+    <meta name="description" content="此文仅是redux-router页面上的部分翻译
+react-router-reduxreact-router-redux(之前称为redux-simple-router)使用了一个不一样的方式去集成路由。react-router-redux让React Router去做所有沉重的任务，并同步url中的数据到store的history location对象里。这代表着用户可以直接使用React R">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Icon Redesign & Imitation">
-<meta property="og:url" content="http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/index.html">
+<meta property="og:title" content="redux-router与react-router-rdeux的不同">
+<meta property="og:url" content="http://consiiii.me/2016/05/14/redux-router与react-router-rdeux的不同/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="利用闲暇的时间，努力去模仿，或者重新设计已经存在的图标。
-Day 1: Ivy160104: Ivy 是Google出品的一个计算器。
-Mine:
-
-Original:
-
-Day 2: Plane160105: 
-
-Day 3: Happy Sun160109:">
-<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_d1_ivy.png">
-<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_ivy-google-calculator-03.png">
-<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_d2_plane.png">
-<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_d3_sun.png">
-<meta property="og:updated_time" content="2016-01-09T07:55:14.000Z">
+<meta property="og:description" content="此文仅是redux-router页面上的部分翻译
+react-router-reduxreact-router-redux(之前称为redux-simple-router)使用了一个不一样的方式去集成路由。react-router-redux让React Router去做所有沉重的任务，并同步url中的数据到store的history location对象里。这代表着用户可以直接使用React R">
+<meta property="og:updated_time" content="2016-06-07T15:29:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Icon Redesign & Imitation">
-<meta name="twitter:description" content="利用闲暇的时间，努力去模仿，或者重新设计已经存在的图标。
-Day 1: Ivy160104: Ivy 是Google出品的一个计算器。
-Mine:
-
-Original:
-
-Day 2: Plane160105: 
-
-Day 3: Happy Sun160109:">
-<meta name="twitter:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_d1_ivy.png">
+<meta name="twitter:title" content="redux-router与react-router-rdeux的不同">
+<meta name="twitter:description" content="此文仅是redux-router页面上的部分翻译
+react-router-reduxreact-router-redux(之前称为redux-simple-router)使用了一个不一样的方式去集成路由。react-router-redux让React Router去做所有沉重的任务，并同步url中的数据到store的history location对象里。这代表着用户可以直接使用React R">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -65,9 +39,23 @@ Day 3: Happy Sun160109:">
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-77216401-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
 </head>
 
     <body>
@@ -206,37 +194,43 @@ Day 3: Happy Sun160109:">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Icon Redesign &amp; Imitation
+            redux-router与react-router-rdeux的不同
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Mon Jan 04 2016 19:03:17 GMT+0800">
+    <time itemprop="datePublished" content="Sat May 14 2016 17:03:12 GMT+0800">
 	
-		    1月 04, 2016
+		    5月 14, 2016
     	
     </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Icon/">Icon</a>
-
-
     
 </div>
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>利用闲暇的时间，努力去模仿，或者重新设计已经存在的图标。</p>
-<h3 id="Day-1-Ivy"><a href="#Day-1-Ivy" class="headerlink" title="Day 1: Ivy"></a>Day 1: Ivy</h3><p>160104: Ivy 是Google出品的一个计算器。</p>
-<p>Mine:</p>
-<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_d1_ivy.png" alt="Ivy Mock"></p>
-<p>Original:</p>
-<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_ivy-google-calculator-03.png" alt="Ivy"></p>
-<h3 id="Day-2-Plane"><a href="#Day-2-Plane" class="headerlink" title="Day 2: Plane"></a>Day 2: Plane</h3><p>160105: </p>
-<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_d2_plane.png" alt="Plane"></p>
-<h3 id="Day-3-Happy-Sun"><a href="#Day-3-Happy-Sun" class="headerlink" title="Day 3: Happy Sun"></a>Day 3: Happy Sun</h3><p>160109:</p>
-<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_d3_sun.png" alt="Happy_Sun"></p>
+            <p><strong>此文仅是<a href="https://github.com/acdlite/redux-router" target="_blank" rel="external">redux-router</a>页面上的部分翻译</strong></p>
+<h2 id="react-router-redux"><a href="#react-router-redux" class="headerlink" title="react-router-redux"></a>react-router-redux</h2><p>react-router-redux(之前称为redux-simple-router)使用了一个不一样的方式去集成路由。react-router-redux让React Router去做所有沉重的任务，并同步url中的数据到store的history <a href="https://github.com/mjackson/history/blob/master/docs/Location.md#location" target="_blank" rel="external">location</a>对象里。这代表着用户可以直接使用React Router的API，并从这一堆<a href="https://github.com/acdlite/redux-router" target="_blank" rel="external">文档和例子</a>中获益。</p>
+<p>react-router-redux的README中有一个非常有用的示意图，如下：</p>
+<p><strong><a href="https://github.com/reactjs/redux" target="_blank" rel="external">redux</a> (store.routing)  ↔  <a href="https://github.com/reactjs/react-router-redux" target="_blank" rel="external">react-router-redux</a>  ↔  <a href="https://github.com/reactjs/history" target="_blank" rel="external">history</a> (history.location)  ↔  <a href="https://github.com/reactjs/react-router" target="_blank" rel="external">react-router</a></strong></p>
+<p>这种方式易于理解，但有些一些需要注意的地方：</p>
+<ol>
+<li><p>history location对象不包含React Router的参数，它们必须被React Router组件向下传递，或被重新计算。(The history location object does not include React Router params and they must be either passed down from a React Router component or recomputed.)</p>
+</li>
+<li><p><strong>不鼓励（危险）</strong>将store中的数据连接到组件里，因为store中的数据在React Router的属性改变后，有潜在的更新可能性， 因此当location store data与向下传递而来的location对象(从React Router到组件）不同时，这就出现了一个互相竞争的场景。</p>
+</li>
+</ol>
+<p>react-router-redux 鼓励用户在React Router中的component中直接使用props（props会向下传递到任何被渲染的component中）。 这意味着如果您想要从comonpent tree中获取location data， 您可能需要将它向下传递，亦或使用React的Context特性。</p>
+<h2 id="redux-router"><a href="#redux-router" class="headerlink" title="redux-router"></a>redux-router</h2><p>这个项目从一方面来说，使用的方法是将<strong>完整的</strong>React Router数据存储在Redux Store中。这样做的主要好处是: 被redux-router向下传递到路由中的组件的props, 允许和存储在store中的数据不同。 因此可连接router的数据到任何您想要的component中。 您还可以直接从store中获取路由的参数。 redux-router也提供了一个API来应对从Router（React Router现在并没有提供这个东西）中进行热交换路由。</p>
+<p>关于redux-router的示意图如下：</p>
+<p><strong><a href="https://github.com/reactjs/redux" target="_blank" rel="external">redux</a> (store.routing)</strong> ↔ <a href="https://github.com/acdlite/redux-router" target="_blank" rel="external">redux-router</a>  ↔  <a href="https://github.com/reactjs/react-router" target="_blank" rel="external">react-router (via RouterContext)</a></p>
+<p>这种方式同时也有一些限制：</p>
+<ol>
+<li>路由数据不全是可序列化的(serializable)(因为组件和函数不能被直接序列化)，因此对于那些帮助保存store到浏览器session中的开发工具扩展和类库，这可能会造成一些问题。但如果这些类库提供了忽略序列化store部分内容的方法，这样的问题可以被缓和，可是这并非总是可行的。</li>
+<li>redux-router利用了RouterContext的一些好的地方，来继续使用React Router的内部逻辑。 然而，redux-router必须要在自身中实现很多React Router已经有的东西，这会造成在升级路径上的延时。</li>
+<li>redux-router必须提供一个有细微区别的顶层API（因为第2点），即使他们的路由的逻辑/匹配模式可能是相同的。</li>
+</ol>
+<p>最终，您对这些库的选择取决于您和您的项目需求. React-router-redux会继续得到更多的社区支持，因为它已经进入了reactjs github组织，也有了相当的关注度。 对于react-router，和redux的集成， <strong>建议使用react-router-redux</strong>。 然而，您可能也会发现redux-router其实更符合您的项目需求。只要有这样的需求存在，那redux-router就会继续被维护。</p>
 
             
                 
@@ -249,7 +243,7 @@ Day 3: Happy Sun160109:">
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Design/">Design</a> <a class="tag tag--primary tag--small t-link" href="/tags/Icon/">Icon</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/React/">React</a> <a class="tag tag--primary tag--small t-link" href="/tags/Redux/">Redux</a> <a class="tag tag--primary tag--small t-link" href="/tags/Translation/">Translation</a>
 
             </div>
         
@@ -258,7 +252,7 @@ Day 3: Happy Sun160109:">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/15/CMS中存放文章内容的Content字段类型/"  data-tooltip="CMS中存放文章内容的Content字段类型">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/21/Install-PHP-7/"  data-tooltip="Install PHP 7">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -266,7 +260,7 @@ Day 3: Happy Sun160109:">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/" data-tooltip=" ES6: Destructing(解构) &amp; Spread Operator(展开运算符) ">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/18/Karma-and-React/" data-tooltip="Karma and React">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -281,17 +275,17 @@ Day 3: Happy Sun160109:">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/05/14/redux-router与react-router-rdeux的不同/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/05/14/redux-router与react-router-rdeux的不同/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/05/14/redux-router与react-router-rdeux的不同/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -337,7 +331,7 @@ Day 3: Happy Sun160109:">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/15/CMS中存放文章内容的Content字段类型/"  data-tooltip="CMS中存放文章内容的Content字段类型">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/21/Install-PHP-7/"  data-tooltip="Install PHP 7">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -345,7 +339,7 @@ Day 3: Happy Sun160109:">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/" data-tooltip=" ES6: Destructing(解构) &amp; Spread Operator(展开运算符) ">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/18/Karma-and-React/" data-tooltip="Karma and React">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -360,17 +354,17 @@ Day 3: Happy Sun160109:">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/05/14/redux-router与react-router-rdeux的不同/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/05/14/redux-router与react-router-rdeux的不同/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/05/14/redux-router与react-router-rdeux的不同/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -396,17 +390,17 @@ Day 3: Happy Sun160109:">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/05/14/redux-router与react-router-rdeux的不同/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/05/14/redux-router与react-router-rdeux的不同/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/05/14/redux-router与react-router-rdeux的不同/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
@@ -449,7 +443,10 @@ Day 3: Happy Sun160109:">
         <!-- <div id="cover" style="background-image:url('/');"></div> -->
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script.min.js"></script>
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     <script type="text/javascript">
