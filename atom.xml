@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2016-05-21T10:45:33.000Z</updated>
+  <updated>2016-09-25T16:03:44.000Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Disallowed nested bundles, contains disallowed file &#39;Frameworks&#39; in XCode</title>
+    <link href="http://consiiii.me/2016/09/24/Disallowed%20nested%20bundles,%20contains%20disallowed%20file%20'Frameworks'%20in%20XCode/"/>
+    <id>http://consiiii.me/2016/09/24/Disallowed nested bundles, contains disallowed file 'Frameworks' in XCode/</id>
+    <published>2016-09-24T12:19:29.000Z</published>
+    <updated>2016-09-25T16:03:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
+&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误提示是：&lt;/p&gt;
+&lt;p&gt;点击Archive后，上传后出现错误提示1&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.&lt;/p&gt;
+&lt;p&gt;Invalid Bundle, The bundle contains disallowed nested bundles, contains disallowed file ‘Frameworks’&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或者iTC成功了，但是收到邮件，得到错误提示2&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We have discovered one or more issues with your recent delivery for “江雪”. &amp;gt;To process your delivery, the following issues must be corrected:&lt;/p&gt;
+&lt;p&gt;Invalid Bundle - One or more dynamic libraries that are referenced by your &amp;gt;app are not present in the dylib search path.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考了多个已有的讨论（见Refer), 最终解决办法如下:&lt;/p&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;Host APP + Today Extension + 多个Framework用来共享代码，Swift(主要) + OC, Cocoapods&lt;/p&gt;
+&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;对于Framework，尝试将&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: YES&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;调成&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: NO&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于appex, 在&lt;code&gt;Target(appex)-&amp;gt; Build Phases&lt;/code&gt;中点击&lt;code&gt;+&lt;/code&gt;, 选择&lt;code&gt;New Run Script Phase&lt;/code&gt;， 填入&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$&amp;#123;CONFIGURATION_BUILD_DIR&amp;#125;&lt;/span&gt;/&lt;span class=&quot;variable&quot;&gt;$&amp;#123;UNLOCALIZED_RESOURCES_FOLDER_PATH&amp;#125;&lt;/span&gt;/&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; [[ &lt;span class=&quot;_&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Frameworks&quot;&lt;/span&gt; ]]; &lt;span class=&quot;keyword&quot;&gt;then&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    rm -fr Frameworks&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;fi&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;尝试更新Cocoapods版&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;清理项目后重新打包&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Refer&quot;&gt;&lt;a href=&quot;#Refer&quot; class=&quot;headerlink&quot; title=&quot;Refer&quot;&gt;&lt;/a&gt;Refer&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4203&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/CocoaPods/CocoaPods/issues/4203&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25777958/validation-error-invalid-bundle-the-bundle-at-contains-disallowed-file-fr&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/25777958/validation-error-invalid-bundle-the-bundle-at-contains-disallowed-file-fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;一次打包＋上传，得到错误提示，前后需要近25分钟，这个错误解决起来真的很花时间。&lt;/p&gt;
+&lt;p&gt;TO DO: 为什么之前XCode 7成功了?&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
+&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://consiiii.me/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
+    
+      <category term="XCode" scheme="http://consiiii.me/tags/XCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Install PHP 7</title>
@@ -1058,39 +1122,6 @@ Operation not permitted - /usr/bin/sass
       <category term=".htaccess" scheme="http://consiiii.me/tags/htaccess/"/>
     
       <category term="Apache" scheme="http://consiiii.me/tags/Apache/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP中的短数组语法[]与array()</title>
-    <link href="http://consiiii.me/2015/10/03/PHP%E4%B8%AD%E7%9A%84%E7%9F%AD%E6%95%B0%E7%BB%84%E8%AF%AD%E6%B3%95%5B%5D%E4%B8%8Earray()/"/>
-    <id>http://consiiii.me/2015/10/03/PHP中的短数组语法[]与array()/</id>
-    <published>2015-10-02T17:18:03.000Z</published>
-    <updated>2016-03-16T09:22:16.000Z</updated>
-    
-    <content type="html">&lt;p&gt;PHP的数组可以有以下方式来表达.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$array = [1,2,3,4,5];
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;亦或&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$array = array(1,2,3,4,5);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;但是[]中括号的表达方式需要&lt;strong&gt;PHP版本&amp;gt;=5.4&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;在给学院做一个CMS的时候，本地测试正常后，放上空间一律返回403 Fobbiden错误（调试关闭）。&lt;/p&gt;
-&lt;p&gt;究其原因是不清楚服务器版本，而写的时候比较想着方便先用中括号，写完之后过了两周才上传，有点淡忘此事。特此记录，长长记性(╯°Д°）╯︵ /(.□ . )&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;PHP的数组可以有以下方式来表达.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$array = [1,2,3,4,5];
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;亦或&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$array = array(1,2,3,4,5);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;但是[]中
-    
-    </summary>
-    
-      <category term="PHP" scheme="http://consiiii.me/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="http://consiiii.me/tags/PHP/"/>
     
   </entry>
   
