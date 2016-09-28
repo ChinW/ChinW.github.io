@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2016-09-25T16:03:44.000Z</updated>
+  <updated>2016-09-28T08:45:40.000Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&#39;Realm/RLMArray.h&#39; file not found</title>
+    <link href="http://consiiii.me/2016/09/28/Realm-RLMArray-h-file-not-found/"/>
+    <id>http://consiiii.me/2016/09/28/Realm-RLMArray-h-file-not-found/</id>
+    <published>2016-09-28T08:44:53.000Z</published>
+    <updated>2016-09-28T08:45:40.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;模拟器运行正常，打包正常，真机编译时部分Framework出现&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;‘Realm/RLMArray.h’ file not found&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;CocoaPods 1.0.1, Xcode 8, Realm 0.98.3&lt;/p&gt;
+&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;p&gt;按下&lt;code&gt;Option&lt;/code&gt;+&lt;code&gt;CMD&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;K&lt;/code&gt;, Clean Build Folder, 或者按下&lt;code&gt;Option&lt;/code&gt;，选择｀Product｀—&amp;gt; &lt;code&gt;Clean Build Folder&lt;/code&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;模拟器运行正常，打包正常，真机编译时部分Framework出现&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;‘Realm/RLM
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://consiiii.me/categories/iOS/"/>
+    
+    
+      <category term="‘iOS’" scheme="http://consiiii.me/tags/%E2%80%98iOS%E2%80%99/"/>
+    
+      <category term="‘Realm’" scheme="http://consiiii.me/tags/%E2%80%98Realm%E2%80%99/"/>
+    
+      <category term="‘XCode’" scheme="http://consiiii.me/tags/%E2%80%98XCode%E2%80%99/"/>
+    
+      <category term="‘CocoaPods’" scheme="http://consiiii.me/tags/%E2%80%98CocoaPods%E2%80%99/"/>
+    
+  </entry>
   
   <entry>
     <title>Disallowed nested bundles, contains disallowed file &#39;Frameworks&#39; in XCode</title>
@@ -1086,42 +1122,6 @@ Operation not permitted - /usr/bin/sass
       <category term="El Capitan" scheme="http://consiiii.me/tags/El-Capitan/"/>
     
       <category term="Ruby" scheme="http://consiiii.me/tags/Ruby/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次服务器的故障</title>
-    <link href="http://consiiii.me/2015/10/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%95%85%E9%9A%9C/"/>
-    <id>http://consiiii.me/2015/10/07/记一次服务器的故障/</id>
-    <published>2015-10-07T15:58:51.000Z</published>
-    <updated>2015-12-16T16:13:37.000Z</updated>
-    
-    <content type="html">&lt;p&gt;今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。&lt;br&gt;以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。&lt;/p&gt;
-&lt;p&gt;国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，重启服务，还是没有效果。&lt;/p&gt;
-&lt;p&gt;然后查看服务器性能：CPU 19%，磁盘读写正常，网络性能20% 。&lt;br&gt;那感觉还是代码原因？但是代码没有动过，也重新部署了一份确认有效的代码，不应该呀。&lt;br&gt;于是写了个target.php放到服务器上，里面就一句话&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;target not here.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;访问这个target.php,同样两分钟才有返回。&lt;br&gt;curl测试一下IP响应的时间，status 200 OK，但是一个网页的返回时间长达2分钟。&lt;/p&gt;
-&lt;p&gt;给跪了。问身边朋友，提醒可能是线路原因。于是去找UCloud的客服，和客服Balabala了情况一堆，提到DNS解析云云。&lt;br&gt;绕了一圈最终是无果。&lt;/p&gt;
-&lt;p&gt;我决定自己再去排查一下，到处捣鼓，发现一个奇怪的症状。&lt;br&gt;就是把根目录下的.htaccess文件给移走（我是改名字，效用相同），网站首页立马就能访问了。但是由于地址重写原因，其他页面访问不到。&lt;br&gt;加上.htaccess，网站又死了，两分钟才有返回。&lt;/p&gt;
-&lt;p&gt;Google搜索“.htaccess 变慢”或者“.htaccess slow”没找到有效资料。无从下手，难道是apache的锅？&lt;br&gt;然而重启apache也没有用，而且这个htaccess已经用了那么久就都好好的，为什么就现在不行了呢？&lt;/p&gt;
-&lt;p&gt;最后，&lt;br&gt;22:00左右的时候，重启啊什么的捣鼓下，网站好了。&lt;br&gt;嗯，就是这样，莫名其妙好了。&lt;/p&gt;
-&lt;p&gt;我突然想到朋友说什么“上线之前也要开个光。”&lt;/p&gt;
-&lt;p&gt;嘛，水平还不够。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天下午，突然发现维护的一个网站莫名其妙莫名其妙上不去了，症状是访问网站返回特别慢（两分钟），简直就是没有返回。&lt;br&gt;以为可能是国庆服务宕了，于是登录上服务器（LAMP)，重启服务，但是没有效果。&lt;/p&gt;
-&lt;p&gt;国庆期间应该没人动过服务器上网站的文件，重新部署了一下代码，
-    
-    </summary>
-    
-      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
-    
-    
-      <category term=".htaccess" scheme="http://consiiii.me/tags/htaccess/"/>
-    
-      <category term="Apache" scheme="http://consiiii.me/tags/Apache/"/>
     
   </entry>
   
