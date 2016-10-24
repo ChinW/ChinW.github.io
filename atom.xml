@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2016-09-28T08:45:40.000Z</updated>
+  <updated>2016-10-24T13:49:47.000Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -14,6 +14,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TECH F5VE 16年纳新正式结束</title>
+    <link href="http://consiiii.me/2016/10/24/TECH-F5VE-16%E5%B9%B4%E7%BA%B3%E6%96%B0%E6%AD%A3%E5%BC%8F%E7%BB%93%E6%9D%9F/"/>
+    <id>http://consiiii.me/2016/10/24/TECH-F5VE-16年纳新正式结束/</id>
+    <published>2016-10-24T13:49:47.000Z</published>
+    <updated>2016-10-24T13:49:47.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PHP保存文件时文件名乱码与Windows Server</title>
+    <link href="http://consiiii.me/2016/10/22/PHP%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6%E6%97%B6%E6%96%87%E4%BB%B6%E5%90%8D%E4%B9%B1%E7%A0%81%E4%B8%8EWindows-Server/"/>
+    <id>http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/</id>
+    <published>2016-10-22T04:50:11.000Z</published>
+    <updated>2016-10-22T04:50:11.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Update Stotyboard Localization</title>
+    <link href="http://consiiii.me/2016/10/08/Update-Stotyboard-Localization/"/>
+    <id>http://consiiii.me/2016/10/08/Update-Stotyboard-Localization/</id>
+    <published>2016-10-07T17:41:58.000Z</published>
+    <updated>2016-10-07T17:43:32.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Change to directory to Base.proj in your project in terminal, and type&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ibtool Main.storyboard --generate-strings-file file_name.strings&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;open the &lt;code&gt;file_name.strings&lt;/code&gt;, copy/replace.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Change to directory to Base.proj in your project in terminal, and type&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ibtool Main.storyboard --generate-strings-file file_n
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://consiiii.me/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
+    
+      <category term="XCode" scheme="http://consiiii.me/tags/XCode/"/>
+    
+      <category term="Swift" scheme="http://consiiii.me/tags/Swift/"/>
+    
+  </entry>
   
   <entry>
     <title>&#39;Realm/RLMArray.h&#39; file not found</title>
@@ -112,6 +178,147 @@
       <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
     
       <category term="XCode" scheme="http://consiiii.me/tags/XCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Using system headers in framework in Swift</title>
+    <link href="http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift%20copy/"/>
+    <id>http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/</id>
+    <published>2016-09-24T12:19:29.000Z</published>
+    <updated>2016-09-27T11:28:31.000Z</updated>
+    
+    <content type="html">&lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
+&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误提示是：&lt;/p&gt;
+&lt;p&gt;点击Archive后，上传后出现错误提示1&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.&lt;/p&gt;
+&lt;p&gt;Invalid Bundle, The bundle contains disallowed nested bundles, contains disallowed file ‘Frameworks’&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或者iTC成功了，但是收到邮件，得到错误提示2&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We have discovered one or more issues with your recent delivery for “江雪”. &amp;gt;To process your delivery, the following issues must be corrected:&lt;/p&gt;
+&lt;p&gt;Invalid Bundle - One or more dynamic libraries that are referenced by your &amp;gt;app are not present in the dylib search path.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考了多个已有的讨论（见Refer), 最终解决办法如下:&lt;/p&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;Host APP + Today Extension + 多个Framework用来共享代码，Swift(主要) + OC&lt;/p&gt;
+&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;对于Framework，尝试将&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: YES&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;调成&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: NO&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于Appex,&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Refer&quot;&gt;&lt;a href=&quot;#Refer&quot; class=&quot;headerlink&quot; title=&quot;Refer&quot;&gt;&lt;/a&gt;Refer&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
+&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Realm/RLMArray.h file not found</title>
+    <link href="http://consiiii.me/2016/09/24/Realm:RLMArray.h%20file%20not%20found/"/>
+    <id>http://consiiii.me/2016/09/24/Realm:RLMArray.h file not found/</id>
+    <published>2016-09-24T12:19:29.000Z</published>
+    <updated>2016-10-24T14:17:03.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;模拟器运行正常，打包正常，真机编译时部分Framework出现&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;‘Realm/RLMArray.h’ file not found&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;CocoaPods 1.0.1, Xcode 8, Realm 0.98.3&lt;/p&gt;
+&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;p&gt;按下&lt;code&gt;Option&lt;/code&gt;+&lt;code&gt;CMD&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;K&lt;/code&gt;, Clean Build Folder, 或者按下&lt;code&gt;Option&lt;/code&gt;，选择｀Product｀—&amp;gt; &lt;code&gt;Clean Build Folder&lt;/code&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;模拟器运行正常，打包正常，真机编译时部分Framework出现&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;‘Realm/RLM
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://consiiii.me/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>识别植物</title>
+    <link href="http://consiiii.me/2016/05/22/%E8%AF%86%E5%88%AB%E6%A4%8D%E7%89%A9/"/>
+    <id>http://consiiii.me/2016/05/22/识别植物/</id>
+    <published>2016-05-22T09:04:06.000Z</published>
+    <updated>2016-10-24T14:12:23.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;好久没有更新Blog。这其实是上学期的一个作业，写完了之后一直存放草稿里，看到了微软识花出来之后，突然发现我还写过这个东西。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这是一个非常简单的程序，上传图片，然后识别，由于“作业”关系，其实只能识别15种植物，准确率是70-80%，这与算法有关，当然也和训练集有很大的关系。&lt;/p&gt;
+&lt;h2 id=&quot;1-目的&quot;&gt;&lt;a href=&quot;#1-目的&quot; class=&quot;headerlink&quot; title=&quot;1. 目的&quot;&gt;&lt;/a&gt;1. 目的&lt;/h2&gt;&lt;p&gt;利用PCA识别花卉，以及iOS上的应用。&lt;/p&gt;
+&lt;p&gt;了解PCA算法原理，并应用到花卉识别中。编写一个App，连接服务器，当用户选择了一张花卉照片时，上传照片到服务器，进行识别，最后返回相应的结果到本地进行显示。&lt;/p&gt;
+&lt;h2 id=&quot;2-环境&quot;&gt;&lt;a href=&quot;#2-环境&quot; class=&quot;headerlink&quot; title=&quot;2. 环境&quot;&gt;&lt;/a&gt;2. 环境&lt;/h2&gt;&lt;p&gt;Python 2.7.11, Swift 2.2&lt;/p&gt;
+&lt;h2 id=&quot;3-原理&quot;&gt;&lt;a href=&quot;#3-原理&quot; class=&quot;headerlink&quot; title=&quot;3. 原理&quot;&gt;&lt;/a&gt;3. 原理&lt;/h2&gt;&lt;p&gt;实验主要利用PCA算法进行识别花卉识别.&lt;/p&gt;
+&lt;p&gt;PCA（Principal Component Analysis），主成分分析，是一种常用的数据分析方法。PCA通过线性变换将原始数据变换为一组各维度线性无关的表示，可用于提取数据的主要特征分量，常用于高维数据的降维。&lt;/p&gt;
+&lt;p&gt;利用起识别图片的基本思想是用一组图片进行训练：利用PCA提取出图片的主成分，即为特征值。在对新的图片进行识别时，也提取其特征值进行比较距离（欧几里得距离），距离最近的目标，就是识别出的对象。&lt;/p&gt;
+&lt;p&gt;简单原理叙述叙述如下：&lt;/p&gt;
+&lt;p&gt;样本X和样本Y的协方差(Covariance)：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_math1.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;协方差为正时说明X和Y是正相关关系，协方差为负时X和Y是负相关关系，协方差为0时X和Y相互独立。&lt;/p&gt;
+&lt;p&gt;Cov(X,X)就是X的方差(Variance).&lt;/p&gt;
+&lt;p&gt;当样本是n维数据时，它们的协方差实际上是协方差矩阵（对称方阵），方阵的边长是。比如对于3维数据(x,y,z)，计算它的协方差就是：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_math2.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;若，则称是A的特征值，X是对应的特征向量。实际上可以这样理解：矩阵A作用在它的特征向量X上，仅仅使得X的长度发生了变化，缩放比例就是相应的特征值。&lt;/p&gt;
+&lt;p&gt;当A是n阶可逆矩阵时，A与P-1Ap相似，相似矩阵具有相同的特征值。&lt;/p&gt;
+&lt;p&gt;特别地，当A是对称矩阵时，A的奇异值等于A的特征值，存在正交矩阵Q（Q-1=QT），使得：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_math3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;对A进行奇异值分解就能求出所有特征值和Q矩阵。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_math4.png&quot; alt=&quot;&quot;&gt; D是由特征值组成的对角矩阵&lt;/p&gt;
+&lt;p&gt;由特征值和特征向量的定义知，Q的列向量就是A的特征向量。&lt;/p&gt;
+&lt;h2 id=&quot;4-效果图&quot;&gt;&lt;a href=&quot;#4-效果图&quot; class=&quot;headerlink&quot; title=&quot;4. 效果图&quot;&gt;&lt;/a&gt;4. 效果图&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_PCA_result_1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;选择图片并点击“Predict”，如下图点击了“杜鹃”的“Predict”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_PCA_result_2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_PCA_result_3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;作业留念&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;好久没有更新Blog。这其实是上学期的一个作业，写完了之后一直存放草稿里，看到了微软识花出来之后，突然发现我还写过这个东西。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这是一个非常简单的程序，上传图片，然后识别，由于“作业”关系，其实只能识别15种
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://consiiii.me/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
+    
+      <category term="KMean" scheme="http://consiiii.me/tags/KMean/"/>
     
   </entry>
   
@@ -822,306 +1029,6 @@
       <category term="ssh" scheme="http://consiiii.me/tags/ssh/"/>
     
       <category term="remote login" scheme="http://consiiii.me/tags/remote-login/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Experience of HackShanghai 2015</title>
-    <link href="http://consiiii.me/2015/11/09/Experience-of-HackShanghai-2015/"/>
-    <id>http://consiiii.me/2015/11/09/Experience-of-HackShanghai-2015/</id>
-    <published>2015-11-09T15:03:41.000Z</published>
-    <updated>2015-12-16T16:19:08.000Z</updated>
-    
-    <content type="html">&lt;p&gt;2015年10月5日请假去了上海准备7,8日的hackShanghai 2015，并非常幸运的最后获得了第三名。但最大的收获是认识了三位有趣又厉害的伙伴：&lt;/p&gt;
-&lt;p&gt;英国老叔叔（队长，现实是一个非常很萌的学姐)&lt;/p&gt;
-&lt;p&gt;SandyHaaa(优雅的女子，英语非常好)&lt;/p&gt;
-&lt;p&gt;wanghu205(迷之声线).&lt;/p&gt;
-&lt;h2 id=&quot;开始&quot;&gt;&lt;a href=&quot;#开始&quot; class=&quot;headerlink&quot; title=&quot;开始&quot;&gt;&lt;/a&gt;开始&lt;/h2&gt;&lt;p&gt;由于我们被选入比赛时都是单身状态(没有组队进入比赛)，因此赛前互不认识。&lt;/p&gt;
-&lt;p&gt;在进入了hackshanghai的选手圈后，我便在群内安静的找大腿抱。终于，“老叔叔”带着一个吊炸天的头像出现了，以下子被吸引住。当听到老叔叔说找队友时，立即求其好友。&lt;/p&gt;
-&lt;p&gt;之后老叔叔又依次找来了wanghu205，SandyHaaa。&lt;br&gt;5日晚上，我们群内提出各种idea，SandyHaaa的想法是本次“Know Video”的雏形。&lt;/p&gt;
-&lt;p&gt;过程遇到一个难以平衡的问题就是我们四个擅长的工作都不相同，交叉的领域似乎也不多。于是在”做什么“”怎么做“的问题上变得有些苦手。&lt;/p&gt;
-&lt;p&gt;最后我们干脆取名“上海游击队”,有点自嘲的意味但是同时气氛也变得轻松。&lt;/p&gt;
-&lt;p&gt;讨论断断续续持续到了次日（6日）下午近两点，最终敲定了Know Video的概念。&lt;/p&gt;
-&lt;h2 id=&quot;过程&quot;&gt;&lt;a href=&quot;#过程&quot; class=&quot;headerlink&quot; title=&quot;过程&quot;&gt;&lt;/a&gt;过程&lt;/h2&gt;&lt;p&gt;由于这是一个Chrome插件，于是前端的知识还算有些用处，我就突然变成了主力……&lt;/p&gt;
-&lt;p&gt;调配工作与资源分享时，曾尝试使用一些在线资料写作工具，后来因为网络太不稳定放弃了（除了我，科学上网是有好处的，哈哈哈)&lt;/p&gt;
-&lt;p&gt;至于网络曾坏到什么地步就是我在分享ss时，队友的网络下载900k+的ss都成了问题,ORZ&lt;/p&gt;
-&lt;p&gt;(很无奈最后我没分享成功，因为VPS搭建了好久我并不确定密码是多少，在试了好一些之后貌似都错了呢…)&lt;/p&gt;
-&lt;p&gt;接着就是不停的看文档，代码，文档，代码，升级成为肝船少年郎。&lt;/p&gt;
-&lt;p&gt;PS：话说队长说我写代码的时候脸都是黑的，她不开心，于是老是黑我！我天生长这样不行嘛！(╯°Д°）╯︵ /(.□ . )&lt;/p&gt;
-&lt;p&gt;然后就是代码到黎明～&lt;/p&gt;
-&lt;p&gt;wanghu205非常棒的给我们队拿来了许多零食，而我在他去交流的时候后面到处看&amp;gt;_&amp;lt;。&lt;/p&gt;
-&lt;p&gt;半夜&lt;br&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/2.pic_hd_1.jpg&quot; alt=&quot;http://7xngrd.com1.z0.glb.clouddn.com/2.pic_hd_1.jpg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;清晨&lt;br&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/1.pic_hd_1.jpg&quot; alt=&quot;http://7xngrd.com1.z0.glb.clouddn.com/1.pic_hd_1.jpg&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;准备演讲&quot;&gt;&lt;a href=&quot;#准备演讲&quot; class=&quot;headerlink&quot; title=&quot;准备演讲&quot;&gt;&lt;/a&gt;准备演讲&lt;/h2&gt;&lt;p&gt;次日上午6点左右，我的工作基本上完成了，所需要的效果差不多已经达到。&lt;/p&gt;
-&lt;p&gt;接下来就是开始愉快的准备演讲，没我太多事啦.&lt;/p&gt;
-&lt;p&gt;准备PPT，稿子等，SandyHaaa,wanghu205跟外国人聊天泰然自若的样子，我就只能在旁边站着看看…称自己英语不好的队长也是balabala一堆….我这个弱渣英语完全插不上话呀混蛋～T_T (决心好好练习口语)&lt;/p&gt;
-&lt;p&gt;抽了个空闲，一起去游荡/围观其它人的作品，很自然地受到了刺激……&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://img0.imgtn.bdimg.com/it/u=3884272796,358266646&amp;amp;fm=21&amp;amp;gp=0.jpg&quot; alt=&quot;Shocked&quot;&gt;&lt;/p&gt;
-&lt;p&gt;怎么感觉好多都是和硬件联动的…..&amp;gt;_&amp;lt; &lt;/p&gt;
-&lt;p&gt;演示是5分钟限制，建议是3分钟演讲＋2分钟QA。&lt;br&gt;第一场演示进去时好紧张，SandyHaaa流畅的演讲真是太赞，演示后评委笑了～有了“Instresting”的声音（我当作是褒义)，队伍松了一口气。&lt;/p&gt;
-&lt;h2 id=&quot;结果&quot;&gt;&lt;a href=&quot;#结果&quot; class=&quot;headerlink&quot; title=&quot;结果&quot;&gt;&lt;/a&gt;结果&lt;/h2&gt;&lt;p&gt;在吃晚餐的时候听到进入Top9时！不敢置信但是又很开心（真实表里不一啊).&lt;br&gt;（队长在吃晚餐时给别人拿鸡块，一定是好人有好报)&lt;/p&gt;
-&lt;p&gt;一翻角逐后最终获得第三名，非常开心。&lt;/p&gt;
-&lt;p&gt;几位伙伴因为一个原因聚在了一起，竟然因此得到了第三名，这样的经历实在是太可贵且记忆深刻！&lt;/p&gt;
-&lt;p&gt;比赛自此结束，分别也来的很快。&lt;/p&gt;
-&lt;p&gt;最后的最后，夜晚，当我们走出NYU SH，都认为一定会再聚。&lt;/p&gt;
-&lt;p&gt;谢谢三位伙伴～&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/IMG_1982.JPG&quot; alt=&quot;留念&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2015年10月5日请假去了上海准备7,8日的hackShanghai 2015，并非常幸运的最后获得了第三名。但最大的收获是认识了三位有趣又厉害的伙伴：&lt;/p&gt;
-&lt;p&gt;英国老叔叔（队长，现实是一个非常很萌的学姐)&lt;/p&gt;
-&lt;p&gt;SandyHaaa(优雅的女子，英语非常好)
-    
-    </summary>
-    
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>8个应该被知道的正则表达式</title>
-    <link href="http://consiiii.me/2015/10/22/8%E4%B8%AA%E5%BA%94%E8%AF%A5%E8%A2%AB%E7%9F%A5%E9%81%93%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>http://consiiii.me/2015/10/22/8个应该被知道的正则表达式/</id>
-    <published>2015-10-22T15:21:37.000Z</published>
-    <updated>2016-01-15T14:32:21.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;翻译自此处&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;正则表达式是一门独立的语言。当您在学习一门新的编程语言，它们可能是那种第一眼看上不太好懂的小语言。很多时候，您必须因此去阅读额外的教程，文章甚至书以求理解它所谓的”简单“的实例。今天，我们将回顾一下您在做下个一个项目前应该知道的，8个正则表达式。&lt;/p&gt;
-&lt;h2 id=&quot;正则表达式的背景&quot;&gt;&lt;a href=&quot;#正则表达式的背景&quot; class=&quot;headerlink&quot; title=&quot;正则表达式的背景&quot;&gt;&lt;/a&gt;正则表达式的背景&lt;/h2&gt;&lt;p&gt;维基百科：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为regex、regexp或RE），计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这段解释并没有真正告诉我们太多关于它实际上是以何种表现形式的。而我今天将要讲的，正是这形如\w,\s,\1，以及其它一些含义与“外表”看起来不那么一样的正则表达式。&lt;/p&gt;
-&lt;p&gt;如果您愿意在阅读此篇文章之前去了解一下正则表达式，建议看看&lt;a href=&quot;http://www.multiurl.com/ga/regexdummies&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Regular Expressions for Dummies&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;我们将要提及的8个正则表达式将能够让您学习如何去匹配：用户名, 密码, 邮箱, 16进制（如#fff, #000), Slug, URL, IP地址, 还有HTML标签。随着程度深入，这些表达式将会变得更容易让人头晕。以下每一张放在开头的解释性图片，将很好的解释文章的内容，但是最后4个（正则表达式）通过阅读说明会更容易理解。&lt;/p&gt;
-&lt;p&gt;记住正则表达式含义的关键点是它们几乎都是同时向前/向后搜索的。这句话将在我们谈到HTML标签的时候会更容易理解。&lt;/p&gt;
-&lt;p&gt;注意：正则表达式中的分隔符是斜杠”/“。每一个匹配语句（以下也将翻译成匹配模式）开头和末尾都会跟着一个分隔符”/“。如果一个出线在表达式之内，那我们一定要通过反斜杠”\”将它转义，如：“\/”。&lt;/p&gt;
-&lt;h2 id=&quot;1-匹配用户名&quot;&gt;&lt;a href=&quot;#1-匹配用户名&quot; class=&quot;headerlink&quot; title=&quot;1. 匹配用户名&quot;&gt;&lt;/a&gt;1. 匹配用户名&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/username.jpg&quot; alt=&quot;Matching a username&quot;&gt;&lt;/p&gt;
-&lt;h5 id=&quot;匹配模式：&quot;&gt;&lt;a href=&quot;#匹配模式：&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^[a-z0^9_-]{3,16}$/&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&quot;解释：&quot;&gt;&lt;a href=&quot;#解释：&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;让我们告诉解析器字符串的开头(通过使用&lt;strong&gt;^&lt;/strong&gt;)后面跟随着的是&lt;strong&gt;小写字母(a-z)/数字(0-9)/下划线/下划线&lt;/strong&gt;。接着，&lt;strong&gt;{3,16}&lt;/strong&gt;确保字符串应当有至少3个这样的字符，而且不超过16个。最后，字符串抵达尾部($).&lt;/p&gt;
-&lt;h5 id=&quot;匹配&quot;&gt;&lt;a href=&quot;#匹配&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;my-us3r_n4m3&lt;/p&gt;
-&lt;h5 id=&quot;不匹配&quot;&gt;&lt;a href=&quot;#不匹配&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;th1s1s-wayt00_l0ngt0beausername (因为太长了)&lt;/p&gt;
-&lt;h2 id=&quot;2-匹配密码&quot;&gt;&lt;a href=&quot;#2-匹配密码&quot; class=&quot;headerlink&quot; title=&quot;2. 匹配密码&quot;&gt;&lt;/a&gt;2. 匹配密码&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/password.jpg&quot; alt=&quot;Mathing a Password&quot;&gt;&lt;/p&gt;
-&lt;h5 id=&quot;匹配模式：-1&quot;&gt;&lt;a href=&quot;#匹配模式：-1&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^[a-z0-9_-]{6,18}$/&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&quot;解释：-1&quot;&gt;&lt;a href=&quot;#解释：-1&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;匹配密码和匹配用户名非常相似。唯一的不同是这里要&lt;strong&gt;6到18位字母/数字/下划线/或者连字符&lt;/strong&gt;，而不是3到16位。&lt;/p&gt;
-&lt;h5 id=&quot;匹配-1&quot;&gt;&lt;a href=&quot;#匹配-1&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;myp4ssw0rd&lt;/p&gt;
-&lt;h5 id=&quot;不匹配-1&quot;&gt;&lt;a href=&quot;#不匹配-1&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;mypa$$w0rd (因为包含了$字符)&lt;/p&gt;
-&lt;h2 id=&quot;3-匹配16进制数&quot;&gt;&lt;a href=&quot;#3-匹配16进制数&quot; class=&quot;headerlink&quot; title=&quot;3. 匹配16进制数&quot;&gt;&lt;/a&gt;3. 匹配16进制数&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/hex-copy.jpg&quot; alt=&quot;Maching a Hex Value&quot;&gt;&lt;/p&gt;
-&lt;h5 id=&quot;匹配模式：-2&quot;&gt;&lt;a href=&quot;#匹配模式：-2&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^#?([a-f0-9]{6}|[a-f0-9]{3})$/&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&quot;解释：-2&quot;&gt;&lt;a href=&quot;#解释：-2&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;符号^&lt;/strong&gt;告诉解析器字符串从哪里开始。是否匹配&lt;strong&gt;＃&lt;/strong&gt;是可选的，因为它后面跟着一个问号（译者注：?代表0个获1个）。&lt;strong&gt;问号?&lt;/strong&gt;告诉解释器，它前面的字符（这里是一个＃）是可选的。注意问号是“贪婪的”，这意味着如果这里有匹配的字符，问号就会去获取字符。接下来，在第一组里(第一组圆括号)，我们实现了两种不同的处理方式。第一个是a－f之间的小写字符或数字，要求出现6次。&lt;strong&gt;垂线｜&lt;/strong&gt;告诉我们，或者这里是a－f之间的小写字母或数字出现3次（译者注：这是16进制的简写）。最后，我们用$来结束字符串。&lt;/p&gt;
-&lt;p&gt;这里把&lt;strong&gt;“匹配6个字符的要求”&lt;/strong&gt;放在前面的原因是，解释器先去会捕获#ffffff这样的16进制数。如果反一下，把&lt;strong&gt;“三个字符的要求”&lt;/strong&gt;放在前面，那么么解释器只会拿走#fff而不会捕获其它的3个f。&lt;/p&gt;
-&lt;h5 id=&quot;匹配-2&quot;&gt;&lt;a href=&quot;#匹配-2&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;#a3c113&lt;/p&gt;
-&lt;p&gt;#333&lt;/p&gt;
-&lt;p&gt;#f66h23 (匹配#f66)&lt;/p&gt;
-&lt;h5 id=&quot;不匹配-2&quot;&gt;&lt;a href=&quot;#不匹配-2&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;#4h82f4 (#4h8不匹配)&lt;/p&gt;
-&lt;h2 id=&quot;4-匹配Slug&quot;&gt;&lt;a href=&quot;#4-匹配Slug&quot; class=&quot;headerlink&quot; title=&quot;4. 匹配Slug&quot;&gt;&lt;/a&gt;4. 匹配Slug&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/slug.jpg&quot; alt=&quot;Matching a &amp;quot;Slug&amp;quot;&quot;&gt;&lt;/p&gt;
-&lt;h5 id=&quot;匹配模式：-3&quot;&gt;&lt;a href=&quot;#匹配模式：-3&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^[a-z0-9-]+$/&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&quot;解释：-3&quot;&gt;&lt;a href=&quot;#解释：-3&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;如果您曾经使用过mod_rewrite以及URL美化，那您大概是会使用正则表达式的。先让解释器去找到字符串的头(^)，其后匹配&lt;strong&gt;一个或多个字符/数字/连字符&lt;/strong&gt;。最后，需要匹配到的字符串到这此结束（$）.&lt;/p&gt;
-&lt;h5 id=&quot;匹配-3&quot;&gt;&lt;a href=&quot;#匹配-3&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;my-title-here&lt;/p&gt;
-&lt;h5 id=&quot;不匹配-3&quot;&gt;&lt;a href=&quot;#不匹配-3&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;my_title_here (包含下划线)&lt;/p&gt;
-&lt;h2 id=&quot;5-匹配邮件&quot;&gt;&lt;a href=&quot;#5-匹配邮件&quot; class=&quot;headerlink&quot; title=&quot;5. 匹配邮件&quot;&gt;&lt;/a&gt;5. 匹配邮件&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/email.jpg&quot; alt=&quot;Matching a Email&quot;&gt;&lt;/p&gt;
-&lt;h5 id=&quot;匹配模式：-4&quot;&gt;&lt;a href=&quot;#匹配模式：-4&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&quot;解释：-4&quot;&gt;&lt;a href=&quot;#解释：-4&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;先让解释器找到字符串的头(^)。然后里面第一组，我们匹配&lt;strong&gt;一个或多个小写字母/数字/下划线/点/破折号&lt;/strong&gt;。我转义了“.”，因为一个没有转义的“.”代表着任何字符（译者注：\. 将 “.” 转义，以匹配字符意义上的”.” ）。在这个分组后面必须直接跟着一个“@”。接下来域名必须匹配上这样的规则：1个或多个小写字母，数字，下划线，点或者破折号。借着又是一个（转义的）“.”，后面跟着2到6位的小写字母或者”.”。限制2到6位是因为有国家的顶级域名这种东西(.ny.us 或者 .co.uk)。最后，我们要求字符串到此结束($)。&lt;/p&gt;
-&lt;h5 id=&quot;匹配-4&quot;&gt;&lt;a href=&quot;#匹配-4&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;john@doe.com&lt;/p&gt;
-&lt;h5 id=&quot;不匹配-4&quot;&gt;&lt;a href=&quot;#不匹配-4&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;john@doe.something (顶级域名太长了)&lt;/p&gt;
-&lt;h2 id=&quot;6-匹配URL&quot;&gt;&lt;a href=&quot;#6-匹配URL&quot; class=&quot;headerlink&quot; title=&quot;6. 匹配URL&quot;&gt;&lt;/a&gt;6. 匹配URL&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/url.jpg&quot; alt=&quot;Matching a URL&quot;&gt;&lt;/p&gt;
-&lt;h5 id=&quot;匹配模式&quot;&gt;&lt;a href=&quot;#匹配模式&quot; class=&quot;headerlink&quot; title=&quot;匹配模式&quot;&gt;&lt;/a&gt;匹配模式&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/&lt;/code&gt;&lt;br&gt;(译者注：在最后一个分组内原文允许匹配空格，但URL中的空格一般在表示时通常会使用urlencode一类的来转义成“+“一类的)&lt;/p&gt;
-&lt;h5 id=&quot;解释&quot;&gt;&lt;a href=&quot;#解释&quot; class=&quot;headerlink&quot; title=&quot;解释&quot;&gt;&lt;/a&gt;解释&lt;/h5&gt;&lt;p&gt;这个正则超像是上面所写的表达式们的杂烩形式，不过是将它们组合于一些文件结构和“ http:// ”之间罢了。其实它比看起来的样子要简单。在开始匹配之前，我们照例先搜寻用脱字符(^)来搜寻一行的开始。&lt;/p&gt;
-&lt;p&gt;第一个要捕捉的部分全部都是可选的。它允许URL以“ http:// ”开头，亦或以“ https:// ”开头，亦或都不使用上述两种。在这之后我设置了一个问号，它告诉URL去匹配https或者http.为了使整个分组可选，需要在末尾再添加一个问号。&lt;/p&gt;
-&lt;p&gt;截下来匹配域名：&lt;strong&gt;一个或多个数字/字母/点/连字符&lt;/strong&gt;。域名后面跟随着一个点，之后是2-6个字母或点。接下来这部分为可选的文件／目录结构。在这个部分中，需要匹配任意数量的 &lt;strong&gt;斜杠/字母/下划线/点/连字符&lt;/strong&gt; 。只要我们需要，这个部分可以匹配任意多次数。多重结构都会被匹配，但是最后以一个文件作为结尾。我在这里使用了”&lt;em&gt;“而不是问号，因为”&lt;/em&gt;“表示0或多个，而不是表示0或1个（译者注：问号表示0或1个）。如果问号被用在这里，那么将会只有一个文件/目录能够被匹配上。&lt;/p&gt;
-&lt;p&gt;接着一个反斜杠”/“可以被匹配，但这是可选的。最后我们结束字符串。&lt;/p&gt;
-&lt;h5 id=&quot;匹配-5&quot;&gt;&lt;a href=&quot;#匹配-5&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;&lt;a href=&quot;http://net.tutsplus.com/about&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://net.tutsplus.com/about&lt;/a&gt;&lt;/p&gt;
-&lt;h5 id=&quot;不匹配-5&quot;&gt;&lt;a href=&quot;#不匹配-5&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;&lt;a href=&quot;http://google.com/some/file!.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://google.com/some/file!.html&lt;/a&gt; (包含感叹号)&lt;/p&gt;
-&lt;h2 id=&quot;7-匹配IP地址&quot;&gt;&lt;a href=&quot;#7-匹配IP地址&quot; class=&quot;headerlink&quot; title=&quot;7. 匹配IP地址&quot;&gt;&lt;/a&gt;7. 匹配IP地址&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/ip.jpg&quot; alt=&quot;Matching an IP Address&quot;&gt;&lt;/p&gt;
-&lt;h5 id=&quot;匹配模式：-5&quot;&gt;&lt;a href=&quot;#匹配模式：-5&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&quot;解释：-5&quot;&gt;&lt;a href=&quot;#解释：-5&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;我不准备说谎，我没有写这个正则，而是从&lt;a href=&quot;http://www.regular-expressions.info/regexbuddy/ipaccurate.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;得到了它。但这不代表我现在不能逐字逐句地分析它。&lt;/p&gt;
-&lt;p&gt;第一个要求捕获的分组其实不是一个被捕获的分组（原文：The first capture group really isn’t a captured group），因为&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;“?:”告诉解释器不要去捕获这个分组（更多内容在最后一个正则表达式会说明)。通过把”{3}”放在这个组别的后面，我们还要求了这个不被捕获的分组需重复3次。这个组别包含了一个子组，和一个”.”。解释器会去尝试匹配子组及”.”，然后继续。&lt;/p&gt;
-&lt;p&gt;这个子组是又一个非捕获组。它只是一堆在括号中的字符集：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;字符串“25”后面需要跟随0-5之间的数字；&lt;/li&gt;
-&lt;li&gt;或字符“2”后面要跟着0-4，然后是一位任意数字；&lt;/li&gt;
-&lt;li&gt;或是一个可选0和1，后面跟着两位数字，其中第二位是可选的。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;最后我们结束匹配这个让人头晕的正则表达式。&lt;/p&gt;
-&lt;h5 id=&quot;匹配-6&quot;&gt;&lt;a href=&quot;#匹配-6&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;73.60.124.136 &lt;/p&gt;
-&lt;h5 id=&quot;不匹配-6&quot;&gt;&lt;a href=&quot;#不匹配-6&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;256.60.124.136 (第一个分组得在0-255之间)&lt;/p&gt;
-&lt;h2 id=&quot;8-匹配HTML标签&quot;&gt;&lt;a href=&quot;#8-匹配HTML标签&quot; class=&quot;headerlink&quot; title=&quot;8. 匹配HTML标签&quot;&gt;&lt;/a&gt;8. 匹配HTML标签&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.tutsplus.com/net/uploads/legacy/404_regularExpressions/images/htmltag.jpg&quot; alt=&quot;Matching an HTML Tag&quot;&gt;&lt;/p&gt;
-&lt;h5 id=&quot;匹配模式：-6&quot;&gt;&lt;a href=&quot;#匹配模式：-6&quot; class=&quot;headerlink&quot; title=&quot;匹配模式：&quot;&gt;&lt;/a&gt;匹配模式：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;/^&amp;lt;([a-z]+)([^&amp;lt;]+)*(?:&amp;gt;(.*)&amp;lt;\/\1&amp;gt;|\s+\/&amp;gt;)$/&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&quot;解释：-6&quot;&gt;&lt;a href=&quot;#解释：-6&quot; class=&quot;headerlink&quot; title=&quot;解释：&quot;&gt;&lt;/a&gt;解释：&lt;/h5&gt;&lt;p&gt;又一个有用的正则表达式！它匹配任何HTML标签还有其中的内容，我们用一行的开头来开始匹配。&lt;/p&gt;
-&lt;p&gt;第一个要匹配的是标签的名字。它必须是1或多个字符。这是一个捕获组，这东西在我们捕获闭标签时相当有用。截下来是标签的属性。它是除符号&amp;gt;外的任意字符。因为这是可选的，但我又需要匹配上多个字符串，所以使用了符号*。加号的使用能匹配属性和值(译者注：加号代表一个或多个)，星号 * 则能表示任意数量的属性。&lt;/p&gt;
-&lt;p&gt;接下里第三个是非捕获组。里面包含了一个大于号(&amp;gt;)，一些文本内容，和一个闭标签；或是一些空格，一个反斜杠(/),\1用来表示捕获的内容要在一个捕获分组内。在这种情况下它是标签的名字。现在，如果这里不能匹配，我们就需要寻找一个自关闭标签（像是img,br,或者hr标签）。这需要有一个或多个空格，其后跟随着 “/&amp;gt;”。&lt;/p&gt;
-&lt;p&gt;正则表达式结束于行末。&lt;/p&gt;
-&lt;h5 id=&quot;匹配-7&quot;&gt;&lt;a href=&quot;#匹配-7&quot; class=&quot;headerlink&quot; title=&quot;匹配&quot;&gt;&lt;/a&gt;匹配&lt;/h5&gt;&lt;p&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;http://net.tutsplus.com/&amp;quot;&amp;gt;Nettuts+&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&quot;不匹配-7&quot;&gt;&lt;a href=&quot;#不匹配-7&quot; class=&quot;headerlink&quot; title=&quot;不匹配&quot;&gt;&lt;/a&gt;不匹配&lt;/h5&gt;&lt;p&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;img.jpg&amp;quot; alt=&amp;quot;My image&amp;gt;&amp;quot; /&amp;gt;&lt;/code&gt; (属性中不能包含大符号)&lt;/p&gt;
-&lt;h2 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;希望您能领略到正则表达式背后的一些想法和思维。愿您能在未来的项目中使用这些正则表达式！很多时候您不必一个字符一个字符地去解读正则表达式，但是有时这样做能帮助您去学习到一些东西。请记住：不要害怕正则表达式，它们不如所看到的那样（晦涩难懂），它们反而能让您的生活变得更加简单。&lt;/p&gt;
-&lt;p&gt;要不要尝试下不使用正则表达式来从字符串中抓取标签的名字呢！ ;)&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;翻译自此处&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Regex" scheme="http://consiiii.me/categories/Regex/"/>
-    
-    
-      <category term="Regex" scheme="http://consiiii.me/tags/Regex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The model used to open the store is incompatible with the one used to create the store</title>
-    <link href="http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/"/>
-    <id>http://consiiii.me/2015/10/17/The-model-used-to-open-the-store-is-incompatible-with-the-one-used-to-create-the-store/</id>
-    <published>2015-10-17T01:47:18.000Z</published>
-    <updated>2016-03-20T05:33:14.000Z</updated>
-    
-    <content type="html">&lt;p&gt;使用CoreData更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.&lt;/p&gt;
-&lt;p&gt;删除app后，重新编辑就好了。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用CoreData更改了实体的字段后出现出错”The model used to open the store is incompatible with the one used to create the store”.&lt;/p&gt;
-&lt;p&gt;删除app后，重新编辑就好了。&lt;/
-    
-    </summary>
-    
-      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
-    
-      <category term="Xcode" scheme="http://consiiii.me/categories/Slots/Xcode/"/>
-    
-    
-      <category term="Xcode" scheme="http://consiiii.me/tags/Xcode/"/>
-    
-      <category term="Slots" scheme="http://consiiii.me/tags/Slots/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTTPS: 应用SSL到Nginx站点</title>
-    <link href="http://consiiii.me/2015/10/16/HTTPS-%E5%BA%94%E7%94%A8SSL%E5%88%B0%E7%AB%99%E7%82%B9/"/>
-    <id>http://consiiii.me/2015/10/16/HTTPS-应用SSL到站点/</id>
-    <published>2015-10-16T11:10:05.000Z</published>
-    <updated>2016-03-16T12:29:40.000Z</updated>
-    
-    <content type="html">&lt;p&gt;通过提交CSR一些可靠的第三方SSL签发机构，得到颁发的CRT文件，我们可以将自己的站点实现上HTTPS访问。&lt;/p&gt;
-&lt;p&gt;一些可靠的第三方SSL签发机构在文末列出。&lt;/p&gt;
-&lt;h2 id=&quot;1-使用OpenSSL生成Key和CSR&quot;&gt;&lt;a href=&quot;#1-使用OpenSSL生成Key和CSR&quot; class=&quot;headerlink&quot; title=&quot;1. 使用OpenSSL生成Key和CSR&quot;&gt;&lt;/a&gt;1. 使用OpenSSL生成Key和CSR&lt;/h2&gt;&lt;p&gt;&lt;code&gt;openssl req -nodes -newkey rsa:2048 -keyout example.key -out example.csr&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;该命令生成一个2048位的Key文件和CSR文件。如果您的服务器性能足够，也可以使用4096位。不选择1024位是因为（简单来说）现在的计算机性能越来越好，其算法被破解的难度大大降低了。&lt;/p&gt;
-&lt;p&gt;生成私钥时会向您询问一些信息，其中：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Common Name (e.g. server FQDN or YOUR name) []: YOUR INPUT&lt;/code&gt;一项在此处填写的是域名，因为我们在给网站应用上HTTPS。&lt;/p&gt;
-&lt;h2 id=&quot;2-获取CRT文件&quot;&gt;&lt;a href=&quot;#2-获取CRT文件&quot; class=&quot;headerlink&quot; title=&quot;2. 获取CRT文件&quot;&gt;&lt;/a&gt;2. 获取CRT文件&lt;/h2&gt;&lt;p&gt;通过您信赖的第三方CA机构（文末列出了一些第三方机构），提供CSR文件，其一般会给您颁发一个CRT文件。现在，您一共有了三个文件：&lt;code&gt;example.key&lt;/code&gt;, &lt;code&gt;example.csr&lt;/code&gt;, &lt;code&gt;example.crt&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;3-在服务区上配置&quot;&gt;&lt;a href=&quot;#3-在服务区上配置&quot; class=&quot;headerlink&quot; title=&quot;3. 在服务区上配置&quot;&gt;&lt;/a&gt;3. 在服务区上配置&lt;/h2&gt;&lt;p&gt;首先将key和crt上传至服务器任意一个目录下，这里假设您上传至了&lt;code&gt;/etc/ssl/private/&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;然后修改Nginx配置：&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 80;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen [::]:80;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 443 ssl default_server;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen [::]:443 ssl default_server;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ....&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        #ssl on; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_certificate /etc/ssl/private/example.crt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_certificate_key /etc/ssl/private/example.key;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_ciphers ALL:!DH:!EXPORT:!RC4:+HIGH:+MEDIUM:!LOW:!aNULL:!eNULL;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;保存并退出, 重启Nginx，访问&lt;a href=&quot;https://example.com即可查看到效果啦！&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://example.com即可查看到效果啦！&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;可以使用&lt;code&gt;nginx -t &amp;amp;&amp;amp; nginx -s reload&lt;/code&gt;来检测语法并且重启，或者直接使用&lt;code&gt;killall -HUP nginx&lt;/code&gt;来平滑启动nginx。&lt;/p&gt;
-&lt;p&gt;如果取消注释&lt;code&gt;ssl on&lt;/code&gt;，那么&lt;strong&gt;在没有其他措施的情况下&lt;/strong&gt;，正常访问&lt;a href=&quot;http://example.com，会显示错误：&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://example.com，会显示错误：&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight elm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;type&quot;&gt;The&lt;/span&gt; plain &lt;span class=&quot;type&quot;&gt;HTTP&lt;/span&gt; request was sent to &lt;span class=&quot;type&quot;&gt;HTTPS&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;port&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;4-可靠第三方SSL签发机构&quot;&gt;&lt;a href=&quot;#4-可靠第三方SSL签发机构&quot; class=&quot;headerlink&quot; title=&quot;4. 可靠第三方SSL签发机构&quot;&gt;&lt;/a&gt;4. 可靠第三方SSL签发机构&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;此处信息摘自于&lt;a href=&quot;https://s.how/nginx-ssl/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;此处&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;目前一般市面上针对中小站长和企业的 SSL 证书颁发机构有：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.startssl.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;StartSSL&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.comodo.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Comodo&lt;/a&gt; / 子品牌 &lt;a href=&quot;https://www.positivessl.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Positive SSL&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.globalsign.com/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GlobalSign&lt;/a&gt; / 子品牌 &lt;a href=&quot;https://www.alphassl.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AlphaSSL&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.geotrust.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GeoTrust&lt;/a&gt;/ 子品牌 &lt;a href=&quot;https://www.rapidssl.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RapidSSL&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;其中 Postivie SSL、AlphaSSL、RapidSSL 等都是子品牌，一般都是三级四级证书，所以你会需要增加 CA 证书链到你的 CRT 文件里。&lt;/p&gt;
-&lt;p&gt;以 Comodo Positive SSL 为例，需要串联 CA 证书，假设你的域名是 example.com&lt;/p&gt;
-&lt;p&gt;那么，串联的命令是&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat example_com&lt;span class=&quot;selector-class&quot;&gt;.crt&lt;/span&gt; COMODORSADomainValidationSecureServerCA&lt;span class=&quot;selector-class&quot;&gt;.crt&lt;/span&gt; COMODORSAAddTrustCA&lt;span class=&quot;selector-class&quot;&gt;.crt&lt;/span&gt; AddTrustExternalCARoot&lt;span class=&quot;selector-class&quot;&gt;.crt&lt;/span&gt; &amp;gt; example_com&lt;span class=&quot;selector-class&quot;&gt;.signed&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.crt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在 Nginx 配置里使用 example_com.signed.crt 即可&lt;/p&gt;
-&lt;p&gt;如果是一般常见的 AplhaSSL 泛域名证书，他们是不会发给你 CA 证书链的，那么在你的 CRT 文件后面需要加入 AlphaSSL 的 CA 证书链&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.alphassl.com/support/install-root-certificate.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AlphaSSL Intermediate CA&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;通过提交CSR一些可靠的第三方SSL签发机构，得到颁发的CRT文件，我们可以将自己的站点实现上HTTPS访问。&lt;/p&gt;
-&lt;p&gt;一些可靠的第三方SSL签发机构在文末列出。&lt;/p&gt;
-&lt;h2 id=&quot;1-使用OpenSSL生成Key和CSR&quot;&gt;&lt;a href=&quot;#1-使用Open
-    
-    </summary>
-    
-      <category term="SSL" scheme="http://consiiii.me/categories/SSL/"/>
-    
-    
-      <category term="SSL" scheme="http://consiiii.me/tags/SSL/"/>
-    
-      <category term="HTTPS" scheme="http://consiiii.me/tags/HTTPS/"/>
-    
-      <category term="Nginx" scheme="http://consiiii.me/tags/Nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决Finder的CPU占有率频繁居高不下问题</title>
-    <link href="http://consiiii.me/2015/10/15/%E8%A7%A3%E5%86%B3Finder%E7%9A%84CPU%E5%8D%A0%E6%9C%89%E7%8E%87%E9%A2%91%E7%B9%81%E5%B1%85%E9%AB%98%E4%B8%8D%E4%B8%8B%E9%97%AE%E9%A2%98/"/>
-    <id>http://consiiii.me/2015/10/15/解决Finder的CPU占有率频繁居高不下问题/</id>
-    <published>2015-10-14T16:21:00.000Z</published>
-    <updated>2015-10-14T16:28:03.000Z</updated>
-    
-    <content type="html">&lt;p&gt;症状：升级El Capitan后，Finder的CPU占有率经常居高不下，100%及以上，连接着Xcode，FF，Chrome也会经常暴增到100%及以上，打字都会卡，十分影响日常。&lt;/p&gt;
-&lt;p&gt;周围：Google搜索有一些帖子反应这个问题，一个帖子里说Apple承认这是El的一个bug并且在修复了。&lt;/p&gt;
-&lt;p&gt;我的解决办法：关机，开机，然后离开command+option+r+p.听到3声启动声音后松开，这招据说是apple客服传授的，用于重置PRAM和NVRAM。&lt;/p&gt;
-&lt;p&gt;效果：开机快了好多，到现在为止finder不会再暴到100%了。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;症状：升级El Capitan后，Finder的CPU占有率经常居高不下，100%及以上，连接着Xcode，FF，Chrome也会经常暴增到100%及以上，打字都会卡，十分影响日常。&lt;/p&gt;
-&lt;p&gt;周围：Google搜索有一些帖子反应这个问题，一个帖子里说Apple承认这是
-    
-    </summary>
-    
-      <category term="Mac" scheme="http://consiiii.me/categories/Mac/"/>
-    
-    
-      <category term="Mac" scheme="http://consiiii.me/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>El Capitan下Sass命令无用的解决办法</title>
-    <link href="http://consiiii.me/2015/10/11/El-Capitan%E4%B8%8BSass%E5%91%BD%E4%BB%A4%E6%97%A0%E7%94%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>http://consiiii.me/2015/10/11/El-Capitan下Sass命令无用的解决办法/</id>
-    <published>2015-10-11T14:07:24.000Z</published>
-    <updated>2015-10-11T14:22:23.000Z</updated>
-    
-    <content type="html">&lt;p&gt;更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。&lt;br&gt;输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。&lt;br&gt;例如错误：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ERROR:  While executing gem ... (Errno::EPERM)
-Operation not permitted - /usr/bin/sass
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;找到的一个解决办法是；&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo gem install -n /usr/local/bin GEM_NAME_HERE
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;话说难道不能直接替换ruby的源吗，感觉这样做不太科学（其实也感觉不方便）。&lt;br&gt;应该有一个变量地址记录着Ruby的地址的吧，但是“该怎么做”还没找到。&lt;/p&gt;
-&lt;p&gt;—&lt;br&gt;找到一个解决的博文：&lt;br&gt;&lt;a href=&quot;https://medium.com/@lab.5721/os-x-el-capitan-10-11-%E5%AE%89%E8%A3%9Dsass%E5%A4%B1%E6%95%97%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95-3739ad67c553&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击这里&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;更新上El Capitan之后使用ruby依赖的相关包出现问题，包括cocoapod，sass,compass等。&lt;br&gt;输入命令后提示 command not found.找到原因是因为ruby的位置换了（这里不甚了解）。&lt;br&gt;例如错误：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;
-    
-    </summary>
-    
-      <category term="Ruby" scheme="http://consiiii.me/categories/Ruby/"/>
-    
-    
-      <category term="Sass" scheme="http://consiiii.me/tags/Sass/"/>
-    
-      <category term="El Capitan" scheme="http://consiiii.me/tags/El-Capitan/"/>
-    
-      <category term="Ruby" scheme="http://consiiii.me/tags/Ruby/"/>
     
   </entry>
   
