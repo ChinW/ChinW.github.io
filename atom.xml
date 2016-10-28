@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2016-10-24T13:49:47.000Z</updated>
+  <updated>2016-10-22T04:50:11.000Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -14,24 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>TECH F5VE 16年纳新正式结束</title>
-    <link href="http://consiiii.me/2016/10/24/TECH-F5VE-16%E5%B9%B4%E7%BA%B3%E6%96%B0%E6%AD%A3%E5%BC%8F%E7%BB%93%E6%9D%9F/"/>
-    <id>http://consiiii.me/2016/10/24/TECH-F5VE-16年纳新正式结束/</id>
-    <published>2016-10-24T13:49:47.000Z</published>
-    <updated>2016-10-24T13:49:47.000Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>PHP保存文件时文件名乱码与Windows Server</title>
@@ -236,36 +218,6 @@
   </entry>
   
   <entry>
-    <title>Realm/RLMArray.h file not found</title>
-    <link href="http://consiiii.me/2016/09/24/Realm:RLMArray.h%20file%20not%20found/"/>
-    <id>http://consiiii.me/2016/09/24/Realm:RLMArray.h file not found/</id>
-    <published>2016-09-24T12:19:29.000Z</published>
-    <updated>2016-10-24T14:17:03.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;模拟器运行正常，打包正常，真机编译时部分Framework出现&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;‘Realm/RLMArray.h’ file not found&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;CocoaPods 1.0.1, Xcode 8, Realm 0.98.3&lt;/p&gt;
-&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;p&gt;按下&lt;code&gt;Option&lt;/code&gt;+&lt;code&gt;CMD&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;K&lt;/code&gt;, Clean Build Folder, 或者按下&lt;code&gt;Option&lt;/code&gt;，选择｀Product｀—&amp;gt; &lt;code&gt;Clean Build Folder&lt;/code&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;模拟器运行正常，打包正常，真机编译时部分Framework出现&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;‘Realm/RLM
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://consiiii.me/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>识别植物</title>
     <link href="http://consiiii.me/2016/05/22/%E8%AF%86%E5%88%AB%E6%A4%8D%E7%89%A9/"/>
     <id>http://consiiii.me/2016/05/22/识别植物/</id>
@@ -408,6 +360,48 @@
       <category term="Redux" scheme="http://consiiii.me/tags/Redux/"/>
     
       <category term="React" scheme="http://consiiii.me/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Experience of HackPKU 2016</title>
+    <link href="http://consiiii.me/2016/04/22/Experience-of-HackPKU-2016/"/>
+    <id>http://consiiii.me/2016/04/22/Experience-of-HackPKU-2016/</id>
+    <published>2016-04-22T11:36:42.000Z</published>
+    <updated>2016-10-24T15:19:03.000Z</updated>
+    
+    <content type="html">&lt;p&gt;这次去北京大学参加了36个小时的Hackathon&lt;/p&gt;
+&lt;h2 id=&quot;1-时间地点&quot;&gt;&lt;a href=&quot;#1-时间地点&quot; class=&quot;headerlink&quot; title=&quot;1. 时间地点&quot;&gt;&lt;/a&gt;1. 时间地点&lt;/h2&gt;&lt;p&gt;2016年4月8日18:00－10日14:00，北京大学，英杰交流中心&lt;/p&gt;
+&lt;h2 id=&quot;2-流水账&quot;&gt;&lt;a href=&quot;#2-流水账&quot; class=&quot;headerlink&quot; title=&quot;2. 流水账&quot;&gt;&lt;/a&gt;2. 流水账&lt;/h2&gt;&lt;p&gt;如果说每次参加Hackathon我有什么期待的话，大概就是对于不知道会发生什么，做什么感觉到非常兴奋！&lt;/p&gt;
+&lt;p&gt;因此个人比较单刀赴会，然后去找到不认识的同学一起组队。我认识了新同学，一起临阵磨枪，做了一件作品，还有比这个更刺激的嘛！当然有，就是大家的技能栈都会不同，去做一件什么样的事情，能不能大家一起来完成，也是一个策略问题。&lt;/p&gt;
+&lt;h3 id=&quot;2-1-新朋友&quot;&gt;&lt;a href=&quot;#2-1-新朋友&quot; class=&quot;headerlink&quot; title=&quot;2.1 新朋友&quot;&gt;&lt;/a&gt;2.1 新朋友&lt;/h3&gt;&lt;p&gt;这次有幸认识来自NYU SH的小伙伴Bill，北京大学的学姐们Feng &amp;amp; Yao，我们一起组成了路人队。我们临场定下idea，决定做一个近场通讯的iOS客户端。我的主要责任是完成这个iOS客户端。&lt;/p&gt;
+&lt;h3 id=&quot;2-2-趣事&quot;&gt;&lt;a href=&quot;#2-2-趣事&quot; class=&quot;headerlink&quot; title=&quot;2.2 趣事&quot;&gt;&lt;/a&gt;2.2 趣事&lt;/h3&gt;&lt;p&gt;这次比赛时的身体状况不佳，一直咳嗽，越咳越厉害，效率变得很低。半夜的时候，由于可能参赛的大部分是本校学生，都回去睡觉了。剩下寥寥数位在敲键盘。学姐帮我买了糖浆之类的药（再次感谢），最后&lt;br&gt;当水喝，也止不住诺大的一个会场，都是我“KeKeKe”的声音。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_late_night.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;效率变得有些低，但是不写完也不想入睡。何况在左前方这个位置，有一位同学敲键盘敲的极其快速，“啪啪啪，啪啪啪啪啪啪…”&lt;/p&gt;
+&lt;p&gt;1:00的时候如此，3:00的时候依旧非常快速，“啪啪啪，啪啪啪啪啪啪…”&lt;/p&gt;
+&lt;p&gt;我被触动了，心想他可能是北大的学生：这就是北大的学生吗，厉害厉害，这就是差距啊，速度之快，思路之清晰…不行！我不能输！&lt;/p&gt;
+&lt;p&gt;于是我一边咳嗽一边继续坚持敲键盘，5:00 的时候，天已经有点蒙蒙亮了，他还是敲的很快。我身心有点受不了，假装晃荡去他后面看看。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;他在打LOL&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我马上回去趴下休息了。&lt;/p&gt;
+&lt;h2 id=&quot;3-结束&quot;&gt;&lt;a href=&quot;#3-结束&quot; class=&quot;headerlink&quot; title=&quot;3. 结束&quot;&gt;&lt;/a&gt;3. 结束&lt;/h2&gt;&lt;p&gt;最后拿到了绿盟的旅行者奖，hahaha，有点有趣。&lt;/p&gt;
+&lt;p&gt;不过比起奖项，我觉得更加宝贵的地方在于，认识到了新的朋友们，Bill让我学习到了怎么去用多个角度看待问题；Feng的宣传手段和方式，让我大开眼界；Yao对待问题时的专精和效率，让我有了一些行为上的启发。&lt;/p&gt;
+&lt;p&gt;我想，隔了5个月，回想着来写这篇流水账时，这些是我更印象深刻的东西。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_group_photo.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这次去北京大学参加了36个小时的Hackathon&lt;/p&gt;
+&lt;h2 id=&quot;1-时间地点&quot;&gt;&lt;a href=&quot;#1-时间地点&quot; class=&quot;headerlink&quot; title=&quot;1. 时间地点&quot;&gt;&lt;/a&gt;1. 时间地点&lt;/h2&gt;&lt;p&gt;2016年4月8日18:00－10日1
+    
+    </summary>
+    
+      <category term="Competiton" scheme="http://consiiii.me/categories/Competiton/"/>
+    
+    
+      <category term="Competiton" scheme="http://consiiii.me/tags/Competiton/"/>
     
   </entry>
   
@@ -800,6 +794,41 @@
       <category term="MySQL" scheme="http://consiiii.me/tags/MySQL/"/>
     
       <category term="CMS" scheme="http://consiiii.me/tags/CMS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>‘Scrawl Icon Redesign &amp; Imitation&#39;</title>
+    <link href="http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/"/>
+    <id>http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/</id>
+    <published>2016-01-04T11:03:17.000Z</published>
+    <updated>2016-10-28T16:34:39.000Z</updated>
+    
+    <content type="html">&lt;p&gt;利用闲暇的时间，努力去模仿，或者重新设计已经存在的图标。&lt;/p&gt;
+&lt;h3 id=&quot;Day-1-Ivy&quot;&gt;&lt;a href=&quot;#Day-1-Ivy&quot; class=&quot;headerlink&quot; title=&quot;Day 1: Ivy&quot;&gt;&lt;/a&gt;Day 1: Ivy&lt;/h3&gt;&lt;p&gt;160104: Ivy 是Google出品的一个计算器。&lt;/p&gt;
+&lt;p&gt;Mine:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_d1_ivy.png&quot; alt=&quot;Ivy Mock&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Original:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_ivy-google-calculator-03.png&quot; alt=&quot;Ivy&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Day-2-Plane&quot;&gt;&lt;a href=&quot;#Day-2-Plane&quot; class=&quot;headerlink&quot; title=&quot;Day 2: Plane&quot;&gt;&lt;/a&gt;Day 2: Plane&lt;/h3&gt;&lt;p&gt;160105: &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_d2_plane.png&quot; alt=&quot;Plane&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Day-3-Happy-Sun&quot;&gt;&lt;a href=&quot;#Day-3-Happy-Sun&quot; class=&quot;headerlink&quot; title=&quot;Day 3: Happy Sun&quot;&gt;&lt;/a&gt;Day 3: Happy Sun&lt;/h3&gt;&lt;p&gt;160109:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_d3_sun.png&quot; alt=&quot;Happy_Sun&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;利用闲暇的时间，努力去模仿，或者重新设计已经存在的图标。&lt;/p&gt;
+&lt;h3 id=&quot;Day-1-Ivy&quot;&gt;&lt;a href=&quot;#Day-1-Ivy&quot; class=&quot;headerlink&quot; title=&quot;Day 1: Ivy&quot;&gt;&lt;/a&gt;Day 1: Ivy&lt;/h3&gt;&lt;p&gt;1601
+    
+    </summary>
+    
+      <category term="Icon" scheme="http://consiiii.me/categories/Icon/"/>
+    
+    
+      <category term="Icon" scheme="http://consiiii.me/tags/Icon/"/>
+    
+      <category term="Design" scheme="http://consiiii.me/tags/Design/"/>
     
   </entry>
   
