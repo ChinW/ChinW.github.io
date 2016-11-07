@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2016-10-22T04:50:11.000Z</updated>
+  <updated>2016-11-04T12:02:26.000Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -14,6 +14,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Login ProFTPD as root</title>
+    <link href="http://consiiii.me/2016/11/04/%E4%BD%BF%E7%94%A8root%E7%99%BB%E9%99%86proFtpd/"/>
+    <id>http://consiiii.me/2016/11/04/使用root登陆proFtpd/</id>
+    <published>2016-11-04T11:48:38.000Z</published>
+    <updated>2016-11-04T12:02:26.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;使用root登录不是一种安全的方式，请悉知&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-安装ProFTPD&quot;&gt;&lt;a href=&quot;#1-安装ProFTPD&quot; class=&quot;headerlink&quot; title=&quot;1. 安装ProFTPD&quot;&gt;&lt;/a&gt;1. 安装ProFTPD&lt;/h2&gt;&lt;p&gt;&lt;code&gt;apt-get install proftpd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;安装完成后会要求我们选择让该 server 以 inetd 还是 standalone, 选择standalone.&lt;/p&gt;
+&lt;p&gt;配置相关文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;vi /etc/proftpd/proftpd.conf&lt;/code&gt; &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改变Server Name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight apache&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;&lt;span class=&quot;nomarkup&quot;&gt;ServerName&lt;/span&gt;&lt;/span&gt;                      &lt;span class=&quot;string&quot;&gt;&quot;example.com&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;如需要，限制用户的目录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;Use&lt;/span&gt; this &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; jail all &lt;span class=&quot;keyword&quot;&gt;users&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; their homes&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; DefaultRoot                    ~&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2-登录FTP&quot;&gt;&lt;a href=&quot;#2-登录FTP&quot; class=&quot;headerlink&quot; title=&quot;2. 登录FTP&quot;&gt;&lt;/a&gt;2. 登录FTP&lt;/h2&gt;&lt;p&gt;ProFTPD会自动使用系统用户和密码来作为登录FTP的凭证。但是注意到，root之类的用户是无法登录的，会一直出现530错误。&lt;/p&gt;
+&lt;figure class=&quot;highlight gherkin&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Command:	USER root&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Response: 	331 Password required for root&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Command:	PASS &lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Response: 	530 Login incorrect.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Error:      Critical error: Could not connect to server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;修改两个地方:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;vi  /etc/proftpd/proftpd.conf&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;添加上&lt;/p&gt;
+&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;RootLogin				&lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;ProFTPD同时也会使用&lt;code&gt;/etc/ftpusers&lt;/code&gt;做合法检测，这是一个容易遗漏的地方。打开&lt;code&gt;/etc/ftpusers&lt;/code&gt;，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# /etc/ftpusers: list of users disallowed FTP access. See ftpusers(5)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;#注释或者删掉它吧&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;daemon&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;重启ProFTPD, &lt;/p&gt;
+&lt;figure class=&quot;highlight maxima&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;service proftpd &lt;span class=&quot;built_in&quot;&gt;restart&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;现在再登录，是否登录成功了呢？希望是。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;使用root登录不是一种安全的方式，请悉知&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-安装ProFTPD&quot;&gt;&lt;a href=&quot;#1-安装ProFTPD&quot; class=&quot;headerlink&quot; title=&quot;1. 安装ProFTPD&quot;&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://consiiii.me/categories/Linux/"/>
+    
+    
+      <category term="FTP" scheme="http://consiiii.me/tags/FTP/"/>
+    
+      <category term="Linux" scheme="http://consiiii.me/tags/Linux/"/>
+    
+      <category term="ProFTPD" scheme="http://consiiii.me/tags/ProFTPD/"/>
+    
+      <category term="Ubuntu" scheme="http://consiiii.me/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP保存文件时文件名乱码与Windows Server</title>
@@ -100,6 +161,60 @@
   </entry>
   
   <entry>
+    <title>Using system headers in framework in Swift</title>
+    <link href="http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift%20copy/"/>
+    <id>http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/</id>
+    <published>2016-09-24T12:19:29.000Z</published>
+    <updated>2016-09-27T11:28:31.000Z</updated>
+    
+    <content type="html">&lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
+&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误提示是：&lt;/p&gt;
+&lt;p&gt;点击Archive后，上传后出现错误提示1&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.&lt;/p&gt;
+&lt;p&gt;Invalid Bundle, The bundle contains disallowed nested bundles, contains disallowed file ‘Frameworks’&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或者iTC成功了，但是收到邮件，得到错误提示2&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We have discovered one or more issues with your recent delivery for “江雪”. &amp;gt;To process your delivery, the following issues must be corrected:&lt;/p&gt;
+&lt;p&gt;Invalid Bundle - One or more dynamic libraries that are referenced by your &amp;gt;app are not present in the dylib search path.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考了多个已有的讨论（见Refer), 最终解决办法如下:&lt;/p&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;Host APP + Today Extension + 多个Framework用来共享代码，Swift(主要) + OC&lt;/p&gt;
+&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;对于Framework，尝试将&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: YES&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;调成&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: NO&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于Appex,&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Refer&quot;&gt;&lt;a href=&quot;#Refer&quot; class=&quot;headerlink&quot; title=&quot;Refer&quot;&gt;&lt;/a&gt;Refer&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
+&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Disallowed nested bundles, contains disallowed file &#39;Frameworks&#39; in XCode</title>
     <link href="http://consiiii.me/2016/09/24/Disallowed%20nested%20bundles,%20contains%20disallowed%20file%20'Frameworks'%20in%20XCode/"/>
     <id>http://consiiii.me/2016/09/24/Disallowed nested bundles, contains disallowed file 'Frameworks' in XCode/</id>
@@ -160,60 +275,6 @@
       <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
     
       <category term="XCode" scheme="http://consiiii.me/tags/XCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Using system headers in framework in Swift</title>
-    <link href="http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift%20copy/"/>
-    <id>http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/</id>
-    <published>2016-09-24T12:19:29.000Z</published>
-    <updated>2016-09-27T11:28:31.000Z</updated>
-    
-    <content type="html">&lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
-&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误提示是：&lt;/p&gt;
-&lt;p&gt;点击Archive后，上传后出现错误提示1&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.&lt;/p&gt;
-&lt;p&gt;Invalid Bundle, The bundle contains disallowed nested bundles, contains disallowed file ‘Frameworks’&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;或者iTC成功了，但是收到邮件，得到错误提示2&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;We have discovered one or more issues with your recent delivery for “江雪”. &amp;gt;To process your delivery, the following issues must be corrected:&lt;/p&gt;
-&lt;p&gt;Invalid Bundle - One or more dynamic libraries that are referenced by your &amp;gt;app are not present in the dylib search path.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;参考了多个已有的讨论（见Refer), 最终解决办法如下:&lt;/p&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;Host APP + Today Extension + 多个Framework用来共享代码，Swift(主要) + OC&lt;/p&gt;
-&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;对于Framework，尝试将&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: YES&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;调成&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: NO&lt;/code&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;对于Appex,&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;Refer&quot;&gt;&lt;a href=&quot;#Refer&quot; class=&quot;headerlink&quot; title=&quot;Refer&quot;&gt;&lt;/a&gt;Refer&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
-&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误
-    
-    </summary>
-    
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
-    
-    
-      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
     
   </entry>
   
@@ -1016,48 +1077,6 @@
       <category term="linux" scheme="http://consiiii.me/tags/linux/"/>
     
       <category term="mysql" scheme="http://consiiii.me/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SSH登录主机</title>
-    <link href="http://consiiii.me/2015/11/22/SSH%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA/"/>
-    <id>http://consiiii.me/2015/11/22/SSH登录主机/</id>
-    <published>2015-11-22T04:03:44.000Z</published>
-    <updated>2016-04-01T05:37:49.000Z</updated>
-    
-    <content type="html">&lt;p&gt;今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。&lt;/p&gt;
-&lt;h2 id=&quot;1-生成密钥对&quot;&gt;&lt;a href=&quot;#1-生成密钥对&quot; class=&quot;headerlink&quot; title=&quot;1.生成密钥对&quot;&gt;&lt;/a&gt;1.生成密钥对&lt;/h2&gt;&lt;h3 id=&quot;使用ssh-gen&quot;&gt;&lt;a href=&quot;#使用ssh-gen&quot; class=&quot;headerlink&quot; title=&quot;使用ssh-gen&quot;&gt;&lt;/a&gt;使用ssh-gen&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ssh-keygen -t [rsa|dsa]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码&lt;br&gt;;如果想要的目的是免密码登录,密码请留空&lt;/p&gt;
-&lt;h2 id=&quot;2-将公钥拷贝到目标主机&quot;&gt;&lt;a href=&quot;#2-将公钥拷贝到目标主机&quot; class=&quot;headerlink&quot; title=&quot;2.将公钥拷贝到目标主机&quot;&gt;&lt;/a&gt;2.将公钥拷贝到目标主机&lt;/h2&gt;&lt;p&gt;将公钥拷贝到~/.ssh中，远程上传可以使用scp命令&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;scp -r your/target/file/path user@ip:your/remote/file/path/&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;如果主机下已经有authorized_keys，注意不要覆盖改文件，没有的话主动创建文件&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;touch ~/.ssh/authorized_keys&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;然后执行&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cat rsa.pub &amp;gt;&amp;gt; authorized_keys&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;或者本地执行&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cat ~/.ssh/rsa.pub | ssh root@xx.xxx.xxx.xx  &amp;quot;mkdir -p ~/.ssh &amp;amp;&amp;amp; cat &amp;gt;&amp;gt;  ~/.ssh/authorized_keys&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;3-在本机添加标识&quot;&gt;&lt;a href=&quot;#3-在本机添加标识&quot; class=&quot;headerlink&quot; title=&quot;3.在本机添加标识&quot;&gt;&lt;/a&gt;3.在本机添加标识&lt;/h2&gt;&lt;p&gt;打开~/.ssh/config，没有的话就创建一个，书写格式为（替换[]中的内容为自己的配置）&lt;/p&gt;
-&lt;figure class=&quot;highlight accesslog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Host &lt;span class=&quot;string&quot;&gt;[myHost]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hostname &lt;span class=&quot;string&quot;&gt;[123.123.123.123]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Port &lt;span class=&quot;string&quot;&gt;[21]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;User &lt;span class=&quot;string&quot;&gt;[myUser]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IdentityFile &lt;span class=&quot;string&quot;&gt;[ ~/.ssh/local_private_rsa]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;4-登录&quot;&gt;&lt;a href=&quot;#4-登录&quot; class=&quot;headerlink&quot; title=&quot;4.登录&quot;&gt;&lt;/a&gt;4.登录&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;ssh myHost&lt;/code&gt; 进行登录&lt;/p&gt;
-&lt;h2 id=&quot;5-可能出现的问题&quot;&gt;&lt;a href=&quot;#5-可能出现的问题&quot; class=&quot;headerlink&quot; title=&quot;5.可能出现的问题&quot;&gt;&lt;/a&gt;5.可能出现的问题&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;如果出现出现&lt;br&gt; &lt;code&gt;Permissions 0644 for &amp;#39;your/target/file&amp;#39; are too open.&lt;/code&gt;&lt;br&gt; 把权限改成0600就好了&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。&lt;/p&gt;
-&lt;h2 id=&quot;1-生成密钥对&quot;&gt;&lt;a href=&quot;#1-生成密钥对&quot; class=&quot;headerlink&quot; title=&quot;1.生成密钥对&quot;&gt;&lt;/a&gt;1.生成密钥对&lt;/h2&gt;&lt;h3 i
-    
-    </summary>
-    
-      <category term="ssh" scheme="http://consiiii.me/categories/ssh/"/>
-    
-    
-      <category term="ssh" scheme="http://consiiii.me/tags/ssh/"/>
-    
-      <category term="remote login" scheme="http://consiiii.me/tags/remote-login/"/>
     
   </entry>
   

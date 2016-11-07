@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Consiiii">
-    <title>PHP保存文件时文件名乱码与Windows Server - Consiiii</title>
+    <title>Login ProFTPD as root - Consiiii</title>
     <meta name="author" content="Consiiii">
     
         <link rel="icon" href="/assets/images/favicon.ico">
@@ -14,16 +14,43 @@
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="在别人的路上，我们也是风景">
+    <meta name="description" content="使用root登录不是一种安全的方式，请悉知
+
+1. 安装ProFTPDapt-get install proftpd
+安装完成后会要求我们选择让该 server 以 inetd 还是 standalone, 选择standalone.
+配置相关文件
+vi /etc/proftpd/proftpd.conf 
+
+改变Server Name
+
+1ServerName">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="PHP保存文件时文件名乱码与Windows Server">
-<meta property="og:url" content="http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/index.html">
+<meta property="og:title" content="Login ProFTPD as root">
+<meta property="og:url" content="http://consiiii.me/2016/11/04/使用root登陆proFtpd/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="在别人的路上，我们也是风景">
-<meta property="og:updated_time" content="2016-10-22T04:50:11.000Z">
+<meta property="og:description" content="使用root登录不是一种安全的方式，请悉知
+
+1. 安装ProFTPDapt-get install proftpd
+安装完成后会要求我们选择让该 server 以 inetd 还是 standalone, 选择standalone.
+配置相关文件
+vi /etc/proftpd/proftpd.conf 
+
+改变Server Name
+
+1ServerName">
+<meta property="og:updated_time" content="2016-11-04T12:02:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP保存文件时文件名乱码与Windows Server">
-<meta name="twitter:description" content="在别人的路上，我们也是风景">
+<meta name="twitter:title" content="Login ProFTPD as root">
+<meta name="twitter:description" content="使用root登录不是一种安全的方式，请悉知
+
+1. 安装ProFTPDapt-get install proftpd
+安装完成后会要求我们选择让该 server 以 inetd 还是 standalone, 选择standalone.
+配置相关文件
+vi /etc/proftpd/proftpd.conf 
+
+改变Server Name
+
+1ServerName">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -191,19 +218,19 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            PHP保存文件时文件名乱码与Windows Server
+            Login ProFTPD as root
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Oct 22 2016 12:50:11 GMT+0800">
+    <time itemprop="datePublished" content="Fri Nov 04 2016 19:48:38 GMT+0800">
 	
-		    10月 22, 2016
+		    11月 04, 2016
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/slots/">slots</a>
+    <a class="category-link" href="/categories/Linux/">Linux</a>
 
 
     
@@ -212,7 +239,37 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <blockquote>
+<p>使用root登录不是一种安全的方式，请悉知</p>
+</blockquote>
+<h2 id="1-安装ProFTPD"><a href="#1-安装ProFTPD" class="headerlink" title="1. 安装ProFTPD"></a>1. 安装ProFTPD</h2><p><code>apt-get install proftpd</code></p>
+<p>安装完成后会要求我们选择让该 server 以 inetd 还是 standalone, 选择standalone.</p>
+<p>配置相关文件</p>
+<p><code>vi /etc/proftpd/proftpd.conf</code> </p>
+<ul>
+<li>改变Server Name</li>
+</ul>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute"><span class="nomarkup">ServerName</span></span>                      <span class="string">"example.com"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>如需要，限制用户的目录</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">Use</span> this <span class="keyword">to</span> jail all <span class="keyword">users</span> <span class="keyword">in</span> their homes</span><br><span class="line"> DefaultRoot                    ~</span><br></pre></td></tr></table></figure>
+<h2 id="2-登录FTP"><a href="#2-登录FTP" class="headerlink" title="2. 登录FTP"></a>2. 登录FTP</h2><p>ProFTPD会自动使用系统用户和密码来作为登录FTP的凭证。但是注意到，root之类的用户是无法登录的，会一直出现530错误。</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Command:	USER root</span><br><span class="line">Response: 	331 Password required for root</span><br><span class="line">Command:	PASS <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line">Response: 	530 Login incorrect.</span><br><span class="line">Error:      Critical error: Could not connect to server</span><br></pre></td></tr></table></figure>
+<p>修改两个地方:</p>
+<ul>
+<li><code>vi  /etc/proftpd/proftpd.conf</code></li>
+</ul>
+<p>添加上</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RootLogin				<span class="keyword">on</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>ProFTPD同时也会使用<code>/etc/ftpusers</code>做合法检测，这是一个容易遗漏的地方。打开<code>/etc/ftpusers</code>，</li>
+</ul>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/ftpusers: list of users disallowed FTP access. See ftpusers(5)</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">root</span> <span class="comment">#注释或者删掉它吧</span></span><br><span class="line">daemon</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>重启ProFTPD, </p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service proftpd <span class="built_in">restart</span></span><br></pre></td></tr></table></figure>
+<p>现在再登录，是否登录成功了呢？希望是。</p>
+
             
                 
 
@@ -221,12 +278,19 @@
     </div>
     <div class="post-footer main-content-wrap">
         
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/FTP/">FTP</a> <a class="tag tag--primary tag--small t-link" href="/tags/Linux/">Linux</a> <a class="tag tag--primary tag--small t-link" href="/tags/ProFTPD/">ProFTPD</a> <a class="tag tag--primary tag--small t-link" href="/tags/Ubuntu/">Ubuntu</a>
+
+            </div>
+        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/04/使用root登陆proFtpd/"  data-tooltip="Login ProFTPD as root">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -234,7 +298,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/10/08/Update-Stotyboard-Localization/" data-tooltip="Update Stotyboard Localization">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/" data-tooltip="PHP保存文件时文件名乱码与Windows Server">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -249,17 +313,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/11/04/使用root登陆proFtpd/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/11/04/使用root登陆proFtpd/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/11/04/使用root登陆proFtpd/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -305,7 +369,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/04/使用root登陆proFtpd/"  data-tooltip="Login ProFTPD as root">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -313,7 +377,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/10/08/Update-Stotyboard-Localization/" data-tooltip="Update Stotyboard Localization">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/" data-tooltip="PHP保存文件时文件名乱码与Windows Server">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -328,17 +392,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/11/04/使用root登陆proFtpd/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/11/04/使用root登陆proFtpd/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/11/04/使用root登陆proFtpd/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -364,17 +428,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/11/04/使用root登陆proFtpd/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/11/04/使用root登陆proFtpd/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/11/04/使用root登陆proFtpd/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
