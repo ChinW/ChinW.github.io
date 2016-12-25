@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2016-11-04T12:02:26.000Z</updated>
+  <updated>2016-11-10T10:01:11.000Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>创建前端脚手架</title>
+    <link href="http://consiiii.me/2016/11/10/%E5%88%9B%E5%BB%BA%E5%89%8D%E7%AB%AF%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
+    <id>http://consiiii.me/2016/11/10/创建前端脚手架/</id>
+    <published>2016-11-10T10:00:56.000Z</published>
+    <updated>2016-11-10T10:01:11.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Refer&quot;&gt;&lt;a href=&quot;#Refer&quot; class=&quot;headerlink&quot; title=&quot;Refer&quot;&gt;&lt;/a&gt;Refer&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/6726c0410650&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.jianshu.com/p/6726c0410650&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Refer&quot;&gt;&lt;a href=&quot;#Refer&quot; class=&quot;headerlink&quot; title=&quot;Refer&quot;&gt;&lt;/a&gt;Refer&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/6726c0410650&quot; target=&quot;_b
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Login ProFTPD as root</title>
@@ -1003,80 +1024,6 @@
       <category term="Swift" scheme="http://consiiii.me/tags/Swift/"/>
     
       <category term="datetime" scheme="http://consiiii.me/tags/datetime/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Install LEMP on Debian</title>
-    <link href="http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/"/>
-    <id>http://consiiii.me/2015/11/22/Install-LEMP-on-Debian/</id>
-    <published>2015-11-22T06:05:23.000Z</published>
-    <updated>2015-11-22T16:49:28.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;本文流程来自&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7&lt;/a&gt; ，并做了部分修改&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;LEMP安装的教程有很多，但是自己也做了一遍并纪录下来。&lt;/p&gt;
-&lt;h2 id=&quot;LEMP&quot;&gt;&lt;a href=&quot;#LEMP&quot; class=&quot;headerlink&quot; title=&quot;LEMP&quot;&gt;&lt;/a&gt;LEMP&lt;/h2&gt;&lt;p&gt;LEMP指Linux(L),MySQL(M),PHP(P),Nginx(E,发音engine x).它和经典的LAMP不同的是把Apache替换成了Nignx.&lt;/p&gt;
-&lt;p&gt;这篇文章主要纪录了如何去安装LEMP，以及一些相关的配置。&lt;/p&gt;
-&lt;h2 id=&quot;1-update-apt-get&quot;&gt;&lt;a href=&quot;#1-update-apt-get&quot; class=&quot;headerlink&quot; title=&quot;1.update apt-get&quot;&gt;&lt;/a&gt;1.update apt-get&lt;/h2&gt;&lt;p&gt;开始之前，我们总要更新一下机器上的版本纪录，以获得最新的软件。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;2-apt-get-install-mysql-server&quot;&gt;&lt;a href=&quot;#2-apt-get-install-mysql-server&quot; class=&quot;headerlink&quot; title=&quot;2.apt-get install mysql-server&quot;&gt;&lt;/a&gt;2.apt-get install mysql-server&lt;/h2&gt;&lt;p&gt;输入&lt;br&gt;&lt;code&gt;sudo apt-get install mysql-server&lt;/code&gt;&lt;br&gt;，过程中会要求设置root密码；&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/Screen%20Shot%202015-11-23%20at%2000.46.09.png&quot; alt=&quot;mysql root password setting&quot;&gt;&lt;/p&gt;
-&lt;p&gt;当安装完成后，可以用这些命令来完成mysql启动向导。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo mysql_install_db&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;然后再用&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo /usr/bin/mysql_secure_installation&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;这条命令进入的时候会要求输入root的密码，然后请仔细阅读每条说明（是否删除匿名帐号，是否删除test数据库等等），输入y/n以选择。&lt;/p&gt;
-&lt;h2 id=&quot;3-apt-get-install-nginx&quot;&gt;&lt;a href=&quot;#3-apt-get-install-nginx&quot; class=&quot;headerlink&quot; title=&quot;3. apt-get install nginx&quot;&gt;&lt;/a&gt;3. apt-get install nginx&lt;/h2&gt;&lt;p&gt;安装nginx&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo apt-get install nginx&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;启动nginx&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo service nginx start&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;OK!现在在浏览器中输入IP地址，看到以下类似的界面就说明成功了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/Screen%20Shot%202015-11-22%20at%2015.54.15.png&quot; alt=&quot;nginx&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;使用ifconfig eth0 | grep inet | awk ‘{ print $2 }’可以看到VPS的IP地址&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;配置nginx&quot;&gt;&lt;a href=&quot;#配置nginx&quot; class=&quot;headerlink&quot; title=&quot;配置nginx&quot;&gt;&lt;/a&gt;配置nginx&lt;/h3&gt;&lt;p&gt;&lt;code&gt;sudo vim /etc/nginx/sites-available/default&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;更改配置参考到如下&lt;/p&gt;
-&lt;figure class=&quot;highlight xquery&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt; [...]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen   &lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		#root的地址页面文件所在位置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        root /usr/share/nginx/www;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        #不要忘记添加index.php&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        index index.php index.html index.htm;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		#在这里定义IP或者自己的域名 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        server_name example.com;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                try_files $uri $uri/ /index.html;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        error_page &lt;span class=&quot;number&quot;&gt;404&lt;/span&gt; /&lt;span class=&quot;number&quot;&gt;404&lt;/span&gt;.html;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        error_page &lt;span class=&quot;number&quot;&gt;500&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;502&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;503&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;504&lt;/span&gt; /&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;x.html;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location = /&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;x.html &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              root /usr/share/nginx/www;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        # pass the PHP scripts to FastCGI server listening on /var/run/php5-fpm.sock&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location ~ \.php$ &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                try_files $uri =&lt;span class=&quot;number&quot;&gt;404&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                fastcgi_pass unix:/var/run/php5-fpm.sock;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                fastcgi_index index.php;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                include fastcgi_params;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[...]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;4-apt-get-install-php5-fpm-php5-mysql&quot;&gt;&lt;a href=&quot;#4-apt-get-install-php5-fpm-php5-mysql&quot; class=&quot;headerlink&quot; title=&quot;4.apt-get install php5-fpm php5-mysql&quot;&gt;&lt;/a&gt;4.apt-get install php5-fpm php5-mysql&lt;/h2&gt;&lt;p&gt;安装php5 fpm&lt;br&gt;&lt;code&gt;sudo apt-get install php5-fpm php5-mysql&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt; 位置：/etc/php5/fpm/php.ini&lt;/p&gt;
-&lt;p&gt; 操作：将&lt;strong&gt;cgi.fix_pathinfo = 1&lt;/strong&gt; ,从&lt;strong&gt;1改成0&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 说明：这一段代码可能是被注释的。cgi.fix_pathinfo＝1 时会有安全隐患。比如网站中有&lt;a href=&quot;http://xx.com/a.jpg这样一个文件，那么构造http://xx.com/a.jpg/foo.php可以查看这个文件的二进制内容，这意味着可以构造一个实际是php代码的图片，去执行一些用户自定义的操作。具体可以参考：http://www.laruence.com/2010/05/20/1495.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xx.com/a.jpg这样一个文件，那么构造http://xx.com/a.jpg/foo.php可以查看这个文件的二进制内容，这意味着可以构造一个实际是php代码的图片，去执行一些用户自定义的操作。具体可以参考：http://www.laruence.com/2010/05/20/1495.html&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;位置：/etc/php5/fpm/pool.d/www.conf&lt;/p&gt;
-&lt;p&gt; 操作：将&lt;code&gt;listen = 127.0.0.1:9000&lt;/code&gt;更改成&lt;code&gt;listen = /var/run/php5-fpm.sock&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt; 说明：&lt;strong&gt;新版本中默认就是&lt;code&gt;listen = /var/run/php5-fpm.sock&lt;/code&gt;&lt;/strong&gt;，所以那些不是这个值的情况下修改一下…&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;5-接近完成，测试一下&quot;&gt;&lt;a href=&quot;#5-接近完成，测试一下&quot; class=&quot;headerlink&quot; title=&quot;5.接近完成，测试一下&quot;&gt;&lt;/a&gt;5.接近完成，测试一下&lt;/h2&gt;&lt;p&gt;在html的目录下，创建一个info.php.写入：&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	phpinfo();&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;顺便一下nginx&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo service nginx restart&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;现在在浏览器中键入 your.domain.com/info.php&lt;/p&gt;
-&lt;p&gt;看见phpinfo了！完成 : D&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;本文流程来自&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7&quot; targ
-    
-    </summary>
-    
-      <category term="LEMP" scheme="http://consiiii.me/categories/LEMP/"/>
-    
-    
-      <category term="LEMP" scheme="http://consiiii.me/tags/LEMP/"/>
-    
-      <category term="nginx" scheme="http://consiiii.me/tags/nginx/"/>
-    
-      <category term="php" scheme="http://consiiii.me/tags/php/"/>
-    
-      <category term="debian" scheme="http://consiiii.me/tags/debian/"/>
-    
-      <category term="linux" scheme="http://consiiii.me/tags/linux/"/>
-    
-      <category term="mysql" scheme="http://consiiii.me/tags/mysql/"/>
     
   </entry>
   
