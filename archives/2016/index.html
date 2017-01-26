@@ -392,7 +392,7 @@ vi /etc/proftpd/proftpd.conf
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">PHP保存文件时文件名乱码与Windows Server</a>
+                                <a class="link-unstyled" href="/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/">中文版Windows Server中PHP保存中文名文件乱码</a>
                         
                     </h1>
                     <div class="postShorten-meta">
@@ -404,7 +404,7 @@ vi /etc/proftpd/proftpd.conf
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/slots/">slots</a>
+    <a class="category-link" href="/categories/PHP/">PHP</a>
 
 
     
@@ -413,7 +413,15 @@ vi /etc/proftpd/proftpd.conf
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     
                         <p>
-                            <br>
+                            在帮导师开发一个校内应用时，由于Windows Server是中文版，Web应用是UTF8的，上传文件后服务器显示乱码。
+原因是Windows Server中文版的字符集是GBK，使用以下代码可以解决：
+1$name = iconv("UTF-8", "GBK//ignore", $name);
+
+几个常用的字符集：
+
+GB2312： 7445个符号，包括6763个汉字
+
+GBK: GB2312的<br>
                     
                     
                         

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Consiiii">
-    <title>PHP保存文件时文件名乱码与Windows Server - Consiiii</title>
+    <title>中文版Windows Server中PHP保存中文名文件乱码 - Consiiii</title>
     <meta name="author" content="Consiiii">
     
         <link rel="icon" href="/assets/images/favicon.ico">
@@ -14,16 +14,40 @@
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="在别人的路上，我们也是风景">
+    <meta name="description" content="在帮导师开发一个校内应用时，由于Windows Server是中文版，Web应用是UTF8的，上传文件后服务器显示乱码。
+原因是Windows Server中文版的字符集是GBK，使用以下代码可以解决：
+1$name = iconv(&quot;UTF-8&quot;, &quot;GBK//ignore&quot;, $name);
+
+几个常用的字符集：
+
+GB2312： 7445个符号，包括6763个汉字
+
+GBK: GB2312的">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="PHP保存文件时文件名乱码与Windows Server">
+<meta property="og:title" content="中文版Windows Server中PHP保存中文名文件乱码">
 <meta property="og:url" content="http://consiiii.me/2016/10/22/PHP保存文件时文件名乱码与Windows-Server/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="在别人的路上，我们也是风景">
-<meta property="og:updated_time" content="2016-10-22T04:50:11.000Z">
+<meta property="og:description" content="在帮导师开发一个校内应用时，由于Windows Server是中文版，Web应用是UTF8的，上传文件后服务器显示乱码。
+原因是Windows Server中文版的字符集是GBK，使用以下代码可以解决：
+1$name = iconv(&quot;UTF-8&quot;, &quot;GBK//ignore&quot;, $name);
+
+几个常用的字符集：
+
+GB2312： 7445个符号，包括6763个汉字
+
+GBK: GB2312的">
+<meta property="og:updated_time" content="2017-01-26T13:31:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP保存文件时文件名乱码与Windows Server">
-<meta name="twitter:description" content="在别人的路上，我们也是风景">
+<meta name="twitter:title" content="中文版Windows Server中PHP保存中文名文件乱码">
+<meta name="twitter:description" content="在帮导师开发一个校内应用时，由于Windows Server是中文版，Web应用是UTF8的，上传文件后服务器显示乱码。
+原因是Windows Server中文版的字符集是GBK，使用以下代码可以解决：
+1$name = iconv(&quot;UTF-8&quot;, &quot;GBK//ignore&quot;, $name);
+
+几个常用的字符集：
+
+GB2312： 7445个符号，包括6763个汉字
+
+GBK: GB2312的">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -191,7 +215,7 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            PHP保存文件时文件名乱码与Windows Server
+            中文版Windows Server中PHP保存中文名文件乱码
         </h1>
     
     <div class="post-meta">
@@ -203,7 +227,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/slots/">slots</a>
+    <a class="category-link" href="/categories/PHP/">PHP</a>
 
 
     
@@ -212,7 +236,24 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <p>在帮导师开发一个校内应用时，由于Windows Server是中文版，Web应用是UTF8的，上传文件后服务器显示乱码。</p>
+<p>原因是Windows Server中文版的字符集是GBK，使用以下代码可以解决：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$name = iconv(<span class="string">"UTF-8"</span>, <span class="string">"GBK//ignore"</span>, $name);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>几个常用的字符集：</p>
+<ul>
+<li><p>GB2312： 7445个符号，包括6763个汉字</p>
+</li>
+<li><p>GBK: GB2312的扩展，可表示21886个字符</p>
+</li>
+<li><p>GB18030：兼容GBK，此外包含日韩，繁体汉字，可表示27484个文字</p>
+</li>
+<li><p>BIG5：统一繁体字编码，13053个汉字 </p>
+</li>
+<li><p>UNICODE: 为世界650种语言进行统一编码，兼容ISO-8859-1, 由多个编码方式：UTF-8，UTF-16，UTF-32</p>
+</li>
+</ul>
+
             
                 
 
