@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2016-11-10T10:01:11.000Z</updated>
+  <updated>2017-01-18T10:00:15.000Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -14,6 +14,100 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>让Terminal全局使用SOCKS代理</title>
+    <link href="http://consiiii.me/2017/01/18/%E8%AE%A9Terminal%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8SOCKS%E4%BB%A3%E7%90%86/"/>
+    <id>http://consiiii.me/2017/01/18/让Terminal全局使用SOCKS代理/</id>
+    <published>2017-01-18T09:39:43.000Z</published>
+    <updated>2017-01-18T10:00:15.000Z</updated>
+    
+    <content type="html">&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; ALL_PROXY=socks5:&lt;span class=&quot;comment&quot;&gt;//127.0.0.1:1080&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# DO IT!&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/t
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>利用key更新React中defaultValue</title>
+    <link href="http://consiiii.me/2017/01/09/%E5%88%A9%E7%94%A8key%E6%9B%B4%E6%96%B0React%E4%B8%ADdefaultValue/"/>
+    <id>http://consiiii.me/2017/01/09/利用key更新React中defaultValue/</id>
+    <published>2017-01-08T16:13:26.000Z</published>
+    <updated>2017-01-08T16:13:26.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Colon in Ruby</title>
+    <link href="http://consiiii.me/2016/12/29/Colon-in-Ruby/"/>
+    <id>http://consiiii.me/2016/12/29/Colon-in-Ruby/</id>
+    <published>2016-12-29T03:34:50.000Z</published>
+    <updated>2016-12-29T03:35:26.000Z</updated>
+    
+    <content type="html">&lt;p&gt;1) abc: it can’t exist independently&lt;/p&gt;
+&lt;p&gt;2) :xyz it is a symbol&lt;/p&gt;
+&lt;p&gt;:xyz.class&lt;br&gt; =&amp;gt; Symbol&lt;br&gt;3) abc::xyz it represents namespace&lt;/p&gt;
+&lt;p&gt;Example code:&lt;/p&gt;
+&lt;p&gt;module ABC&lt;br&gt;    class Xyz&lt;br&gt;       def initialize&lt;br&gt;         @size = 400&lt;br&gt;       end&lt;br&gt;    end&lt;br&gt;end&lt;/p&gt;
+&lt;p&gt;x = ABC::Xyz.new&lt;br&gt;4) abc: :xyz&lt;/p&gt;
+&lt;p&gt;hash = {abc: :xyz} #hash key and value all are symbol.&lt;br&gt;5) abc: xyz&lt;/p&gt;
+&lt;p&gt;xyz = “just a test”&lt;br&gt;hash = {abc: xyz} #hash key is symbol, value is string.&lt;br&gt;6) :abc =&amp;gt; xyz&lt;/p&gt;
+&lt;p&gt;xyz = “just a test”&lt;br&gt;hash = {:abc =&amp;gt; xyz} # same with (5)， just another representation&lt;br&gt;7) ternary operator :&lt;/p&gt;
+&lt;p&gt;abc = 1&lt;br&gt;xyz = 2&lt;br&gt;result = abc &amp;gt; xyz ? abc : xyz&lt;br&gt;=&amp;gt; result = 2&lt;/p&gt;
+&lt;p&gt;–&lt;br&gt;Copy from &lt;a href=&quot;http://stackoverflow.com/questions/30315021/colon-placement-in-ruby-on-rails/30315118#30315118&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/30315021/colon-placement-in-ruby-on-rails/30315118#30315118&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1) abc: it can’t exist independently&lt;/p&gt;
+&lt;p&gt;2) :xyz it is a symbol&lt;/p&gt;
+&lt;p&gt;:xyz.class&lt;br&gt; =&amp;gt; Symbol&lt;br&gt;3) abc::xyz it represents namesp
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>替换homebrew默认源</title>
+    <link href="http://consiiii.me/2016/12/28/%E6%9B%BF%E6%8D%A2homebrew%E9%BB%98%E8%AE%A4%E6%BA%90/"/>
+    <id>http://consiiii.me/2016/12/28/替换homebrew默认源/</id>
+    <published>2016-12-28T07:41:39.000Z</published>
+    <updated>2016-12-28T10:20:32.000Z</updated>
+    
+    <content type="html">&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;$(brew --repo)&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote &lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;-url origin gi&lt;span class=&quot;variable&quot;&gt;t:&lt;/span&gt;//mirrors.ustc.edu.&lt;span class=&quot;keyword&quot;&gt;cn&lt;/span&gt;/brew.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;来源&lt;a href=&quot;https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;$ gem sources –add &lt;a href=&quot;https://gems.ruby-china.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gems.ruby-china.org/&lt;/a&gt; –remove &lt;a href=&quot;https://rubygems.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://rubygems.org/&lt;/a&gt;&lt;br&gt;$ gem sources -l&lt;br&gt;&lt;a href=&quot;https://gems.ruby-china.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gems.ruby-china.org&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;确保只有-gems-ruby-china-org&quot;&gt;&lt;a href=&quot;#确保只有-gems-ruby-china-org&quot; class=&quot;headerlink&quot; title=&quot;确保只有 gems.ruby-china.org&quot;&gt;&lt;/a&gt;确保只有 gems.ruby-china.org&lt;/h1&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;t
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>创建前端脚手架</title>
@@ -182,60 +276,6 @@
   </entry>
   
   <entry>
-    <title>Using system headers in framework in Swift</title>
-    <link href="http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift%20copy/"/>
-    <id>http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/</id>
-    <published>2016-09-24T12:19:29.000Z</published>
-    <updated>2016-09-27T11:28:31.000Z</updated>
-    
-    <content type="html">&lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
-&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误提示是：&lt;/p&gt;
-&lt;p&gt;点击Archive后，上传后出现错误提示1&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.&lt;/p&gt;
-&lt;p&gt;Invalid Bundle, The bundle contains disallowed nested bundles, contains disallowed file ‘Frameworks’&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;或者iTC成功了，但是收到邮件，得到错误提示2&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;We have discovered one or more issues with your recent delivery for “江雪”. &amp;gt;To process your delivery, the following issues must be corrected:&lt;/p&gt;
-&lt;p&gt;Invalid Bundle - One or more dynamic libraries that are referenced by your &amp;gt;app are not present in the dylib search path.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;参考了多个已有的讨论（见Refer), 最终解决办法如下:&lt;/p&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;Host APP + Today Extension + 多个Framework用来共享代码，Swift(主要) + OC&lt;/p&gt;
-&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;对于Framework，尝试将&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: YES&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;调成&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: NO&lt;/code&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;对于Appex,&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;Refer&quot;&gt;&lt;a href=&quot;#Refer&quot; class=&quot;headerlink&quot; title=&quot;Refer&quot;&gt;&lt;/a&gt;Refer&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
-&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误
-    
-    </summary>
-    
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
-    
-    
-      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Disallowed nested bundles, contains disallowed file &#39;Frameworks&#39; in XCode</title>
     <link href="http://consiiii.me/2016/09/24/Disallowed%20nested%20bundles,%20contains%20disallowed%20file%20'Frameworks'%20in%20XCode/"/>
     <id>http://consiiii.me/2016/09/24/Disallowed nested bundles, contains disallowed file 'Frameworks' in XCode/</id>
@@ -296,6 +336,60 @@
       <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
     
       <category term="XCode" scheme="http://consiiii.me/tags/XCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Using system headers in framework in Swift</title>
+    <link href="http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift%20copy/"/>
+    <id>http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/</id>
+    <published>2016-09-24T12:19:29.000Z</published>
+    <updated>2016-09-27T11:28:31.000Z</updated>
+    
+    <content type="html">&lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
+&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误提示是：&lt;/p&gt;
+&lt;p&gt;点击Archive后，上传后出现错误提示1&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.&lt;/p&gt;
+&lt;p&gt;Invalid Bundle, The bundle contains disallowed nested bundles, contains disallowed file ‘Frameworks’&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或者iTC成功了，但是收到邮件，得到错误提示2&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We have discovered one or more issues with your recent delivery for “江雪”. &amp;gt;To process your delivery, the following issues must be corrected:&lt;/p&gt;
+&lt;p&gt;Invalid Bundle - One or more dynamic libraries that are referenced by your &amp;gt;app are not present in the dylib search path.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考了多个已有的讨论（见Refer), 最终解决办法如下:&lt;/p&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;Host APP + Today Extension + 多个Framework用来共享代码，Swift(主要) + OC&lt;/p&gt;
+&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;对于Framework，尝试将&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: YES&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;调成&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: NO&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于Appex,&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Refer&quot;&gt;&lt;a href=&quot;#Refer&quot; class=&quot;headerlink&quot; title=&quot;Refer&quot;&gt;&lt;/a&gt;Refer&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
+&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
     
   </entry>
   
@@ -876,154 +970,6 @@
       <category term="MySQL" scheme="http://consiiii.me/tags/MySQL/"/>
     
       <category term="CMS" scheme="http://consiiii.me/tags/CMS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>‘Scrawl Icon Redesign &amp; Imitation&#39;</title>
-    <link href="http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/"/>
-    <id>http://consiiii.me/2016/01/04/Icon-Redesign-Imitation/</id>
-    <published>2016-01-04T11:03:17.000Z</published>
-    <updated>2016-10-28T16:34:39.000Z</updated>
-    
-    <content type="html">&lt;p&gt;利用闲暇的时间，努力去模仿，或者重新设计已经存在的图标。&lt;/p&gt;
-&lt;h3 id=&quot;Day-1-Ivy&quot;&gt;&lt;a href=&quot;#Day-1-Ivy&quot; class=&quot;headerlink&quot; title=&quot;Day 1: Ivy&quot;&gt;&lt;/a&gt;Day 1: Ivy&lt;/h3&gt;&lt;p&gt;160104: Ivy 是Google出品的一个计算器。&lt;/p&gt;
-&lt;p&gt;Mine:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_d1_ivy.png&quot; alt=&quot;Ivy Mock&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Original:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_ivy-google-calculator-03.png&quot; alt=&quot;Ivy&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Day-2-Plane&quot;&gt;&lt;a href=&quot;#Day-2-Plane&quot; class=&quot;headerlink&quot; title=&quot;Day 2: Plane&quot;&gt;&lt;/a&gt;Day 2: Plane&lt;/h3&gt;&lt;p&gt;160105: &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_d2_plane.png&quot; alt=&quot;Plane&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Day-3-Happy-Sun&quot;&gt;&lt;a href=&quot;#Day-3-Happy-Sun&quot; class=&quot;headerlink&quot; title=&quot;Day 3: Happy Sun&quot;&gt;&lt;/a&gt;Day 3: Happy Sun&lt;/h3&gt;&lt;p&gt;160109:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_d3_sun.png&quot; alt=&quot;Happy_Sun&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;利用闲暇的时间，努力去模仿，或者重新设计已经存在的图标。&lt;/p&gt;
-&lt;h3 id=&quot;Day-1-Ivy&quot;&gt;&lt;a href=&quot;#Day-1-Ivy&quot; class=&quot;headerlink&quot; title=&quot;Day 1: Ivy&quot;&gt;&lt;/a&gt;Day 1: Ivy&lt;/h3&gt;&lt;p&gt;1601
-    
-    </summary>
-    
-      <category term="Icon" scheme="http://consiiii.me/categories/Icon/"/>
-    
-    
-      <category term="Icon" scheme="http://consiiii.me/tags/Icon/"/>
-    
-      <category term="Design" scheme="http://consiiii.me/tags/Design/"/>
-    
-  </entry>
-  
-  <entry>
-    <title> ES6: Destructing(解构) &amp; Spread Operator(展开运算符) </title>
-    <link href="http://consiiii.me/2015/12/19/ES6-Destructing-%E8%A7%A3%E6%9E%84-Spread-Operator-%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
-    <id>http://consiiii.me/2015/12/19/ES6-Destructing-解构-Spread-Operator-展开运算符/</id>
-    <published>2015-12-19T13:09:36.000Z</published>
-    <updated>2015-12-19T13:10:44.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;Destructing&quot;&gt;&lt;a href=&quot;#Destructing&quot; class=&quot;headerlink&quot; title=&quot;Destructing&quot;&gt;&lt;/a&gt;Destructing&lt;/h2&gt;&lt;p&gt;这个应该是翻译成“解构”吧&lt;br&gt;ES6允许这样这样操作&lt;/p&gt;
-&lt;p&gt;首先是对于Object&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123; a:&lt;span class=&quot;string&quot;&gt;&quot;Hello&quot;&lt;/span&gt;, b:&lt;span class=&quot;string&quot;&gt;&quot;Hi&quot;&lt;/span&gt; &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &amp;#123;a,b&amp;#125; = obj &lt;span class=&quot;comment&quot;&gt;//Bingo, now a = &quot;Hello&quot;, b = &quot;Hi&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &amp;#123;a,c&amp;#125; = obj &lt;span class=&quot;comment&quot;&gt;//Wrong, now a = &quot;Hello&quot;, c = undefined&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;对于数组，效果类同&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = [ &lt;span class=&quot;string&quot;&gt;&quot;Hello&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;Hi&quot;&lt;/span&gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; [a,b] = arr &lt;span class=&quot;comment&quot;&gt;//Bingo, now a = &quot;Hello&quot;, b = &quot;Hi&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; [a,c] = arr &lt;span class=&quot;comment&quot;&gt;//Also correct, now a = &quot;Hello&quot;, b = &quot;Hi&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;Spread-Operator&quot;&gt;&lt;a href=&quot;#Spread-Operator&quot; class=&quot;headerlink&quot; title=&quot;Spread Operator&quot;&gt;&lt;/a&gt;Spread Operator&lt;/h2&gt;&lt;p&gt;翻译为“展开运算符”, 语法是三个点:  &lt;strong&gt;…&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这是一个仅针对Array有效的运算符，作用为在那些需要同时调用多个参数/元素 的地方提供语法便利&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sum&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x,y,z&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x+y+z&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(sum(...[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;])) &lt;span class=&quot;comment&quot;&gt;//6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(sum(...[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;])) &lt;span class=&quot;comment&quot;&gt;//6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(sum(...[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;])) &lt;span class=&quot;comment&quot;&gt;//NaN&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; doSomething = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;...args&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; sum(..args)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(doSomething(...[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;])) &lt;span class=&quot;comment&quot;&gt;//6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//对Object是否有效呢？&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123; a:&lt;span class=&quot;string&quot;&gt;&quot;A&quot;&lt;/span&gt;, b:&lt;span class=&quot;string&quot;&gt;&quot;B&quot;&lt;/span&gt;, c:&lt;span class=&quot;string&quot;&gt;&quot;C&quot;&lt;/span&gt;, d:&lt;span class=&quot;string&quot;&gt;&quot;D&quot;&lt;/span&gt;, e:&lt;span class=&quot;string&quot;&gt;&quot;E&quot;&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &amp;#123;a,b,...others&amp;#125; = obj &lt;span class=&quot;comment&quot;&gt;//报错&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Destructing&quot;&gt;&lt;a href=&quot;#Destructing&quot; class=&quot;headerlink&quot; title=&quot;Destructing&quot;&gt;&lt;/a&gt;Destructing&lt;/h2&gt;&lt;p&gt;这个应该是翻译成“解构”吧&lt;br&gt;ES6允许这样这样操作&lt;/p&gt;
-&lt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://consiiii.me/categories/JavaScript/"/>
-    
-    
-      <category term="ES6" scheme="http://consiiii.me/tags/ES6/"/>
-    
-      <category term="JavaScript" scheme="http://consiiii.me/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中华之梦创业比赛后记</title>
-    <link href="http://consiiii.me/2015/12/06/%E4%B8%AD%E5%8D%8E%E4%B9%8B%E6%A2%A6%E5%88%9B%E4%B8%9A%E6%AF%94%E8%B5%9B%E5%90%8E%E8%AE%B0/"/>
-    <id>http://consiiii.me/2015/12/06/中华之梦创业比赛后记/</id>
-    <published>2015-12-06T11:02:57.000Z</published>
-    <updated>2016-09-24T12:23:00.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;Upadte 1: 这是一篇无聊的流水账，我什么时候也会删了它&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;–&lt;/p&gt;
-&lt;p&gt;周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。&lt;/p&gt;
-&lt;p&gt;参加这个比赛是意料之外的事情: 暑期的时候应学校要求参加了市级的一个创业大赛，意外收获名次，而后便在11月份的时候被通知入围了复赛。&lt;/p&gt;
-&lt;p&gt;本着学习和涨见识的想法，我决定去天津。&lt;/p&gt;
-&lt;h2 id=&quot;概况&quot;&gt;&lt;a href=&quot;#概况&quot; class=&quot;headerlink&quot; title=&quot;概况&quot;&gt;&lt;/a&gt;概况&lt;/h2&gt;&lt;p&gt;比赛队伍一共有48支，本科生两队：一支来自于北京师范大学的与自行车相关的公益项目，还有我。其它的队伍大多已是职场人士多年，看PPT不乏博士，专家，清北复交大牛…&lt;/p&gt;
-&lt;p&gt;此次目的是选出20强，参与录制CCTV的一个创业类型的电视节目。其实这次复赛中也已经看到了CCTV的编导在不停地摄像。&lt;/p&gt;
-&lt;h2 id=&quot;行程&quot;&gt;&lt;a href=&quot;#行程&quot; class=&quot;headerlink&quot; title=&quot;行程&quot;&gt;&lt;/a&gt;行程&lt;/h2&gt;&lt;p&gt;12-03日，下午是一个创业训练营，由梁青(现中科纳新总经理，曾任联想之星副总裁)来给我们做一个相关的要点讲座，内容是关于创业的一些坑啦，股权啦等经验的分享。&lt;/p&gt;
-&lt;p&gt;12-04日，为期一整天的现场演示, 分三个赛场, 每个赛场三位评审. 关于作品和想象中的差不多，大多有一些“互联网＋”项目, 做内容啦，做平台之类的。&lt;/p&gt;
-&lt;p&gt;我比较纳闷，部分一些“互联网＋”的公司们，在我搜索其产品时，其产品的有很明显的粗制劣造痕迹，比如很多都是电商形式，产品也就是一个通用的电商模版，然后硬加上自己的Logo，改动一下文字。但也宣称自己拿到了百万投资，估值千万。我确有些迷惑, 让我想起一句话（&lt;a href=&quot;http://www.ruanyifeng.com/blog/2008/01/the_future_of_web_startups_part_i.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;来源&lt;/a&gt;）：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;以前创业很昂贵，你不得不找到投资人才能创业。而现在，唯一的门槛就是勇气。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;当然，在赛场上也看到一些有相当技术含量的项目. 例如名为“浩恒征途”的无人机项目，是来自北航的团队做的，现场带了个体型较大的工程机来，挺有震慑力.&lt;/p&gt;
-&lt;p&gt;另外，还有一个叫做CIRI的语音系统让我印象深刻, 当我第一眼看到这个词的时候想到的是Siri.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2244.JPG&quot; alt=&quot;photos&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;插曲&quot;&gt;&lt;a href=&quot;#插曲&quot; class=&quot;headerlink&quot; title=&quot;插曲&quot;&gt;&lt;/a&gt;插曲&lt;/h2&gt;&lt;p&gt;赛前晚上，举办方搞了一个投票，让参赛者在指定App上宣传自己的项目(明显的带APP营销啊喂)，参赛者都有点反感… 于是试着看了下代码，发现后端竟然没做限制，只在前端做了限制, 然后顺手就录制了一个快速刷票的视频作为演示的佐料.&lt;/p&gt;
-&lt;p&gt;最后，止步于一个优胜奖。&lt;/p&gt;
-&lt;h2 id=&quot;返程&quot;&gt;&lt;a href=&quot;#返程&quot; class=&quot;headerlink&quot; title=&quot;返程&quot;&gt;&lt;/a&gt;返程&lt;/h2&gt;&lt;p&gt;一路无言，附北京末班地铁照一张. &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_IMG_2194.JPG&quot; alt=&quot;subway&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;Upadte 1: 这是一篇无聊的流水账，我什么时候也会删了它&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;–&lt;/p&gt;
-&lt;p&gt;周五(12-04) 启程去天津的武清区参加了”中华之梦”创业大赛。&lt;/p&gt;
-&lt;p&gt;参加这个比赛是意料之外的事情: 暑期的时候应学校要求参加了市级
-    
-    </summary>
-    
-      <category term="Competition" scheme="http://consiiii.me/categories/Competition/"/>
-    
-    
-      <category term="Competition" scheme="http://consiiii.me/tags/Competition/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Swift 时间操作:NSDate,NSDateFormatter</title>
-    <link href="http://consiiii.me/2015/11/23/Swift-%E6%97%B6%E9%97%B4%E6%93%8D%E4%BD%9C-NSDate-NSDateFormatter/"/>
-    <id>http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/</id>
-    <published>2015-11-23T11:50:26.000Z</published>
-    <updated>2015-11-23T11:53:15.000Z</updated>
-    
-    <content type="html">&lt;p&gt;转载出处：&lt;a href=&quot;https://code.csdn.net/snippets/627333&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://code.csdn.net/snippets/627333&lt;/a&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;NSDate&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 1、初始化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 初始化一个当前时刻对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; now = NSDate()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 初始化一个明天当前时刻对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; tomorrow = NSDate(timeIntervalSinceNow: &lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 初始化一个昨天当前时刻对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; yestoday = NSDate(timeInterval: -&lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;, sinceDate: now)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 初始化一个 2001-01-01 08:00:00 1小时后的时刻对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; date1 = NSDate(timeIntervalSinceReferenceDate: &lt;span class=&quot;number&quot;&gt;3600&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 初始化一个 1970-01-01 08:00:00 1小时后的时刻对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; date2 = NSDate(timeIntervalSince1970: &lt;span class=&quot;number&quot;&gt;3600&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 2、获取时间描述&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; dateDescription = now&lt;span class=&quot;selector-class&quot;&gt;.description&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 3、获取时间间隔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取今天到明天的时间间隔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; interval1 = tomorrow.timeIntervalSinceDate(now)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取今天到明天的时间间隔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; interval2 = tomorrow&lt;span class=&quot;selector-class&quot;&gt;.timeIntervalSinceNow&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取 2001-01-01 08:00:00 到今天的时间间隔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; interval3 = now&lt;span class=&quot;selector-class&quot;&gt;.timeIntervalSinceReferenceDate&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取 1970-01-01 08:00:00 到今天的时间间隔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; interval5 = now&lt;span class=&quot;selector-class&quot;&gt;.timeIntervalSince1970&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 4、随机返回一个不可能达到的未来时间、过去时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date1 = NSDate.distantFuture() as NSDate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date2 = NSDate.distantPast() as NSDate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 5、时间相加&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 返回一个后天当前时刻对象（在明天基础上再加上一天的时间）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; theDayAfterTomorrow = tomorrow.dateByAddingTimeInterval(&lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 6、时间比较&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 比较两个时间对象是否相同返回布尔值（由于精度问题，isTheSameDate 为 false）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; isTheSameDate = theDayAfterTomorrow.isEqualToDate(NSDate(timeInterval: &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;, sinceDate: now))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 返回两个时间中较早的一个时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; earlierOne = now.earlierDate(tomorrow)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 返回两个时间中较晚的一个时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; laterOne = now.laterDate(tomorrow)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 比较两个时间对象是否相同并返回 NSComparisonResult 值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; compareResult = now.compare(tomorrow)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ol&gt;
-&lt;li&gt;NSDateFormatter&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 方式1：用已有日期格式进行转换&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; dateFormatter1 = NSDateFormatter()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dateFormatter1&lt;span class=&quot;selector-class&quot;&gt;.dateStyle&lt;/span&gt; = NSDateFormatterStyle&lt;span class=&quot;selector-class&quot;&gt;.MediumStyle&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dateFormatter1&lt;span class=&quot;selector-class&quot;&gt;.timeStyle&lt;/span&gt; = NSDateFormatterStyle&lt;span class=&quot;selector-class&quot;&gt;.MediumStyle&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; now = NSDate()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Date 转 String&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; nowString = dateFormatter1.stringFromDate(now)      &lt;span class=&quot;comment&quot;&gt;// Mar 24, 2015, 9:00:00 PM&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// String 转 Date&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;now = dateFormatter1.dateFromString(nowString)!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 方式2：自定义日期格式进行转换&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;var&lt;/span&gt; dateFormatter2 = NSDateFormatter()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dateFormatter2&lt;span class=&quot;selector-class&quot;&gt;.dateFormat&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;yyyy-MM-dd HH:mm:ss&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Date 转 String&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;nowString = dateFormatter2.stringFromDate(now)          &lt;span class=&quot;comment&quot;&gt;// 2015-03-24 21:00:00&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// String 转 Date&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;now = dateFormatter2.dateFromString(nowString)!&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;转载出处：&lt;a href=&quot;https://code.csdn.net/snippets/627333&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://code.csdn.net/snippets/627333&lt;/a&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;l
-    
-    </summary>
-    
-      <category term="Swift" scheme="http://consiiii.me/categories/Swift/"/>
-    
-    
-      <category term="Swift" scheme="http://consiiii.me/tags/Swift/"/>
-    
-      <category term="datetime" scheme="http://consiiii.me/tags/datetime/"/>
     
   </entry>
   
