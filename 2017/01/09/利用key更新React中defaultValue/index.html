@@ -14,16 +14,22 @@
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="在别人的路上，我们也是风景">
+    <meta name="description" content="React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则写成：
+1&amp;lt;input defaultValue=&amp;#123;this.state.defaultValue&amp;#125; key=&amp;#123;`random$&amp;#123;Math.random()&amp;#125;`&amp;#125; /&amp;gt;
+key的刷新可以造成input节点强制刷新，从而更新defaul">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="利用key更新React中defaultValue">
 <meta property="og:url" content="http://consiiii.me/2017/01/09/利用key更新React中defaultValue/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="在别人的路上，我们也是风景">
-<meta property="og:updated_time" content="2017-01-08T16:13:26.000Z">
+<meta property="og:description" content="React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则写成：
+1&amp;lt;input defaultValue=&amp;#123;this.state.defaultValue&amp;#125; key=&amp;#123;`random$&amp;#123;Math.random()&amp;#125;`&amp;#125; /&amp;gt;
+key的刷新可以造成input节点强制刷新，从而更新defaul">
+<meta property="og:updated_time" content="2017-01-26T13:38:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用key更新React中defaultValue">
-<meta name="twitter:description" content="在别人的路上，我们也是风景">
+<meta name="twitter:description" content="React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则写成：
+1&amp;lt;input defaultValue=&amp;#123;this.state.defaultValue&amp;#125; key=&amp;#123;`random$&amp;#123;Math.random()&amp;#125;`&amp;#125; /&amp;gt;
+key的刷新可以造成input节点强制刷新，从而更新defaul">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -212,7 +218,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <p>React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则写成：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">input</span> defaultValue=&#123;this<span class="selector-class">.state</span><span class="selector-class">.defaultValue</span>&#125; key=&#123;`random$&#123;Math.random()&#125;`&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>key的刷新可以造成input节点强制刷新，从而更新defaultValue.</p>
+
             
                 
 

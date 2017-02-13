@@ -261,7 +261,9 @@
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     
                         <p>
-                            <br>
+                            React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则写成：
+1&lt;input defaultValue=&#123;this.state.defaultValue&#125; key=&#123;`random$&#123;Math.random()&#125;`&#125; /&gt;
+key的刷新可以造成input节点强制刷新，从而更新defaul<br>
                     
                     
                         

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2017-01-18T10:00:15.000Z</updated>
+  <updated>2017-02-09T13:19:57.000Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -14,6 +14,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Setup Typescript &amp; webpack 2</title>
+    <link href="http://consiiii.me/2017/02/09/Setup-Typescript-webpack-2/"/>
+    <id>http://consiiii.me/2017/02/09/Setup-Typescript-webpack-2/</id>
+    <published>2017-02-09T13:19:57.000Z</published>
+    <updated>2017-02-09T13:19:57.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>让Terminal全局使用SOCKS代理</title>
@@ -40,11 +58,17 @@
     <link href="http://consiiii.me/2017/01/09/%E5%88%A9%E7%94%A8key%E6%9B%B4%E6%96%B0React%E4%B8%ADdefaultValue/"/>
     <id>http://consiiii.me/2017/01/09/利用key更新React中defaultValue/</id>
     <published>2017-01-08T16:13:26.000Z</published>
-    <updated>2017-01-08T16:13:26.000Z</updated>
+    <updated>2017-01-26T13:38:38.000Z</updated>
     
-    <content type="html"></content>
+    <content type="html">&lt;p&gt;React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则写成：&lt;/p&gt;
+&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;selector-tag&quot;&gt;input&lt;/span&gt; defaultValue=&amp;#123;this&lt;span class=&quot;selector-class&quot;&gt;.state&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.defaultValue&lt;/span&gt;&amp;#125; key=&amp;#123;`random$&amp;#123;Math.random()&amp;#125;`&amp;#125; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;key的刷新可以造成input节点强制刷新，从而更新defaultValue.&lt;/p&gt;
+</content>
     
     <summary type="html">
+    
+      &lt;p&gt;React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则写成：&lt;/p&gt;
+&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;l
     
     </summary>
     
@@ -91,7 +115,7 @@
     <link href="http://consiiii.me/2016/12/28/%E6%9B%BF%E6%8D%A2homebrew%E9%BB%98%E8%AE%A4%E6%BA%90/"/>
     <id>http://consiiii.me/2016/12/28/替换homebrew默认源/</id>
     <published>2016-12-28T07:41:39.000Z</published>
-    <updated>2016-12-28T10:20:32.000Z</updated>
+    <updated>2017-02-13T12:21:44.000Z</updated>
     
     <content type="html">&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;$(brew --repo)&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote &lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;-url origin gi&lt;span class=&quot;variable&quot;&gt;t:&lt;/span&gt;//mirrors.ustc.edu.&lt;span class=&quot;keyword&quot;&gt;cn&lt;/span&gt;/brew.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;来源&lt;a href=&quot;https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git&lt;/a&gt;&lt;/p&gt;
@@ -104,7 +128,7 @@
     
     </summary>
     
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+      <category term="Ruby" scheme="http://consiiii.me/categories/Ruby/"/>
     
     
   </entry>
@@ -297,6 +321,60 @@
   </entry>
   
   <entry>
+    <title>Using system headers in framework in Swift</title>
+    <link href="http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift%20copy/"/>
+    <id>http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/</id>
+    <published>2016-09-24T12:19:29.000Z</published>
+    <updated>2016-09-27T11:28:31.000Z</updated>
+    
+    <content type="html">&lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
+&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误提示是：&lt;/p&gt;
+&lt;p&gt;点击Archive后，上传后出现错误提示1&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.&lt;/p&gt;
+&lt;p&gt;Invalid Bundle, The bundle contains disallowed nested bundles, contains disallowed file ‘Frameworks’&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或者iTC成功了，但是收到邮件，得到错误提示2&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We have discovered one or more issues with your recent delivery for “江雪”. &amp;gt;To process your delivery, the following issues must be corrected:&lt;/p&gt;
+&lt;p&gt;Invalid Bundle - One or more dynamic libraries that are referenced by your &amp;gt;app are not present in the dylib search path.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考了多个已有的讨论（见Refer), 最终解决办法如下:&lt;/p&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;Host APP + Today Extension + 多个Framework用来共享代码，Swift(主要) + OC&lt;/p&gt;
+&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;对于Framework，尝试将&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: YES&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;调成&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: NO&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于Appex,&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Refer&quot;&gt;&lt;a href=&quot;#Refer&quot; class=&quot;headerlink&quot; title=&quot;Refer&quot;&gt;&lt;/a&gt;Refer&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
+&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Disallowed nested bundles, contains disallowed file &#39;Frameworks&#39; in XCode</title>
     <link href="http://consiiii.me/2016/09/24/Disallowed%20nested%20bundles,%20contains%20disallowed%20file%20'Frameworks'%20in%20XCode/"/>
     <id>http://consiiii.me/2016/09/24/Disallowed nested bundles, contains disallowed file 'Frameworks' in XCode/</id>
@@ -357,60 +435,6 @@
       <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
     
       <category term="XCode" scheme="http://consiiii.me/tags/XCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Using system headers in framework in Swift</title>
-    <link href="http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift%20copy/"/>
-    <id>http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/</id>
-    <published>2016-09-24T12:19:29.000Z</published>
-    <updated>2016-09-27T11:28:31.000Z</updated>
-    
-    <content type="html">&lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
-&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误提示是：&lt;/p&gt;
-&lt;p&gt;点击Archive后，上传后出现错误提示1&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.&lt;/p&gt;
-&lt;p&gt;Invalid Bundle, The bundle contains disallowed nested bundles, contains disallowed file ‘Frameworks’&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;或者iTC成功了，但是收到邮件，得到错误提示2&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;We have discovered one or more issues with your recent delivery for “江雪”. &amp;gt;To process your delivery, the following issues must be corrected:&lt;/p&gt;
-&lt;p&gt;Invalid Bundle - One or more dynamic libraries that are referenced by your &amp;gt;app are not present in the dylib search path.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;参考了多个已有的讨论（见Refer), 最终解决办法如下:&lt;/p&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;Host APP + Today Extension + 多个Framework用来共享代码，Swift(主要) + OC&lt;/p&gt;
-&lt;h2 id=&quot;解决方式&quot;&gt;&lt;a href=&quot;#解决方式&quot; class=&quot;headerlink&quot; title=&quot;解决方式&quot;&gt;&lt;/a&gt;解决方式&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;对于Framework，尝试将&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: YES&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;调成&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Embedded Content Contains Swift Code: NO&lt;/code&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;对于Appex,&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;Refer&quot;&gt;&lt;a href=&quot;#Refer&quot; class=&quot;headerlink&quot; title=&quot;Refer&quot;&gt;&lt;/a&gt;Refer&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。&lt;/p&gt;
-&lt;h2 id=&quot;错误症状&quot;&gt;&lt;a href=&quot;#错误症状&quot; class=&quot;headerlink&quot; title=&quot;错误症状&quot;&gt;&lt;/a&gt;错误症状&lt;/h2&gt;&lt;p&gt;具体错误
-    
-    </summary>
-    
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
-    
-    
-      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
     
   </entry>
   
@@ -869,9 +893,9 @@
     <link href="http://consiiii.me/2016/01/24/Doodle-in-Canvas/"/>
     <id>http://consiiii.me/2016/01/24/Doodle-in-Canvas/</id>
     <published>2016-01-24T06:02:59.000Z</published>
-    <updated>2016-03-31T11:40:06.000Z</updated>
+    <updated>2017-02-13T12:23:37.000Z</updated>
     
-    <content type="html">&lt;p&gt;Canvas涂鸦，想通过Grid来做出一些不一样的效果，现在我也不知道弄出了什么。&lt;/p&gt;
+    <content type="html">&lt;p&gt;Canvas涂鸦。&lt;/p&gt;
 &lt;p&gt;您可以&lt;a href=&quot;https://github.com/ChinW/GridEffect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;从Github上得到它的源码&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id=&quot;1-收缩&quot;&gt;&lt;a href=&quot;#1-收缩&quot; class=&quot;headerlink&quot; title=&quot;1. 收缩&quot;&gt;&lt;/a&gt;1. 收缩&lt;/h2&gt;&lt;p&gt;第一张 gif 较大(3M)。 &lt;a href=&quot;http://consiiii.me/display/DoodleInCanvas/Shrink/index.html&quot;&gt;Check Demo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_shrink.gif&quot; alt=&quot;Shrink1&quot;&gt;&lt;/p&gt;
@@ -890,8 +914,9 @@
     
     <summary type="html">
     
-      &lt;p&gt;Canvas涂鸦，想通过Grid来做出一些不一样的效果，现在我也不知道弄出了什么。&lt;/p&gt;
-&lt;p&gt;您可以&lt;a href=&quot;https://github.com/ChinW/GridEffect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;从Github上
+      &lt;p&gt;Canvas涂鸦。&lt;/p&gt;
+&lt;p&gt;您可以&lt;a href=&quot;https://github.com/ChinW/GridEffect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;从Github上得到它的源码&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;1-收缩&quot;&gt;&lt;a
     
     </summary>
     
@@ -899,98 +924,6 @@
     
     
       <category term="Canvas" scheme="http://consiiii.me/tags/Canvas/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CMS中存放文章内容的Content字段类型</title>
-    <link href="http://consiiii.me/2016/01/15/CMS%E4%B8%AD%E5%AD%98%E6%94%BE%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E7%9A%84Content%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://consiiii.me/2016/01/15/CMS中存放文章内容的Content字段类型/</id>
-    <published>2016-01-15T14:00:28.000Z</published>
-    <updated>2016-01-15T14:33:32.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h2&gt;&lt;p&gt;今天学校里的老师让我帮忙看看学校内站点发文章时为什么文章保存后自动被截取一部分：一张很长的表格，复制到富文本编辑器中后，点击“发布文章”后查看（过程没有出现执行错误），只出现了部分内容。&lt;/p&gt;
-&lt;h2 id=&quot;操作&quot;&gt;&lt;a href=&quot;#操作&quot; class=&quot;headerlink&quot; title=&quot;操作&quot;&gt;&lt;/a&gt;操作&lt;/h2&gt;&lt;p&gt;检查后发现CMS的数据库（用的是MySQL），其保存文章的字段Content的类型是TEXT。&lt;/p&gt;
-&lt;p&gt;关于TEXT一类相关的属性对比如下 &lt;a href=&quot;http://blog.sina.com.cn/s/blog_4f925fc30102edg8.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;资料来源&lt;/a&gt;：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;类型&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;范围&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Char(N) [binary]&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;N=1~255 个字元 。binary ：分辨大小写&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;固定长度&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;VarChar(N) [binary]&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;N=1~255 个字元 。binary ：分辨大小写&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;可变长度&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;TinyBlob&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;最大长度255个字元(2^8-1)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;TinyText&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;最大长度255个字元(2^8-1)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Text&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;最大长度65535个字元(2^16-1)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;MediumBlob&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;最大长度 16777215 个字元(2^24-1)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;MediumText&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;最大长度 16777215 个字元(2^24-1&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;LongBlob&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;最大长度4294967295个字元 (2^32-1)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;LongText&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;最大长度4294967295个字元 (2^32-1)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Blob (Binary large objects)储存二进制资料，且有分大小写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h2&gt;&lt;p&gt;将Content的类型改为MediumText(或以上级别)后功能执行正常。&lt;/p&gt;
-&lt;h2 id=&quot;讨论&quot;&gt;&lt;a href=&quot;#讨论&quot; class=&quot;headerlink&quot; title=&quot;讨论&quot;&gt;&lt;/a&gt;讨论&lt;/h2&gt;&lt;p&gt;由于学校内CMS用的一般都是富文本编辑器，存储在数据库中时还会保存成HTML格式的文本，其中一般含有大量的HTML标记，因此存储在Content字段中的字数要远超其显示的字符数。因此上述老师保存一段长表格，会被截取。&lt;/p&gt;
-&lt;p&gt;然而:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;MySQL在执行这个某个字段的值会被截断的插入／更新语句时不会提示错误（我在Console中测试过，没有错误反馈）。&lt;/li&gt;
-&lt;li&gt;感觉不仅时学校内使用的CMS，很多CMS站点中关于Conetent的字段类型也都是TEXT类型的。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;非常感谢您的阅读。如果错误，欢迎在评论中指正！&lt;/strong&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h2&gt;&lt;p&gt;今天学校里的老师让我帮忙看看学校内站点发文章时为什么文章保存后自动被截取一部分：一张很长的表格，复制到富文本编辑器中后，点击“发布文章”后查
-    
-    </summary>
-    
-      <category term="MySQL" scheme="http://consiiii.me/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="http://consiiii.me/tags/MySQL/"/>
-    
-      <category term="CMS" scheme="http://consiiii.me/tags/CMS/"/>
     
   </entry>
   

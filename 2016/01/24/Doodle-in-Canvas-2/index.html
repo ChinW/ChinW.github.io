@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Consiiii">
-    <title>Using system headers in framework in Swift - Consiiii</title>
+    <title>Doodle in Canvas 2 - Consiiii</title>
     <meta name="author" content="Consiiii">
     
         <link rel="icon" href="/assets/images/favicon.ico">
@@ -14,31 +14,28 @@
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。
-错误症状具体错误提示是：
-点击Archive后，上传后出现错误提示1
-
-Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.
-Invalid Bundle, The bundle contains disa">
+    <meta name="description" content="以下效果利用canvas完成，纯粹涂鸦。目前完成度心里预计在30%。
+Github仓库地址。
+以下为过程截图。
+1. 画一条正弦曲线
+2. 添加移动效果3. 使幅度也成正弦变化4. 调整周期和速度5. 组合6. 实际效果7. 添加模糊滤镜…待添加">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Using system headers in framework in Swift">
-<meta property="og:url" content="http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/index.html">
+<meta property="og:title" content="Doodle in Canvas 2">
+<meta property="og:url" content="http://consiiii.me/2016/01/24/Doodle-in-Canvas-2/index.html">
 <meta property="og:site_name" content="Consiiii">
-<meta property="og:description" content="这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。
-错误症状具体错误提示是：
-点击Archive后，上传后出现错误提示1
-
-Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.
-Invalid Bundle, The bundle contains disa">
-<meta property="og:updated_time" content="2016-09-27T11:28:31.000Z">
+<meta property="og:description" content="以下效果利用canvas完成，纯粹涂鸦。目前完成度心里预计在30%。
+Github仓库地址。
+以下为过程截图。
+1. 画一条正弦曲线
+2. 添加移动效果3. 使幅度也成正弦变化4. 调整周期和速度5. 组合6. 实际效果7. 添加模糊滤镜…待添加">
+<meta property="og:updated_time" content="2017-02-13T12:40:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Using system headers in framework in Swift">
-<meta name="twitter:description" content="这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。
-错误症状具体错误提示是：
-点击Archive后，上传后出现错误提示1
-
-Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.
-Invalid Bundle, The bundle contains disa">
+<meta name="twitter:title" content="Doodle in Canvas 2">
+<meta name="twitter:description" content="以下效果利用canvas完成，纯粹涂鸦。目前完成度心里预计在30%。
+Github仓库地址。
+以下为过程截图。
+1. 画一条正弦曲线
+2. 添加移动效果3. 使幅度也成正弦变化4. 调整周期和速度5. 组合6. 实际效果7. 添加模糊滤镜…待添加">
 <meta name="twitter:creator" content="@Consiiiix">
     
         <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
@@ -206,19 +203,19 @@ Invalid Bundle, The bundle contains disa">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Using system headers in framework in Swift
+            Doodle in Canvas 2
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Sep 24 2016 20:19:29 GMT+0800">
+    <time itemprop="datePublished" content="Sun Jan 24 2016 14:02:59 GMT+0800">
 	
-		    9月 24, 2016
+		    1月 24, 2016
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/slots/">slots</a>
+    <a class="category-link" href="/categories/Canvas/">Canvas</a>
 
 
     
@@ -227,38 +224,11 @@ Invalid Bundle, The bundle contains disa">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>这两天在更新一个iOS项目，因为更新XCode 8，遇到了Debug模式下能跑，但是无法打包的问题。</p>
-<h2 id="错误症状"><a href="#错误症状" class="headerlink" title="错误症状"></a>错误症状</h2><p>具体错误提示是：</p>
-<p>点击Archive后，上传后出现错误提示1</p>
-<blockquote>
-<p>Invalid Bundle. The bundle at ‘XXXX’ contains disallowed nested bundles.</p>
-<p>Invalid Bundle, The bundle contains disallowed nested bundles, contains disallowed file ‘Frameworks’</p>
-</blockquote>
-<p>或者iTC成功了，但是收到邮件，得到错误提示2</p>
-<blockquote>
-<p>We have discovered one or more issues with your recent delivery for “江雪”. &gt;To process your delivery, the following issues must be corrected:</p>
-<p>Invalid Bundle - One or more dynamic libraries that are referenced by your &gt;app are not present in the dylib search path.</p>
-</blockquote>
-<p>参考了多个已有的讨论（见Refer), 最终解决办法如下:</p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Host APP + Today Extension + 多个Framework用来共享代码，Swift(主要) + OC</p>
-<h2 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h2><ol>
-<li>对于Framework，尝试将</li>
-</ol>
-<p><code>Embedded Content Contains Swift Code: YES</code></p>
-<p>调成</p>
-<p><code>Embedded Content Contains Swift Code: NO</code></p>
-<ol>
-<li>对于Appex,</li>
-</ol>
-<h2 id="Refer"><a href="#Refer" class="headerlink" title="Refer"></a>Refer</h2><ol>
-<li><p><a href="https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s" target="_blank" rel="external">https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe#.ia0bv8j5s</a></p>
-</li>
-<li><p><a href="http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported" target="_blank" rel="external">http://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported</a></p>
-</li>
-<li><p><a href="http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework" target="_blank" rel="external">http://stackoverflow.com/questions/25808055/ifaddrs-in-swift-framework</a></p>
-</li>
-</ol>
-
+            <p>以下效果利用canvas完成，纯粹涂鸦。目前完成度心里预计在30%。</p>
+<p><a href="https://github.com/ChinW/GridEffect" target="_blank" rel="external">Github仓库地址</a>。</p>
+<p>以下为过程截图。</p>
+<h3 id="1-画一条正弦曲线"><a href="#1-画一条正弦曲线" class="headerlink" title="1. 画一条正弦曲线"></a>1. 画一条正弦曲线</h3><p><img src="" alt=""></p>
+<h3 id="2-添加移动效果"><a href="#2-添加移动效果" class="headerlink" title="2. 添加移动效果"></a>2. 添加移动效果</h3><h3 id="3-使幅度也成正弦变化"><a href="#3-使幅度也成正弦变化" class="headerlink" title="3. 使幅度也成正弦变化"></a>3. 使幅度也成正弦变化</h3><h3 id="4-调整周期和速度"><a href="#4-调整周期和速度" class="headerlink" title="4. 调整周期和速度"></a>4. 调整周期和速度</h3><h3 id="5-组合"><a href="#5-组合" class="headerlink" title="5. 组合"></a>5. 组合</h3><h3 id="6-实际效果"><a href="#6-实际效果" class="headerlink" title="6. 实际效果"></a>6. 实际效果</h3><h3 id="7-添加模糊滤镜"><a href="#7-添加模糊滤镜" class="headerlink" title="7. 添加模糊滤镜"></a>7. 添加模糊滤镜</h3><h3 id="…待添加"><a href="#…待添加" class="headerlink" title="…待添加"></a>…待添加</h3>
             
                 
 
@@ -270,7 +240,7 @@ Invalid Bundle, The bundle contains disa">
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/iOS/">iOS</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Canvas/">Canvas</a>
 
             </div>
         
@@ -279,7 +249,7 @@ Invalid Bundle, The bundle contains disa">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/28/Realm-RLMArray-h-file-not-found/"  data-tooltip="&#39;Realm/RLMArray.h&#39; file not found">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/24/Doodle-in-Canvas/"  data-tooltip="Doodle in Canvas">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -287,7 +257,7 @@ Invalid Bundle, The bundle contains disa">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/24/Disallowed nested bundles, contains disallowed file 'Frameworks' in XCode/" data-tooltip="Disallowed nested bundles, contains disallowed file &#39;Frameworks&#39; in XCode">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/15/CMS中存放文章内容的Content字段类型/" data-tooltip="CMS中存放文章内容的Content字段类型">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -302,17 +272,17 @@ Invalid Bundle, The bundle contains disa">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/01/24/Doodle-in-Canvas-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/01/24/Doodle-in-Canvas-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/01/24/Doodle-in-Canvas-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -358,7 +328,7 @@ Invalid Bundle, The bundle contains disa">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/28/Realm-RLMArray-h-file-not-found/"  data-tooltip="&#39;Realm/RLMArray.h&#39; file not found">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/24/Doodle-in-Canvas/"  data-tooltip="Doodle in Canvas">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -366,7 +336,7 @@ Invalid Bundle, The bundle contains disa">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/24/Disallowed nested bundles, contains disallowed file 'Frameworks' in XCode/" data-tooltip="Disallowed nested bundles, contains disallowed file &#39;Frameworks&#39; in XCode">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/15/CMS中存放文章内容的Content字段类型/" data-tooltip="CMS中存放文章内容的Content字段类型">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -381,17 +351,17 @@ Invalid Bundle, The bundle contains disa">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/01/24/Doodle-in-Canvas-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/01/24/Doodle-in-Canvas-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/01/24/Doodle-in-Canvas-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -417,17 +387,17 @@ Invalid Bundle, The bundle contains disa">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/01/24/Doodle-in-Canvas-2/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/01/24/Doodle-in-Canvas-2/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/09/24/Using-system-headers-in-framework-in-Swift copy/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/01/24/Doodle-in-Canvas-2/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
