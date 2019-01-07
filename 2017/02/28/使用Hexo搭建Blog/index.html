@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>使用Hexo搭建Blog - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="本文针对Mac下超初级用户，已入门者请略过。  1. 检查环境据说程序员有三大金句：不可能／你环境有问题／你不会用。所以我们先检查一下环境。 Terminal将是我们接下来一直会用到的工具。在Spotlight中或者lauchpad搜索，打开它。 1.1 Git Terminal中输入git，如果返回如下内容，证明ok.  12345678usage: git [--version] [--he">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="使用Hexo搭建Blog">
+<meta property="og:url" content="http://consiiii.me/2017/02/28/使用Hexo搭建Blog/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="本文针对Mac下超初级用户，已入门者请略过。  1. 检查环境据说程序员有三大金句：不可能／你环境有问题／你不会用。所以我们先检查一下环境。 Terminal将是我们接下来一直会用到的工具。在Spotlight中或者lauchpad搜索，打开它。 1.1 Git Terminal中输入git，如果返回如下内容，证明ok.  12345678usage: git [--version] [--he">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-29T14:06:30.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Hexo搭建Blog">
+<meta name="twitter:description" content="本文针对Mac下超初级用户，已入门者请略过。  1. 检查环境据说程序员有三大金句：不可能／你环境有问题／你不会用。所以我们先检查一下环境。 Terminal将是我们接下来一直会用到的工具。在Spotlight中或者lauchpad搜索，打开它。 1.1 Git Terminal中输入git，如果返回如下内容，证明ok.  12345678usage: git [--version] [--he">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-77216401-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-menu" class="fa fa-lg fa-bars"></i>
+    <!--<h1 class="header-title">-->
+        <!--<a class="header-title-link" href="/ ">Consiiii</a>-->
+    <!--</h1>-->
+    
+    <ul class="header-section">
+        
+        <li class="header-item">
+            
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="header-section">
+        
+    </ul>
+    
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png">
+        </a>
+    
+</header>
+<section class="dialog hide" id="menu-dialog">
+    <div class="dialog-header">
+        CHECK MORE
+    </div>
+    <div class="dialog-content">
+        
+        <ul class="list">
+            
+            <li class="item">
+                
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+            </li>
+            
+        </ul>
+        
+        <ul class="list">
+            
+        </ul>
+        
+    </div>
+    <div class="dialog-footer">
+        <a class="btn btn--default no-shadow" id="cancel-menu-btn">CANCEL</a>
+    </div>
+</section>
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                <div class="master">
+                    
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            使用Hexo搭建Blog
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Tue Feb 28 2017 23:40:39 GMT+0800">
+	
+		    2月 28, 2017
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Hexo/">Hexo</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <blockquote>
+<p>本文针对Mac下超初级用户，已入门者请略过。</p>
+</blockquote>
+<h2 id="1-检查环境"><a href="#1-检查环境" class="headerlink" title="1. 检查环境"></a>1. 检查环境</h2><p>据说程序员有三大金句：<code>不可能／你环境有问题／你不会用</code>。所以我们先检查一下环境。</p>
+<p>Terminal将是我们接下来一直会用到的工具。在Spotlight中或者lauchpad搜索，打开它。</p>
+<h3 id="1-1-Git"><a href="#1-1-Git" class="headerlink" title="1.1 Git"></a>1.1 Git</h3><p> Terminal中输入<code>git</code>，如果返回如下内容，证明ok. </p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">usage: git <span class="comment">[--version]</span> <span class="comment">[--help]</span> <span class="comment">[-C &lt;path&gt;]</span> <span class="comment">[-c name=value]</span></span><br><span class="line">           <span class="comment">[--exec-path<span class="comment">[=&lt;path&gt;]</span>]</span> <span class="comment">[--html-path]</span> <span class="comment">[--man-path]</span> <span class="comment">[--info-path]</span></span><br><span class="line">           <span class="comment">[-p | --paginate | --no-pager]</span> <span class="comment">[--no-replace-objects]</span> <span class="comment">[--bare]</span></span><br><span class="line">           <span class="comment">[--git-dir=&lt;path&gt;]</span> <span class="comment">[--work-tree=&lt;path&gt;]</span> <span class="comment">[--namespace=&lt;name&gt;]</span></span><br><span class="line">           &lt;command&gt; <span class="comment">[&lt;args&gt;]</span></span><br><span class="line"></span><br><span class="line">These <span class="keyword">are</span> common Git commands used in various situations:</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<p>如果没有，可以通过<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a> 或者<a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="noopener">安装包</a>进行安装.</p>
+<h3 id="1-2-NodeJS"><a href="#1-2-NodeJS" class="headerlink" title="1.2. NodeJS"></a>1.2. NodeJS</h3><p>我们使用NVM来管理NodeJS的版本，所以先安装NVM。在Terminal中输入</p>
+<p><code>curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh</code></p>
+<p>回车，等待安装。一旦安装完成，在Terminal中输入<code>nvm install stable</code>来安装稳定版本的nodejs.<br>安装完成后, 在terminal中输入<code>node --version</code>， 此时应该可以看到如下信息：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6<span class="selector-class">.1</span><span class="selector-class">.0</span> # 这里显示了安装的版本号</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-进入正题：安装Hexo"><a href="#1-3-进入正题：安装Hexo" class="headerlink" title="1.3 进入正题：安装Hexo"></a>1.3 进入正题：安装Hexo</h3><p>在自己的电脑中新建一个目录来存放自己的Blog吧，这里我建立了一个名为<code>Hexo</code>的文件夹，然后在Finder中拖动这个文件夹到Terminal中，接着回车，就在Terminal中进入了这个目录。接着输入命令:</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
+<p><code>-g</code>代表全局安装，这样在termnial中，任何路径下都能够使用命令<code>hexo</code>了。</p>
+<h2 id="2-创建Blog"><a href="#2-创建Blog" class="headerlink" title="2. 创建Blog"></a>2. 创建Blog</h2><h3 id="2-1-hexo-init-amp-hexo-server"><a href="#2-1-hexo-init-amp-hexo-server" class="headerlink" title="2.1 hexo init &amp; hexo server"></a>2.1 hexo init &amp; hexo server</h3><p>Terminla输入<code>hexo init blog</code>, 完成后<code>Hexo</code>文件夹下会出现<code>blog</code>文件夹。<code>cd blog</code>，进入到blog文件夹中，然后<code>hexo server</code>， 不久会返回以下信息:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  <span class="keyword">Start</span> processing</span><br><span class="line">INFO  Hexo <span class="keyword">is</span> running <span class="keyword">at</span> <span class="keyword">http</span>://localhost:<span class="number">4000</span>/. Press Ctrl+C <span class="keyword">to</span> stop.</span><br></pre></td></tr></table></figure>
+<p>启动完成，在浏览器中打开上述地址<code>http://localhost:4000/</code>, 没错的话应该可以看到自己的网站了。想要退出进程请按<code>Ctrl + C</code>。</p>
+<h3 id="2-2-修改配置"><a href="#2-2-修改配置" class="headerlink" title="2.2 修改配置"></a>2.2 修改配置</h3><p><code>blog</code>文件夹中的目录应当如下图所示，</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml <span class="meta"># 这个文件用来配置相关信息</span></span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line"><span class="string">|   ├── _drafts</span></span><br><span class="line"><span class="string">|   └── _posts</span></span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>配置的相关信息，参见<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">这里</a></p>
+<h3 id="2-3-hexo-new-post-“magic”"><a href="#2-3-hexo-new-post-“magic”" class="headerlink" title="2.3 hexo new post “magic”"></a>2.3 hexo new post “magic”</h3><p>使用如下命令来创建我们的第一篇帖子: </p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="type">post</span> <span class="string">"magic"</span> <span class="meta"># 引号内的是hexo将创建的post名称</span></span><br></pre></td></tr></table></figure>
+<p>得到返回如下 ：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">⇒  hexo <span class="keyword">new</span> post <span class="string">"magic"</span></span><br><span class="line">INFO  <span class="string">Created:</span> <span class="regexp">~/Hexo/</span>blog<span class="regexp">/source/</span>_posts/magic.md</span><br></pre></td></tr></table></figure>
+<p>可以看到我们创建了<code>magic.md</code>, 位置是<code>~/Hexo/blog/source/_posts/</code>.</p>
+<p>👌，<code>.md</code>后缀一般涌来代表这是一个markdown文件，使用markdown编辑器打开<code>magic.md</code>.<br>发现内容如下:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">magic</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-03</span><span class="bullet">-01</span> <span class="number">00</span><span class="string">:40:02</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 我们这部分书写自己的内容, 注意需要学习一下Markdown语法</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-4-hexo-generate"><a href="#2-4-hexo-generate" class="headerlink" title="2.4 hexo generate"></a>2.4 hexo generate</h3><pre><code>参见https://hexo.io/docs/generating.html
+</code></pre><p>使用如下命令来生成博客的文件：</p>
+<p><code>hexo generate</code>或者直接打<code>hexo g</code></p>
+<p>等待一会，<code>blog</code>文件夹下应该出现了一个新的文件夹，名称叫做<code>public</code>。</p>
+<p><code>public</code>文件夹中的内容，就是所有生成好的Blog文件。这一部分，我们可以上传到Github上。</p>
+<h2 id="3-上传Github"><a href="#3-上传Github" class="headerlink" title="3. 上传Github"></a>3. 上传Github</h2><pre><code>参见https://hexo.io/docs/deployment.html
+</code></pre><p>安装 hexo-deployer-git, 在terminal中键入</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>在<code>_config.yml</code>中的<code>deploy</code>填写上如下信息:</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> GIT的地址</span><br><span class="line"><span class="symbol">  branch:</span> master <span class="meta">#一般是master吧</span></span><br></pre></td></tr></table></figure>
+<p>接着，在Terminal中的输入<code>hexo deploy</code>或<code>hexo deploy</code>，完成。</p>
+<h2 id="4-开启Github-Pages"><a href="#4-开启Github-Pages" class="headerlink" title="4. 开启Github Pages"></a>4. 开启Github Pages</h2><p>在github仓库的设置页面中，可以找到Github Pages的选项，选择开启后就会获得一个子域名。接着用这个域名访问就好了。</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Hexo/">Hexo</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/23/The-view-s-frame-change-when-it-s-loaded/" data-tooltip="iOS: View的Frame在加载时的改变">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/09/Setup-Typescript-webpack-2/" data-tooltip="Setup TypeScript &amp; Webpack 2">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2017/02/28/使用Hexo搭建Blog/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2017/02/28/使用Hexo搭建Blog/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2017/02/28/使用Hexo搭建Blog/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                </div>
+                <div class="slave">
+                    <aside id="sidebar">
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="widget-list category-list"><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/CSS/">CSS</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Canvas/">Canvas</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Competition/">Competition</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Hexo/">Hexo</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Icon/">Icon</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="widget-list category-list-count">4</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LEMP/">LEMP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LISP/">LISP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Linux/">Linux</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Mac/">Mac</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/MySQL/">MySQL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/NS2/">NS2</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/PHP/">PHP</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Regex/">Regex</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Ruby/">Ruby</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/SSL/">SSL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Slots/">Slots</a><span class="widget-list category-list-count">4</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Swift/">Swift</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/iOS/">iOS</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/slots/">slots</a><span class="widget-list category-list-count">8</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/ssh/">ssh</a><span class="widget-list category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="widget-list tag-list"><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CMS/">CMS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CSS/">CSS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Canvas/">Canvas</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Competition/">Competition</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Design/">Design</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ES6/">ES6</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/El-Capitan/">El Capitan</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FTP/">FTP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Icon/">Icon</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/KMean/">KMean</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Karma/">Karma</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LEMP/">LEMP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Linux/">Linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Mac/">Mac</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NS2/">NS2</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/PHP/">PHP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ProFTPD/">ProFTPD</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/React/">React</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Redux/">Redux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Regex/">Regex</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/SSL/">SSL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Sass/">Sass</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Slots/">Slots</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Swift/">Swift</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Test/">Test</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Translation/">Translation</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Webpack/">Webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/XCode/">XCode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/datetime/">datetime</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/debian/">debian</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/iOS/">iOS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/linux/">linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/mysql/">mysql</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/nginx/">nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/php/">php</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/remote-login/">remote login</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ssh/">ssh</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘CocoaPods’/">‘CocoaPods’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘Realm’/">‘Realm’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘XCode’/">‘XCode’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘iOS’/">‘iOS’</a></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recent_posts</h3>
+    <div class="widget">
+      <ul class="widget-list post-list">
+        
+          <li class="post-list-item">
+            <a href="/2019/01/07/2019-first-blog/">2019年！我还活着</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2018/11/29/redux-router与react-router-rdeux的不同/">redux-router与react-router-rdeux的不同</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2018/11/29/Install-PHP-7/">Install PHP 7</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2017/04/29/Set-up-MIT-Scheme-in-macOS/">Set up MIT-Scheme in macOS</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2017/04/27/人工智能/">人工智能</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+</aside>
+
+                </div>
+            </div>
+            <footer id="footer">
+    <span class="copyrights">
+        Copyrights &copy; 2019 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2017/02/28/使用Hexo搭建Blog/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2017/02/28/使用Hexo搭建Blog/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2017/02/28/使用Hexo搭建Blog/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png">
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>

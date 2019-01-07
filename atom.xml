@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Consiiii</title>
+  
+  <subtitle>DISCO</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://consiiii.me/"/>
+  <updated>2019-01-07T15:46:52.024Z</updated>
+  <id>http://consiiii.me/</id>
+  
+  <author>
+    <name>Consiiii</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019年！我还活着</title>
+    <link href="http://consiiii.me/2019/01/07/2019-first-blog/"/>
+    <id>http://consiiii.me/2019/01/07/2019-first-blog/</id>
+    <published>2019-01-07T15:45:51.000Z</published>
+    <updated>2019-01-07T15:46:52.024Z</updated>
+    
+    <content type="html"><![CDATA[<p>很久很久没有写东西。<br>现在下班了。我突然想到，上班都在解决别人的问题。什么时候有时间，解决一下自己的问题。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;很久很久没有写东西。&lt;br&gt;现在下班了。我突然想到，上班都在解决别人的问题。什么时候有时间，解决一下自己的问题。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>redux-router与react-router-rdeux的不同</title>
+    <link href="http://consiiii.me/2018/11/29/redux-router%E4%B8%8Ereact-router-rdeux%E7%9A%84%E4%B8%8D%E5%90%8C/"/>
+    <id>http://consiiii.me/2018/11/29/redux-router与react-router-rdeux的不同/</id>
+    <published>2018-11-29T14:06:30.363Z</published>
+    <updated>2018-11-29T14:06:30.363Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>此文仅是<a href="https://github.com/acdlite/redux-router" target="_blank" rel="noopener">redux-router</a>页面上的部分翻译</strong></p><h2 id="react-router-redux"><a href="#react-router-redux" class="headerlink" title="react-router-redux"></a>react-router-redux</h2><p>react-router-redux(之前称为redux-simple-router)使用了一个不一样的方式去集成路由。react-router-redux让React Router去做所有沉重的任务，并同步url中的数据到store的history <a href="https://github.com/mjackson/history/blob/master/docs/Location.md#location" target="_blank" rel="noopener">location</a>对象里。这代表着用户可以直接使用React Router的API，并从这一堆<a href="https://github.com/acdlite/redux-router" target="_blank" rel="noopener">文档和例子</a>中获益。</p><p>react-router-redux的README中有一个非常有用的示意图，如下：</p><p><strong><a href="https://github.com/reactjs/redux" target="_blank" rel="noopener">redux</a> (store.routing)  ↔  <a href="https://github.com/reactjs/react-router-redux" target="_blank" rel="noopener">react-router-redux</a>  ↔  <a href="https://github.com/reactjs/history" target="_blank" rel="noopener">history</a> (history.location)  ↔  <a href="https://github.com/reactjs/react-router" target="_blank" rel="noopener">react-router</a></strong></p><p>这种方式易于理解，但有些一些需要注意的地方：</p><ol><li><p>history location对象不包含React Router的参数，它们必须被React Router组件向下传递，或被重新计算。(The history location object does not include React Router params and they must be either passed down from a React Router component or recomputed.)</p></li><li><p><strong>不鼓励（危险）</strong>将store中的数据连接到组件里，因为store中的数据在React Router的属性改变后，有潜在的更新可能性， 因此当location store data与向下传递而来的location对象(从React Router到组件）不同时，这就出现了一个互相竞争的场景。</p></li></ol><p>react-router-redux 鼓励用户在React Router中的component中直接使用props（props会向下传递到任何被渲染的component中）。 这意味着如果您想要从comonpent tree中获取location data， 您可能需要将它向下传递，亦或使用React的Context特性。</p><h2 id="redux-router"><a href="#redux-router" class="headerlink" title="redux-router"></a>redux-router</h2><p>这个项目从一方面来说，使用的方法是将<strong>完整的</strong>React Router数据存储在Redux Store中。这样做的主要好处是: 被redux-router向下传递到路由中的组件的props, 允许和存储在store中的数据不同。 因此可连接router的数据到任何您想要的component中。 您还可以直接从store中获取路由的参数。 redux-router也提供了一个API来应对从Router（React Router现在并没有提供这个东西）中进行热交换路由。</p><p>关于redux-router的示意图如下：</p><p><strong><a href="https://github.com/reactjs/redux" target="_blank" rel="noopener">redux</a> (store.routing)</strong> ↔ <a href="https://github.com/acdlite/redux-router" target="_blank" rel="noopener">redux-router</a>  ↔  <a href="https://github.com/reactjs/react-router" target="_blank" rel="noopener">react-router (via RouterContext)</a></p><p>这种方式同时也有一些限制：</p><ol><li>路由数据不全是可序列化的(serializable)(因为组件和函数不能被直接序列化)，因此对于那些帮助保存store到浏览器session中的开发工具扩展和类库，这可能会造成一些问题。但如果这些类库提供了忽略序列化store部分内容的方法，这样的问题可以被缓和，可是这并非总是可行的。</li><li>redux-router利用了RouterContext的一些好的地方，来继续使用React Router的内部逻辑。 然而，redux-router必须要在自身中实现很多React Router已经有的东西，这会造成在升级路径上的延时。</li><li>redux-router必须提供一个有细微区别的顶层API（因为第2点），即使他们的路由的逻辑/匹配模式可能是相同的。</li></ol><p>最终，您对这些库的选择取决于您和您的项目需求. React-router-redux会继续得到更多的社区支持，因为它已经进入了reactjs github组织，也有了相当的关注度。 对于react-router，和redux的集成， <strong>建议使用react-router-redux</strong>。 然而，您可能也会发现redux-router其实更符合您的项目需求。只要有这样的需求存在，那redux-router就会继续被维护。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;此文仅是&lt;a href=&quot;https://github.com/acdlite/redux-router&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;redux-router&lt;/a&gt;页面上的部分翻译&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id
+      
+    
+    </summary>
+    
+    
+      <category term="React" scheme="http://consiiii.me/tags/React/"/>
+    
+      <category term="Translation" scheme="http://consiiii.me/tags/Translation/"/>
+    
+      <category term="Redux" scheme="http://consiiii.me/tags/Redux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Install PHP 7</title>
+    <link href="http://consiiii.me/2018/11/29/Install-PHP-7/"/>
+    <id>http://consiiii.me/2018/11/29/Install-PHP-7/</id>
+    <published>2018-11-29T14:06:30.362Z</published>
+    <updated>2018-11-29T14:06:30.362Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><h4 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h4><p>Test OS: Ubuntu 15.10</p><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get install software-properties-common</span><br><span class="line">add-apt-repository ppa:ondrej/php</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install php7.0 -y --force-yes</span><br></pre></td></tr></table></figure><h4 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h4><p>Test OS: Debian 8 x64 (jessie) </p><p><strong>Edit <code>/etc/apt/sources.list</code></strong>, replacing <code>&lt;distribution&gt;</code> with either <code>sequeeze</code>, <code>wheezy</code>, <code>jessie</code>.</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">deb</span> http://packages.dotdeb.org <span class="symbol">&lt;distribution&gt;</span> <span class="keyword">all</span></span><br><span class="line"><span class="keyword">deb</span>-src http://packages.dotdeb.org <span class="symbol">&lt;distribution&gt;</span> <span class="keyword">all</span></span><br></pre></td></tr></table></figure><p>Add the GPG key:</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#download gpg</span></span><br><span class="line">wget https://www.dotdeb.org/dotdeb.gpg </span><br><span class="line"><span class="comment">#when you added it, you can delete it as you like </span></span><br><span class="line">sudo apt-key <span class="keyword">add</span><span class="bash"> dotdeb.gpg</span></span><br></pre></td></tr></table></figure><p>Install:</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install php7.0</span><br></pre></td></tr></table></figure><p>PS: If you meet some problems when you excute <code>apt-get update</code>, you may need to check <code>/etc/apt/sources.list</code>.</p><h2 id="Check"><a href="#Check" class="headerlink" title="Check"></a>Check</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@Ubuntu:~# php -v</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PHP 7.0.6-13+donate.sury.org~wily+1 (cli) ( NTS )</span><br><span class="line">Copyright (c) 1997-2016 The PHP Group</span><br><span class="line">Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies</span><br><span class="line">    with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies</span><br></pre></td></tr></table></figure><h2 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">root@Ubuntu:~# apt-cache search php7-*</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">php-radius -<span class="built_in"> radius client </span>library <span class="keyword">for</span> PHP</span><br><span class="line">php-http - PECL HTTP module <span class="keyword">for</span> PHP Extended HTTP Support</span><br><span class="line">php-uploadprogress - file upload progress<span class="built_in"> tracking </span>extension <span class="keyword">for</span> PHP</span><br><span class="line">php-mongodb - MongoDB driver <span class="keyword">for</span> PHP</span><br><span class="line">php7.0-common - documentation, examples <span class="keyword">and</span> common module <span class="keyword">for</span> PHP</span><br><span class="line">libapache2-mod-php7.0 - server-side, HTML-embedded scripting language (Apache 2 module)</span><br><span class="line">php7.0-cgi - server-side, HTML-embedded scripting language (CGI binary)</span><br><span class="line">php7.0-cli - command-line interpreter <span class="keyword">for</span> the PHP scripting language</span><br><span class="line">php7.0-phpdbg - server-side, HTML-embedded scripting language (PHPDBG binary)</span><br><span class="line">php7.0-fpm - server-side, HTML-embedded scripting language (FPM-CGI binary)</span><br><span class="line">libphp7.0-embed - HTML-embedded scripting language (Embedded SAPI library)</span><br><span class="line">php7.0-dev - Files <span class="keyword">for</span> PHP7.0 module development</span><br><span class="line">php7.0-curl - CURL module <span class="keyword">for</span> PHP</span><br><span class="line">php7.0-enchant - Enchant module <span class="keyword">for</span> PHP</span><br><span class="line">php7.0-gd - GD module <span class="keyword">for</span> PHP</span><br><span class="line"><span class="built_in">..</span>.</span><br></pre></td></tr></table></figure><p>Install specific modules with command below:</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">apt-get</span> <span class="selector-tag">install</span> <span class="selector-tag">php7</span><span class="selector-class">.0-mysql</span> <span class="selector-tag">php7</span><span class="selector-class">.0-curl</span></span><br></pre></td></tr></table></figure><h2 id="PHP-FPM-amp-Nginx"><a href="#PHP-FPM-amp-Nginx" class="headerlink" title="PHP-FPM &amp; Nginx"></a>PHP-FPM &amp; Nginx</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> install nginx</span><br><span class="line">apt-<span class="builtin-name">get</span> install php7.0-fpm</span><br></pre></td></tr></table></figure><p>Edit <code>/etc/nginx/sites-enabled/default</code>, check the configuration below for advisory optinoin purpose.</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        try_files <span class="variable">$uri</span> =404;</span><br><span class="line">        fastcgi_split_path_info ^(.+\.php)(/.+)$;</span><br><span class="line">        fastcgi_pass unix:/<span class="keyword">var</span>/<span class="keyword">run</span>/php/php7.0-fpm.sock;</span><br><span class="line">        fastcgi_index index.php;</span><br><span class="line">        fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">        <span class="keyword">include</span> fastcgi_params;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol><li><a href="http://tecadmin.net/install-php-7-on-ubuntu/" target="_blank" rel="noopener">http://tecadmin.net/install-php-7-on-ubuntu/</a></li><li><a href="https://www.colinodell.com/blog/2015-12/installing-php-7-0-0" target="_blank" rel="noopener">https://www.colinodell.com/blog/2015-12/installing-php-7-0-0</a></li><li><a href="https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-php-7-on-ubuntu-14-04" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-php-7-on-ubuntu-14-04</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h2&gt;&lt;h4 id=&quot;Ubuntu&quot;&gt;&lt;a href=&quot;#Ubuntu&quot; class=&quot;headerlink&quot; 
+      
+    
+    </summary>
+    
+    
+      <category term="PHP" scheme="http://consiiii.me/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Set up MIT-Scheme in macOS</title>
+    <link href="http://consiiii.me/2017/04/29/Set-up-MIT-Scheme-in-macOS/"/>
+    <id>http://consiiii.me/2017/04/29/Set-up-MIT-Scheme-in-macOS/</id>
+    <published>2017-04-29T05:47:55.000Z</published>
+    <updated>2018-11-29T14:06:30.363Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-Install-MIT-Scheme"><a href="#1-Install-MIT-Scheme" class="headerlink" title="1. Install MIT-Scheme"></a>1. Install MIT-Scheme</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># using homebrew</span></span><br><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>mit-<span class="keyword">scheme</span></span><br></pre></td></tr></table></figure><h2 id="2-How-to-code"><a href="#2-How-to-code" class="headerlink" title="2. How to code"></a>2. How to code</h2><h3 id="2-1-REPL"><a href="#2-1-REPL" class="headerlink" title="2.1 REPL"></a>2.1 REPL</h3><p>Using terminal</p><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">⇒  mit-scheme</span><br><span class="line">MIT/GNU <span class="keyword">Scheme</span> running under OS X</span><br><span class="line"><span class="keyword">Type</span> `^C' (control-C) followed <span class="built_in">by</span> `H' to obtain information about interrupts.</span><br><span class="line"></span><br><span class="line">Copyright (C) <span class="number">2014</span> Massachusetts Institute of Technology</span><br><span class="line">This is free software; see the source <span class="keyword">for</span> copying conditions. There is NO warranty; not even <span class="keyword">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span><br><span class="line"></span><br><span class="line">Image saved on Wednesday January <span class="number">4</span>, <span class="number">2017</span> <span class="built_in">at</span> <span class="number">8</span>:<span class="number">46</span>:<span class="number">32</span> AM</span><br><span class="line">  Release <span class="number">9.2</span> |<span class="type">| Microcode</span> <span class="number">15.3</span> |<span class="type">| Runtime</span> <span class="number">15.7</span> |<span class="type">| SF</span> <span class="number">4.41</span> |<span class="type">| LIAR</span>/C <span class="number">4.118</span> |<span class="type">| Edwin</span> <span class="number">3.116</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> ]=&gt;</span><br></pre></td></tr></table></figure><h3 id="2-2-Emacs"><a href="#2-2-Emacs" class="headerlink" title="2.2 Emacs"></a>2.2 Emacs</h3><p>Install <img src="https://www.gnu.org/software/emacs/download.html" alt="Emacs"></p><p>Create <code>~/.emacs</code>, appending below: </p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;;Always do syntax</span></span><br><span class="line">(<span class="name">global-font-lock-mode</span> <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">(<span class="name">setq</span> show-paren-delay <span class="number">0</span></span><br><span class="line">      show-paren-style 'parentheses)</span><br><span class="line">(<span class="name">show-paren-mode</span> <span class="number">1</span>)</span><br><span class="line">(<span class="name">setq</span> scheme-program-name <span class="string">"/usr/local/bin/mit-scheme"</span>)</span><br></pre></td></tr></table></figure><p>Open <em>Emacs</em>, <code>Meta + X</code>, then type <code>run mit-scheme</code>, mostly done.</p><p>Next step is create new <code>.scm</code> file in new window (try <code>C+x, d</code> or something similiar). Use <code>C+x C+e</code> to run code.</p><h3 id="2-3-Sublime"><a href="#2-3-Sublime" class="headerlink" title="2.3 Sublime"></a>2.3 Sublime</h3><p>Install packages <code>Scheme</code>, <code>SchemeREPL</code>.</p><p>Edit <code>Menu/ Sublime Text/ Preference/ Browse Packages/ SublimeREPL/ config/ Scheme/ Main.sublime-menu</code>,</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">Edit</span> <span class="keyword">Line</span> 30</span><br><span class="line"><span class="string">"syntax"</span>: <span class="string">"Packages/Scheme/Scheme.tmLanguage"</span></span><br></pre></td></tr></table></figure><p>Reboot Sublime, opne <code>your.scm</code>, click <code>Tools/ SublimeREPL/ Scheme/ Scheme</code>, then use <code>Tools/ SublimeREPL/ Eval in REPL/ *</code> to run codes.</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://luxiyalu.com/scheme-on-sublime-text-3/" target="_blank" rel="noopener">http://luxiyalu.com/scheme-on-sublime-text-3/</a></p><p><a href="http://stackoverflow.com/questions/32415247/sublimerepl-and-scheme-cannot-find-repl-for-scheme-error-message-when-transf" target="_blank" rel="noopener">http://stackoverflow.com/questions/32415247/sublimerepl-and-scheme-cannot-find-repl-for-scheme-error-message-when-transf</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-Install-MIT-Scheme&quot;&gt;&lt;a href=&quot;#1-Install-MIT-Scheme&quot; class=&quot;headerlink&quot; title=&quot;1. Install MIT-Scheme&quot;&gt;&lt;/a&gt;1. Install MIT-Scheme&lt;/h2
+      
+    
+    </summary>
+    
+      <category term="LISP" scheme="http://consiiii.me/categories/LISP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>人工智能</title>
+    <link href="http://consiiii.me/2017/04/27/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <id>http://consiiii.me/2017/04/27/人工智能/</id>
+    <published>2017-04-27T04:47:01.000Z</published>
+    <updated>2018-11-29T14:06:30.364Z</updated>
+    
+    <content type="html"><![CDATA[<p>人工智能：我看懂了你说的每一个字，但我就是不知道什么意思。</p><p>人工智能，机器学习，深度学习，视觉识别… （对于个人而言）以前从来不知道有那么多公司在辛勤地做着这方面的工作，而现在一下子全部都出现了，着实吃了好几惊。</p><p>关于知乎内很多“怎么看待Wang Yin 的XXXX”的问题中，回答者都仿佛很有默契地统一开始数落其各种不对。对于一个辩论题目，高考告诉我要利弊一齐分析，答案才叫全面。但似乎大多数的答案多着墨在于对方如何不对，释放“怒气“，看客心满意足。我很想问：难道对方就一无是处了吗？为什么不说说哪里对？过分强调其不对，有种”一着失误，满盘皆输“的感觉。</p><p>不管怎么样，敢说出来都需要一些勇气。Wang Yin似乎还在不断往前走，知道错了就改掉，知道对的就继续坚持。他是会变的，我们也会变的。而我们是不是一直在跟在他的后面，追着抓他的尾巴。都是一时之快啊！</p><p>我一直想着自己要不断努力，最终成为一个计算机领域的专家，当然我现在也是这样想的。但我换了一种方式，我要成为我自己。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;人工智能：我看懂了你说的每一个字，但我就是不知道什么意思。&lt;/p&gt;
+&lt;p&gt;人工智能，机器学习，深度学习，视觉识别… （对于个人而言）以前从来不知道有那么多公司在辛勤地做着这方面的工作，而现在一下子全部都出现了，着实吃了好几惊。&lt;/p&gt;
+&lt;p&gt;关于知乎内很多“怎么看待Wang
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>常用镜像源</title>
+    <link href="http://consiiii.me/2017/04/18/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+    <id>http://consiiii.me/2017/04/18/常用镜像源/</id>
+    <published>2017-04-18T04:57:35.000Z</published>
+    <updated>2018-11-29T14:06:30.365Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h2><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">yarn config get registry</span><br><span class="line"></span><br><span class="line">&gt; https:<span class="comment">//registry.yarnpkg.com</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">yarn config <span class="keyword">set</span> registry <span class="comment">'https://registry.npm.taobao.org'</span></span><br><span class="line"></span><br><span class="line">&gt; yarn <span class="comment">config v0.15.0</span></span><br><span class="line">&gt; success <span class="comment">Set</span> <span class="comment">"registry"</span><span class="comment"> to</span> <span class="comment">"https://registry.npm.taobao.org"</span><span class="comment">.</span></span><br><span class="line">&gt; Done <span class="comment">in 0.04s.</span></span><br></pre></td></tr></table></figure><h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> npm install -g cnpm <span class="params">--registry=https</span>:<span class="string">//registry.npm.taobao.org</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Or</span></span><br><span class="line"><span class="keyword">alias</span> cnpm=<span class="string">"npm --registry=https://registry.npm.taobao.org \</span></span><br><span class="line"><span class="string">--cache=$HOME/.npm/.cache/cnpm \</span></span><br><span class="line"><span class="string">--disturl=https://npm.taobao.org/dist \</span></span><br><span class="line"><span class="string">--userconfig=$HOME/.cnpmrc"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Or alias it in .bashrc or .zshrc</span></span><br><span class="line">$ <span class="keyword">echo</span> '\n<span class="comment">#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taobao.org \</span></span><br><span class="line">  <span class="params">--cache=</span>$HOME/<span class="string">.npm/.cache/cnpm</span> \</span><br><span class="line">  <span class="params">--disturl=https</span>:<span class="string">//npm.taobao.org/dist</span> \</span><br><span class="line">  <span class="params">--userconfig=</span>$HOME/<span class="string">.cnpmrc</span><span class="string">"' &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc</span></span><br></pre></td></tr></table></figure><h2 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h2><h4 id="Ruby-China"><a href="#Ruby-China" class="headerlink" title="Ruby-China"></a>Ruby-China</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="keyword">source</span> -<span class="keyword">a</span> http<span class="variable">s:</span>//gems.<span class="keyword">ruby</span>-china.org</span><br><span class="line"># Or <span class="keyword">make</span> it <span class="keyword">only</span> <span class="built_in">has</span> <span class="number">1</span> <span class="keyword">source</span></span><br><span class="line">gem sources --<span class="built_in">add</span> http<span class="variable">s:</span>//gems.<span class="keyword">ruby</span>-china.org/ --<span class="built_in">remove</span> http<span class="variable">s:</span>//rubygems.org/</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Yarn&quot;&gt;&lt;a href=&quot;#Yarn&quot; class=&quot;headerlink&quot; title=&quot;Yarn&quot;&gt;&lt;/a&gt;Yarn&lt;/h2&gt;&lt;figure class=&quot;highlight gams&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>江苏大学计算机学院网站改版整理</title>
+    <link href="http://consiiii.me/2017/04/18/%E6%B1%9F%E8%8B%8F%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E9%99%A2%E7%BD%91%E7%AB%99%E6%94%B9%E7%89%88%E6%95%B4%E7%90%86/"/>
+    <id>http://consiiii.me/2017/04/18/江苏大学计算机学院网站改版整理/</id>
+    <published>2017-04-17T18:47:50.000Z</published>
+    <updated>2018-11-29T14:06:30.365Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>江雪项目开发的一些整理</title>
+    <link href="http://consiiii.me/2017/04/18/%E6%B1%9F%E9%9B%AA%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%95%B4%E7%90%86/"/>
+    <id>http://consiiii.me/2017/04/18/江雪项目开发的一些整理/</id>
+    <published>2017-04-17T18:47:33.000Z</published>
+    <updated>2018-11-29T14:06:30.365Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一个格子效果的实现</title>
+    <link href="http://consiiii.me/2017/04/18/%E4%B8%80%E4%B8%AA%E6%A0%BC%E5%AD%90%E6%95%88%E6%9E%9C%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://consiiii.me/2017/04/18/一个格子效果的实现/</id>
+    <published>2017-04-17T17:26:49.000Z</published>
+    <updated>2018-11-29T14:06:30.364Z</updated>
+    
+    <content type="html"><![CDATA[<p>CSS实现</p><p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_grid.png" alt=""></p><p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_grids.gif" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;CSS实现&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/ci_grid.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xngrd.com1.z0.glb.clouddn.com/
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://consiiii.me/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://consiiii.me/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>运气守恒定律</title>
+    <link href="http://consiiii.me/2017/04/17/%E8%BF%90%E6%B0%94%E5%AE%88%E6%81%92%E5%AE%9A%E5%BE%8B/"/>
+    <id>http://consiiii.me/2017/04/17/运气守恒定律/</id>
+    <published>2017-04-17T12:32:47.000Z</published>
+    <updated>2018-11-29T14:06:30.365Z</updated>
+    
+    <content type="html"><![CDATA[<p>根据22年来对地球生活的认真调研与分析，我，沃尔鸾朔得・强，发现了<strong>运气守恒定律</strong></p><p>运气守恒定律主要有表现有：</p><blockquote><ol><li>运气不会变多，也不会变少</li><li>现在太顺，说明接下来就要出大事了</li><li>运气的组成成分非常复杂，但是可以在事发前用“我也考的不好”，“我也做的不好”，“我真的不会”，“这次完蛋了”等等来扭转运气</li><li>运气跟身份没关系</li></ol></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;根据22年来对地球生活的认真调研与分析，我，沃尔鸾朔得・强，发现了&lt;strong&gt;运气守恒定律&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;运气守恒定律主要有表现有：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;运气不会变多，也不会变少&lt;/li&gt;
+&lt;li&gt;现在太顺，说明接下来就
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+      <category term="Slots" scheme="http://consiiii.me/tags/Slots/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>window object in React Server Rendering</title>
+    <link href="http://consiiii.me/2017/04/17/window-object-in-React-Server-Rendering/"/>
+    <id>http://consiiii.me/2017/04/17/window-object-in-React-Server-Rendering/</id>
+    <published>2017-04-17T08:50:41.000Z</published>
+    <updated>2018-11-29T14:06:30.364Z</updated>
+    
+    <content type="html"><![CDATA[<p>做服务器端渲染时（所谓的Universal JvaScript），共享部分的代码会同时在服务器端（NodeJS）和客户端跑。</p><p>在某些情况下不可避免的将会操作到<code>window</code>等对象，然而<code>window</code>对象是属于客户端才有的全局对象。因此在渲染时就会出现</p><p><code>window is not defined</code></p><p>之类的错误导致服务器端渲染出错。</p><p>解决的方法也很简单，</p><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefined'</span>) &#123;</span><br><span class="line">  <span class="regexp">//</span> 在这里包含需要用到<span class="built_in">window</span>对象的第三方库等操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;做服务器端渲染时（所谓的Universal JvaScript），共享部分的代码会同时在服务器端（NodeJS）和客户端跑。&lt;/p&gt;
+&lt;p&gt;在某些情况下不可避免的将会操作到&lt;code&gt;window&lt;/code&gt;等对象，然而&lt;code&gt;window&lt;/code&gt;对象是属于客户
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://consiiii.me/categories/JavaScript/"/>
+    
+    
+      <category term="React" scheme="http://consiiii.me/tags/React/"/>
+    
+      <category term="NodeJS" scheme="http://consiiii.me/tags/NodeJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS: View的Frame在加载时的改变</title>
+    <link href="http://consiiii.me/2017/03/23/The-view-s-frame-change-when-it-s-loaded/"/>
+    <id>http://consiiii.me/2017/03/23/The-view-s-frame-change-when-it-s-loaded/</id>
+    <published>2017-03-23T04:23:38.000Z</published>
+    <updated>2018-11-29T14:06:30.363Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-ViewController"><a href="#1-ViewController" class="headerlink" title="1. ViewController"></a>1. ViewController</h2><p>有一个<code>contentView</code>紧贴着屏幕，如下图所示，那么，<code>contentView</code>的frame是如何变化的呢？</p><p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_ios-view-1.png" alt=""></p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">weak</span> <span class="keyword">var</span> contentView: <span class="type">UIView</span>!</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        <span class="comment">// #1</span></span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewDidLoad: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewWillAppear</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> &#123;</span><br><span class="line">        <span class="comment">// #2</span></span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewWillAppear: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidAppear</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> &#123;</span><br><span class="line">        <span class="comment">// #3</span></span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewDidAppear: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>首先是iPhone 6的尺寸：</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"viewDidLoad: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"viewWillAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"viewDidAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br></pre></td></tr></table></figure><p>都没有变化，因此这里有可能让初学者有误区，认为在viewDidLoad或者viewWillAppear中的就已经出现了最终的尺寸。</p><p>iPhone 6P:</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"viewDidLoad: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"viewWillAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"viewDidAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">414.0</span>, <span class="number">716.0</span>)</span><br></pre></td></tr></table></figure><p>注意到viewDidAppear中出现的尺寸才是screen中的尺寸。如果在viewDidLoad或者viewWillAppear唤醒了xib中的view，那么需要注意到，在viewWillAppear中我们可能需重新设置最新的frame.</p><h2 id="2-View"><a href="#2-View" class="headerlink" title="2. View"></a>2. View</h2><p>对于xib中的view来说，将其添加到ViewController中的view时，又是怎样的一个生命周期呢？</p><p>这里创建了一个自定义的view, 叫它CustomView</p><p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_ios-view-2.png" alt=""></p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomView</span>: <span class="title">UIView</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">func</span> <span class="title">instanceFromNib</span>() -&gt; <span class="title">CustomView</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UINib</span>(nibName: <span class="string">"View"</span>, bundle: <span class="literal">nil</span>).instantiate(withOwner: <span class="literal">nil</span>, options: <span class="literal">nil</span>)[<span class="number">0</span>] <span class="keyword">as</span>! <span class="type">CustomView</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"init: frame"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">required</span> <span class="keyword">init</span>?(coder aDecoder: <span class="type">NSCoder</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(coder: aDecoder)</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"init: coder"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">awakeFromNib</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"awakeFromNib"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">willMove</span><span class="params">(toSuperview newSuperview: UIView?)</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"willMove: toSuperview"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">didMoveToSuperview</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"didMoveToSuperview"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">willMove</span><span class="params">(toWindow newWindow: UIWindow?)</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"willMove: toWindow"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">didMoveToWindow</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"didMoveToWindow"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>修改ViewController,</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">weak</span> <span class="keyword">var</span> contentView: <span class="type">UIView</span>!</span><br><span class="line">    <span class="comment">// New</span></span><br><span class="line">    <span class="keyword">var</span> customView: <span class="type">CustomView</span> = <span class="type">CustomView</span>.instanceFromNib()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewDidLoad: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">        <span class="comment">// New</span></span><br><span class="line">        <span class="keyword">self</span>.view.addSubview(<span class="keyword">self</span>.customView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewWillAppear</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewWillAppear: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidAppear</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewDidAppear: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>最后的出现顺序如下：</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"init: coder"</span></span><br><span class="line"><span class="string">"awakeFromNib"</span></span><br><span class="line"># <span class="string">"viewDidLoad: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"willMove: toSuperview"</span></span><br><span class="line"><span class="string">"didMoveToSuperview"</span></span><br><span class="line"># <span class="string">"viewWillAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"willMove: toWindow"</span></span><br><span class="line"><span class="string">"didMoveToWindow"</span></span><br><span class="line"># <span class="string">"viewDidAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">414.0</span>, <span class="number">716.0</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-ViewController&quot;&gt;&lt;a href=&quot;#1-ViewController&quot; class=&quot;headerlink&quot; title=&quot;1. ViewController&quot;&gt;&lt;/a&gt;1. ViewController&lt;/h2&gt;&lt;p&gt;有一个&lt;code&gt;con
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://consiiii.me/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Hexo搭建Blog</title>
+    <link href="http://consiiii.me/2017/02/28/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BABlog/"/>
+    <id>http://consiiii.me/2017/02/28/使用Hexo搭建Blog/</id>
+    <published>2017-02-28T15:40:39.000Z</published>
+    <updated>2018-11-29T14:06:30.364Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文针对Mac下超初级用户，已入门者请略过。</p></blockquote><h2 id="1-检查环境"><a href="#1-检查环境" class="headerlink" title="1. 检查环境"></a>1. 检查环境</h2><p>据说程序员有三大金句：<code>不可能／你环境有问题／你不会用</code>。所以我们先检查一下环境。</p><p>Terminal将是我们接下来一直会用到的工具。在Spotlight中或者lauchpad搜索，打开它。</p><h3 id="1-1-Git"><a href="#1-1-Git" class="headerlink" title="1.1 Git"></a>1.1 Git</h3><p> Terminal中输入<code>git</code>，如果返回如下内容，证明ok. </p><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">usage: git <span class="comment">[--version]</span> <span class="comment">[--help]</span> <span class="comment">[-C &lt;path&gt;]</span> <span class="comment">[-c name=value]</span></span><br><span class="line">           <span class="comment">[--exec-path<span class="comment">[=&lt;path&gt;]</span>]</span> <span class="comment">[--html-path]</span> <span class="comment">[--man-path]</span> <span class="comment">[--info-path]</span></span><br><span class="line">           <span class="comment">[-p | --paginate | --no-pager]</span> <span class="comment">[--no-replace-objects]</span> <span class="comment">[--bare]</span></span><br><span class="line">           <span class="comment">[--git-dir=&lt;path&gt;]</span> <span class="comment">[--work-tree=&lt;path&gt;]</span> <span class="comment">[--namespace=&lt;name&gt;]</span></span><br><span class="line">           &lt;command&gt; <span class="comment">[&lt;args&gt;]</span></span><br><span class="line"></span><br><span class="line">These <span class="keyword">are</span> common Git commands used in various situations:</span><br><span class="line">....</span><br></pre></td></tr></table></figure><p>如果没有，可以通过<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a> 或者<a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="noopener">安装包</a>进行安装.</p><h3 id="1-2-NodeJS"><a href="#1-2-NodeJS" class="headerlink" title="1.2. NodeJS"></a>1.2. NodeJS</h3><p>我们使用NVM来管理NodeJS的版本，所以先安装NVM。在Terminal中输入</p><p><code>curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh</code></p><p>回车，等待安装。一旦安装完成，在Terminal中输入<code>nvm install stable</code>来安装稳定版本的nodejs.<br>安装完成后, 在terminal中输入<code>node --version</code>， 此时应该可以看到如下信息：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6<span class="selector-class">.1</span><span class="selector-class">.0</span> # 这里显示了安装的版本号</span><br></pre></td></tr></table></figure><h3 id="1-3-进入正题：安装Hexo"><a href="#1-3-进入正题：安装Hexo" class="headerlink" title="1.3 进入正题：安装Hexo"></a>1.3 进入正题：安装Hexo</h3><p>在自己的电脑中新建一个目录来存放自己的Blog吧，这里我建立了一个名为<code>Hexo</code>的文件夹，然后在Finder中拖动这个文件夹到Terminal中，接着回车，就在Terminal中进入了这个目录。接着输入命令:</p><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure><p><code>-g</code>代表全局安装，这样在termnial中，任何路径下都能够使用命令<code>hexo</code>了。</p><h2 id="2-创建Blog"><a href="#2-创建Blog" class="headerlink" title="2. 创建Blog"></a>2. 创建Blog</h2><h3 id="2-1-hexo-init-amp-hexo-server"><a href="#2-1-hexo-init-amp-hexo-server" class="headerlink" title="2.1 hexo init &amp; hexo server"></a>2.1 hexo init &amp; hexo server</h3><p>Terminla输入<code>hexo init blog</code>, 完成后<code>Hexo</code>文件夹下会出现<code>blog</code>文件夹。<code>cd blog</code>，进入到blog文件夹中，然后<code>hexo server</code>， 不久会返回以下信息:</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  <span class="keyword">Start</span> processing</span><br><span class="line">INFO  Hexo <span class="keyword">is</span> running <span class="keyword">at</span> <span class="keyword">http</span>://localhost:<span class="number">4000</span>/. Press Ctrl+C <span class="keyword">to</span> stop.</span><br></pre></td></tr></table></figure><p>启动完成，在浏览器中打开上述地址<code>http://localhost:4000/</code>, 没错的话应该可以看到自己的网站了。想要退出进程请按<code>Ctrl + C</code>。</p><h3 id="2-2-修改配置"><a href="#2-2-修改配置" class="headerlink" title="2.2 修改配置"></a>2.2 修改配置</h3><p><code>blog</code>文件夹中的目录应当如下图所示，</p><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml <span class="meta"># 这个文件用来配置相关信息</span></span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line"><span class="string">|   ├── _drafts</span></span><br><span class="line"><span class="string">|   └── _posts</span></span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure><p>配置的相关信息，参见<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">这里</a></p><h3 id="2-3-hexo-new-post-“magic”"><a href="#2-3-hexo-new-post-“magic”" class="headerlink" title="2.3 hexo new post “magic”"></a>2.3 hexo new post “magic”</h3><p>使用如下命令来创建我们的第一篇帖子: </p><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="type">post</span> <span class="string">"magic"</span> <span class="meta"># 引号内的是hexo将创建的post名称</span></span><br></pre></td></tr></table></figure><p>得到返回如下 ：</p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">⇒  hexo <span class="keyword">new</span> post <span class="string">"magic"</span></span><br><span class="line">INFO  <span class="string">Created:</span> <span class="regexp">~/Hexo/</span>blog<span class="regexp">/source/</span>_posts/magic.md</span><br></pre></td></tr></table></figure><p>可以看到我们创建了<code>magic.md</code>, 位置是<code>~/Hexo/blog/source/_posts/</code>.</p><p>👌，<code>.md</code>后缀一般涌来代表这是一个markdown文件，使用markdown编辑器打开<code>magic.md</code>.<br>发现内容如下:</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">magic</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-03</span><span class="bullet">-01</span> <span class="number">00</span><span class="string">:40:02</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 我们这部分书写自己的内容, 注意需要学习一下Markdown语法</span></span><br></pre></td></tr></table></figure><h3 id="2-4-hexo-generate"><a href="#2-4-hexo-generate" class="headerlink" title="2.4 hexo generate"></a>2.4 hexo generate</h3><pre><code>参见https://hexo.io/docs/generating.html</code></pre><p>使用如下命令来生成博客的文件：</p><p><code>hexo generate</code>或者直接打<code>hexo g</code></p><p>等待一会，<code>blog</code>文件夹下应该出现了一个新的文件夹，名称叫做<code>public</code>。</p><p><code>public</code>文件夹中的内容，就是所有生成好的Blog文件。这一部分，我们可以上传到Github上。</p><h2 id="3-上传Github"><a href="#3-上传Github" class="headerlink" title="3. 上传Github"></a>3. 上传Github</h2><pre><code>参见https://hexo.io/docs/deployment.html</code></pre><p>安装 hexo-deployer-git, 在terminal中键入</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure><p>在<code>_config.yml</code>中的<code>deploy</code>填写上如下信息:</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> GIT的地址</span><br><span class="line"><span class="symbol">  branch:</span> master <span class="meta">#一般是master吧</span></span><br></pre></td></tr></table></figure><p>接着，在Terminal中的输入<code>hexo deploy</code>或<code>hexo deploy</code>，完成。</p><h2 id="4-开启Github-Pages"><a href="#4-开启Github-Pages" class="headerlink" title="4. 开启Github Pages"></a>4. 开启Github Pages</h2><p>在github仓库的设置页面中，可以找到Github Pages的选项，选择开启后就会获得一个子域名。接着用这个域名访问就好了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;本文针对Mac下超初级用户，已入门者请略过。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-检查环境&quot;&gt;&lt;a href=&quot;#1-检查环境&quot; class=&quot;headerlink&quot; title=&quot;1. 检查环境&quot;&gt;&lt;/a&gt;1. 检查环境&lt;/h
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://consiiii.me/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://consiiii.me/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Setup TypeScript &amp; Webpack 2</title>
+    <link href="http://consiiii.me/2017/02/09/Setup-Typescript-webpack-2/"/>
+    <id>http://consiiii.me/2017/02/09/Setup-Typescript-webpack-2/</id>
+    <published>2017-02-09T13:19:57.000Z</published>
+    <updated>2018-11-29T14:06:30.363Z</updated>
+    
+    <content type="html"><![CDATA[<p>// BREAK</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;// BREAK&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="http://consiiii.me/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="http://consiiii.me/tags/TypeScript/"/>
+    
+      <category term="Webpack" scheme="http://consiiii.me/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>让Terminal全局使用SOCKS代理</title>
+    <link href="http://consiiii.me/2017/01/18/%E8%AE%A9Terminal%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8SOCKS%E4%BB%A3%E7%90%86/"/>
+    <id>http://consiiii.me/2017/01/18/让Terminal全局使用SOCKS代理/</id>
+    <published>2017-01-18T09:39:43.000Z</published>
+    <updated>2018-11-29T14:06:30.365Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">ALL_PROXY</span>=socks5://127.0.0.1:1080</span><br><span class="line"></span><br><span class="line"><span class="comment"># DO IT!</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight routeros&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span cl
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>利用key更新React中defaultValue</title>
+    <link href="http://consiiii.me/2017/01/09/%E5%88%A9%E7%94%A8key%E6%9B%B4%E6%96%B0React%E4%B8%ADdefaultValue/"/>
+    <id>http://consiiii.me/2017/01/09/利用key更新React中defaultValue/</id>
+    <published>2017-01-08T16:13:26.000Z</published>
+    <updated>2018-11-29T14:06:30.364Z</updated>
+    
+    <content type="html"><![CDATA[<p>React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则可以写成：</p><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.state = &#123;</span><br><span class="line">defaultValue: ...,</span><br><span class="line">key: Math.random()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render () &#123;</span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line"> &lt;input defaultValue=&#123;<span class="keyword">this</span>.state.defaultValue&#125; key=&#123;`<span class="keyword">this</span>.state.key`&#125; /&gt;</span><br><span class="line">);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>key的刷新可以造成input节点强制刷新，从而更新defaultValue. </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则可以写成：&lt;/p&gt;
+&lt;figure class=&quot;highlight kotlin&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://consiiii.me/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://consiiii.me/tags/JavaScript/"/>
+    
+      <category term="React" scheme="http://consiiii.me/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Colon in Ruby</title>
+    <link href="http://consiiii.me/2016/12/29/Colon-in-Ruby/"/>
+    <id>http://consiiii.me/2016/12/29/Colon-in-Ruby/</id>
+    <published>2016-12-29T03:34:50.000Z</published>
+    <updated>2018-11-29T14:06:30.360Z</updated>
+    
+    <content type="html"><![CDATA[<p>1) abc: it can’t exist independently</p><p>2) :xyz it is a symbol</p><p>:xyz.class<br> =&gt; Symbol<br>3) abc::xyz it represents namespace</p><p>Example code:</p><p>module ABC<br>    class Xyz<br>       def initialize<br>         @size = 400<br>       end<br>    end<br>end</p><p>x = ABC::Xyz.new<br>4) abc: :xyz</p><p>hash = {abc: :xyz} #hash key and value all are symbol.<br>5) abc: xyz</p><p>xyz = “just a test”<br>hash = {abc: xyz} #hash key is symbol, value is string.<br>6) :abc =&gt; xyz</p><p>xyz = “just a test”<br>hash = {:abc =&gt; xyz} # same with (5)， just another representation<br>7) ternary operator :</p><p>abc = 1<br>xyz = 2<br>result = abc &gt; xyz ? abc : xyz<br>=&gt; result = 2</p><p>–<br>Copy from <a href="http://stackoverflow.com/questions/30315021/colon-placement-in-ruby-on-rails/30315118#30315118" target="_blank" rel="noopener">http://stackoverflow.com/questions/30315021/colon-placement-in-ruby-on-rails/30315118#30315118</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1) abc: it can’t exist independently&lt;/p&gt;
+&lt;p&gt;2) :xyz it is a symbol&lt;/p&gt;
+&lt;p&gt;:xyz.class&lt;br&gt; =&amp;gt; Symbol&lt;br&gt;3) abc::xyz it represents namesp
+      
+    
+    </summary>
+    
+      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
+    
+    
+      <category term="Ruby" scheme="http://consiiii.me/tags/Ruby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>替换homebrew默认源</title>
+    <link href="http://consiiii.me/2016/12/28/%E6%9B%BF%E6%8D%A2homebrew%E9%BB%98%E8%AE%A4%E6%BA%90/"/>
+    <id>http://consiiii.me/2016/12/28/替换homebrew默认源/</id>
+    <published>2016-12-28T07:41:39.000Z</published>
+    <updated>2018-11-29T14:06:30.365Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">cd </span><span class="string">"$(brew --repo)"</span></span><br><span class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">git:</span>//<span class="string">mirrors.</span><span class="string">ustc.</span><span class="string">edu.</span><span class="string">cn/</span><span class="string">brew.</span><span class="string">git</span></span><br></pre></td></tr></table></figure><p>来源<a href="https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git" target="_blank" rel="noopener">https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git</a></p><p>$ gem sources –add <a href="https://gems.ruby-china.org/" target="_blank" rel="noopener">https://gems.ruby-china.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a><br>$ gem sources -l<br><a href="https://gems.ruby-china.org" target="_blank" rel="noopener">https://gems.ruby-china.org</a></p><h1 id="确保只有-gems-ruby-china-org"><a href="#确保只有-gems-ruby-china-org" class="headerlink" title="确保只有 gems.ruby-china.org"></a>确保只有 gems.ruby-china.org</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight dsconfig&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/
+      
+    
+    </summary>
+    
+      <category term="Ruby" scheme="http://consiiii.me/categories/Ruby/"/>
+    
+    
+      <category term="Ruby" scheme="http://consiiii.me/tags/Ruby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>创建前端脚手架</title>
+    <link href="http://consiiii.me/2016/11/10/%E5%88%9B%E5%BB%BA%E5%89%8D%E7%AB%AF%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
+    <id>http://consiiii.me/2016/11/10/创建前端脚手架/</id>
+    <published>2016-11-10T10:00:56.000Z</published>
+    <updated>2018-11-29T14:06:30.364Z</updated>
+    
+    <content type="html"><![CDATA[<p>// BREAK</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;// BREAK&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Login ProFTPD as root</title>
+    <link href="http://consiiii.me/2016/11/04/%E4%BD%BF%E7%94%A8root%E7%99%BB%E9%99%86proFtpd/"/>
+    <id>http://consiiii.me/2016/11/04/使用root登陆proFtpd/</id>
+    <published>2016-11-04T11:48:38.000Z</published>
+    <updated>2018-11-29T14:06:30.364Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>使用root登录不是一种安全的方式，请悉知</p></blockquote><h2 id="1-安装ProFTPD"><a href="#1-安装ProFTPD" class="headerlink" title="1. 安装ProFTPD"></a>1. 安装ProFTPD</h2><p><code>apt-get install proftpd</code></p><p>安装完成后会要求我们选择让该 server 以 inetd 还是 standalone, 选择standalone.</p><p>配置相关文件</p><p><code>vi /etc/proftpd/proftpd.conf</code> </p><ul><li>改变Server Name</li></ul><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute"><span class="nomarkup">ServerName</span></span>                      <span class="string">"example.com"</span></span><br></pre></td></tr></table></figure><ul><li>如需要，限制用户的目录</li></ul><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">Use</span> this <span class="keyword">to</span> jail <span class="keyword">all</span> users <span class="keyword">in</span> their homes</span><br><span class="line"> DefaultRoot                    ~</span><br></pre></td></tr></table></figure><h2 id="2-登录FTP"><a href="#2-登录FTP" class="headerlink" title="2. 登录FTP"></a>2. 登录FTP</h2><p>ProFTPD会自动使用系统用户和密码来作为登录FTP的凭证。但是注意到，root之类的用户是无法登录的，会一直出现530错误。</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Command:<span class="built_in">USER </span>root</span><br><span class="line">Response: 331 Password required <span class="keyword">for</span> root</span><br><span class="line">Command:PASS ************</span><br><span class="line">Response: 530 Login incorrect.</span><br><span class="line">Error:      Critical error: Could <span class="keyword">not</span> connect <span class="keyword">to</span> server</span><br></pre></td></tr></table></figure><p>修改两个地方:</p><ul><li><code>vi  /etc/proftpd/proftpd.conf</code></li></ul><p>添加上</p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RootLogin<span class="keyword">on</span></span><br></pre></td></tr></table></figure><ul><li>ProFTPD同时也会使用<code>/etc/ftpusers</code>做合法检测，这是一个容易遗漏的地方。打开<code>/etc/ftpusers</code>，</li></ul><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># /etc/ftpusers: list <span class="keyword">of</span> users disallowed FTP access. See ftpusers(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">root #注释或者删掉它吧</span><br><span class="line">daemon</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>重启ProFTPD, </p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">service proftpd restart</span></span><br></pre></td></tr></table></figure><p>现在再登录，是否登录成功了呢？希望是。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;使用root登录不是一种安全的方式，请悉知&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-安装ProFTPD&quot;&gt;&lt;a href=&quot;#1-安装ProFTPD&quot; class=&quot;headerlink&quot; title=&quot;1. 安装ProFTPD&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://consiiii.me/categories/Linux/"/>
+    
+    
+      <category term="FTP" scheme="http://consiiii.me/tags/FTP/"/>
+    
+      <category term="Linux" scheme="http://consiiii.me/tags/Linux/"/>
+    
+      <category term="ProFTPD" scheme="http://consiiii.me/tags/ProFTPD/"/>
+    
+      <category term="Ubuntu" scheme="http://consiiii.me/tags/Ubuntu/"/>
+    
+  </entry>
+  
+</feed>
