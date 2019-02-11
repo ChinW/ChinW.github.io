@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2019-01-07T15:46:52.024Z</updated>
+  <updated>2019-02-11T15:55:10.584Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>怜取眼前人</title>
+    <link href="http://consiiii.me/2019/02/11/2019-02-11withFamily/"/>
+    <id>http://consiiii.me/2019/02/11/2019-02-11withFamily/</id>
+    <published>2019-02-11T15:40:06.000Z</published>
+    <updated>2019-02-11T15:55:10.584Z</updated>
+    
+    <content type="html"><![CDATA[<p>| 深圳, 香港, 和家人</p><p>最近总是感叹时间过的太快，现在已经到了2019年了。春节过的匆匆忙忙。</p><p>我和姐姐长大之后都去了不同的地方，和家人聚少离多。这个春节终于因为我而聚集在了深圳。整个春节过的匆匆忙忙，我中间有一段时间没有很好的脾气，会偶尔用自以为是的语气说父母不懂大城市的规矩，最快之后却也立马觉得自己也不过是大城市里的一只虫子，不懂得感恩父母对自己的好。姐姐在香港也是走马观花，没能好好地带他们去玩。</p><p>目送他们从车站离开的时候，又深深懊悔自己没有好好珍惜在一起的时间，接下来一年也不知道会发生多少事情，还能见面几次。</p><p>总的来说最难熬的是高中，大学开始时间过的飞快，那些迷人的，漂亮的，令人伤感的，琢磨不透的东西，事后都觉得在那个时候没有好好去体会，去感受。</p><p>总觉得抱歉，总觉得自己做的不够好，借用一句话：</p><p>“尘归尘以及土归土。 再也不见以及再次相见。 抱歉的抱歉以及一切的一切。 黯淡无光的希望以及卑微凌乱的梦想。”</p><p>我希望自己可以做的更好。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;| 深圳, 香港, 和家人&lt;/p&gt;
+&lt;p&gt;最近总是感叹时间过的太快，现在已经到了2019年了。春节过的匆匆忙忙。&lt;/p&gt;
+&lt;p&gt;我和姐姐长大之后都去了不同的地方，和家人聚少离多。这个春节终于因为我而聚集在了深圳。整个春节过的匆匆忙忙，我中间有一段时间没有很好的脾气，会偶尔用
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+      <category term="life" scheme="http://consiiii.me/tags/life/"/>
+    
+  </entry>
   
   <entry>
     <title>2019年！我还活着</title>
@@ -484,40 +511,6 @@
     
       <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Login ProFTPD as root</title>
-    <link href="http://consiiii.me/2016/11/04/%E4%BD%BF%E7%94%A8root%E7%99%BB%E9%99%86proFtpd/"/>
-    <id>http://consiiii.me/2016/11/04/使用root登陆proFtpd/</id>
-    <published>2016-11-04T11:48:38.000Z</published>
-    <updated>2018-11-29T14:06:30.364Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>使用root登录不是一种安全的方式，请悉知</p></blockquote><h2 id="1-安装ProFTPD"><a href="#1-安装ProFTPD" class="headerlink" title="1. 安装ProFTPD"></a>1. 安装ProFTPD</h2><p><code>apt-get install proftpd</code></p><p>安装完成后会要求我们选择让该 server 以 inetd 还是 standalone, 选择standalone.</p><p>配置相关文件</p><p><code>vi /etc/proftpd/proftpd.conf</code> </p><ul><li>改变Server Name</li></ul><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute"><span class="nomarkup">ServerName</span></span>                      <span class="string">"example.com"</span></span><br></pre></td></tr></table></figure><ul><li>如需要，限制用户的目录</li></ul><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">Use</span> this <span class="keyword">to</span> jail <span class="keyword">all</span> users <span class="keyword">in</span> their homes</span><br><span class="line"> DefaultRoot                    ~</span><br></pre></td></tr></table></figure><h2 id="2-登录FTP"><a href="#2-登录FTP" class="headerlink" title="2. 登录FTP"></a>2. 登录FTP</h2><p>ProFTPD会自动使用系统用户和密码来作为登录FTP的凭证。但是注意到，root之类的用户是无法登录的，会一直出现530错误。</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Command:<span class="built_in">USER </span>root</span><br><span class="line">Response: 331 Password required <span class="keyword">for</span> root</span><br><span class="line">Command:PASS ************</span><br><span class="line">Response: 530 Login incorrect.</span><br><span class="line">Error:      Critical error: Could <span class="keyword">not</span> connect <span class="keyword">to</span> server</span><br></pre></td></tr></table></figure><p>修改两个地方:</p><ul><li><code>vi  /etc/proftpd/proftpd.conf</code></li></ul><p>添加上</p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RootLogin<span class="keyword">on</span></span><br></pre></td></tr></table></figure><ul><li>ProFTPD同时也会使用<code>/etc/ftpusers</code>做合法检测，这是一个容易遗漏的地方。打开<code>/etc/ftpusers</code>，</li></ul><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># /etc/ftpusers: list <span class="keyword">of</span> users disallowed FTP access. See ftpusers(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">root #注释或者删掉它吧</span><br><span class="line">daemon</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>重启ProFTPD, </p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">service proftpd restart</span></span><br></pre></td></tr></table></figure><p>现在再登录，是否登录成功了呢？希望是。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;使用root登录不是一种安全的方式，请悉知&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;1-安装ProFTPD&quot;&gt;&lt;a href=&quot;#1-安装ProFTPD&quot; class=&quot;headerlink&quot; title=&quot;1. 安装ProFTPD&quot;&gt;
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://consiiii.me/categories/Linux/"/>
-    
-    
-      <category term="FTP" scheme="http://consiiii.me/tags/FTP/"/>
-    
-      <category term="Linux" scheme="http://consiiii.me/tags/Linux/"/>
-    
-      <category term="ProFTPD" scheme="http://consiiii.me/tags/ProFTPD/"/>
-    
-      <category term="Ubuntu" scheme="http://consiiii.me/tags/Ubuntu/"/>
     
   </entry>
   
