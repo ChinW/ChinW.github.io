@@ -249,36 +249,6 @@
   </entry>
   
   <entry>
-    <title>运气守恒定律</title>
-    <link href="http://consiiii.me/2017/04/17/%E8%BF%90%E6%B0%94%E5%AE%88%E6%81%92%E5%AE%9A%E5%BE%8B/"/>
-    <id>http://consiiii.me/2017/04/17/运气守恒定律/</id>
-    <published>2017-04-17T12:32:47.000Z</published>
-    <updated>2018-11-29T14:06:30.365Z</updated>
-    
-    <content type="html"><![CDATA[<p>根据22年来对地球生活的认真调研与分析，我，沃尔鸾朔得・强，发现了<strong>运气守恒定律</strong></p><p>运气守恒定律主要有表现有：</p><blockquote><ol><li>运气不会变多，也不会变少</li><li>现在太顺，说明接下来就要出大事了</li><li>运气的组成成分非常复杂，但是可以在事发前用“我也考的不好”，“我也做的不好”，“我真的不会”，“这次完蛋了”等等来扭转运气</li><li>运气跟身份没关系</li></ol></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;根据22年来对地球生活的认真调研与分析，我，沃尔鸾朔得・强，发现了&lt;strong&gt;运气守恒定律&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;运气守恒定律主要有表现有：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;运气不会变多，也不会变少&lt;/li&gt;
-&lt;li&gt;现在太顺，说明接下来就
-      
-    
-    </summary>
-    
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
-    
-    
-      <category term="Slots" scheme="http://consiiii.me/tags/Slots/"/>
-    
-  </entry>
-  
-  <entry>
     <title>window object in React Server Rendering</title>
     <link href="http://consiiii.me/2017/04/17/window-object-in-React-Server-Rendering/"/>
     <id>http://consiiii.me/2017/04/17/window-object-in-React-Server-Rendering/</id>
@@ -511,6 +481,40 @@
     
       <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Login ProFTPD as root</title>
+    <link href="http://consiiii.me/2016/11/04/%E4%BD%BF%E7%94%A8root%E7%99%BB%E9%99%86proFtpd/"/>
+    <id>http://consiiii.me/2016/11/04/使用root登陆proFtpd/</id>
+    <published>2016-11-04T11:48:38.000Z</published>
+    <updated>2018-11-29T14:06:30.364Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>使用root登录不是一种安全的方式，请悉知</p></blockquote><h2 id="1-安装ProFTPD"><a href="#1-安装ProFTPD" class="headerlink" title="1. 安装ProFTPD"></a>1. 安装ProFTPD</h2><p><code>apt-get install proftpd</code></p><p>安装完成后会要求我们选择让该 server 以 inetd 还是 standalone, 选择standalone.</p><p>配置相关文件</p><p><code>vi /etc/proftpd/proftpd.conf</code> </p><ul><li>改变Server Name</li></ul><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute"><span class="nomarkup">ServerName</span></span>                      <span class="string">"example.com"</span></span><br></pre></td></tr></table></figure><ul><li>如需要，限制用户的目录</li></ul><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">Use</span> this <span class="keyword">to</span> jail <span class="keyword">all</span> users <span class="keyword">in</span> their homes</span><br><span class="line"> DefaultRoot                    ~</span><br></pre></td></tr></table></figure><h2 id="2-登录FTP"><a href="#2-登录FTP" class="headerlink" title="2. 登录FTP"></a>2. 登录FTP</h2><p>ProFTPD会自动使用系统用户和密码来作为登录FTP的凭证。但是注意到，root之类的用户是无法登录的，会一直出现530错误。</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Command:<span class="built_in">USER </span>root</span><br><span class="line">Response: 331 Password required <span class="keyword">for</span> root</span><br><span class="line">Command:PASS ************</span><br><span class="line">Response: 530 Login incorrect.</span><br><span class="line">Error:      Critical error: Could <span class="keyword">not</span> connect <span class="keyword">to</span> server</span><br></pre></td></tr></table></figure><p>修改两个地方:</p><ul><li><code>vi  /etc/proftpd/proftpd.conf</code></li></ul><p>添加上</p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RootLogin<span class="keyword">on</span></span><br></pre></td></tr></table></figure><ul><li>ProFTPD同时也会使用<code>/etc/ftpusers</code>做合法检测，这是一个容易遗漏的地方。打开<code>/etc/ftpusers</code>，</li></ul><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># /etc/ftpusers: list <span class="keyword">of</span> users disallowed FTP access. See ftpusers(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">root #注释或者删掉它吧</span><br><span class="line">daemon</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>重启ProFTPD, </p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">service proftpd restart</span></span><br></pre></td></tr></table></figure><p>现在再登录，是否登录成功了呢？希望是。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;使用root登录不是一种安全的方式，请悉知&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-安装ProFTPD&quot;&gt;&lt;a href=&quot;#1-安装ProFTPD&quot; class=&quot;headerlink&quot; title=&quot;1. 安装ProFTPD&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://consiiii.me/categories/Linux/"/>
+    
+    
+      <category term="FTP" scheme="http://consiiii.me/tags/FTP/"/>
+    
+      <category term="Linux" scheme="http://consiiii.me/tags/Linux/"/>
+    
+      <category term="ProFTPD" scheme="http://consiiii.me/tags/ProFTPD/"/>
+    
+      <category term="Ubuntu" scheme="http://consiiii.me/tags/Ubuntu/"/>
     
   </entry>
   
