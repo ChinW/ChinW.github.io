@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="Consiiii">
 <meta property="og:description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。 1.生成密钥对使用ssh-genssh-keygen -t [rsa|dsa] 过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码;如果想要的目的是免密码登录,密码请留空 2.将公钥拷贝到目标主机将公钥拷贝到~/.ssh中，远程上传可以使用scp命令 scp -r your/target">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-29T14:06:30.363Z">
+<meta property="og:updated_time" content="2019-06-09T04:29:51.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH登录主机">
 <meta name="twitter:description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。 1.生成密钥对使用ssh-genssh-keygen -t [rsa|dsa] 过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码;如果想要的目的是免密码登录,密码请留空 2.将公钥拷贝到目标主机将公钥拷贝到~/.ssh中，远程上传可以使用scp命令 scp -r your/target">
@@ -239,9 +239,11 @@
 <h2 id="3-在本机添加标识"><a href="#3-在本机添加标识" class="headerlink" title="3.在本机添加标识"></a>3.在本机添加标识</h2><p>打开~/.ssh/config，没有的话就创建一个，书写格式为（替换[]中的内容为自己的配置）</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host [myHost]</span><br><span class="line">Hostname [123.123.123.123]</span><br><span class="line">Port [21]</span><br><span class="line">User [myUser]</span><br><span class="line">IdentityFile [ ~/.ssh/local_private_rsa]</span><br></pre></td></tr></table></figure>
 <h2 id="4-登录"><a href="#4-登录" class="headerlink" title="4.登录"></a>4.登录</h2><p>使用 <code>ssh myHost</code> 进行登录</p>
-<h2 id="5-可能出现的问题"><a href="#5-可能出现的问题" class="headerlink" title="5.可能出现的问题"></a>5.可能出现的问题</h2><ol>
-<li>如果出现出现<br> <code>Permissions 0644 for &#39;your/target/file&#39; are too open.</code><br> 把权限改成0600就好了</li>
-</ol>
+<h2 id="More"><a href="#More" class="headerlink" title="More"></a>More</h2><h3 id="5-1-生成host自签CA证书"><a href="#5-1-生成host自签CA证书" class="headerlink" title="5.1 生成host自签CA证书"></a>5.1 生成host自签CA证书</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -s <span class="regexp">~/.ssh/</span>ca_host_key -I certificate_ID -h -Z host_name.example.com -V -<span class="string">start:</span>+end <span class="regexp">/etc/</span>ssh/ssh_host_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>The -Z option restricts this certificate to a specific host within the domain. The -V option is for adding a validity period; this is highly recommend. Where the validity period is intended to be one year, fifty two weeks, consider the need for time to change the certificates and any holiday periods around the time of certificate expiry.</p>
+<p>e.g.</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~]# ssh-keygen -s ~/.ssh/ca_host_key -I host_name -h -Z host_name.example.<span class="keyword">com</span> -V -<span class="number">1</span><span class="variable">w:</span>+<span class="number">54</span>w5d /etc/ssh/ssh_host_rsa.pub</span><br><span class="line">Enter passphrase:</span><br><span class="line">Signed host key /root/.ssh/ssh_host_rsa-cert.<span class="keyword">pu</span><span class="variable">b:</span> id <span class="string">"host_name"</span> serial <span class="number">0</span> <span class="keyword">for</span> host_name.example.<span class="keyword">com</span> valid from <span class="number">2015</span>-<span class="number">05</span>-<span class="number">15</span>T13:<span class="number">52</span>:<span class="number">29</span> <span class="keyword">to</span> <span class="number">2016</span>-<span class="number">06</span>-<span class="number">08</span>T13:<span class="number">52</span>:<span class="number">29</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-2-OpenSSL-or-ssh-keygen"><a href="#5-2-OpenSSL-or-ssh-keygen" class="headerlink" title="5.2 OpenSSL or ssh-keygen"></a>5.2 OpenSSL or ssh-keygen</h3><p>ssh-keygen实际上调用了OpenSSL lib，通过两个方式产生ssh keys并没有明显的区别。可以直接使用ssh-keygen来直接产生key pair。</p>
 
             
                 
