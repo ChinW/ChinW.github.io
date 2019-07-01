@@ -145,11 +145,11 @@
     </summary>
     
     
-      <category term="React" scheme="http://consiiii.me/tags/React/"/>
-    
       <category term="Translation" scheme="http://consiiii.me/tags/Translation/"/>
     
       <category term="Redux" scheme="http://consiiii.me/tags/Redux/"/>
+    
+      <category term="React" scheme="http://consiiii.me/tags/React/"/>
     
   </entry>
   
