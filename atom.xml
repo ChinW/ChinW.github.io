@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2019-02-11T15:55:10.584Z</updated>
+  <updated>2019-07-01T14:04:04.175Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>光猫/wifi+esxi/lede | 无额外AP情况下提供无线接入</title>
+    <link href="http://consiiii.me/2019/07/01/esxi-lede-light-modem/"/>
+    <id>http://consiiii.me/2019/07/01/esxi-lede-light-modem/</id>
+    <published>2019-07-01T13:35:37.000Z</published>
+    <updated>2019-07-01T14:04:04.175Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>概述：没有额外AP的情况下，利用光猫提供的wifi功能提供无线接入</li></ul><p>因为对网络多了更多的需求，转卖了用了近两年久的huawei b618s 22d, 告别了我漫长的sim卡上网时代，然后入手软路由了.</p><p>网上一般的解决方案是:</p><p>拓扑1:</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">光猫</span> <span class="string">(桥接)</span> <span class="meta">---</span> <span class="string">软路由(Host</span> <span class="string">+</span> <span class="string">VM(LEDE,</span> <span class="string">拨号))</span> <span class="meta">---</span> <span class="string">AP</span> <span class="meta">---</span> <span class="string">无线设备</span></span><br><span class="line">                <span class="string">|</span></span><br><span class="line"><span class="string">                |</span></span><br><span class="line"><span class="string">                ------有线连接</span></span><br></pre></td></tr></table></figure><p>但由于我手头上已经没有了AP(byebye huawei b618)，因此网络模型主要如下：</p><p>拓扑2:<br><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">        (<span class="number">192.168</span><span class="meta">.10</span><span class="meta">.10</span>/<span class="number">24</span>)</span><br><span class="line">混凝土墙壁---光猫 (桥接) ------- 软路由(Host + VM(LEDE, 拨号)) // ESXI:<span class="number">192.168</span><span class="meta">.10</span><span class="meta">.254</span>/<span class="number">24</span>, LEDE: <span class="number">192.168</span><span class="meta">.10</span><span class="meta">.1</span>/<span class="number">24</span></span><br><span class="line">                |                  |</span><br><span class="line">                |                  |</span><br><span class="line">                |                  ------有线连接</span><br><span class="line">                --- 无线接入</span><br></pre></td></tr></table></figure></p><p>要点在于接入时的网关设置和DNS设置</p><p>假设我们的地址如拓扑2，这样的拓扑好处在于大家都在同一个网段/24，那么作为guest可以随意访问光猫/ESXI/LEDE的地址，其实也算是一个懒人方案吧。</p><p>真正的网关在192.168.10.1。容易碰到的问题是<code>无线接入设备</code>可能会自动把自己的网关设置成<code>192.168.10.10</code>， 这样让req出不去，也就是软路由可以上网，但是所有无限接入的设备都无法上网。</p><p>这种情况下本质上是要确认一下接入设备的DNS和gateway，更改成LEDE的IP即可。</p><p>操作上则上尝试以下方式：</p><ol><li>在光猫内设置好固定的DNS和gateway</li><li>或者尝试让lede在<code>xxx.xxx.xxx.1</code>（因为默认网关在1位）</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;概述：没有额外AP的情况下，利用光猫提供的wifi功能提供无线接入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因为对网络多了更多的需求，转卖了用了近两年久的huawei b618s 22d, 告别了我漫长的sim卡上网时代，然后入手软路由了.&lt;/p&gt;
+&lt;p&gt;网上一般的解决方案
+      
+    
+    </summary>
+    
+      <category term="network" scheme="http://consiiii.me/categories/network/"/>
+    
+    
+      <category term="network" scheme="http://consiiii.me/tags/network/"/>
+    
+      <category term="lede" scheme="http://consiiii.me/tags/lede/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Run hyperledger-composer under proxy</title>
+    <link href="http://consiiii.me/2019/06/09/hyperledger-composer/"/>
+    <id>http://consiiii.me/2019/06/09/hyperledger-composer/</id>
+    <published>2019-06-09T07:04:06.000Z</published>
+    <updated>2019-07-01T13:38:33.508Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h2><p>Host could not visit Intenet directly, need to set up proxy to connect Internet. Under this situation, the docker containers could not visit Internet directly either.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h2 id="Option-1"><a href="#Option-1" class="headerlink" title="Option 1"></a>Option 1</h2><p>Change the route table, transfer all request to host (this was succeed, but I could not recall the details, need verified later)</p><h2 id="Option-2"><a href="#Option-2" class="headerlink" title="Option 2"></a>Option 2</h2><p>In docker instance, using below command to change the network:</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> http_proxy=</span><br><span class="line"><span class="builtin-name">export</span> https_proxy=</span><br><span class="line"><span class="builtin-name">export</span> no_proxy=</span><br></pre></td></tr></table></figure><p>In addition, if you meet DNS problem, manually update <code>/etc/resolv.conf</code> could work for one time (invalid after reboot or reconnect, for persist this conf please google).</p><p>You could also add above configuration in <code>docker-compose.yml</code> if you are running instance by this file.</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">version:</span> <span class="string">'3'</span></span><br><span class="line"><span class="symbol">services:</span></span><br><span class="line"><span class="symbol">  web:</span></span><br><span class="line"><span class="symbol">    build:</span> .</span><br><span class="line"><span class="symbol">    ports:</span></span><br><span class="line">      - <span class="string">"5000:5000"</span></span><br><span class="line"><span class="symbol">    volumes:</span></span><br><span class="line">      - .:/code</span><br><span class="line"><span class="symbol">    environment:</span></span><br><span class="line"><span class="symbol">      FLASK_ENV:</span> development]</span><br><span class="line"><span class="symbol">      http_proxy:</span> xxxx <span class="meta"># update here</span></span><br><span class="line"><span class="symbol">  redis:</span></span><br><span class="line"><span class="symbol">    image:</span> <span class="string">"redis:alpine"</span></span><br></pre></td></tr></table></figure><h3 id="DNS-error-could-not-resolve-xxx…"><a href="#DNS-error-could-not-resolve-xxx…" class="headerlink" title="DNS error, could not resolve xxx…."></a>DNS error, could not resolve xxx….</h3><p>If the DNS you are setting is a domain name, try to use IP address directly. </p><h3 id="Ref-cheatsheet-of-running-hyperledger-comoiser"><a href="#Ref-cheatsheet-of-running-hyperledger-comoiser" class="headerlink" title="Ref: cheatsheet of running hyperledger/comoiser"></a>Ref: cheatsheet of running hyperledger/comoiser</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1.</span><br><span class="line">composer archive create -t dir -n .</span><br><span class="line"></span><br><span class="line">2.</span><br><span class="line">composer<span class="built_in"> network </span>install --card PeerAdmin@hlfv1 --archiveFile tutorial-network@0.0.7.bna -o <span class="attribute">npmrcFile</span>=/Users/bangqchi/Programming/cnpm/.cnpmrc</span><br><span class="line"></span><br><span class="line">composer<span class="built_in"> network upgrade </span>--card PeerAdmin@hlfv1 --networkName tutorial-network --networkVersion 0.0.7 -O <span class="attribute">npmrcFile</span>=/Users/bangqchi/Programming/cnpm/.cnpmrc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3.</span><br><span class="line">composer<span class="built_in"> network </span>start --networkName tutorial-network --networkVersion 0.0.7 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card</span><br><span class="line"></span><br><span class="line">composer card import --file networkadmin.card</span><br><span class="line"></span><br><span class="line">4.</span><br><span class="line">composer<span class="built_in"> network ping </span>--card admin@tutorial-network</span><br><span class="line"></span><br><span class="line">5.</span><br><span class="line">composer-rest-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># To restart the REST server using the same options, issue the following command:</span></span><br><span class="line"></span><br><span class="line">composer-rest-server -c admin@tutorial-network -n never -u <span class="literal">true</span> -d tutorial-network -w <span class="literal">true</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Condition&quot;&gt;&lt;a href=&quot;#Condition&quot; class=&quot;headerlink&quot; title=&quot;Condition&quot;&gt;&lt;/a&gt;Condition&lt;/h2&gt;&lt;p&gt;Host could not visit Intenet directly, nee
+      
+    
+    </summary>
+    
+      <category term="blockchain" scheme="http://consiiii.me/categories/blockchain/"/>
+    
+    
+      <category term="blockchain" scheme="http://consiiii.me/tags/blockchain/"/>
+    
+      <category term="hyperledger" scheme="http://consiiii.me/tags/hyperledger/"/>
+    
+  </entry>
   
   <entry>
     <title>怜取眼前人</title>
@@ -87,11 +145,11 @@
     </summary>
     
     
+      <category term="React" scheme="http://consiiii.me/tags/React/"/>
+    
       <category term="Translation" scheme="http://consiiii.me/tags/Translation/"/>
     
       <category term="Redux" scheme="http://consiiii.me/tags/Redux/"/>
-    
-      <category term="React" scheme="http://consiiii.me/tags/React/"/>
     
   </entry>
   
@@ -459,55 +517,6 @@
     
     
       <category term="Ruby" scheme="http://consiiii.me/tags/Ruby/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>替换homebrew默认源</title>
-    <link href="http://consiiii.me/2016/12/28/%E6%9B%BF%E6%8D%A2homebrew%E9%BB%98%E8%AE%A4%E6%BA%90/"/>
-    <id>http://consiiii.me/2016/12/28/替换homebrew默认源/</id>
-    <published>2016-12-28T07:41:39.000Z</published>
-    <updated>2018-11-29T14:06:30.365Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">cd </span><span class="string">"$(brew --repo)"</span></span><br><span class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">git:</span>//<span class="string">mirrors.</span><span class="string">ustc.</span><span class="string">edu.</span><span class="string">cn/</span><span class="string">brew.</span><span class="string">git</span></span><br></pre></td></tr></table></figure><p>来源<a href="https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git" target="_blank" rel="noopener">https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git</a></p><p>$ gem sources –add <a href="https://gems.ruby-china.org/" target="_blank" rel="noopener">https://gems.ruby-china.org/</a> –remove <a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a><br>$ gem sources -l<br><a href="https://gems.ruby-china.org" target="_blank" rel="noopener">https://gems.ruby-china.org</a></p><h1 id="确保只有-gems-ruby-china-org"><a href="#确保只有-gems-ruby-china-org" class="headerlink" title="确保只有 gems.ruby-china.org"></a>确保只有 gems.ruby-china.org</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight dsconfig&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/
-      
-    
-    </summary>
-    
-      <category term="Ruby" scheme="http://consiiii.me/categories/Ruby/"/>
-    
-    
-      <category term="Ruby" scheme="http://consiiii.me/tags/Ruby/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>创建前端脚手架</title>
-    <link href="http://consiiii.me/2016/11/10/%E5%88%9B%E5%BB%BA%E5%89%8D%E7%AB%AF%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
-    <id>http://consiiii.me/2016/11/10/创建前端脚手架/</id>
-    <published>2016-11-10T10:00:56.000Z</published>
-    <updated>2018-11-29T14:06:30.364Z</updated>
-    
-    <content type="html"><![CDATA[<p>// BREAK</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;// BREAK&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
-    
     
   </entry>
   
