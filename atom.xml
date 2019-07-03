@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2019-07-01T14:04:04.175Z</updated>
+  <updated>2019-07-03T16:05:38.705Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webpack-dev-server doesnt watch file changes</title>
+    <link href="http://consiiii.me/2019/07/04/webpack-dev-server-doesnt-watch-file-changes/"/>
+    <id>http://consiiii.me/2019/07/04/webpack-dev-server-doesnt-watch-file-changes/</id>
+    <published>2019-07-03T16:01:42.000Z</published>
+    <updated>2019-07-03T16:05:38.705Z</updated>
+    
+    <content type="html"><![CDATA[<p>Env: Ubuntu 16</p><p>Could refer to <a href="https://webpack.js.org/configuration/watch/#not-enough-watchers" target="_blank" rel="noopener">https://webpack.js.org/configuration/watch/#not-enough-watchers</a></p><p>The main root cause is <code>fs.inotify.max_user_watches</code> too low, higher the value resolved my issue.</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="number">1048576</span> &gt; <span class="meta-keyword">/proc/</span>sys<span class="meta-keyword">/fs/</span>inotify/max_user_watches <span class="comment">// resovle the issue for one time</span></span><br><span class="line"></span><br><span class="line"><span class="meta">## persist the changes</span></span><br></pre></td></tr></table></figure><p>Add below conf to <code>/etc/sysctl.conf</code></p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs<span class="selector-class">.inotify</span><span class="selector-class">.max_user_watches</span>=<span class="number">1048576</span></span><br></pre></td></tr></table></figure><p>And then <code>sysctl -p /etc/sysctl.conf</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Env: Ubuntu 16&lt;/p&gt;
+&lt;p&gt;Could refer to &lt;a href=&quot;https://webpack.js.org/configuration/watch/#not-enough-watchers&quot; target=&quot;_blank&quot; rel=&quot;noope
+      
+    
+    </summary>
+    
+      <category term="webpack" scheme="http://consiiii.me/categories/webpack/"/>
+    
+      <category term="frontend" scheme="http://consiiii.me/categories/webpack/frontend/"/>
+    
+    
+      <category term="webpack" scheme="http://consiiii.me/tags/webpack/"/>
+    
+      <category term="frontend" scheme="http://consiiii.me/tags/frontend/"/>
+    
+  </entry>
   
   <entry>
     <title>光猫/wifi+esxi/lede | 无额外AP情况下提供无线接入</title>
@@ -145,11 +175,11 @@
     </summary>
     
     
+      <category term="React" scheme="http://consiiii.me/tags/React/"/>
+    
       <category term="Translation" scheme="http://consiiii.me/tags/Translation/"/>
     
       <category term="Redux" scheme="http://consiiii.me/tags/Redux/"/>
-    
-      <category term="React" scheme="http://consiiii.me/tags/React/"/>
     
   </entry>
   
@@ -490,33 +520,6 @@
       <category term="JavaScript" scheme="http://consiiii.me/tags/JavaScript/"/>
     
       <category term="React" scheme="http://consiiii.me/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Colon in Ruby</title>
-    <link href="http://consiiii.me/2016/12/29/Colon-in-Ruby/"/>
-    <id>http://consiiii.me/2016/12/29/Colon-in-Ruby/</id>
-    <published>2016-12-29T03:34:50.000Z</published>
-    <updated>2018-11-29T14:06:30.360Z</updated>
-    
-    <content type="html"><![CDATA[<p>1) abc: it can’t exist independently</p><p>2) :xyz it is a symbol</p><p>:xyz.class<br> =&gt; Symbol<br>3) abc::xyz it represents namespace</p><p>Example code:</p><p>module ABC<br>    class Xyz<br>       def initialize<br>         @size = 400<br>       end<br>    end<br>end</p><p>x = ABC::Xyz.new<br>4) abc: :xyz</p><p>hash = {abc: :xyz} #hash key and value all are symbol.<br>5) abc: xyz</p><p>xyz = “just a test”<br>hash = {abc: xyz} #hash key is symbol, value is string.<br>6) :abc =&gt; xyz</p><p>xyz = “just a test”<br>hash = {:abc =&gt; xyz} # same with (5)， just another representation<br>7) ternary operator :</p><p>abc = 1<br>xyz = 2<br>result = abc &gt; xyz ? abc : xyz<br>=&gt; result = 2</p><p>–<br>Copy from <a href="http://stackoverflow.com/questions/30315021/colon-placement-in-ruby-on-rails/30315118#30315118" target="_blank" rel="noopener">http://stackoverflow.com/questions/30315021/colon-placement-in-ruby-on-rails/30315118#30315118</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1) abc: it can’t exist independently&lt;/p&gt;
-&lt;p&gt;2) :xyz it is a symbol&lt;/p&gt;
-&lt;p&gt;:xyz.class&lt;br&gt; =&amp;gt; Symbol&lt;br&gt;3) abc::xyz it represents namesp
-      
-    
-    </summary>
-    
-      <category term="Slots" scheme="http://consiiii.me/categories/Slots/"/>
-    
-    
-      <category term="Ruby" scheme="http://consiiii.me/tags/Ruby/"/>
     
   </entry>
   
