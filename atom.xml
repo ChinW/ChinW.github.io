@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2019-07-03T16:05:38.705Z</updated>
+  <updated>2019-07-10T16:15:48.370Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于最近</title>
+    <link href="http://consiiii.me/2019/07/09/about-these-days/"/>
+    <id>http://consiiii.me/2019/07/09/about-these-days/</id>
+    <published>2019-07-09T14:59:35.000Z</published>
+    <updated>2019-07-10T16:15:48.370Z</updated>
+    
+    <content type="html"><![CDATA[<p>关于最近</p><p>毕业已经是两年啦，朦朦胧胧迷迷蒙蒙。今天坐办公室里，7pm左右的时候完成了又一个模块，转头问Misky， “我发现我们每天就是写写写”</p><p>“这就是程序员啊哈哈哈”</p><p>我想到我的堂弟，在毕业后已经经历了转行程序员 – 专职程序员 – 养四只猫 — 做猫的公众号 — 辞职 — 做公众号 — 旅行半个月 — 重新做程序员的过程。</p><p>比较起来感觉自己不再有什么新的冒险，身上有了很多依赖，不像是刚入大学的时候，没有太多牵连的线，感觉什么都有机会，我记忆最深的是为了1500块钱写了4个月代码，骑着自行车30分钟去工业区做review。</p><p>我建议了堂弟很多次弄个微博公众号，猫什么的多可爱多吸引人啊，万一成了网红KOL什么的，没准可以赚更多。后来发现，在别人都在写搞笑文章的时候，他在写大肠杆菌什么的对猫的影响，文章点击量都是10以下，应该都是亲戚点的没有错。</p><p>最近没有看见他发了。若有所思。</p><p>我想用一些深奥，有哲学的话来总结一下自己这两年，思索之后却又总觉得没有什么好说的，我想到佛山，广州，深圳，绿皮火车，午夜12点的摩托车，铁路轨道，老旧的电影院，公交车总站的长椅，躺着木椅上的我，台风，滴滴，20块钱，还有洗面奶。</p><p>我觉得这两年我看到了自己的摇摆，没有担当，懦弱，媚态，低俗，不成熟，肤浅，骄傲和一大堆坏的词语，我开始想着”我是不是就是这样的人”，有一段时间对自己是这样的人感觉羞耻。</p><p>2019年7月10日，正好两年，我希望未来的自己可以成熟，勇敢，正视自己，有担当，勤劳，厚脸皮。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;关于最近&lt;/p&gt;
+&lt;p&gt;毕业已经是两年啦，朦朦胧胧迷迷蒙蒙。今天坐办公室里，7pm左右的时候完成了又一个模块，转头问Misky， “我发现我们每天就是写写写”&lt;/p&gt;
+&lt;p&gt;“这就是程序员啊哈哈哈”&lt;/p&gt;
+&lt;p&gt;我想到我的堂弟，在毕业后已经经历了转行程序员 – 专职程序员
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>webpack-dev-server doesnt watch file changes</title>
@@ -175,11 +201,11 @@
     </summary>
     
     
-      <category term="React" scheme="http://consiiii.me/tags/React/"/>
-    
       <category term="Translation" scheme="http://consiiii.me/tags/Translation/"/>
     
       <category term="Redux" scheme="http://consiiii.me/tags/Redux/"/>
+    
+      <category term="React" scheme="http://consiiii.me/tags/React/"/>
     
   </entry>
   
@@ -492,34 +518,6 @@
     
       <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>利用key更新React中defaultValue</title>
-    <link href="http://consiiii.me/2017/01/09/%E5%88%A9%E7%94%A8key%E6%9B%B4%E6%96%B0React%E4%B8%ADdefaultValue/"/>
-    <id>http://consiiii.me/2017/01/09/利用key更新React中defaultValue/</id>
-    <published>2017-01-08T16:13:26.000Z</published>
-    <updated>2018-11-29T14:06:30.364Z</updated>
-    
-    <content type="html"><![CDATA[<p>React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则可以写成：</p><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.state = &#123;</span><br><span class="line">defaultValue: ...,</span><br><span class="line">key: Math.random()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render () &#123;</span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line"> &lt;input defaultValue=&#123;<span class="keyword">this</span>.state.defaultValue&#125; key=&#123;`<span class="keyword">this</span>.state.key`&#125; /&gt;</span><br><span class="line">);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>key的刷新可以造成input节点强制刷新，从而更新defaultValue. </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;React中的使用input时想让输入框有一个可修改的默认值，且该默认值跟随state变化，则可以写成：&lt;/p&gt;
-&lt;figure class=&quot;highlight kotlin&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=
-      
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://consiiii.me/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://consiiii.me/tags/JavaScript/"/>
-    
-      <category term="React" scheme="http://consiiii.me/tags/React/"/>
     
   </entry>
   
