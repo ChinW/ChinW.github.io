@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2019-08-20T17:37:14.607Z</updated>
+  <updated>2019-07-27T10:17:36.150Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -15,35 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>你回头看</title>
-    <link href="http://consiiii.me/2019/08/21/new-post-embrance/"/>
-    <id>http://consiiii.me/2019/08/21/new-post-embrance/</id>
-    <published>2019-08-20T17:30:51.000Z</published>
-    <updated>2019-08-20T17:37:14.607Z</updated>
-    
-    <content type="html"><![CDATA[<p>我想要拥有新的生活，而不是只有一种模式。</p><p>我喜欢IT，我喜欢计算机，但是它不与生活冲突</p><p>那么多的梦想和计划，却只存在于闹钟声中</p><p>我要重新开始</p><p>我回头看</p><p>我还有希望</p><p>我相信自己还有希望</p><p>今天梦到蝴蝶成了我</p><p>一切都是梦</p><p>梦也就是我</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;我想要拥有新的生活，而不是只有一种模式。&lt;/p&gt;
-&lt;p&gt;我喜欢IT，我喜欢计算机，但是它不与生活冲突&lt;/p&gt;
-&lt;p&gt;那么多的梦想和计划，却只存在于闹钟声中&lt;/p&gt;
-&lt;p&gt;我要重新开始&lt;/p&gt;
-&lt;p&gt;我回头看&lt;/p&gt;
-&lt;p&gt;我还有希望&lt;/p&gt;
-&lt;p&gt;我相信自己还有希望&lt;/p&gt;
-      
-    
-    </summary>
-    
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>hyperledger fabric with k8s</title>
@@ -523,6 +494,34 @@
     
     
       <category term="Hexo" scheme="http://consiiii.me/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Setup TypeScript &amp; Webpack 2</title>
+    <link href="http://consiiii.me/2017/02/09/Setup-Typescript-webpack-2/"/>
+    <id>http://consiiii.me/2017/02/09/Setup-Typescript-webpack-2/</id>
+    <published>2017-02-09T13:19:57.000Z</published>
+    <updated>2018-11-29T14:06:30.363Z</updated>
+    
+    <content type="html"><![CDATA[<p>// BREAK</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;// BREAK&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="http://consiiii.me/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="http://consiiii.me/tags/TypeScript/"/>
+    
+      <category term="Webpack" scheme="http://consiiii.me/tags/Webpack/"/>
     
   </entry>
   
