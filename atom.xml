@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2019-07-27T10:17:36.150Z</updated>
+  <updated>2020-02-24T16:03:16.480Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -15,6 +15,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>the real china</title>
+    <link href="http://consiiii.me/2020/02/25/the-real-china/"/>
+    <id>http://consiiii.me/2020/02/25/the-real-china/</id>
+    <published>2020-02-24T16:00:20.000Z</published>
+    <updated>2020-02-24T16:03:16.480Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>在网上看到一句话，特此记录</p></blockquote><p>北上广深大概只占全国面积的0.33%</p><p>加上新一线城市</p><p>也只是占了全国面积的3%。</p><p>在剩下的97%的土地上</p><p>有着约300个地级市，3000个县城</p><p>40000个乡镇和66万个村庄</p><p>全国约84%的人在这里消费，生长</p><p>你以为的土味，其实是大半个中国</p><p><a href="https://www.bilibili.com/video/av83412833" target="_blank" rel="noopener">https://www.bilibili.com/video/av83412833</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">我也想杀死伤痛</span><br><span class="line">让那恩怨有始有终</span><br><span class="line">抬头望着故乡的天空</span><br><span class="line">飞来成群野外孤鸿</span><br><span class="line">敲碎我沉浸其中的</span><br><span class="line">一场场不愿醒来的梦</span><br><span class="line">不堪回首月明中</span><br><span class="line">千层山 万重浪</span><br><span class="line">比不过县城一碗汤</span><br><span class="line">多加辣 不要糖</span><br><span class="line">没事儿别看老板娘</span><br><span class="line">血过眉 眼飙泪</span><br><span class="line">不吃完夜宵不许醉</span><br><span class="line">今夜我陪你化成灰</span><br><span class="line">千层山 万重浪</span><br><span class="line">比不过县城一碗汤</span><br><span class="line">多加辣 不要糖</span><br><span class="line">没事儿别看老板娘</span><br><span class="line">血过眉 眼飙泪</span><br><span class="line">不吃完夜宵不许醉</span><br><span class="line">别追别追别追我叫你别追</span><br><span class="line">今夜我陪你化成灰</span><br><span class="line">今夜我陪你化成灰</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;在网上看到一句话，特此记录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;北上广深大概只占全国面积的0.33%&lt;/p&gt;
+&lt;p&gt;加上新一线城市&lt;/p&gt;
+&lt;p&gt;也只是占了全国面积的3%。&lt;/p&gt;
+&lt;p&gt;在剩下的97%的土地上&lt;/p&gt;
+&lt;p&gt;有着约300个地
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ESXI and lede</title>
+    <link href="http://consiiii.me/2020/02/08/ESXI-and-lede/"/>
+    <id>http://consiiii.me/2020/02/08/ESXI-and-lede/</id>
+    <published>2020-02-08T11:44:28.000Z</published>
+    <updated>2020-02-08T11:49:07.617Z</updated>
+    
+    <content type="html"><![CDATA[<p> Task<br>Power On VM<br>Key</p><p>haTask-2-vim.VirtualMachine.powerOn-2255487717<br>Description</p><p>Power On this virtual machine<br>Virtual machine</p><p>lean200106<br>State</p><p>Failed - Module ‘DevicePowerOn’ power on failed.<br>Errors</p><pre><code>Module &apos;DevicePowerOn&apos; power on failed.The IDE device (disks/CD-ROM) configuration is incorrect. There is an IDE slave with no master at &apos;ide0:1&apos;. This configuration does not work correctly in virtual machines. Move the disk/CD-ROM from &apos;ide0:1&apos; to &apos;ide0:0&apos; using the configuration editor.Failed to start the virtual machine.</code></pre><p><a href="https://jc-lan.org/2017/02/01/esxi-6-5-host-crash-then-guest-fails-to-power-on/" target="_blank" rel="noopener">https://jc-lan.org/2017/02/01/esxi-6-5-host-crash-then-guest-fails-to-power-on/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; Task&lt;br&gt;Power On VM&lt;br&gt;Key&lt;/p&gt;
+&lt;p&gt;haTask-2-vim.VirtualMachine.powerOn-2255487717&lt;br&gt;Description&lt;/p&gt;
+&lt;p&gt;Power On this virtual machine&lt;br&gt;
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一个不需要webpack的未来</title>
+    <link href="http://consiiii.me/2019/11/19/a-future-without-webpack/"/>
+    <id>http://consiiii.me/2019/11/19/a-future-without-webpack/</id>
+    <published>2019-11-19T14:45:33.000Z</published>
+    <updated>2019-11-19T16:09:06.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>今年是1941年，你的名字叫Richard  Hubbell。你工作在一个CBS旗下的实验性纽约电视工作室。你马上要去给世界上最重要的电视新闻做广播，然后你有15分钟的时间去填充。你要怎么做？</p><p>在一个只知道电台的世界，你坚持你早就知道的东西。也就是说，你读这种新闻，“大多数电视新闻广告都在放映着Hubbell读新闻报纸，然后偶尔去看一下图片或者地图”</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今年是1941年，你的名字叫Richard  Hubbell。你工作在一个CBS旗下的实验性纽约电视工作室。你马上要去给世界上最重要的电视新闻做广播，然后你有15分钟的时间去填充。你要怎么做？&lt;/p&gt;
+&lt;p&gt;在一个只知道电台的世界，你坚持你早就知道的东西。也就是说，你读这种
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>hyperledger fabric with k8s</title>
@@ -441,87 +520,6 @@
       <category term="React" scheme="http://consiiii.me/tags/React/"/>
     
       <category term="NodeJS" scheme="http://consiiii.me/tags/NodeJS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS: View的Frame在加载时的改变</title>
-    <link href="http://consiiii.me/2017/03/23/The-view-s-frame-change-when-it-s-loaded/"/>
-    <id>http://consiiii.me/2017/03/23/The-view-s-frame-change-when-it-s-loaded/</id>
-    <published>2017-03-23T04:23:38.000Z</published>
-    <updated>2018-11-29T14:06:30.363Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-ViewController"><a href="#1-ViewController" class="headerlink" title="1. ViewController"></a>1. ViewController</h2><p>有一个<code>contentView</code>紧贴着屏幕，如下图所示，那么，<code>contentView</code>的frame是如何变化的呢？</p><p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_ios-view-1.png" alt=""></p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">weak</span> <span class="keyword">var</span> contentView: <span class="type">UIView</span>!</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        <span class="comment">// #1</span></span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewDidLoad: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewWillAppear</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> &#123;</span><br><span class="line">        <span class="comment">// #2</span></span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewWillAppear: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidAppear</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> &#123;</span><br><span class="line">        <span class="comment">// #3</span></span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewDidAppear: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>首先是iPhone 6的尺寸：</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"viewDidLoad: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"viewWillAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"viewDidAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br></pre></td></tr></table></figure><p>都没有变化，因此这里有可能让初学者有误区，认为在viewDidLoad或者viewWillAppear中的就已经出现了最终的尺寸。</p><p>iPhone 6P:</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"viewDidLoad: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"viewWillAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"viewDidAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">414.0</span>, <span class="number">716.0</span>)</span><br></pre></td></tr></table></figure><p>注意到viewDidAppear中出现的尺寸才是screen中的尺寸。如果在viewDidLoad或者viewWillAppear唤醒了xib中的view，那么需要注意到，在viewWillAppear中我们可能需重新设置最新的frame.</p><h2 id="2-View"><a href="#2-View" class="headerlink" title="2. View"></a>2. View</h2><p>对于xib中的view来说，将其添加到ViewController中的view时，又是怎样的一个生命周期呢？</p><p>这里创建了一个自定义的view, 叫它CustomView</p><p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_ios-view-2.png" alt=""></p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomView</span>: <span class="title">UIView</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">func</span> <span class="title">instanceFromNib</span>() -&gt; <span class="title">CustomView</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UINib</span>(nibName: <span class="string">"View"</span>, bundle: <span class="literal">nil</span>).instantiate(withOwner: <span class="literal">nil</span>, options: <span class="literal">nil</span>)[<span class="number">0</span>] <span class="keyword">as</span>! <span class="type">CustomView</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"init: frame"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">required</span> <span class="keyword">init</span>?(coder aDecoder: <span class="type">NSCoder</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(coder: aDecoder)</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"init: coder"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">awakeFromNib</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"awakeFromNib"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">willMove</span><span class="params">(toSuperview newSuperview: UIView?)</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"willMove: toSuperview"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">didMoveToSuperview</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"didMoveToSuperview"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">willMove</span><span class="params">(toWindow newWindow: UIWindow?)</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"willMove: toWindow"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">didMoveToWindow</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"didMoveToWindow"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>修改ViewController,</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">weak</span> <span class="keyword">var</span> contentView: <span class="type">UIView</span>!</span><br><span class="line">    <span class="comment">// New</span></span><br><span class="line">    <span class="keyword">var</span> customView: <span class="type">CustomView</span> = <span class="type">CustomView</span>.instanceFromNib()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewDidLoad: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">        <span class="comment">// New</span></span><br><span class="line">        <span class="keyword">self</span>.view.addSubview(<span class="keyword">self</span>.customView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewWillAppear</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewWillAppear: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidAppear</span><span class="params">(<span class="number">_</span> animated: Bool)</span></span> &#123;</span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"viewDidAppear: "</span>, <span class="keyword">self</span>.contentView.frame)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>最后的出现顺序如下：</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"init: coder"</span></span><br><span class="line"><span class="string">"awakeFromNib"</span></span><br><span class="line"># <span class="string">"viewDidLoad: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"willMove: toSuperview"</span></span><br><span class="line"><span class="string">"didMoveToSuperview"</span></span><br><span class="line"># <span class="string">"viewWillAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">375.0</span>, <span class="number">647.0</span>)</span><br><span class="line"><span class="string">"willMove: toWindow"</span></span><br><span class="line"><span class="string">"didMoveToWindow"</span></span><br><span class="line"># <span class="string">"viewDidAppear: "</span> (<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">414.0</span>, <span class="number">716.0</span>)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;1-ViewController&quot;&gt;&lt;a href=&quot;#1-ViewController&quot; class=&quot;headerlink&quot; title=&quot;1. ViewController&quot;&gt;&lt;/a&gt;1. ViewController&lt;/h2&gt;&lt;p&gt;有一个&lt;code&gt;con
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://consiiii.me/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="http://consiiii.me/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Hexo搭建Blog</title>
-    <link href="http://consiiii.me/2017/02/28/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BABlog/"/>
-    <id>http://consiiii.me/2017/02/28/使用Hexo搭建Blog/</id>
-    <published>2017-02-28T15:40:39.000Z</published>
-    <updated>2018-11-29T14:06:30.364Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>本文针对Mac下超初级用户，已入门者请略过。</p></blockquote><h2 id="1-检查环境"><a href="#1-检查环境" class="headerlink" title="1. 检查环境"></a>1. 检查环境</h2><p>据说程序员有三大金句：<code>不可能／你环境有问题／你不会用</code>。所以我们先检查一下环境。</p><p>Terminal将是我们接下来一直会用到的工具。在Spotlight中或者lauchpad搜索，打开它。</p><h3 id="1-1-Git"><a href="#1-1-Git" class="headerlink" title="1.1 Git"></a>1.1 Git</h3><p> Terminal中输入<code>git</code>，如果返回如下内容，证明ok. </p><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">usage: git <span class="comment">[--version]</span> <span class="comment">[--help]</span> <span class="comment">[-C &lt;path&gt;]</span> <span class="comment">[-c name=value]</span></span><br><span class="line">           <span class="comment">[--exec-path<span class="comment">[=&lt;path&gt;]</span>]</span> <span class="comment">[--html-path]</span> <span class="comment">[--man-path]</span> <span class="comment">[--info-path]</span></span><br><span class="line">           <span class="comment">[-p | --paginate | --no-pager]</span> <span class="comment">[--no-replace-objects]</span> <span class="comment">[--bare]</span></span><br><span class="line">           <span class="comment">[--git-dir=&lt;path&gt;]</span> <span class="comment">[--work-tree=&lt;path&gt;]</span> <span class="comment">[--namespace=&lt;name&gt;]</span></span><br><span class="line">           &lt;command&gt; <span class="comment">[&lt;args&gt;]</span></span><br><span class="line"></span><br><span class="line">These <span class="keyword">are</span> common Git commands used in various situations:</span><br><span class="line">....</span><br></pre></td></tr></table></figure><p>如果没有，可以通过<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a> 或者<a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="noopener">安装包</a>进行安装.</p><h3 id="1-2-NodeJS"><a href="#1-2-NodeJS" class="headerlink" title="1.2. NodeJS"></a>1.2. NodeJS</h3><p>我们使用NVM来管理NodeJS的版本，所以先安装NVM。在Terminal中输入</p><p><code>curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh</code></p><p>回车，等待安装。一旦安装完成，在Terminal中输入<code>nvm install stable</code>来安装稳定版本的nodejs.<br>安装完成后, 在terminal中输入<code>node --version</code>， 此时应该可以看到如下信息：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6<span class="selector-class">.1</span><span class="selector-class">.0</span> # 这里显示了安装的版本号</span><br></pre></td></tr></table></figure><h3 id="1-3-进入正题：安装Hexo"><a href="#1-3-进入正题：安装Hexo" class="headerlink" title="1.3 进入正题：安装Hexo"></a>1.3 进入正题：安装Hexo</h3><p>在自己的电脑中新建一个目录来存放自己的Blog吧，这里我建立了一个名为<code>Hexo</code>的文件夹，然后在Finder中拖动这个文件夹到Terminal中，接着回车，就在Terminal中进入了这个目录。接着输入命令:</p><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure><p><code>-g</code>代表全局安装，这样在termnial中，任何路径下都能够使用命令<code>hexo</code>了。</p><h2 id="2-创建Blog"><a href="#2-创建Blog" class="headerlink" title="2. 创建Blog"></a>2. 创建Blog</h2><h3 id="2-1-hexo-init-amp-hexo-server"><a href="#2-1-hexo-init-amp-hexo-server" class="headerlink" title="2.1 hexo init &amp; hexo server"></a>2.1 hexo init &amp; hexo server</h3><p>Terminla输入<code>hexo init blog</code>, 完成后<code>Hexo</code>文件夹下会出现<code>blog</code>文件夹。<code>cd blog</code>，进入到blog文件夹中，然后<code>hexo server</code>， 不久会返回以下信息:</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  <span class="keyword">Start</span> processing</span><br><span class="line">INFO  Hexo <span class="keyword">is</span> running <span class="keyword">at</span> <span class="keyword">http</span>://localhost:<span class="number">4000</span>/. Press Ctrl+C <span class="keyword">to</span> stop.</span><br></pre></td></tr></table></figure><p>启动完成，在浏览器中打开上述地址<code>http://localhost:4000/</code>, 没错的话应该可以看到自己的网站了。想要退出进程请按<code>Ctrl + C</code>。</p><h3 id="2-2-修改配置"><a href="#2-2-修改配置" class="headerlink" title="2.2 修改配置"></a>2.2 修改配置</h3><p><code>blog</code>文件夹中的目录应当如下图所示，</p><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml <span class="meta"># 这个文件用来配置相关信息</span></span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line"><span class="string">|   ├── _drafts</span></span><br><span class="line"><span class="string">|   └── _posts</span></span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure><p>配置的相关信息，参见<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">这里</a></p><h3 id="2-3-hexo-new-post-“magic”"><a href="#2-3-hexo-new-post-“magic”" class="headerlink" title="2.3 hexo new post “magic”"></a>2.3 hexo new post “magic”</h3><p>使用如下命令来创建我们的第一篇帖子: </p><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="type">post</span> <span class="string">"magic"</span> <span class="meta"># 引号内的是hexo将创建的post名称</span></span><br></pre></td></tr></table></figure><p>得到返回如下 ：</p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">⇒  hexo <span class="keyword">new</span> post <span class="string">"magic"</span></span><br><span class="line">INFO  <span class="string">Created:</span> <span class="regexp">~/Hexo/</span>blog<span class="regexp">/source/</span>_posts/magic.md</span><br></pre></td></tr></table></figure><p>可以看到我们创建了<code>magic.md</code>, 位置是<code>~/Hexo/blog/source/_posts/</code>.</p><p>👌，<code>.md</code>后缀一般涌来代表这是一个markdown文件，使用markdown编辑器打开<code>magic.md</code>.<br>发现内容如下:</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">magic</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-03</span><span class="bullet">-01</span> <span class="number">00</span><span class="string">:40:02</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 我们这部分书写自己的内容, 注意需要学习一下Markdown语法</span></span><br></pre></td></tr></table></figure><h3 id="2-4-hexo-generate"><a href="#2-4-hexo-generate" class="headerlink" title="2.4 hexo generate"></a>2.4 hexo generate</h3><pre><code>参见https://hexo.io/docs/generating.html</code></pre><p>使用如下命令来生成博客的文件：</p><p><code>hexo generate</code>或者直接打<code>hexo g</code></p><p>等待一会，<code>blog</code>文件夹下应该出现了一个新的文件夹，名称叫做<code>public</code>。</p><p><code>public</code>文件夹中的内容，就是所有生成好的Blog文件。这一部分，我们可以上传到Github上。</p><h2 id="3-上传Github"><a href="#3-上传Github" class="headerlink" title="3. 上传Github"></a>3. 上传Github</h2><pre><code>参见https://hexo.io/docs/deployment.html</code></pre><p>安装 hexo-deployer-git, 在terminal中键入</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure><p>在<code>_config.yml</code>中的<code>deploy</code>填写上如下信息:</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> GIT的地址</span><br><span class="line"><span class="symbol">  branch:</span> master <span class="meta">#一般是master吧</span></span><br></pre></td></tr></table></figure><p>接着，在Terminal中的输入<code>hexo deploy</code>或<code>hexo deploy</code>，完成。</p><h2 id="4-开启Github-Pages"><a href="#4-开启Github-Pages" class="headerlink" title="4. 开启Github Pages"></a>4. 开启Github Pages</h2><p>在github仓库的设置页面中，可以找到Github Pages的选项，选择开启后就会获得一个子域名。接着用这个域名访问就好了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;本文针对Mac下超初级用户，已入门者请略过。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;1-检查环境&quot;&gt;&lt;a href=&quot;#1-检查环境&quot; class=&quot;headerlink&quot; title=&quot;1. 检查环境&quot;&gt;&lt;/a&gt;1. 检查环境&lt;/h
-      
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://consiiii.me/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="http://consiiii.me/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Setup TypeScript &amp; Webpack 2</title>
-    <link href="http://consiiii.me/2017/02/09/Setup-Typescript-webpack-2/"/>
-    <id>http://consiiii.me/2017/02/09/Setup-Typescript-webpack-2/</id>
-    <published>2017-02-09T13:19:57.000Z</published>
-    <updated>2018-11-29T14:06:30.363Z</updated>
-    
-    <content type="html"><![CDATA[<p>// BREAK</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;// BREAK&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="http://consiiii.me/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="http://consiiii.me/tags/TypeScript/"/>
-    
-      <category term="Webpack" scheme="http://consiiii.me/tags/Webpack/"/>
     
   </entry>
   
