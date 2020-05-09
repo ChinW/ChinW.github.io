@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2020-02-24T16:05:37.039Z</updated>
+  <updated>2020-05-09T13:29:24.126Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>杂思：什么是Tech</title>
+    <link href="http://consiiii.me/2020/05/09/what-is-tech/"/>
+    <id>http://consiiii.me/2020/05/09/what-is-tech/</id>
+    <published>2020-05-09T13:16:55.000Z</published>
+    <updated>2020-05-09T13:29:24.126Z</updated>
+    
+    <content type="html"><![CDATA[<p>说实话今天被问到这个问题的时候确实愣了一下，以前有想过类似的问题，例如：“什么是程序”</p><p>确实是一个好问题，Tech是code吗，肯定不是，code可以是tech，tech肯定不是code</p><p>一门学科是怎么开始发展的，淘宝是为了一个系统而开始做的的吗，还是现有了业务才有一个“能跑的系统”</p><p><strong>我认为是tech就是解决一个问题的方法论</strong>，对于某一类问题，你不需要思考太多，按照一个模式，一个方法，走完步骤，就解决了问题，从一个状态走到了另一个状态, <code>f(x) = y</code>, 那就是tech</p><p>营销是一种tech，story teller也是tech，code/program只是一种tech的一种，通过计算机，来极大的提高效率地来解决某一类问题，它非常常见，因为现在每个人都有手机，每个人都手握着数台卫星微型电脑</p><p>然而最最最最常见的tech，应该就是语言了吧？说话是一门技术</p><p>我个人的童年经历，让我时常想起以前小时候在桂林的一个冬天夜晚，一个白头发白色络腮胡（长得有点像张纪中haha），身着邋遢的老头，抓着我的手说：“语文是什么，语文就是说话”</p><p>我父亲把我拉走了，先说了一句怎么被乞丐抓着说话，然后说“但是他说的有道理，语文就是说话”</p><p>从那以后，语文作文我真的就是想写什么写什么，思想乱弹，废话连篇，字数对我来说真的就不是一个问题，因为我废话太多</p><p>好了，今天的思想乱弹就到这里，晚安 :D</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;说实话今天被问到这个问题的时候确实愣了一下，以前有想过类似的问题，例如：“什么是程序”&lt;/p&gt;
+&lt;p&gt;确实是一个好问题，Tech是code吗，肯定不是，code可以是tech，tech肯定不是code&lt;/p&gt;
+&lt;p&gt;一门学科是怎么开始发展的，淘宝是为了一个系统而开始做的的吗
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>县城</title>
@@ -492,34 +517,6 @@
     
     
       <category term="CSS" scheme="http://consiiii.me/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>window object in React Server Rendering</title>
-    <link href="http://consiiii.me/2017/04/17/window-object-in-React-Server-Rendering/"/>
-    <id>http://consiiii.me/2017/04/17/window-object-in-React-Server-Rendering/</id>
-    <published>2017-04-17T08:50:41.000Z</published>
-    <updated>2018-11-29T14:06:30.364Z</updated>
-    
-    <content type="html"><![CDATA[<p>做服务器端渲染时（所谓的Universal JvaScript），共享部分的代码会同时在服务器端（NodeJS）和客户端跑。</p><p>在某些情况下不可避免的将会操作到<code>window</code>等对象，然而<code>window</code>对象是属于客户端才有的全局对象。因此在渲染时就会出现</p><p><code>window is not defined</code></p><p>之类的错误导致服务器端渲染出错。</p><p>解决的方法也很简单，</p><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefined'</span>) &#123;</span><br><span class="line">  <span class="regexp">//</span> 在这里包含需要用到<span class="built_in">window</span>对象的第三方库等操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;做服务器端渲染时（所谓的Universal JvaScript），共享部分的代码会同时在服务器端（NodeJS）和客户端跑。&lt;/p&gt;
-&lt;p&gt;在某些情况下不可避免的将会操作到&lt;code&gt;window&lt;/code&gt;等对象，然而&lt;code&gt;window&lt;/code&gt;对象是属于客户
-      
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://consiiii.me/categories/JavaScript/"/>
-    
-    
-      <category term="React" scheme="http://consiiii.me/tags/React/"/>
-    
-      <category term="NodeJS" scheme="http://consiiii.me/tags/NodeJS/"/>
     
   </entry>
   
