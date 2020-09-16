@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2020-09-16T17:22:43.263Z</updated>
+  <updated>2020-09-16T17:25:44.228Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://consiiii.me/2020/09/17/windows-koltin-error-intellij-2020-2/"/>
     <id>http://consiiii.me/2020/09/17/windows-koltin-error-intellij-2020-2/</id>
     <published>2020-09-16T17:17:51.000Z</published>
-    <updated>2020-09-16T17:22:43.263Z</updated>
+    <updated>2020-09-16T17:25:44.228Z</updated>
     
-    <content type="html"><![CDATA[<p>花费了好半天在这个error上，给windows上的intellij从2020.1升级到2020.2.1之后，gradle build不能，出现error：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Unable to <span class="keyword">load</span> <span class="keyword">class</span> org.jetbrains.klotlin.noarg.ide.NoArgModel</span><br><span class="line">// <span class="keyword">or</span></span><br><span class="line">Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">class</span> ....KaptGradleModel</span><br><span class="line">// <span class="keyword">or</span></span><br><span class="line"><span class="keyword">Connection</span> <span class="keyword">failed</span>: <span class="keyword">connect</span></span><br></pre></td></tr></table></figure><p>公司内部的有网络限制，外部的镜像源不能访问，直接用gradle build项目又偏偏是ok的。</p><p>解决办法：<br>double shift —&gt; plugins –&gt; 关闭 koltin –&gt; 重新run gradle</p>]]></content>
+    <content type="html"><![CDATA[<p>花费了好半天在这个error上，给windows上的intellij从2020.1升级到2020.2.1之后，gradle build不能，出现error：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Unable to <span class="keyword">load</span> <span class="keyword">class</span> org.jetbrains.klotlin.noarg.ide.NoArgModel</span><br><span class="line">// <span class="keyword">or</span></span><br><span class="line">Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">class</span> ....KaptGradleModel</span><br><span class="line">// <span class="keyword">or</span></span><br><span class="line"><span class="keyword">Connection</span> <span class="keyword">failed</span>: <span class="keyword">connect</span></span><br></pre></td></tr></table></figure><p>公司内部的有网络限制，外部的镜像源不能访问，直接用gradle build项目又偏偏是ok的。</p><p>解决办法：<br>double shift —&gt; plugins –&gt; 关闭 koltin –&gt; 重新run gradle</p><p>ref:<br><a href="https://stackoverflow.com/questions/55774797/android-gradle-sync-failed-org-jetbrains-kotlin-kapt-idea-kaptgradlemodelorg/55780707" target="_blank" rel="noopener">https://stackoverflow.com/questions/55774797/android-gradle-sync-failed-org-jetbrains-kotlin-kapt-idea-kaptgradlemodelorg/55780707</a></p><p>重新下载Kotlin插件：<br><a href="https://plugins.jetbrains.com/plugin/6954-kotlin/versions" target="_blank" rel="noopener">https://plugins.jetbrains.com/plugin/6954-kotlin/versions</a></p>]]></content>
     
     <summary type="html">
     
