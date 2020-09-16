@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2020-08-30T09:18:30.912Z</updated>
+  <updated>2020-09-16T17:22:43.263Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Unable to load class ...kotlin.noarg|...KaptGradleModel</title>
+    <link href="http://consiiii.me/2020/09/17/windows-koltin-error-intellij-2020-2/"/>
+    <id>http://consiiii.me/2020/09/17/windows-koltin-error-intellij-2020-2/</id>
+    <published>2020-09-16T17:17:51.000Z</published>
+    <updated>2020-09-16T17:22:43.263Z</updated>
+    
+    <content type="html"><![CDATA[<p>花费了好半天在这个error上，给windows上的intellij从2020.1升级到2020.2.1之后，gradle build不能，出现error：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Unable to <span class="keyword">load</span> <span class="keyword">class</span> org.jetbrains.klotlin.noarg.ide.NoArgModel</span><br><span class="line">// <span class="keyword">or</span></span><br><span class="line">Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">class</span> ....KaptGradleModel</span><br><span class="line">// <span class="keyword">or</span></span><br><span class="line"><span class="keyword">Connection</span> <span class="keyword">failed</span>: <span class="keyword">connect</span></span><br></pre></td></tr></table></figure><p>公司内部的有网络限制，外部的镜像源不能访问，直接用gradle build项目又偏偏是ok的。</p><p>解决办法：<br>double shift —&gt; plugins –&gt; 关闭 koltin –&gt; 重新run gradle</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;花费了好半天在这个error上，给windows上的intellij从2020.1升级到2020.2.1之后，gradle build不能，出现error：&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gu
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>几种 Websocket 框架的性能测试</title>
@@ -514,29 +538,6 @@
       <category term="Fabric" scheme="http://consiiii.me/tags/Fabric/"/>
     
       <category term="Blockchain" scheme="http://consiiii.me/tags/Blockchain/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Set up MIT-Scheme in macOS</title>
-    <link href="http://consiiii.me/2017/04/29/Set-up-MIT-Scheme-in-macOS/"/>
-    <id>http://consiiii.me/2017/04/29/Set-up-MIT-Scheme-in-macOS/</id>
-    <published>2017-04-29T05:47:55.000Z</published>
-    <updated>2018-11-29T14:06:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-Install-MIT-Scheme"><a href="#1-Install-MIT-Scheme" class="headerlink" title="1. Install MIT-Scheme"></a>1. Install MIT-Scheme</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># using homebrew</span></span><br><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>mit-<span class="keyword">scheme</span></span><br></pre></td></tr></table></figure><h2 id="2-How-to-code"><a href="#2-How-to-code" class="headerlink" title="2. How to code"></a>2. How to code</h2><h3 id="2-1-REPL"><a href="#2-1-REPL" class="headerlink" title="2.1 REPL"></a>2.1 REPL</h3><p>Using terminal</p><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">⇒  mit-scheme</span><br><span class="line">MIT/GNU <span class="keyword">Scheme</span> running under OS X</span><br><span class="line"><span class="keyword">Type</span> `^C' (control-C) followed <span class="built_in">by</span> `H' to obtain information about interrupts.</span><br><span class="line"></span><br><span class="line">Copyright (C) <span class="number">2014</span> Massachusetts Institute of Technology</span><br><span class="line">This is free software; see the source <span class="keyword">for</span> copying conditions. There is NO warranty; not even <span class="keyword">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span><br><span class="line"></span><br><span class="line">Image saved on Wednesday January <span class="number">4</span>, <span class="number">2017</span> <span class="built_in">at</span> <span class="number">8</span>:<span class="number">46</span>:<span class="number">32</span> AM</span><br><span class="line">  Release <span class="number">9.2</span> |<span class="type">| Microcode</span> <span class="number">15.3</span> |<span class="type">| Runtime</span> <span class="number">15.7</span> |<span class="type">| SF</span> <span class="number">4.41</span> |<span class="type">| LIAR</span>/C <span class="number">4.118</span> |<span class="type">| Edwin</span> <span class="number">3.116</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> ]=&gt;</span><br></pre></td></tr></table></figure><h3 id="2-2-Emacs"><a href="#2-2-Emacs" class="headerlink" title="2.2 Emacs"></a>2.2 Emacs</h3><p>Install <img src="https://www.gnu.org/software/emacs/download.html" alt="Emacs"></p><p>Create <code>~/.emacs</code>, appending below: </p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;;Always do syntax</span></span><br><span class="line">(<span class="name">global-font-lock-mode</span> <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">(<span class="name">setq</span> show-paren-delay <span class="number">0</span></span><br><span class="line">      show-paren-style 'parentheses)</span><br><span class="line">(<span class="name">show-paren-mode</span> <span class="number">1</span>)</span><br><span class="line">(<span class="name">setq</span> scheme-program-name <span class="string">"/usr/local/bin/mit-scheme"</span>)</span><br></pre></td></tr></table></figure><p>Open <em>Emacs</em>, <code>Meta + X</code>, then type <code>run mit-scheme</code>, mostly done.</p><p>Next step is create new <code>.scm</code> file in new window (try <code>C+x, d</code> or something similiar). Use <code>C+x C+e</code> to run code.</p><h3 id="2-3-Sublime"><a href="#2-3-Sublime" class="headerlink" title="2.3 Sublime"></a>2.3 Sublime</h3><p>Install packages <code>Scheme</code>, <code>SchemeREPL</code>.</p><p>Edit <code>Menu/ Sublime Text/ Preference/ Browse Packages/ SublimeREPL/ config/ Scheme/ Main.sublime-menu</code>,</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">Edit</span> <span class="keyword">Line</span> 30</span><br><span class="line"><span class="string">"syntax"</span>: <span class="string">"Packages/Scheme/Scheme.tmLanguage"</span></span><br></pre></td></tr></table></figure><p>Reboot Sublime, opne <code>your.scm</code>, click <code>Tools/ SublimeREPL/ Scheme/ Scheme</code>, then use <code>Tools/ SublimeREPL/ Eval in REPL/ *</code> to run codes.</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://luxiyalu.com/scheme-on-sublime-text-3/" target="_blank" rel="noopener">http://luxiyalu.com/scheme-on-sublime-text-3/</a></p><p><a href="http://stackoverflow.com/questions/32415247/sublimerepl-and-scheme-cannot-find-repl-for-scheme-error-message-when-transf" target="_blank" rel="noopener">http://stackoverflow.com/questions/32415247/sublimerepl-and-scheme-cannot-find-repl-for-scheme-error-message-when-transf</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;1-Install-MIT-Scheme&quot;&gt;&lt;a href=&quot;#1-Install-MIT-Scheme&quot; class=&quot;headerlink&quot; title=&quot;1. Install MIT-Scheme&quot;&gt;&lt;/a&gt;1. Install MIT-Scheme&lt;/h2
-      
-    
-    </summary>
-    
-      <category term="LISP" scheme="http://consiiii.me/categories/LISP/"/>
-    
     
   </entry>
   
