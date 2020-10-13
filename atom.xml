@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2020-09-21T10:03:45.841Z</updated>
+  <updated>2020-10-13T14:39:08.828Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Apollo - Cannot use GraphQLSchema &quot;[object GraphQLSchema]&quot; from another module or realm</title>
+    <link href="http://consiiii.me/2020/10/13/graphql-issue/"/>
+    <id>http://consiiii.me/2020/10/13/graphql-issue/</id>
+    <published>2020-10-13T14:35:46.000Z</published>
+    <updated>2020-10-13T14:39:08.828Z</updated>
+    
+    <content type="html"><![CDATA[<p>I am keeping receiving error below in a webpack + graphql + apollo-server project, the build script is quite simple, by digging out all the internet but no results (tried resolutions – yarn resolutsion, npx force resolutions packages, read all the dependecies in apollo tree, etc)<br>Error<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">webpack://stream/./node_modules/graphql/jsutils/instanceOf.js?:27</span><br><span class="line">      throw new Error("Cannot <span class="keyword">use</span> <span class="string">".concat(className, "</span> \<span class="string">""</span>).concat(<span class="keyword">value</span>, <span class="string">"\" from another module or realm.\n\nEnsure that there is only one instance of \"graphql\" in the node_modules\ndirectory. If different versions of \"graphql\" are the dependencies of other\nrelied on modules, use \"resolutions\" to ensure only one version is installed.\n\nhttps://yarnpkg.com/en/docs/selective-version-resolutions\n\nDuplicate \"graphql\" modules cannot be used at the same time since different\nversions may have different capabilities and behavior. The data from one\nversion used in the function from another could produce confusing and\nspurious results."</span>));</span><br><span class="line">      ^</span><br><span class="line"></span><br><span class="line">Error: Cannot <span class="keyword">use</span> GraphQLSchema <span class="string">"[object GraphQLSchema]"</span> <span class="keyword">from</span> another <span class="keyword">module</span> <span class="keyword">or</span> realm.</span><br><span class="line"></span><br><span class="line">Ensure that there <span class="keyword">is</span> <span class="keyword">only</span> one <span class="keyword">instance</span> <span class="keyword">of</span> <span class="string">"graphql"</span> <span class="keyword">in</span> the node_modules</span><br><span class="line">directory. <span class="keyword">If</span> different <span class="keyword">versions</span> <span class="keyword">of</span> <span class="string">"graphql"</span> <span class="keyword">are</span> the dependencies <span class="keyword">of</span> other</span><br><span class="line">relied <span class="keyword">on</span> modules, <span class="keyword">use</span> <span class="string">"resolutions"</span> <span class="keyword">to</span> ensure <span class="keyword">only</span> one <span class="keyword">version</span> <span class="keyword">is</span> installed.</span><br><span class="line"></span><br><span class="line">https://yarnpkg.com/en/docs/selective-<span class="keyword">version</span>-resolutions</span><br><span class="line"></span><br><span class="line"><span class="keyword">Duplicate</span> <span class="string">"graphql"</span> modules cannot be used <span class="keyword">at</span> the same <span class="built_in">time</span> since different</span><br><span class="line"><span class="keyword">versions</span> may have different capabilities <span class="keyword">and</span> behavior. The <span class="keyword">data</span> <span class="keyword">from</span> one</span><br><span class="line"><span class="keyword">version</span> used <span class="keyword">in</span> the <span class="keyword">function</span> <span class="keyword">from</span> another could produce confusing <span class="keyword">and</span></span><br><span class="line">spurious results.</span><br></pre></td></tr></table></figure></p><h2 id="Final-workout-in-my-case"><a href="#Final-workout-in-my-case" class="headerlink" title="Final workout in my case!"></a>Final workout in my case!</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">   rules: [</span><br><span class="line">     &#123;</span><br><span class="line">       test: <span class="regexp">/\.(j|t)sx?$/</span>,</span><br><span class="line">       <span class="keyword">include</span>: [path.resolve(__dirname, <span class="string">'./src/'</span>)],</span><br><span class="line">       <span class="keyword">exclude</span>: <span class="regexp">/node_modules/</span>,</span><br><span class="line">       use: &#123;</span><br><span class="line">         loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">         <span class="keyword">options</span>: &#123;</span><br><span class="line">           cacheDirectory: <span class="keyword">false</span>,</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;,</span><br><span class="line">     <span class="comment">// below matters!!!!</span></span><br><span class="line">     &#123;</span><br><span class="line">       test: <span class="regexp">/\.mjs$/</span>,</span><br><span class="line">       <span class="keyword">include</span>: <span class="regexp">/node_modules/</span>,</span><br><span class="line">       type: <span class="string">'javascript/auto'</span>,</span><br><span class="line">     &#125;,</span><br><span class="line">   ],</span><br><span class="line"> &#125;,</span><br><span class="line"> resolve: &#123;</span><br><span class="line">   <span class="comment">// add .mjs</span></span><br><span class="line">   extensions: [<span class="string">'.mjs'</span>, <span class="string">'.ts'</span>, <span class="string">'.tsx'</span>, <span class="string">'.js'</span>, <span class="string">'.jsx'</span>]</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I am keeping receiving error below in a webpack + graphql + apollo-server project, the build script is quite simple, by digging out all t
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>kubernetes cheat sheet</title>
@@ -509,34 +532,6 @@
     
     
       <category term="PHP" scheme="http://consiiii.me/tags/PHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>redux-router与react-router-rdeux的不同</title>
-    <link href="http://consiiii.me/2018/11/29/redux-router%E4%B8%8Ereact-router-rdeux%E7%9A%84%E4%B8%8D%E5%90%8C/"/>
-    <id>http://consiiii.me/2018/11/29/redux-router与react-router-rdeux的不同/</id>
-    <published>2018-11-29T14:06:30.000Z</published>
-    <updated>2018-11-29T14:06:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>此文仅是<a href="https://github.com/acdlite/redux-router" target="_blank" rel="noopener">redux-router</a>页面上的部分翻译</strong></p><h2 id="react-router-redux"><a href="#react-router-redux" class="headerlink" title="react-router-redux"></a>react-router-redux</h2><p>react-router-redux(之前称为redux-simple-router)使用了一个不一样的方式去集成路由。react-router-redux让React Router去做所有沉重的任务，并同步url中的数据到store的history <a href="https://github.com/mjackson/history/blob/master/docs/Location.md#location" target="_blank" rel="noopener">location</a>对象里。这代表着用户可以直接使用React Router的API，并从这一堆<a href="https://github.com/acdlite/redux-router" target="_blank" rel="noopener">文档和例子</a>中获益。</p><p>react-router-redux的README中有一个非常有用的示意图，如下：</p><p><strong><a href="https://github.com/reactjs/redux" target="_blank" rel="noopener">redux</a> (store.routing)  ↔  <a href="https://github.com/reactjs/react-router-redux" target="_blank" rel="noopener">react-router-redux</a>  ↔  <a href="https://github.com/reactjs/history" target="_blank" rel="noopener">history</a> (history.location)  ↔  <a href="https://github.com/reactjs/react-router" target="_blank" rel="noopener">react-router</a></strong></p><p>这种方式易于理解，但有些一些需要注意的地方：</p><ol><li><p>history location对象不包含React Router的参数，它们必须被React Router组件向下传递，或被重新计算。(The history location object does not include React Router params and they must be either passed down from a React Router component or recomputed.)</p></li><li><p><strong>不鼓励（危险）</strong>将store中的数据连接到组件里，因为store中的数据在React Router的属性改变后，有潜在的更新可能性， 因此当location store data与向下传递而来的location对象(从React Router到组件）不同时，这就出现了一个互相竞争的场景。</p></li></ol><p>react-router-redux 鼓励用户在React Router中的component中直接使用props（props会向下传递到任何被渲染的component中）。 这意味着如果您想要从comonpent tree中获取location data， 您可能需要将它向下传递，亦或使用React的Context特性。</p><h2 id="redux-router"><a href="#redux-router" class="headerlink" title="redux-router"></a>redux-router</h2><p>这个项目从一方面来说，使用的方法是将<strong>完整的</strong>React Router数据存储在Redux Store中。这样做的主要好处是: 被redux-router向下传递到路由中的组件的props, 允许和存储在store中的数据不同。 因此可连接router的数据到任何您想要的component中。 您还可以直接从store中获取路由的参数。 redux-router也提供了一个API来应对从Router（React Router现在并没有提供这个东西）中进行热交换路由。</p><p>关于redux-router的示意图如下：</p><p><strong><a href="https://github.com/reactjs/redux" target="_blank" rel="noopener">redux</a> (store.routing)</strong> ↔ <a href="https://github.com/acdlite/redux-router" target="_blank" rel="noopener">redux-router</a>  ↔  <a href="https://github.com/reactjs/react-router" target="_blank" rel="noopener">react-router (via RouterContext)</a></p><p>这种方式同时也有一些限制：</p><ol><li>路由数据不全是可序列化的(serializable)(因为组件和函数不能被直接序列化)，因此对于那些帮助保存store到浏览器session中的开发工具扩展和类库，这可能会造成一些问题。但如果这些类库提供了忽略序列化store部分内容的方法，这样的问题可以被缓和，可是这并非总是可行的。</li><li>redux-router利用了RouterContext的一些好的地方，来继续使用React Router的内部逻辑。 然而，redux-router必须要在自身中实现很多React Router已经有的东西，这会造成在升级路径上的延时。</li><li>redux-router必须提供一个有细微区别的顶层API（因为第2点），即使他们的路由的逻辑/匹配模式可能是相同的。</li></ol><p>最终，您对这些库的选择取决于您和您的项目需求. React-router-redux会继续得到更多的社区支持，因为它已经进入了reactjs github组织，也有了相当的关注度。 对于react-router，和redux的集成， <strong>建议使用react-router-redux</strong>。 然而，您可能也会发现redux-router其实更符合您的项目需求。只要有这样的需求存在，那redux-router就会继续被维护。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;此文仅是&lt;a href=&quot;https://github.com/acdlite/redux-router&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;redux-router&lt;/a&gt;页面上的部分翻译&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id
-      
-    
-    </summary>
-    
-    
-      <category term="Translation" scheme="http://consiiii.me/tags/Translation/"/>
-    
-      <category term="Redux" scheme="http://consiiii.me/tags/Redux/"/>
-    
-      <category term="React" scheme="http://consiiii.me/tags/React/"/>
     
   </entry>
   
