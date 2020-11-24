@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2020-10-31T04:07:27.661Z</updated>
+  <updated>2020-11-24T15:04:54.196Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -17,11 +17,62 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>11月15日上海线下听友聚会 | 从零道一播客</title>
+    <title>Flink序列化慢 | Collector.colect()?</title>
+    <link href="http://consiiii.me/2020/11/24/flink%20%E5%BA%8F%E5%88%97%E5%8C%96%E6%85%A2/"/>
+    <id>http://consiiii.me/2020/11/24/flink 序列化慢/</id>
+    <published>2020-11-24T15:01:06.000Z</published>
+    <updated>2020-11-24T15:04:54.196Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在做Processing Framework的性能比较，做到Flink时，测出的数据性能变得及其差。<br>细看之后发现瓶颈出现在 <code>Collector.collect()</code> 方法， 可能是序列化，对象的复制话费了大量的时间。<br>在我的例子中，collect(SINGLE OBJECGT)甚至要多到100ms (我这的OBJECT大概有500Bytes)</p><p>经过一番搜寻，这篇文章给了我答案</p><p><a href="https://www.ververica.com/blog/curious-case-broken-benchmark-revisiting-apache-flink-vs-databricks-runtime" target="_blank" rel="noopener">https://www.ververica.com/blog/curious-case-broken-benchmark-revisiting-apache-flink-vs-databricks-runtime</a></p><p>简单来说：</p><ol><li>数据的存储结构尽量使用平整的方式</li><li>开启flink的object resue （collect()消耗瞬间减少到 &lt; 1ms!)</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近在做Processing Framework的性能比较，做到Flink时，测出的数据性能变得及其差。&lt;br&gt;细看之后发现瓶颈出现在 &lt;code&gt;Collector.collect()&lt;/code&gt; 方法， 可能是序列化，对象的复制话费了大量的时间。&lt;br&gt;在我的例子中，
+      
+    
+    </summary>
+    
+      <category term="Flink" scheme="http://consiiii.me/categories/Flink/"/>
+    
+    
+      <category term="Flink" scheme="http://consiiii.me/tags/Flink/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flink 动态提交依赖Jar</title>
+    <link href="http://consiiii.me/2020/11/02/flink-posts/"/>
+    <id>http://consiiii.me/2020/11/02/flink-posts/</id>
+    <published>2020-11-02T10:04:19.000Z</published>
+    <updated>2020-11-24T15:06:12.934Z</updated>
+    
+    <content type="html"><![CDATA[<p>很简单，</p><p><code>flink run -C &lt;link to your dependencies jar&gt; my-flink-job.jar</code></p><p>参考：</p><p><a href="https://www.cnblogs.com/felixzh/p/10300002.html" target="_blank" rel="noopener">https://www.cnblogs.com/felixzh/p/10300002.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;很简单，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flink run -C &amp;lt;link to your dependencies jar&amp;gt; my-flink-job.jar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cnblo
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>从零道一播客在11月15日上海线下听友聚会</title>
     <link href="http://consiiii.me/2020/10/31/shanghai-event/"/>
     <id>http://consiiii.me/2020/10/31/shanghai-event/</id>
     <published>2020-10-31T04:05:08.000Z</published>
-    <updated>2020-10-31T04:07:27.661Z</updated>
+    <updated>2020-11-02T10:04:01.936Z</updated>
     
     <content type="html"><![CDATA[<h3 id="活动详情"><a href="#活动详情" class="headerlink" title="活动详情"></a>活动详情</h3><p>11月15日周日下午，「从零道一」播客将在上海举行首次播客听友线下聚会。届时，S2E3嘉宾陈思羽（前麦肯锡顾问，沃顿MBA在读）也会做客现场（往期节目链接: <a href="https://mp.weixin.qq.com/s/TOTOGQ2cmNttPYLU_3uJqg）。" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/TOTOGQ2cmNttPYLU_3uJqg）。</a></p><p>此次活动将帮助你接触到愿意真诚分享的嘉宾，播客主创团队，认识各行各业的优质听友。同时，从零道一也很想认识你，听听你对我们节目的想法。</p><h3 id="活动报名"><a href="#活动报名" class="headerlink" title="活动报名"></a>活动报名</h3><p>请填写报名表（<a href="https://wj.qq.com/s2/7424294/2a30" target="_blank" rel="noopener">https://wj.qq.com/s2/7424294/2a30</a>, 场地位置有限，请尽快填写）。<br>如报名成功，从零道一小助手会联系你。如有任何问题，欢迎直接联系小助手微信（id：goto_helper)。</p><p>活动时间：11月15日（周日）下午 14:00 - 16:30<br>活动地点：上海市静安区（具体地址将在报名成功后通知）</p><p>活动主要流程：</p><ul><li>开场介绍及破冰</li><li>嘉宾访谈以及Q&amp;A（陈思羽）</li><li>对话从零道一主播</li><li>自由交流 (Networking)</li></ul>]]></content>
     
@@ -295,31 +346,6 @@
   </entry>
   
   <entry>
-    <title>ESXI and lede</title>
-    <link href="http://consiiii.me/2020/02/08/ESXI-and-lede/"/>
-    <id>http://consiiii.me/2020/02/08/ESXI-and-lede/</id>
-    <published>2020-02-08T11:44:28.000Z</published>
-    <updated>2020-02-08T11:49:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p> Task<br>Power On VM<br>Key</p><p>haTask-2-vim.VirtualMachine.powerOn-2255487717<br>Description</p><p>Power On this virtual machine<br>Virtual machine</p><p>lean200106<br>State</p><p>Failed - Module ‘DevicePowerOn’ power on failed.<br>Errors</p><pre><code>Module &apos;DevicePowerOn&apos; power on failed.The IDE device (disks/CD-ROM) configuration is incorrect. There is an IDE slave with no master at &apos;ide0:1&apos;. This configuration does not work correctly in virtual machines. Move the disk/CD-ROM from &apos;ide0:1&apos; to &apos;ide0:0&apos; using the configuration editor.Failed to start the virtual machine.</code></pre><p><a href="https://jc-lan.org/2017/02/01/esxi-6-5-host-crash-then-guest-fails-to-power-on/" target="_blank" rel="noopener">https://jc-lan.org/2017/02/01/esxi-6-5-host-crash-then-guest-fails-to-power-on/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt; Task&lt;br&gt;Power On VM&lt;br&gt;Key&lt;/p&gt;
-&lt;p&gt;haTask-2-vim.VirtualMachine.powerOn-2255487717&lt;br&gt;Description&lt;/p&gt;
-&lt;p&gt;Power On this virtual machine&lt;br&gt;
-      
-    
-    </summary>
-    
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>一个不需要webpack的未来</title>
     <link href="http://consiiii.me/2019/11/19/a-future-without-webpack/"/>
     <id>http://consiiii.me/2019/11/19/a-future-without-webpack/</id>
@@ -427,13 +453,13 @@
   </entry>
   
   <entry>
-    <title>光猫/wifi+esxi/lede | 无额外AP情况下提供无线接入</title>
+    <title>光猫 + esxi/lede + wifi</title>
     <link href="http://consiiii.me/2019/07/01/esxi-lede-light-modem/"/>
     <id>http://consiiii.me/2019/07/01/esxi-lede-light-modem/</id>
     <published>2019-07-01T13:35:37.000Z</published>
-    <updated>2019-07-01T14:04:04.000Z</updated>
+    <updated>2020-11-23T08:00:53.776Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>概述：没有额外AP的情况下，利用光猫提供的wifi功能提供无线接入</li></ul><p>因为对网络多了更多的需求，转卖了用了近两年久的huawei b618s 22d, 告别了我漫长的sim卡上网时代，然后入手软路由了.</p><p>网上一般的解决方案是:</p><p>拓扑1:</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">光猫</span> <span class="string">(桥接)</span> <span class="meta">---</span> <span class="string">软路由(Host</span> <span class="string">+</span> <span class="string">VM(LEDE,</span> <span class="string">拨号))</span> <span class="meta">---</span> <span class="string">AP</span> <span class="meta">---</span> <span class="string">无线设备</span></span><br><span class="line">                <span class="string">|</span></span><br><span class="line"><span class="string">                |</span></span><br><span class="line"><span class="string">                ------有线连接</span></span><br></pre></td></tr></table></figure><p>但由于我手头上已经没有了AP(byebye huawei b618)，因此网络模型主要如下：</p><p>拓扑2:<br><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">        (<span class="number">192.168</span><span class="meta">.10</span><span class="meta">.10</span>/<span class="number">24</span>)</span><br><span class="line">混凝土墙壁---光猫 (桥接) ------- 软路由(Host + VM(LEDE, 拨号)) // ESXI:<span class="number">192.168</span><span class="meta">.10</span><span class="meta">.254</span>/<span class="number">24</span>, LEDE: <span class="number">192.168</span><span class="meta">.10</span><span class="meta">.1</span>/<span class="number">24</span></span><br><span class="line">                |                  |</span><br><span class="line">                |                  |</span><br><span class="line">                |                  ------有线连接</span><br><span class="line">                --- 无线接入</span><br></pre></td></tr></table></figure></p><p>要点在于接入时的网关设置和DNS设置</p><p>假设我们的地址如拓扑2，这样的拓扑好处在于大家都在同一个网段/24，那么作为guest可以随意访问光猫/ESXI/LEDE的地址，其实也算是一个懒人方案吧。</p><p>真正的网关在192.168.10.1。容易碰到的问题是<code>无线接入设备</code>可能会自动把自己的网关设置成<code>192.168.10.10</code>， 这样让req出不去，也就是软路由可以上网，但是所有无限接入的设备都无法上网。</p><p>这种情况下本质上是要确认一下接入设备的DNS和gateway，更改成LEDE的IP即可。</p><p>操作上则上尝试以下方式：</p><ol><li>在光猫内设置好固定的DNS和gateway</li><li>或者尝试让lede在<code>xxx.xxx.xxx.1</code>（因为默认网关在1位）</li></ol>]]></content>
+    <content type="html"><![CDATA[<ul><li>概述：没有额外AP的情况下，利用光猫提供的wifi功能提供无线接入</li></ul><p>因为对网络多了更多的需求，转卖了用了近两年久的huawei b618s 22d, 告别了我漫长的sim卡上网时代，然后入手软路由了.</p><p>网上一般的解决方案是:</p><p>拓扑1:</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">光猫</span> <span class="string">(桥接)</span> <span class="meta">---</span> <span class="string">软路由(Host</span> <span class="string">+</span> <span class="string">VM(LEDE,</span> <span class="string">拨号))</span> <span class="meta">---</span> <span class="string">AP</span> <span class="meta">---</span> <span class="string">无线设备</span></span><br><span class="line">                <span class="string">|</span></span><br><span class="line"><span class="string">                |</span></span><br><span class="line"><span class="string">                ------有线连接</span></span><br></pre></td></tr></table></figure><p>但由于我手头上已经没有了AP(byebye huawei b618)，因此网络模型主要如下：</p><p>拓扑2:<br><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">        (<span class="number">192.168</span><span class="meta">.10</span><span class="meta">.10</span>/<span class="number">24</span>)</span><br><span class="line">混凝土墙壁---光猫 (桥接) ------- 软路由(Host + VM(LEDE, 拨号)) // ESXI:<span class="number">192.168</span><span class="meta">.10</span><span class="meta">.254</span>/<span class="number">24</span>, LEDE: <span class="number">192.168</span><span class="meta">.10</span><span class="meta">.1</span>/<span class="number">24</span></span><br><span class="line">                |                  |</span><br><span class="line">                |                  |</span><br><span class="line">                |                  ------有线连接</span><br><span class="line">                --- 无线接入</span><br></pre></td></tr></table></figure></p><p>要点在于接入时的网关设置和DNS设置</p><p>假设我们的地址如拓扑2，这样的拓扑好处在于大家都在同一个网段/24，那么作为guest可以随意访问光猫/ESXI/LEDE的地址，其实也算是一个懒人方案吧。</p><p>真正的网关在192.168.10.1。容易碰到的问题是<code>无线接入设备</code>可能会自动把自己的网关设置成<code>192.168.10.10</code>， 这样让req出不去，也就是软路由可以上网，但是所有无限接入的设备都无法上网。</p><p>这种情况下本质上是要确认一下接入设备的DNS和gateway，更改成LEDE的IP即可。</p><p>操作上则上尝试以下方式：</p><ol><li>在光猫内设置好固定的DNS和gateway</li><li>或者尝试让lede在<code>xxx.xxx.xxx.1</code>（因为默认网关在1位）</li></ol><hr><p>Update：</p><ol><li>在软路由断电之后，我的镜像总是会被损坏，这个时候就会越到无法启动的镜像的错误，仔细检查会发现产生的镜像地址失效了，我目前的解决办法就是重做一次。熟练了，挺快的。</li></ol>]]></content>
     
     <summary type="html">
     
@@ -508,30 +534,6 @@
     
     
       <category term="life" scheme="http://consiiii.me/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2019年！我还活着</title>
-    <link href="http://consiiii.me/2019/01/07/2019-first-blog/"/>
-    <id>http://consiiii.me/2019/01/07/2019-first-blog/</id>
-    <published>2019-01-07T15:45:51.000Z</published>
-    <updated>2019-01-07T15:46:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>很久很久没有写东西。<br>现在下班了。我突然想到，上班都在解决别人的问题。什么时候有时间，解决一下自己的问题。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;很久很久没有写东西。&lt;br&gt;现在下班了。我突然想到，上班都在解决别人的问题。什么时候有时间，解决一下自己的问题。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
-    
     
   </entry>
   
