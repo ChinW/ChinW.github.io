@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://consiiii.me/"/>
-  <updated>2020-11-24T15:04:54.196Z</updated>
+  <updated>2020-12-25T05:00:21.094Z</updated>
   <id>http://consiiii.me/</id>
   
   <author>
@@ -17,13 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>墙倒众人推</title>
+    <link href="http://consiiii.me/2020/12/25/%E5%A2%99%E5%80%92%E4%BC%97%E4%BA%BA%E6%8E%A8/"/>
+    <id>http://consiiii.me/2020/12/25/墙倒众人推/</id>
+    <published>2020-12-25T04:53:05.000Z</published>
+    <updated>2020-12-25T05:00:21.094Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近真的是越来越能感受到网络舆论对人们的控制问题</p><p>以前，所有的舆论提到马Y，都是放他各种挥斥方遒的视频，放他早期创业的所作所为，各个论坛上的经典语录，就算是讲出了996是福报这样的话，很多人隐隐觉得不对，但心上又被什么东西隐隐的压住了，什么也说不出来。</p><p>现在再看他的新闻，所有言论都变成嘲笑。以前还有人叫“马爸爸”，当然现在叫人“爸爸“这个行为随处可见。但是我对这种行为非常敏感，对这个称呼，起码要有一点自己的尊重。</p><p>新时代的战争就是舆论战争，还真是“口水就能把你淹死”，当食物不再是大部分人类生存的限制，马斯洛模型的走向上层，杀死一个人，就让他社会性死亡。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近真的是越来越能感受到网络舆论对人们的控制问题&lt;/p&gt;
+&lt;p&gt;以前，所有的舆论提到马Y，都是放他各种挥斥方遒的视频，放他早期创业的所作所为，各个论坛上的经典语录，就算是讲出了996是福报这样的话，很多人隐隐觉得不对，但心上又被什么东西隐隐的压住了，什么也说不出来。&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Flink序列化慢 | Collector.colect()?</title>
     <link href="http://consiiii.me/2020/11/24/flink%20%E5%BA%8F%E5%88%97%E5%8C%96%E6%85%A2/"/>
     <id>http://consiiii.me/2020/11/24/flink 序列化慢/</id>
     <published>2020-11-24T15:01:06.000Z</published>
-    <updated>2020-11-24T15:04:54.196Z</updated>
+    <updated>2020-11-25T04:08:15.916Z</updated>
     
-    <content type="html"><![CDATA[<p>最近在做Processing Framework的性能比较，做到Flink时，测出的数据性能变得及其差。<br>细看之后发现瓶颈出现在 <code>Collector.collect()</code> 方法， 可能是序列化，对象的复制话费了大量的时间。<br>在我的例子中，collect(SINGLE OBJECGT)甚至要多到100ms (我这的OBJECT大概有500Bytes)</p><p>经过一番搜寻，这篇文章给了我答案</p><p><a href="https://www.ververica.com/blog/curious-case-broken-benchmark-revisiting-apache-flink-vs-databricks-runtime" target="_blank" rel="noopener">https://www.ververica.com/blog/curious-case-broken-benchmark-revisiting-apache-flink-vs-databricks-runtime</a></p><p>简单来说：</p><ol><li>数据的存储结构尽量使用平整的方式</li><li>开启flink的object resue （collect()消耗瞬间减少到 &lt; 1ms!)</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>最近在做Processing Framework的性能比较，做到Flink时，测出的数据性能变得及其差。<br>细看之后发现瓶颈出现在 <code>Collector.collect()</code> 方法， 可能是序列化，对象的复制话费了大量的时间。<br>在我的例子中，collect(SINGLE OBJECGT)甚至要多到100ms (我这的OBJECT大概有500Bytes)</p><p>经过一番搜寻，这篇文章给了我答案</p><p><a href="https://www.ververica.com/blog/curious-case-broken-benchmark-revisiting-apache-flink-vs-databricks-runtime" target="_blank" rel="noopener">https://www.ververica.com/blog/curious-case-broken-benchmark-revisiting-apache-flink-vs-databricks-runtime</a></p><p>简单来说：</p><ol><li>数据的存储结构尽量使用平整的方式</li><li>开启flink的object resue （collect()消耗瞬间减少到 &lt; 1ms!)</li></ol><p>另有一些参考文章：</p><ol><li><a href="https://flink.apache.org/news/2020/04/15/flink-serialization-tuning-vol-1.html#performance-comparison" target="_blank" rel="noopener">https://flink.apache.org/news/2020/04/15/flink-serialization-tuning-vol-1.html#performance-comparison</a></li></ol>]]></content>
     
     <summary type="html">
     
@@ -507,33 +531,6 @@
       <category term="blockchain" scheme="http://consiiii.me/tags/blockchain/"/>
     
       <category term="hyperledger" scheme="http://consiiii.me/tags/hyperledger/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>怜取眼前人</title>
-    <link href="http://consiiii.me/2019/02/11/2019-02-11withFamily/"/>
-    <id>http://consiiii.me/2019/02/11/2019-02-11withFamily/</id>
-    <published>2019-02-11T15:40:06.000Z</published>
-    <updated>2019-02-11T15:55:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>| 深圳, 香港, 和家人</p><p>最近总是感叹时间过的太快，现在已经到了2019年了。春节过的匆匆忙忙。</p><p>我和姐姐长大之后都去了不同的地方，和家人聚少离多。这个春节终于因为我而聚集在了深圳。整个春节过的匆匆忙忙，我中间有一段时间没有很好的脾气，会偶尔用自以为是的语气说父母不懂大城市的规矩，最快之后却也立马觉得自己也不过是大城市里的一只虫子，不懂得感恩父母对自己的好。姐姐在香港也是走马观花，没能好好地带他们去玩。</p><p>目送他们从车站离开的时候，又深深懊悔自己没有好好珍惜在一起的时间，接下来一年也不知道会发生多少事情，还能见面几次。</p><p>总的来说最难熬的是高中，大学开始时间过的飞快，那些迷人的，漂亮的，令人伤感的，琢磨不透的东西，事后都觉得在那个时候没有好好去体会，去感受。</p><p>总觉得抱歉，总觉得自己做的不够好，借用一句话：</p><p>“尘归尘以及土归土。 再也不见以及再次相见。 抱歉的抱歉以及一切的一切。 黯淡无光的希望以及卑微凌乱的梦想。”</p><p>我希望自己可以做的更好。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;| 深圳, 香港, 和家人&lt;/p&gt;
-&lt;p&gt;最近总是感叹时间过的太快，现在已经到了2019年了。春节过的匆匆忙忙。&lt;/p&gt;
-&lt;p&gt;我和姐姐长大之后都去了不同的地方，和家人聚少离多。这个春节终于因为我而聚集在了深圳。整个春节过的匆匆忙忙，我中间有一段时间没有很好的脾气，会偶尔用
-      
-    
-    </summary>
-    
-      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
-    
-    
-      <category term="life" scheme="http://consiiii.me/tags/life/"/>
     
   </entry>
   
