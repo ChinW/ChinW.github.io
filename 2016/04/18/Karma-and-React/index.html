@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>Karma and React - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="1. 目的使用Karma来测试React编写的应用 2. 安装环境使用的依赖如下： 123456789101112131415161718babel-corebabel-loaderbabel-preset-es2015babel-preset-reactexpectjasminekarmakarma-chrome-launcher// karma-firefox-launcher 如果您使用Fi">
+<meta name="keywords" content="Karma,Test">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Karma and React">
+<meta property="og:url" content="http://consiiii.me/2016/04/18/Karma-and-React/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="1. 目的使用Karma来测试React编写的应用 2. 安装环境使用的依赖如下： 123456789101112131415161718babel-corebabel-loaderbabel-preset-es2015babel-preset-reactexpectjasminekarmakarma-chrome-launcher// karma-firefox-launcher 如果您使用Fi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_Karma_1.png">
+<meta property="og:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_Karma_2.png">
+<meta property="og:updated_time" content="2021-06-25T15:14:59.625Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Karma and React">
+<meta name="twitter:description" content="1. 目的使用Karma来测试React编写的应用 2. 安装环境使用的依赖如下： 123456789101112131415161718babel-corebabel-loaderbabel-preset-es2015babel-preset-reactexpectjasminekarmakarma-chrome-launcher// karma-firefox-launcher 如果您使用Fi">
+<meta name="twitter:image" content="http://7xngrd.com1.z0.glb.clouddn.com/ci_Karma_1.png">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-77216401-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-menu" class="fa fa-lg fa-bars"></i>
+    <!--<h1 class="header-title">-->
+        <!--<a class="header-title-link" href="/ ">Consiiii</a>-->
+    <!--</h1>-->
+    
+    <ul class="header-section">
+        
+        <li class="header-item">
+            
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="header-section">
+        
+    </ul>
+    
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png">
+        </a>
+    
+</header>
+<section class="dialog hide" id="menu-dialog">
+    <div class="dialog-header">
+        CHECK MORE
+    </div>
+    <div class="dialog-content">
+        
+        <ul class="list">
+            
+            <li class="item">
+                
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+            </li>
+            
+        </ul>
+        
+        <ul class="list">
+            
+        </ul>
+        
+    </div>
+    <div class="dialog-footer">
+        <a class="btn btn--default no-shadow" id="cancel-menu-btn">CANCEL</a>
+    </div>
+</section>
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                <div class="master">
+                    
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Karma and React
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Mon Apr 18 2016 19:52:41 GMT+0800">
+	
+		    4月 18, 2016
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h2 id="1-目的"><a href="#1-目的" class="headerlink" title="1. 目的"></a>1. 目的</h2><p>使用Karma来测试React编写的应用</p>
+<h2 id="2-安装环境"><a href="#2-安装环境" class="headerlink" title="2. 安装环境"></a>2. 安装环境</h2><p>使用的依赖如下：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">babel-core</span></span><br><span class="line"><span class="keyword">babel-loader</span></span><br><span class="line"><span class="keyword">babel-preset-es2015</span></span><br><span class="line"><span class="keyword">babel-preset-react</span></span><br><span class="line"><span class="keyword">expect</span></span><br><span class="line"><span class="keyword">jasmine</span></span><br><span class="line"><span class="keyword">karma</span></span><br><span class="line"><span class="keyword">karma-chrome-launcher</span></span><br><span class="line"><span class="keyword">// </span>karma-firefox-launcher 如果您使用Firefox来测试，应当安装上它</span><br><span class="line"><span class="symbol">karma</span>-cli</span><br><span class="line"><span class="symbol">karma</span>-jasmine</span><br><span class="line"><span class="symbol">karma</span>-sourcemap-loader</span><br><span class="line"><span class="symbol">karma</span>-webpack</span><br><span class="line"><span class="symbol">react</span></span><br><span class="line"><span class="symbol">react</span>-<span class="keyword">addons-test-utils</span></span><br><span class="line"><span class="keyword">react-dom</span></span><br><span class="line"><span class="keyword">requirejs</span></span><br><span class="line"><span class="keyword">webpack</span></span><br></pre></td></tr></table></figure>
+<p>使用<code>npm install</code>命令来安装它们。</p>
+<p>在文章最后，我们的项目文件大概是这个样子：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">├── karma<span class="selector-class">.conf</span><span class="selector-class">.js</span></span><br><span class="line">├── package.json</span><br><span class="line">├── src</span><br><span class="line">│   ├── __tests__</span><br><span class="line">│   │   └── index<span class="selector-class">.test</span><span class="selector-class">.js</span></span><br><span class="line">│   ├── components</span><br><span class="line">│   │   ├── __tests__</span><br><span class="line">│   │   │   └── app<span class="selector-class">.test</span><span class="selector-class">.js</span></span><br><span class="line">│   │   └── app<span class="selector-class">.comp</span><span class="selector-class">.jsx</span></span><br><span class="line">│   └── index.jsx</span><br><span class="line">└── test-main.js</span><br></pre></td></tr></table></figure>
+<h2 id="3-完善karma配置"><a href="#3-完善karma配置" class="headerlink" title="3. 完善karma配置"></a>3. 完善karma配置</h2><p>使用<code>karma init karma.conf.js</code>来引导我们建立配置。</p>
+<p>以下是我的选择</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Which testing framework <span class="keyword">do</span> you want <span class="keyword">to</span> use ?</span><br><span class="line">Press <span class="keyword">tab</span> <span class="keyword">to</span> <span class="keyword">list</span> possible <span class="keyword">options</span>. Enter <span class="keyword">to</span> <span class="keyword">move</span> <span class="keyword">to</span> the <span class="keyword">next</span> question.</span><br><span class="line">&gt; jasmine</span><br><span class="line"></span><br><span class="line">Do you want <span class="keyword">to</span> use Require.js ?</span><br><span class="line">This will <span class="built_in">add</span> Require.js plugin.</span><br><span class="line">Press <span class="keyword">tab</span> <span class="keyword">to</span> <span class="keyword">list</span> possible <span class="keyword">options</span>. Enter <span class="keyword">to</span> <span class="keyword">move</span> <span class="keyword">to</span> the <span class="keyword">next</span> question.</span><br><span class="line">&gt; <span class="keyword">no</span></span><br><span class="line"></span><br><span class="line">Do you want <span class="keyword">to</span> capture any browsers automatically ?</span><br><span class="line">Press <span class="keyword">tab</span> <span class="keyword">to</span> <span class="keyword">list</span> possible <span class="keyword">options</span>. Enter <span class="built_in">empty</span> <span class="built_in">string</span> <span class="keyword">to</span> <span class="keyword">move</span> <span class="keyword">to</span> the <span class="keyword">next</span> question.</span><br><span class="line">&gt; Chrome</span><br><span class="line">&gt;</span><br><span class="line"></span><br><span class="line">What <span class="keyword">is</span> the location of your <span class="keyword">source</span> <span class="built_in">and</span> test <span class="keyword">files</span> ?</span><br><span class="line">You can use <span class="built_in">glob</span> patterns, eg. <span class="string">"js/*.js"</span> <span class="built_in">or</span> <span class="string">"test/**/*Spec.js"</span>.</span><br><span class="line">Enter <span class="built_in">empty</span> <span class="built_in">string</span> <span class="keyword">to</span> <span class="keyword">move</span> <span class="keyword">to</span> the <span class="keyword">next</span> question.</span><br><span class="line">&gt; src/*.jsx</span><br><span class="line">&gt;</span><br><span class="line"></span><br><span class="line">Should any of the <span class="keyword">files</span> included by the <span class="keyword">previous</span> patterns <span class="keyword">be</span> excluded ?</span><br><span class="line">You can use <span class="built_in">glob</span> patterns, eg. <span class="string">"**/*.swp"</span>.</span><br><span class="line">Enter <span class="built_in">empty</span> <span class="built_in">string</span> <span class="keyword">to</span> <span class="keyword">move</span> <span class="keyword">to</span> the <span class="keyword">next</span> question.</span><br><span class="line">&gt;</span><br><span class="line"></span><br><span class="line">Do you want Karma <span class="keyword">to</span> watch <span class="keyword">all</span> the <span class="keyword">files</span> <span class="built_in">and</span> run the tests <span class="keyword">on</span> <span class="keyword">change</span> ?</span><br><span class="line">Press <span class="keyword">tab</span> <span class="keyword">to</span> <span class="keyword">list</span> possible <span class="keyword">options</span>.</span><br><span class="line">&gt; yes</span><br></pre></td></tr></table></figure>
+<p>接下来编辑<code>karma.conf.js</code>，来补充webpack, 添加测试文件等, 主要改动如下：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">module.exports = <span class="function"><span class="keyword">function</span><span class="params">(config)</span> &#123;</span></span><br><span class="line">  config.<span class="keyword">set</span>(&#123;</span><br><span class="line">  ...</span><br><span class="line">	// frameworks <span class="keyword">to</span> use</span><br><span class="line">	// available framework<span class="variable">s:</span> http<span class="variable">s:</span>//npmjs.org/<span class="keyword">browse</span>/keyword/karma-adapter</span><br><span class="line">	framework<span class="variable">s:</span> [<span class="string">'jasmine'</span>],</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	// <span class="keyword">list</span> of <span class="keyword">files</span> / patterns <span class="keyword">to</span> load in the browser</span><br><span class="line">	<span class="keyword">file</span><span class="variable">s:</span> [</span><br><span class="line">	   <span class="string">'test-main.js'</span></span><br><span class="line">	],</span><br><span class="line">	</span><br><span class="line">	...</span><br><span class="line">	// preprocess matching <span class="keyword">files</span> before serving them <span class="keyword">to</span> the browser</span><br><span class="line">    // available preprocessor<span class="variable">s:</span> http<span class="variable">s:</span>//npmjs.org/<span class="keyword">browse</span>/keyword/karma-preprocessor</span><br><span class="line">    preprocessor<span class="variable">s:</span> &#123;</span><br><span class="line">        <span class="string">'test-main.js'</span>: [ <span class="string">'webpack'</span>, <span class="string">'sourcemap'</span> ]</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">	webpack: &#123;</span><br><span class="line">        devtoo<span class="variable">l:</span> <span class="string">'inline-source-map'</span>,</span><br><span class="line">        module: &#123;</span><br><span class="line">            loader<span class="variable">s:</span> [</span><br><span class="line">                &#123; tes<span class="variable">t:</span> /\.js$/, loader: <span class="string">'babel-loader?presets[]=react,presets[]=es2015'</span>&#125;,</span><br><span class="line">                &#123; tes<span class="variable">t:</span> /\.jsx$/, loader: <span class="string">'babel-loader?presets[]=react,presets[]=es2015'</span>&#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    webpackServer: &#123;</span><br><span class="line">        noInfo: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意到files和preprocessors中都提及了test-main.js这个文件，这是一个我们自定义增加的文件，我们用它来选择含有测试代码的文件。</p>
+<p>在项目目录中添加完成文件后（我将其放在项目根目录下，如果您放在其他路径，请对应上相应的路径），修改其内容如下：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">context</span> = require.<span class="built_in">context</span>('./src', <span class="literal">true</span>, /(spec|test)\.js$/i);</span><br><span class="line"><span class="built_in">context</span>.keys().forEach(<span class="built_in">context</span>);</span><br></pre></td></tr></table></figure>
+<p>这里利用了webpack的<a href="https://webpack.github.io/docs/context.html" target="_blank" rel="noopener">require.context</a>功能来包括需要的测试文件，第一行中的正则表明这些文件是以spec.js或test.js结尾的, 且对大小写不敏感。</p>
+<h2 id="4-添加测试文件"><a href="#4-添加测试文件" class="headerlink" title="4.  添加测试文件"></a>4.  添加测试文件</h2><p>添加几个React文件以及测试，尽快来尝试功能吧！</p>
+<p>添加的几个文件放在src中，目录结构可能是这个样子：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line">├── __tests__</span><br><span class="line">│   └── index<span class="selector-class">.test</span><span class="selector-class">.js</span></span><br><span class="line">├── components</span><br><span class="line">│   ├── __tests__</span><br><span class="line">│   │   └── app<span class="selector-class">.test</span><span class="selector-class">.js</span></span><br><span class="line">│   └── app<span class="selector-class">.comp</span><span class="selector-class">.jsx</span></span><br><span class="line">└── index.jsx</span><br></pre></td></tr></table></figure>
+<p>接着一堆代码黏贴：</p>
+<h4 id="index-test-js"><a href="#index-test-js" class="headerlink" title="index.test.js"></a>index.test.js</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">"index.jsx"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	it(<span class="string">"renders without problems"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">require</span>(<span class="string">"../index.jsx"</span>);</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="index-jsx"><a href="#index-jsx" class="headerlink" title="index.jsx"></a>index.jsx</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">"react-dom"</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">"./components/app.comp.jsx"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> root = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>)</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(root)</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">	&lt;h1&gt; Hi &lt;<span class="regexp">/h1&gt;,</span></span><br><span class="line"><span class="regexp">	root</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+<h4 id="app-comp-jsx"><a href="#app-comp-jsx" class="headerlink" title="app.comp.jsx"></a>app.comp.jsx</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">		<span class="keyword">super</span>(props)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getNumber()&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">3</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;h1&gt;Hi, Karma&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">				&lt;h1&gt;Hi, React&lt;/</span>h1&gt;</span><br><span class="line">			&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="app-test-js"><a href="#app-test-js" class="headerlink" title="app.test.js"></a>app.test.js</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> TestUtils <span class="keyword">from</span> <span class="string">'react-addons-test-utils'</span></span><br><span class="line"><span class="keyword">import</span> expect <span class="keyword">from</span> <span class="string">'expect'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'../app.comp.jsx'</span></span><br><span class="line"></span><br><span class="line">describe(<span class="string">'app.comp.jsx'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> app = TestUtils.renderIntoDocument(&lt;App /&gt;)</span><br><span class="line"></span><br><span class="line">	it(<span class="string">'renders without problems'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		expect(app).toExist()</span><br><span class="line">	&#125;);</span><br><span class="line"></span><br><span class="line">	it(<span class="string">"getNumber function works"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		expect(app.getNumber()).toEqual(<span class="number">3</span>)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="5-开始测试"><a href="#5-开始测试" class="headerlink" title="5. 开始测试"></a>5. 开始测试</h2><p>在终端中输入 <code>karma start</code> 或 <code>karma start karma.conf.js</code>， 如图所示， </p>
+<p>测试全都正确，Great.</p>
+<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_Karma_1.png" alt=""></p>
+<p>将<code>app.test.js</code>中的<code>toEqual(3)</code>改成<code>toEqual(4)</code>， 报错, 很好.</p>
+<p><img src="http://7xngrd.com1.z0.glb.clouddn.com/ci_Karma_2.png" alt=""></p>
+<hr>
+<p>整个项目的示例，您可以在<a href="https://github.com/ChinW/Karma-React" target="_blank" rel="noopener">这里</a>下载到。</p>
+<p>另外水平有限，如有错误，欢迎指正.</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Karma/">Karma</a> <a class="tag tag--primary tag--small t-link" href="/tags/Test/">Test</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/22/Experience-of-HackPKU-2016/" data-tooltip="Experience of HackPKU 2016">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/17/安装NS2进行网络仿真/" data-tooltip="安装NS2进行网络仿真">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/04/18/Karma-and-React/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/04/18/Karma-and-React/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/04/18/Karma-and-React/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                </div>
+                <div class="slave">
+                    <aside id="sidebar">
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="widget-list category-list"><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Blockchain/">Blockchain</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/CSS/">CSS</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Canvas/">Canvas</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Competition/">Competition</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Flink/">Flink</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/FrontEnd/">FrontEnd</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Hexo/">Hexo</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Icon/">Icon</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="widget-list category-list-count">4</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LEMP/">LEMP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LISP/">LISP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Linux/">Linux</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Mac/">Mac</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/MySQL/">MySQL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/NS2/">NS2</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/PHP/">PHP</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Regex/">Regex</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Ruby/">Ruby</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/SSL/">SSL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Slots/">Slots</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Swift/">Swift</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/blockchain/">blockchain</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/iOS/">iOS</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/network/">network</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/slots/">slots</a><span class="widget-list category-list-count">26</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/ssh/">ssh</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/webpack/">webpack</a><span class="widget-list category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="widget-list tag-list"><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Blockchain/">Blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CMS/">CMS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CSS/">CSS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Canvas/">Canvas</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Competition/">Competition</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Design/">Design</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ES6/">ES6</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/El-Capitan/">El Capitan</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FTP/">FTP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Fabric/">Fabric</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Flink/">Flink</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FrontEnd/">FrontEnd</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Icon/">Icon</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/KMean/">KMean</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Karma/">Karma</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LEMP/">LEMP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Linux/">Linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LiveReload/">LiveReload</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Mac/">Mac</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NS2/">NS2</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/PHP/">PHP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ProFTPD/">ProFTPD</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/React/">React</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Redux/">Redux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Regex/">Regex</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/SSL/">SSL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Sass/">Sass</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Slots/">Slots</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Swift/">Swift</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Test/">Test</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Translation/">Translation</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Webpack/">Webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/XCode/">XCode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/blockchain/">blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/datetime/">datetime</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/debian/">debian</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/frontend/">frontend</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/hyperledger/">hyperledger</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/iOS/">iOS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/lede/">lede</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/life/">life</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/linux/">linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/mysql/">mysql</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/network/">network</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/nginx/">nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/php/">php</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/remote-login/">remote login</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ssh/">ssh</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/webpack/">webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/websocket/">websocket</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘CocoaPods’/">‘CocoaPods’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘Realm’/">‘Realm’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘XCode’/">‘XCode’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘iOS’/">‘iOS’</a></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recent_posts</h3>
+    <div class="widget">
+      <ul class="widget-list post-list">
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/crazy-and-stupid-ideas/">crazy and stupid ideas</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/redux-router与react-router-rdeux的不同/">redux-router与react-router-rdeux的不同</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/Install-PHP-7/">Install PHP 7</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/04/11/StreamSerialzier-and-Portable-in-Hazelcast-Jet/">Serialization in Stream Processing: StreamSerializer and Portable in Hazelcast Jet</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/02/24/life-in-a-day-2020/">Life in a day 2020</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+</aside>
+
+                </div>
+            </div>
+            <footer id="footer">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2016/04/18/Karma-and-React/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2016/04/18/Karma-and-React/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2016/04/18/Karma-and-React/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png">
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>

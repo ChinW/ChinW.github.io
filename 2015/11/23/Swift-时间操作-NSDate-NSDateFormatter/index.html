@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>Swift 时间操作:NSDate, NSDateFormatter - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="转载出处：https://code.csdn.net/snippets/627333  NSDate  123456789101112131415161718192021222324252627282930313233343536373839404142// 1、初始化// 初始化一个当前时刻对象var now = NSDate()// 初始化一个明天当前时刻对象var tomorrow = NS">
+<meta name="keywords" content="Swift,datetime">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Swift 时间操作:NSDate, NSDateFormatter">
+<meta property="og:url" content="http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="转载出处：https://code.csdn.net/snippets/627333  NSDate  123456789101112131415161718192021222324252627282930313233343536373839404142// 1、初始化// 初始化一个当前时刻对象var now = NSDate()// 初始化一个明天当前时刻对象var tomorrow = NS">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-06-25T15:14:59.628Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift 时间操作:NSDate, NSDateFormatter">
+<meta name="twitter:description" content="转载出处：https://code.csdn.net/snippets/627333  NSDate  123456789101112131415161718192021222324252627282930313233343536373839404142// 1、初始化// 初始化一个当前时刻对象var now = NSDate()// 初始化一个明天当前时刻对象var tomorrow = NS">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-77216401-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-menu" class="fa fa-lg fa-bars"></i>
+    <!--<h1 class="header-title">-->
+        <!--<a class="header-title-link" href="/ ">Consiiii</a>-->
+    <!--</h1>-->
+    
+    <ul class="header-section">
+        
+        <li class="header-item">
+            
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="header-section">
+        
+    </ul>
+    
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png">
+        </a>
+    
+</header>
+<section class="dialog hide" id="menu-dialog">
+    <div class="dialog-header">
+        CHECK MORE
+    </div>
+    <div class="dialog-content">
+        
+        <ul class="list">
+            
+            <li class="item">
+                
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+            </li>
+            
+        </ul>
+        
+        <ul class="list">
+            
+        </ul>
+        
+    </div>
+    <div class="dialog-footer">
+        <a class="btn btn--default no-shadow" id="cancel-menu-btn">CANCEL</a>
+    </div>
+</section>
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                <div class="master">
+                    
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Swift 时间操作:NSDate, NSDateFormatter
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Mon Nov 23 2015 19:50:26 GMT+0800">
+	
+		    11月 23, 2015
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Swift/">Swift</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>转载出处：<a href="https://code.csdn.net/snippets/627333" target="_blank" rel="noopener">https://code.csdn.net/snippets/627333</a></p>
+<ol>
+<li>NSDate</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、初始化</span></span><br><span class="line"><span class="comment">// 初始化一个当前时刻对象</span></span><br><span class="line"><span class="selector-tag">var</span> now = NSDate()</span><br><span class="line"><span class="comment">// 初始化一个明天当前时刻对象</span></span><br><span class="line"><span class="selector-tag">var</span> tomorrow = NSDate(timeIntervalSinceNow: <span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>)</span><br><span class="line"><span class="comment">// 初始化一个昨天当前时刻对象</span></span><br><span class="line"><span class="selector-tag">var</span> yestoday = NSDate(timeInterval: -<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>, sinceDate: now)</span><br><span class="line"><span class="comment">// 初始化一个 2001-01-01 08:00:00 1小时后的时刻对象</span></span><br><span class="line"><span class="selector-tag">var</span> date1 = NSDate(timeIntervalSinceReferenceDate: <span class="number">3600</span>)</span><br><span class="line"><span class="comment">// 初始化一个 1970-01-01 08:00:00 1小时后的时刻对象</span></span><br><span class="line"><span class="selector-tag">var</span> date2 = NSDate(timeIntervalSince1970: <span class="number">3600</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、获取时间描述</span></span><br><span class="line"><span class="selector-tag">var</span> dateDescription = now.description</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3、获取时间间隔</span></span><br><span class="line"><span class="comment">// 获取今天到明天的时间间隔</span></span><br><span class="line"><span class="selector-tag">var</span> interval1 = tomorrow.timeIntervalSinceDate(now)</span><br><span class="line"><span class="comment">// 获取今天到明天的时间间隔</span></span><br><span class="line"><span class="selector-tag">var</span> interval2 = tomorrow.timeIntervalSinceNow</span><br><span class="line"><span class="comment">// 获取 2001-01-01 08:00:00 到今天的时间间隔</span></span><br><span class="line"><span class="selector-tag">var</span> interval3 = now.timeIntervalSinceReferenceDate</span><br><span class="line"><span class="comment">// 获取 1970-01-01 08:00:00 到今天的时间间隔</span></span><br><span class="line"><span class="selector-tag">var</span> interval5 = now.timeIntervalSince1970</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4、随机返回一个不可能达到的未来时间、过去时间</span></span><br><span class="line">date1 = NSDate.distantFuture() as NSDate</span><br><span class="line">date2 = NSDate.distantPast() as NSDate</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5、时间相加</span></span><br><span class="line"><span class="comment">// 返回一个后天当前时刻对象（在明天基础上再加上一天的时间）</span></span><br><span class="line"><span class="selector-tag">var</span> theDayAfterTomorrow = tomorrow.dateByAddingTimeInterval(<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 6、时间比较</span></span><br><span class="line"><span class="comment">// 比较两个时间对象是否相同返回布尔值（由于精度问题，isTheSameDate 为 false）</span></span><br><span class="line"><span class="selector-tag">var</span> isTheSameDate = theDayAfterTomorrow.isEqualToDate(NSDate(timeInterval: <span class="number">2</span>*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>, sinceDate: now))</span><br><span class="line"><span class="comment">// 返回两个时间中较早的一个时间</span></span><br><span class="line"><span class="selector-tag">var</span> earlierOne = now.earlierDate(tomorrow)</span><br><span class="line"><span class="comment">// 返回两个时间中较晚的一个时间</span></span><br><span class="line"><span class="selector-tag">var</span> laterOne = now.laterDate(tomorrow)</span><br><span class="line"><span class="comment">// 比较两个时间对象是否相同并返回 NSComparisonResult 值</span></span><br><span class="line"><span class="selector-tag">var</span> compareResult = now.compare(tomorrow)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>NSDateFormatter</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方式1：用已有日期格式进行转换</span></span><br><span class="line"><span class="selector-tag">var</span> dateFormatter1 = NSDateFormatter()</span><br><span class="line">dateFormatter1<span class="selector-class">.dateStyle</span> = NSDateFormatterStyle.MediumStyle</span><br><span class="line">dateFormatter1<span class="selector-class">.timeStyle</span> = NSDateFormatterStyle.MediumStyle</span><br><span class="line"><span class="selector-tag">var</span> now = NSDate()</span><br><span class="line"><span class="comment">// Date 转 String</span></span><br><span class="line"><span class="selector-tag">var</span> nowString = dateFormatter1.stringFromDate(now)      <span class="comment">// Mar 24, 2015, 9:00:00 PM</span></span><br><span class="line"><span class="comment">// String 转 Date</span></span><br><span class="line">now = dateFormatter1.dateFromString(nowString)!</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式2：自定义日期格式进行转换</span></span><br><span class="line"><span class="selector-tag">var</span> dateFormatter2 = NSDateFormatter()</span><br><span class="line">dateFormatter2<span class="selector-class">.dateFormat</span> = <span class="string">"yyyy-MM-dd HH:mm:ss"</span></span><br><span class="line"><span class="comment">// Date 转 String</span></span><br><span class="line">nowString = dateFormatter2.stringFromDate(now)          <span class="comment">// 2015-03-24 21:00:00</span></span><br><span class="line"><span class="comment">// String 转 Date</span></span><br><span class="line">now = dateFormatter2.dateFromString(nowString)!</span><br></pre></td></tr></table></figure>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Swift/">Swift</a> <a class="tag tag--primary tag--small t-link" href="/tags/datetime/">datetime</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/06/中华之梦创业比赛后记/" data-tooltip="中华之梦创业比赛后记">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/22/Install-LEMP-on-Debian/" data-tooltip="Install LEMP on Debian">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                </div>
+                <div class="slave">
+                    <aside id="sidebar">
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="widget-list category-list"><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Blockchain/">Blockchain</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/CSS/">CSS</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Canvas/">Canvas</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Competition/">Competition</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Flink/">Flink</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/FrontEnd/">FrontEnd</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Hexo/">Hexo</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Icon/">Icon</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="widget-list category-list-count">4</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LEMP/">LEMP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LISP/">LISP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Linux/">Linux</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Mac/">Mac</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/MySQL/">MySQL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/NS2/">NS2</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/PHP/">PHP</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Regex/">Regex</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Ruby/">Ruby</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/SSL/">SSL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Slots/">Slots</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Swift/">Swift</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/blockchain/">blockchain</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/iOS/">iOS</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/network/">network</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/slots/">slots</a><span class="widget-list category-list-count">26</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/ssh/">ssh</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/webpack/">webpack</a><span class="widget-list category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="widget-list tag-list"><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Blockchain/">Blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CMS/">CMS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CSS/">CSS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Canvas/">Canvas</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Competition/">Competition</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Design/">Design</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ES6/">ES6</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/El-Capitan/">El Capitan</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FTP/">FTP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Fabric/">Fabric</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Flink/">Flink</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FrontEnd/">FrontEnd</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Icon/">Icon</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/KMean/">KMean</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Karma/">Karma</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LEMP/">LEMP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Linux/">Linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LiveReload/">LiveReload</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Mac/">Mac</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NS2/">NS2</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/PHP/">PHP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ProFTPD/">ProFTPD</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/React/">React</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Redux/">Redux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Regex/">Regex</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/SSL/">SSL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Sass/">Sass</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Slots/">Slots</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Swift/">Swift</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Test/">Test</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Translation/">Translation</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Webpack/">Webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/XCode/">XCode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/blockchain/">blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/datetime/">datetime</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/debian/">debian</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/frontend/">frontend</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/hyperledger/">hyperledger</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/iOS/">iOS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/lede/">lede</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/life/">life</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/linux/">linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/mysql/">mysql</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/network/">network</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/nginx/">nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/php/">php</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/remote-login/">remote login</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ssh/">ssh</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/webpack/">webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/websocket/">websocket</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘CocoaPods’/">‘CocoaPods’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘Realm’/">‘Realm’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘XCode’/">‘XCode’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘iOS’/">‘iOS’</a></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recent_posts</h3>
+    <div class="widget">
+      <ul class="widget-list post-list">
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/crazy-and-stupid-ideas/">crazy and stupid ideas</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/redux-router与react-router-rdeux的不同/">redux-router与react-router-rdeux的不同</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/Install-PHP-7/">Install PHP 7</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/04/11/StreamSerialzier-and-Portable-in-Hazelcast-Jet/">Serialization in Stream Processing: StreamSerializer and Portable in Hazelcast Jet</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/02/24/life-in-a-day-2020/">Life in a day 2020</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+</aside>
+
+                </div>
+            </div>
+            <footer id="footer">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/23/Swift-时间操作-NSDate-NSDateFormatter/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png">
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>

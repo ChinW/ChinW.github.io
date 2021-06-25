@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>SSH登录主机 - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。 1.生成密钥对使用ssh-genssh-keygen -t [rsa|dsa] 过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码;如果想要的目的是免密码登录,密码请留空 2.将公钥拷贝到目标主机将公钥拷贝到~/.ssh中，远程上传可以使用scp命令 scp -r your/target">
+<meta name="keywords" content="ssh,remote login">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="SSH登录主机">
+<meta property="og:url" content="http://consiiii.me/2015/11/22/SSH登录主机/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。 1.生成密钥对使用ssh-genssh-keygen -t [rsa|dsa] 过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码;如果想要的目的是免密码登录,密码请留空 2.将公钥拷贝到目标主机将公钥拷贝到~/.ssh中，远程上传可以使用scp命令 scp -r your/target">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-06-25T15:14:59.627Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSH登录主机">
+<meta name="twitter:description" content="今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。 1.生成密钥对使用ssh-genssh-keygen -t [rsa|dsa] 过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码;如果想要的目的是免密码登录,密码请留空 2.将公钥拷贝到目标主机将公钥拷贝到~/.ssh中，远程上传可以使用scp命令 scp -r your/target">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-77216401-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-menu" class="fa fa-lg fa-bars"></i>
+    <!--<h1 class="header-title">-->
+        <!--<a class="header-title-link" href="/ ">Consiiii</a>-->
+    <!--</h1>-->
+    
+    <ul class="header-section">
+        
+        <li class="header-item">
+            
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="header-section">
+        
+    </ul>
+    
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png">
+        </a>
+    
+</header>
+<section class="dialog hide" id="menu-dialog">
+    <div class="dialog-header">
+        CHECK MORE
+    </div>
+    <div class="dialog-content">
+        
+        <ul class="list">
+            
+            <li class="item">
+                
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+            </li>
+            
+        </ul>
+        
+        <ul class="list">
+            
+        </ul>
+        
+    </div>
+    <div class="dialog-footer">
+        <a class="btn btn--default no-shadow" id="cancel-menu-btn">CANCEL</a>
+    </div>
+</section>
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                <div class="master">
+                    
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            SSH登录主机
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sun Nov 22 2015 12:03:44 GMT+0800">
+	
+		    11月 22, 2015
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/ssh/">ssh</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>今天想给自己新弄的一个主机配一下SSH，突然发现忘了部分操作细节，在此记录一下。</p>
+<h2 id="1-生成密钥对"><a href="#1-生成密钥对" class="headerlink" title="1.生成密钥对"></a>1.生成密钥对</h2><h3 id="使用ssh-gen"><a href="#使用ssh-gen" class="headerlink" title="使用ssh-gen"></a>使用ssh-gen</h3><p><code>ssh-keygen -t [rsa|dsa]</code></p>
+<p>过程当中会要求输入密码，但是如果输入了，那么远程登录主机的时候就会要求键入改密码<br>;如果想要的目的是免密码登录,密码请留空</p>
+<h2 id="2-将公钥拷贝到目标主机"><a href="#2-将公钥拷贝到目标主机" class="headerlink" title="2.将公钥拷贝到目标主机"></a>2.将公钥拷贝到目标主机</h2><p>将公钥拷贝到~/.ssh中，远程上传可以使用scp命令</p>
+<p><code>scp -r your/target/file/path user@ip:your/remote/file/path/</code></p>
+<p>如果主机下已经有authorized_keys，注意不要覆盖改文件，没有的话主动创建文件</p>
+<p><code>touch ~/.ssh/authorized_keys</code></p>
+<p>然后执行</p>
+<p><code>cat rsa.pub &gt;&gt; authorized_keys</code></p>
+<p>或者本地执行</p>
+<p><code>cat ~/.ssh/rsa.pub | ssh root@xx.xxx.xxx.xx  &quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys&quot;</code></p>
+<h2 id="3-在本机添加标识"><a href="#3-在本机添加标识" class="headerlink" title="3.在本机添加标识"></a>3.在本机添加标识</h2><p>打开~/.ssh/config，没有的话就创建一个，书写格式为（替换[]中的内容为自己的配置）</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host [myHost]</span><br><span class="line">Hostname [123.123.123.123]</span><br><span class="line">Port [21]</span><br><span class="line">User [myUser]</span><br><span class="line">IdentityFile [ ~/.ssh/local_private_rsa]</span><br></pre></td></tr></table></figure>
+<h2 id="4-登录"><a href="#4-登录" class="headerlink" title="4.登录"></a>4.登录</h2><p>使用 <code>ssh myHost</code> 进行登录</p>
+<h2 id="More"><a href="#More" class="headerlink" title="More"></a>More</h2><h3 id="5-1-生成host自签CA证书"><a href="#5-1-生成host自签CA证书" class="headerlink" title="5.1 生成host自签CA证书"></a>5.1 生成host自签CA证书</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -s <span class="regexp">~/.ssh/</span>ca_host_key -I certificate_ID -h -Z host_name.example.com -V -<span class="string">start:</span>+end <span class="regexp">/etc/</span>ssh/ssh_host_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>The -Z option restricts this certificate to a specific host within the domain. The -V option is for adding a validity period; this is highly recommend. Where the validity period is intended to be one year, fifty two weeks, consider the need for time to change the certificates and any holiday periods around the time of certificate expiry.</p>
+<p>e.g.</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~]# ssh-keygen -s ~/.ssh/ca_host_key -I host_name -h -Z host_name.example.<span class="keyword">com</span> -V -<span class="number">1</span><span class="variable">w:</span>+<span class="number">54</span>w5d /etc/ssh/ssh_host_rsa.pub</span><br><span class="line">Enter passphrase:</span><br><span class="line">Signed host key /root/.ssh/ssh_host_rsa-cert.<span class="keyword">pu</span><span class="variable">b:</span> id <span class="string">"host_name"</span> serial <span class="number">0</span> <span class="keyword">for</span> host_name.example.<span class="keyword">com</span> valid from <span class="number">2015</span>-<span class="number">05</span>-<span class="number">15</span>T13:<span class="number">52</span>:<span class="number">29</span> <span class="keyword">to</span> <span class="number">2016</span>-<span class="number">06</span>-<span class="number">08</span>T13:<span class="number">52</span>:<span class="number">29</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-2-OpenSSL-or-ssh-keygen"><a href="#5-2-OpenSSL-or-ssh-keygen" class="headerlink" title="5.2 OpenSSL or ssh-keygen"></a>5.2 OpenSSL or ssh-keygen</h3><p>ssh-keygen实际上调用了OpenSSL lib，通过两个方式产生ssh keys并没有明显的区别。可以直接使用ssh-keygen来直接产生key pair。</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/remote-login/">remote login</a> <a class="tag tag--primary tag--small t-link" href="/tags/ssh/">ssh</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/22/Install-LEMP-on-Debian/" data-tooltip="Install LEMP on Debian">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/09/Experience-of-HackShanghai-2015/" data-tooltip="Experience of HackShanghai 2015">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                </div>
+                <div class="slave">
+                    <aside id="sidebar">
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="widget-list category-list"><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Blockchain/">Blockchain</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/CSS/">CSS</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Canvas/">Canvas</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Competition/">Competition</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Flink/">Flink</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/FrontEnd/">FrontEnd</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Hexo/">Hexo</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Icon/">Icon</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="widget-list category-list-count">4</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LEMP/">LEMP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LISP/">LISP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Linux/">Linux</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Mac/">Mac</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/MySQL/">MySQL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/NS2/">NS2</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/PHP/">PHP</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Regex/">Regex</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Ruby/">Ruby</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/SSL/">SSL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Slots/">Slots</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Swift/">Swift</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/blockchain/">blockchain</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/iOS/">iOS</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/network/">network</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/slots/">slots</a><span class="widget-list category-list-count">26</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/ssh/">ssh</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/webpack/">webpack</a><span class="widget-list category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="widget-list tag-list"><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Blockchain/">Blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CMS/">CMS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CSS/">CSS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Canvas/">Canvas</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Competition/">Competition</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Design/">Design</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ES6/">ES6</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/El-Capitan/">El Capitan</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FTP/">FTP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Fabric/">Fabric</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Flink/">Flink</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FrontEnd/">FrontEnd</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Icon/">Icon</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/KMean/">KMean</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Karma/">Karma</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LEMP/">LEMP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Linux/">Linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LiveReload/">LiveReload</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Mac/">Mac</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NS2/">NS2</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/PHP/">PHP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ProFTPD/">ProFTPD</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/React/">React</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Redux/">Redux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Regex/">Regex</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/SSL/">SSL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Sass/">Sass</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Slots/">Slots</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Swift/">Swift</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Test/">Test</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Translation/">Translation</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Webpack/">Webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/XCode/">XCode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/blockchain/">blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/datetime/">datetime</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/debian/">debian</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/frontend/">frontend</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/hyperledger/">hyperledger</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/iOS/">iOS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/lede/">lede</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/life/">life</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/linux/">linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/mysql/">mysql</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/network/">network</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/nginx/">nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/php/">php</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/remote-login/">remote login</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ssh/">ssh</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/webpack/">webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/websocket/">websocket</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘CocoaPods’/">‘CocoaPods’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘Realm’/">‘Realm’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘XCode’/">‘XCode’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘iOS’/">‘iOS’</a></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recent_posts</h3>
+    <div class="widget">
+      <ul class="widget-list post-list">
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/crazy-and-stupid-ideas/">crazy and stupid ideas</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/redux-router与react-router-rdeux的不同/">redux-router与react-router-rdeux的不同</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/Install-PHP-7/">Install PHP 7</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/04/11/StreamSerialzier-and-Portable-in-Hazelcast-Jet/">Serialization in Stream Processing: StreamSerializer and Portable in Hazelcast Jet</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/02/24/life-in-a-day-2020/">Life in a day 2020</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+</aside>
+
+                </div>
+            </div>
+            <footer id="footer">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2015/11/22/SSH登录主机/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png">
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>

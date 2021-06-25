@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>几种 Websocket 框架的性能测试 - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="结论NodeJS 的 ws 综合表现最好，latency ~7ms 左右，轻松上到 5000 个 client 连接，TypeScript 的成熟同样给程序的编写提供了保障，同时也能利用弱类型语言本身的便利进行快速开发。 测试指标给定一定 clients 的数量，在不 drop 任何 client 连接的前提下：  单机服务器每秒能发送多少消息 客户端收到消息的延迟是多少 (ms)  测试环境 H">
+<meta name="keywords" content="websocket">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="几种 Websocket 框架的性能测试">
+<meta property="og:url" content="http://consiiii.me/2020/08/30/websocket-benchmark/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="结论NodeJS 的 ws 综合表现最好，latency ~7ms 左右，轻松上到 5000 个 client 连接，TypeScript 的成熟同样给程序的编写提供了保障，同时也能利用弱类型语言本身的便利进行快速开发。 测试指标给定一定 clients 的数量，在不 drop 任何 client 连接的前提下：  单机服务器每秒能发送多少消息 客户端收到消息的延迟是多少 (ms)  测试环境 H">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-06-25T15:14:59.631Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="几种 Websocket 框架的性能测试">
+<meta name="twitter:description" content="结论NodeJS 的 ws 综合表现最好，latency ~7ms 左右，轻松上到 5000 个 client 连接，TypeScript 的成熟同样给程序的编写提供了保障，同时也能利用弱类型语言本身的便利进行快速开发。 测试指标给定一定 clients 的数量，在不 drop 任何 client 连接的前提下：  单机服务器每秒能发送多少消息 客户端收到消息的延迟是多少 (ms)  测试环境 H">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-77216401-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-menu" class="fa fa-lg fa-bars"></i>
+    <!--<h1 class="header-title">-->
+        <!--<a class="header-title-link" href="/ ">Consiiii</a>-->
+    <!--</h1>-->
+    
+    <ul class="header-section">
+        
+        <li class="header-item">
+            
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="header-section">
+        
+    </ul>
+    
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png">
+        </a>
+    
+</header>
+<section class="dialog hide" id="menu-dialog">
+    <div class="dialog-header">
+        CHECK MORE
+    </div>
+    <div class="dialog-content">
+        
+        <ul class="list">
+            
+            <li class="item">
+                
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+            </li>
+            
+        </ul>
+        
+        <ul class="list">
+            
+        </ul>
+        
+    </div>
+    <div class="dialog-footer">
+        <a class="btn btn--default no-shadow" id="cancel-menu-btn">CANCEL</a>
+    </div>
+</section>
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                <div class="master">
+                    
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            几种 Websocket 框架的性能测试
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sun Aug 30 2020 15:56:01 GMT+0800">
+	
+		    8月 30, 2020
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/slots/">slots</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>NodeJS 的 ws 综合表现最好，latency ~7ms 左右，轻松上到 5000 个 client 连接，TypeScript 的成熟同样给程序的编写提供了保障，同时也能利用弱类型语言本身的便利进行快速开发。</p>
+<h2 id="测试指标"><a href="#测试指标" class="headerlink" title="测试指标"></a>测试指标</h2><p>给定一定 clients 的数量，在不 drop 任何 client 连接的前提下：</p>
+<ul>
+<li>单机服务器每秒能发送多少消息</li>
+<li>客户端收到消息的延迟是多少 (ms)</li>
+</ul>
+<h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><ul>
+<li><p>Host</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MacBook Pro (<span class="number">13</span>-inch, <span class="number">2020</span>, Four Thunderbolt <span class="number">3</span> ports)</span><br><span class="line"><span class="number">2</span> GHz Quad-Core Intel Core i5</span><br><span class="line"><span class="number">16</span> GB <span class="number">3733</span> MHz LPDDR4X</span><br><span class="line">Intel Iris Plus Graphics <span class="number">1536</span> MB</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5000个node client连接，每个client每500ms发一次小时到服务器</p>
+</li>
+</ul>
+<h2 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h2><h3 id="nodejs-ws"><a href="#nodejs-ws" class="headerlink" title="nodejs ws"></a>nodejs ws</h3><p>Server: </p>
+<ul>
+<li>CPU 100%</li>
+<li>completed in seconds</li>
+<li>send message to client per 50ms</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">1522</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">13406.5</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">2731</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">41965.01749125437</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3618</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">62558.603491271824</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">4221</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">75828.58570714643</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">4572</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">80643.14115308151</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">4844</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">86410.76769690926</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">89313.71571072319</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">91170.90184354757</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">72340.14598540145</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">82267.92828685259</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">88514.94023904382</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">87901.93164933135</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">88450.0998003992</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">89606.9825436409</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">84441.67497507477</span></span><br></pre></td></tr></table></figure>
+<p>Client (via NodeJS):</p>
+<ul>
+<li>CPU: 100%</li>
+</ul>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">TPS: <span class="number">9828.009828009828</span></span><br><span class="line">Average latency: <span class="number">9.525885550821567</span> ms</span><br><span class="line">TPS: <span class="number">9893.44672336168</span></span><br><span class="line">Average latency: <span class="number">5.686742775410783</span> ms</span><br><span class="line">TPS: <span class="number">9980.49024512256</span></span><br><span class="line">Average latency: <span class="number">3.5819713877053916</span> ms</span><br><span class="line">TPS: <span class="number">9539.269634817409</span></span><br><span class="line">Average latency: <span class="number">2.258685693852696</span> ms</span><br><span class="line">TPS: <span class="number">9990.009990009989</span></span><br><span class="line">Average latency: <span class="number">1.637942846926348</span> ms</span><br><span class="line">TPS: <span class="number">7245.835026412028</span></span><br><span class="line">Average latency: <span class="number">14.647771423463173</span> ms</span><br><span class="line">TPS: <span class="number">10005.002501250625</span></span><br><span class="line">Average latency: <span class="number">7.350285711731586</span> ms</span><br><span class="line">TPS: <span class="number">10005.002501250625</span></span><br><span class="line">Average latency: <span class="number">3.697042855865793</span> ms</span><br></pre></td></tr></table></figure>
+<h3 id="Java-Vert-X-v3-9-2"><a href="#Java-Vert-X-v3-9-2" class="headerlink" title="Java Vert.X v3.9.2"></a>Java Vert.X v3.9.2</h3><p>Server: </p>
+<ul>
+<li>CPU 130%</li>
+<li>send message to client per <code>100ms</code> (as 50ms it makes my computer die)</li>
+<li>takes more than 3mins (each log is under 2 seconds interval), dropped then</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">377</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">874.1887169246131</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">993</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">5707.730673316708</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">1769</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">13499.750374438343</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">2593</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">21835.164835164836</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3003</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">27957.04295704296</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3008</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">28956.54345654346</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3166</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">30418.6626746507</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3263</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">31657.51372940589</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3453</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">33087.86819770344</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3543</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">34520.718921617576</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3620</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">35061.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3656</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">35845.30938123753</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3678</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36177.41129435282</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3707</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36575.5</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3730</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36724.637681159424</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3749</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36628.18590704648</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3769</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">35519.96007984032</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3789</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">37355.322338830585</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3807</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36828.67132867133</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3823</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36764.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3840</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">37955.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3859</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38223.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3878</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">37930.5</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3889</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38040.979510244884</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3902</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38278.582126809786</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3907</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38161.5</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3911</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38794.10294852574</span> // <span class="built_in">line</span> <span class="number">34</span></span><br><span class="line">...</span><br><span class="line">client<span class="variable">s:</span> <span class="number">3951</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">37222.27772227772</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3952</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38845.23215177235</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3952</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">37233.033932135724</span> //<span class="built_in">line</span> <span class="number">78</span></span><br></pre></td></tr></table></figure>
+<p>Client (via NodeJS):</p>
+<ul>
+<li>CPU: 151%</li>
+</ul>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">TPS: <span class="number">9055.944055944055</span></span><br><span class="line">Average latency: <span class="number">33895.241751952984</span> ms</span><br><span class="line">TPS: <span class="number">9043.5</span></span><br><span class="line">Average latency: <span class="number">34512.603531743174</span> ms</span><br><span class="line">TPS: <span class="number">9054.5</span></span><br><span class="line">Average latency: <span class="number">35110.37179017024</span> ms</span><br><span class="line">TPS: <span class="number">9053.5</span></span><br><span class="line">Average latency: <span class="number">35783.786292699435</span> ms</span><br><span class="line">TPS: <span class="number">9056</span></span><br><span class="line">Average latency: <span class="number">36455.58598929206</span> ms</span><br><span class="line">TPS: <span class="number">9058</span></span><br><span class="line">Average latency: <span class="number">37053.6221686743</span> ms</span><br><span class="line">TPS: <span class="number">9058</span></span><br><span class="line">Average latency: <span class="number">37630.76835023821</span> ms</span><br><span class="line">TPS: <span class="number">9059.5</span></span><br><span class="line">Average latency: <span class="number">38157.07903049557</span> ms</span><br></pre></td></tr></table></figure>
+<h3 id="socket-io"><a href="#socket-io" class="headerlink" title="socket.io"></a>socket.io</h3><p><strong>node cpu: &gt;120%, die after 20s</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">clients:</span> <span class="number">200</span>, tx/<span class="string">second:</span> <span class="number">3160.2962255136167</span></span><br><span class="line"><span class="string">clients:</span> <span class="number">200</span>, tx/<span class="string">second:</span> <span class="number">2765.8108500145054</span></span><br><span class="line"><span class="string">clients:</span> <span class="number">200</span>, tx/<span class="string">second:</span> <span class="number">4459.919839679359</span></span><br></pre></td></tr></table></figure>
+<h3 id="uwebsocket"><a href="#uwebsocket" class="headerlink" title="uwebsocket"></a>uwebsocket</h3><p>node cpu: 100%</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">clients:</span> <span class="number">200</span>, tx/<span class="string">second:</span> <span class="number">7340</span></span><br><span class="line"><span class="string">clients:</span> <span class="number">400</span>, tx/<span class="string">second:</span> <span class="number">10720</span></span><br><span class="line"><span class="string">clients:</span> <span class="number">400</span>, tx/<span class="string">second:</span> <span class="number">8712.28771228771</span></span><br><span class="line"><span class="string">clients:</span> <span class="number">400</span>, tx/<span class="string">second:</span> <span class="number">7911.08891108891</span></span><br></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><ul>
+<li><a href="https://colobu.com/2015/07/14/performance-comparison-of-7-websocket-frameworks/" target="_blank" rel="noopener">https://colobu.com/2015/07/14/performance-comparison-of-7-websocket-frameworks/</a></li>
+<li><a href="https://www.jianshu.com/p/1edea2f6fd4d" target="_blank" rel="noopener">https://www.jianshu.com/p/1edea2f6fd4d</a></li>
+<li><a href="https://blog.jayway.com/2015/04/13/600k-concurrent-websocket-connections-on-aws-using-node-js/" target="_blank" rel="noopener">https://blog.jayway.com/2015/04/13/600k-concurrent-websocket-connections-on-aws-using-node-js/</a></li>
+<li><a href="https://nodejs.org/api/cli.html#cli_max_old_space_size_size_in_megabytes" target="_blank" rel="noopener">https://nodejs.org/api/cli.html#cli_max_old_space_size_size_in_megabytes</a></li>
+</ul>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/websocket/">websocket</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2020/09/17/windows-koltin-error-intellij-2020-2/" data-tooltip="Unable to load class ...kotlin.noarg|...KaptGradleModel">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2020/07/26/React-Posts-Collections/" data-tooltip="React/Typescript 文章集合">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2020/08/30/websocket-benchmark/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2020/08/30/websocket-benchmark/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2020/08/30/websocket-benchmark/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                </div>
+                <div class="slave">
+                    <aside id="sidebar">
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="widget-list category-list"><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Blockchain/">Blockchain</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/CSS/">CSS</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Canvas/">Canvas</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Competition/">Competition</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Flink/">Flink</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/FrontEnd/">FrontEnd</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Hexo/">Hexo</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Icon/">Icon</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="widget-list category-list-count">4</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LEMP/">LEMP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LISP/">LISP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Linux/">Linux</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Mac/">Mac</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/MySQL/">MySQL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/NS2/">NS2</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/PHP/">PHP</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Regex/">Regex</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Ruby/">Ruby</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/SSL/">SSL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Slots/">Slots</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Swift/">Swift</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/blockchain/">blockchain</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/iOS/">iOS</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/network/">network</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/slots/">slots</a><span class="widget-list category-list-count">26</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/ssh/">ssh</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/webpack/">webpack</a><span class="widget-list category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="widget-list tag-list"><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Blockchain/">Blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CMS/">CMS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CSS/">CSS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Canvas/">Canvas</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Competition/">Competition</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Design/">Design</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ES6/">ES6</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/El-Capitan/">El Capitan</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FTP/">FTP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Fabric/">Fabric</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Flink/">Flink</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FrontEnd/">FrontEnd</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Icon/">Icon</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/KMean/">KMean</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Karma/">Karma</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LEMP/">LEMP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Linux/">Linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LiveReload/">LiveReload</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Mac/">Mac</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NS2/">NS2</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/PHP/">PHP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ProFTPD/">ProFTPD</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/React/">React</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Redux/">Redux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Regex/">Regex</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/SSL/">SSL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Sass/">Sass</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Slots/">Slots</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Swift/">Swift</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Test/">Test</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Translation/">Translation</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Webpack/">Webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/XCode/">XCode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/blockchain/">blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/datetime/">datetime</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/debian/">debian</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/frontend/">frontend</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/hyperledger/">hyperledger</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/iOS/">iOS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/lede/">lede</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/life/">life</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/linux/">linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/mysql/">mysql</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/network/">network</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/nginx/">nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/php/">php</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/remote-login/">remote login</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ssh/">ssh</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/webpack/">webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/websocket/">websocket</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘CocoaPods’/">‘CocoaPods’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘Realm’/">‘Realm’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘XCode’/">‘XCode’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘iOS’/">‘iOS’</a></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recent_posts</h3>
+    <div class="widget">
+      <ul class="widget-list post-list">
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/crazy-and-stupid-ideas/">crazy and stupid ideas</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/redux-router与react-router-rdeux的不同/">redux-router与react-router-rdeux的不同</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/Install-PHP-7/">Install PHP 7</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/04/11/StreamSerialzier-and-Portable-in-Hazelcast-Jet/">Serialization in Stream Processing: StreamSerializer and Portable in Hazelcast Jet</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/02/24/life-in-a-day-2020/">Life in a day 2020</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+</aside>
+
+                </div>
+            </div>
+            <footer id="footer">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2020/08/30/websocket-benchmark/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2020/08/30/websocket-benchmark/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2020/08/30/websocket-benchmark/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png">
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>

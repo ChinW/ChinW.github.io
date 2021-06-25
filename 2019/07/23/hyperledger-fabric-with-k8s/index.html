@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Consiiii">
+    <title>hyperledger fabric with k8s - Consiiii</title>
+    <meta name="author" content="Consiiii">
+    
+        <link rel="icon" href="/assets/images/favicon.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="Download fabric toolsdocker pull hyperledger/fabric-tools:1.2.1docker pull hyperledger/fabric-couchdb:0.4.10docker pull hyperledger/fabric-orderer:1.4.0docker pull hyperledger/fabric-peer:1.4.0docker">
+<meta name="keywords" content="blockchain,hyperledger">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="hyperledger fabric with k8s">
+<meta property="og:url" content="http://consiiii.me/2019/07/23/hyperledger-fabric-with-k8s/index.html">
+<meta property="og:site_name" content="Consiiii">
+<meta property="og:description" content="Download fabric toolsdocker pull hyperledger/fabric-tools:1.2.1docker pull hyperledger/fabric-couchdb:0.4.10docker pull hyperledger/fabric-orderer:1.4.0docker pull hyperledger/fabric-peer:1.4.0docker">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-06-25T15:14:59.630Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hyperledger fabric with k8s">
+<meta name="twitter:description" content="Download fabric toolsdocker pull hyperledger/fabric-tools:1.2.1docker pull hyperledger/fabric-couchdb:0.4.10docker pull hyperledger/fabric-orderer:1.4.0docker pull hyperledger/fabric-peer:1.4.0docker">
+<meta name="twitter:creator" content="@Consiiiix">
+    
+        <meta rel="publisher" content="https://plus.google.com/103942175678827400000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/headicon.png"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-77216401-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-menu" class="fa fa-lg fa-bars"></i>
+    <!--<h1 class="header-title">-->
+        <!--<a class="header-title-link" href="/ ">Consiiii</a>-->
+    <!--</h1>-->
+    
+    <ul class="header-section">
+        
+        <li class="header-item">
+            
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+        </li>
+        
+        <li class="header-item">
+            
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="header-section">
+        
+    </ul>
+    
+    
+        <a class="header-right-picture" href="/about">
+            <img class="header-picture" src="/assets/images/headicon.png">
+        </a>
+    
+</header>
+<section class="dialog hide" id="menu-dialog">
+    <div class="dialog-header">
+        CHECK MORE
+    </div>
+    <div class="dialog-content">
+        
+        <ul class="list">
+            
+            <li class="item">
+                
+                <a class=" " href="/ ">
+                    
+                    HOME
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-categories">
+                    
+                    CATEGORIES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/all-archives">
+                    
+                    ARCHIVES
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/project">
+                    
+                    PROJECT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/about">
+                    
+                    ABOUT
+                </a>
+            </li>
+            
+            <li class="item">
+                
+                <a class=" " href="/links">
+                    
+                    LINKS
+                </a>
+            </li>
+            
+        </ul>
+        
+        <ul class="list">
+            
+        </ul>
+        
+    </div>
+    <div class="dialog-footer">
+        <a class="btn btn--default no-shadow" id="cancel-menu-btn">CANCEL</a>
+    </div>
+</section>
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                <div class="master">
+                    
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            hyperledger fabric with k8s
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Tue Jul 23 2019 22:20:40 GMT+0800">
+	
+		    7月 23, 2019
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/blockchain/">blockchain</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h1 id="Download-fabric-tools"><a href="#Download-fabric-tools" class="headerlink" title="Download fabric tools"></a>Download fabric tools</h1><p>docker pull hyperledger/fabric-tools:1.2.1<br>docker pull hyperledger/fabric-couchdb:0.4.10<br>docker pull hyperledger/fabric-orderer:1.4.0<br>docker pull hyperledger/fabric-peer:1.4.0<br>docker pull hyperledger/fabric-ca:1.4.0</p>
+<h1 id="create-couchdb"><a href="#create-couchdb" class="headerlink" title="create couchdb"></a>create couchdb</h1><p>listen: 5984, 30005<br>srv: 10.98.81.63<br>ip: 172.17.0.4</p>
+<h1 id="create-CA"><a href="#create-CA" class="headerlink" title="create CA"></a>create CA</h1><p>listen: 7054<br>srv: 10.111.251.3<br>ip: 172.17.0.7</p>
+<h1 id="create-orderer"><a href="#create-orderer" class="headerlink" title="create orderer"></a>create orderer</h1><p>listen:<br>srv: 10.98.135.207<br>ip: 172.17.0.8</p>
+<h1 id="create-peer-depend-on-CA-orderer"><a href="#create-peer-depend-on-CA-orderer" class="headerlink" title="create peer (depend on CA + orderer)"></a>create peer (depend on CA + orderer)</h1><p>listen: 7051, 7052, 7053<br>srv: 10.106.27.9</p>
+<h1 id="Create-channel"><a href="#Create-channel" class="headerlink" title="Create channel"></a>Create channel</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">CORE_PEER_MSPCONFIGPATH</span>=/opt/gopath/src/github.com/chaincode/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CORE_PEER_LOCALMSPID</span>=<span class="string">"Org1MSP"</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CHANNEL_NAME</span>=composerchannel</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CORE_PEER_NETWORKID</span>=<span class="string">"nid1"</span></span><br><span class="line">peer channel create -o orderer.example.com:7050 -c composerchannel -f ./composer-channel.tx</span><br><span class="line"></span><br><span class="line">peer channel fetch newest -o orderer.example.com:7050 -c composerchannel</span><br><span class="line"></span><br><span class="line">peer channel join -b composerchannel.block</span><br><span class="line"><span class="comment"># peer channel create -o orderer.example.com:7050 -c mychannel -f ./composer-channel.tx</span></span><br></pre></td></tr></table></figure>
+<h1 id="Join-Channel"><a href="#Join-Channel" class="headerlink" title="Join Channel"></a>Join Channel</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#join channel</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CORE_PEER_MSPCONFIGPATH</span>=/opt/gopath/src/github.com/chaincode/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CHANNEL_NAME</span>=composerchannel</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CORE_PEER_LOCALMSPID</span>=<span class="string">"Org1MSP"</span> #this matters</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CORE_PEER_MSPID</span>=<span class="string">"Org1MSP"</span></span><br><span class="line"></span><br><span class="line">peer channel fetch newest -o orderer.example.com:7050 -c <span class="variable">$&#123;CHANNEL_NAME&#125;</span></span><br><span class="line">peer channel join -b <span class="variable">$&#123;CHANNEL_NAME&#125;</span>_newest.block</span><br></pre></td></tr></table></figure>
+<h1 id="Install-chaincode"><a href="#Install-chaincode" class="headerlink" title="Install chaincode"></a>Install chaincode</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cp -r chaincode_example02/ <span class="variable">$GOPATH</span>/src</span><br><span class="line"></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CHAINCODE_NAME</span>=<span class="string">"exam2_1"</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CHAINCODE_VERSION</span>=<span class="string">"2.0"</span></span><br><span class="line"></span><br><span class="line">peer chaincode install -n <span class="variable">$&#123;CHAINCODE_NAME&#125;</span> -v <span class="variable">$&#123;CHAINCODE_VERSION&#125;</span> -p chaincode_example02/</span><br></pre></td></tr></table></figure>
+<h1 id="Instantiate-Chaincode"><a href="#Instantiate-Chaincode" class="headerlink" title="Instantiate Chaincode"></a>Instantiate Chaincode</h1><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> ORDERER_URL=orderer.example.com:<span class="number">7050</span></span><br><span class="line"><span class="keyword">export</span> CHANNEL_NAME=composerchannel</span><br><span class="line"></span><br><span class="line">peer chaincode instantiate -o <span class="variable">$&#123;ORDERER_URL&#125;</span> -C <span class="variable">$&#123;CHANNEL_NAME&#125;</span> -n <span class="variable">$&#123;CHAINCODE_NAME&#125;</span> -v <span class="variable">$&#123;CHAINCODE_VERSION&#125;</span> -P <span class="string">"AND('Org1MSP.member')"</span> -c '&#123;<span class="string">"Args"</span>:[<span class="string">"init"</span>,<span class="string">"a"</span>,<span class="string">"400"</span>,<span class="string">"b"</span>,<span class="string">"300"</span>]&#125;'</span><br></pre></td></tr></table></figure>
+<h1 id="Query"><a href="#Query" class="headerlink" title="Query"></a>Query</h1><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">peer chaincode invoke --peerAddresses peer0.org1.example.com:7051 -o <span class="variable">$&#123;ORDERER_URL&#125;</span> -C <span class="variable">$&#123;CHANNEL_NAME&#125;</span> -<span class="keyword">n</span> <span class="variable">$&#123;CHAINCODE_NAME&#125;</span> -c '&#123;<span class="string">"Args"</span>:[<span class="string">"invoke"</span>,<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"50"</span>]&#125;'</span><br><span class="line"></span><br><span class="line">peer chaincode invoke -C <span class="variable">$&#123;CHANNEL_NAME&#125;</span> -<span class="keyword">n</span> <span class="variable">$&#123;CHAINCODE_NAME&#125;</span> -c '&#123;<span class="string">"Args"</span>:[<span class="string">"invoke"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>,<span class="string">"50"</span>]&#125;'</span><br><span class="line"></span><br><span class="line">peer chaincode <span class="keyword">query</span> -C <span class="variable">$&#123;CHANNEL_NAME&#125;</span> -<span class="keyword">n</span> <span class="variable">$&#123;CHAINCODE_NAME&#125;</span> -c '&#123;<span class="string">"Args"</span>:[<span class="string">"query"</span>,<span class="string">"a"</span>]&#125;'</span><br></pre></td></tr></table></figure>
+<h1 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h1><ol>
+<li><p>NodeJS chaincode shim<br><a href="https://fabric-shim.github.io/release-1.4/fabric-shim.ChaincodeInterface.html?redirect=true" target="_blank" rel="noopener">https://fabric-shim.github.io/release-1.4/fabric-shim.ChaincodeInterface.html?redirect=true</a></p>
+</li>
+<li><p><a href="https://jicki.me/fabric,kubernetes/2019/01/21/hyperledger-fabric-1.4-to-k8s/" target="_blank" rel="noopener">https://jicki.me/fabric,kubernetes/2019/01/21/hyperledger-fabric-1.4-to-k8s/</a></p>
+</li>
+<li><a href="https://opensource.com/article/18/4/deploying-hyperledger-fabric-kubernetes" target="_blank" rel="noopener">https://opensource.com/article/18/4/deploying-hyperledger-fabric-kubernetes</a></li>
+<li><a href="https://github.com/hainingzhang/articles" target="_blank" rel="noopener">https://github.com/hainingzhang/articles</a></li>
+<li><a href="http://www.think-foundry.com/deploy-hyperledger-fabric-on-kubernetes-part-2/" target="_blank" rel="noopener">http://www.think-foundry.com/deploy-hyperledger-fabric-on-kubernetes-part-2/</a></li>
+<li><a href="https://github.com/feitnomore/hyperledger-fabric-kubernetes" target="_blank" rel="noopener">https://github.com/feitnomore/hyperledger-fabric-kubernetes</a></li>
+<li><a href="https://www.lijiaocn.com/问题/2018/04/25/hyperledger-fabric-problem.html#创建channel时失败failed-to-reach-implicit-threshold-of-1-sub-policies-required-1-remaining" target="_blank" rel="noopener">https://www.lijiaocn.com/问题/2018/04/25/hyperledger-fabric-problem.html#创建channel时失败failed-to-reach-implicit-threshold-of-1-sub-policies-required-1-remaining</a></li>
+<li>using dev mode<br><a href="https://hyperledger-fabric.readthedocs.io/en/release-1.4/peer-chaincode-devmode.html" target="_blank" rel="noopener">https://hyperledger-fabric.readthedocs.io/en/release-1.4/peer-chaincode-devmode.html</a></li>
+</ol>
+<h1 id="utils"><a href="#utils" class="headerlink" title="utils"></a>utils</h1><h2 id="install-ping"><a href="#install-ping" class="headerlink" title="install ping"></a>install ping</h2><p>apt-get update &amp;&amp; apt-get install -y iputils-ping</p>
+<h2 id="commit-images"><a href="#commit-images" class="headerlink" title="commit images"></a>commit images</h2><p>docker commit -a “chiban” -m “add ping” 21758ff79079 hyperledger/fabric-tools:1.2.1-c</p>
+<h2 id="if-port-is-open"><a href="#if-port-is-open" class="headerlink" title="if port is open?"></a>if port is open?</h2><p>cat &lt;/dev/tcp/peer0.org1.example.com/7052</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/blockchain/">blockchain</a> <a class="tag tag--primary tag--small t-link" href="/tags/hyperledger/">hyperledger</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/19/a-future-without-webpack/" data-tooltip="一个不需要webpack的未来">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/07/09/about-these-days/" data-tooltip="关于最近">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2019/07/23/hyperledger-fabric-with-k8s/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2019/07/23/hyperledger-fabric-with-k8s/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2019/07/23/hyperledger-fabric-with-k8s/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                </div>
+                <div class="slave">
+                    <aside id="sidebar">
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="widget-list category-list"><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Blockchain/">Blockchain</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/CSS/">CSS</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Canvas/">Canvas</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Competition/">Competition</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Flink/">Flink</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/FrontEnd/">FrontEnd</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Hexo/">Hexo</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Icon/">Icon</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="widget-list category-list-count">4</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LEMP/">LEMP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/LISP/">LISP</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Linux/">Linux</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Mac/">Mac</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/MySQL/">MySQL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/NS2/">NS2</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/PHP/">PHP</a><span class="widget-list category-list-count">3</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Regex/">Regex</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Ruby/">Ruby</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/SSL/">SSL</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Slots/">Slots</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/Swift/">Swift</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/blockchain/">blockchain</a><span class="widget-list category-list-count">2</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/iOS/">iOS</a><span class="widget-list category-list-count">5</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/network/">network</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/slots/">slots</a><span class="widget-list category-list-count">26</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/ssh/">ssh</a><span class="widget-list category-list-count">1</span></li><li class="widget-list category-list-item"><a class="widget-list category-list-link" href="/categories/webpack/">webpack</a><span class="widget-list category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="widget-list tag-list"><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Blockchain/">Blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CMS/">CMS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CSS/">CSS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Canvas/">Canvas</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Competition/">Competition</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Design/">Design</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ES6/">ES6</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/El-Capitan/">El Capitan</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FTP/">FTP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Fabric/">Fabric</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Flink/">Flink</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FrontEnd/">FrontEnd</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Icon/">Icon</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/KMean/">KMean</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Karma/">Karma</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LEMP/">LEMP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Linux/">Linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LiveReload/">LiveReload</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Mac/">Mac</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NS2/">NS2</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/PHP/">PHP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ProFTPD/">ProFTPD</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/React/">React</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Redux/">Redux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Regex/">Regex</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/SSL/">SSL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Sass/">Sass</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Slots/">Slots</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Swift/">Swift</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Test/">Test</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Translation/">Translation</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Webpack/">Webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/XCode/">XCode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/blockchain/">blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/datetime/">datetime</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/debian/">debian</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/frontend/">frontend</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/hyperledger/">hyperledger</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/iOS/">iOS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/lede/">lede</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/life/">life</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/linux/">linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/mysql/">mysql</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/network/">network</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/nginx/">nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/php/">php</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/remote-login/">remote login</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ssh/">ssh</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/webpack/">webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/websocket/">websocket</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘CocoaPods’/">‘CocoaPods’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘Realm’/">‘Realm’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘XCode’/">‘XCode’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘iOS’/">‘iOS’</a></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recent_posts</h3>
+    <div class="widget">
+      <ul class="widget-list post-list">
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/crazy-and-stupid-ideas/">crazy and stupid ideas</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/redux-router与react-router-rdeux的不同/">redux-router与react-router-rdeux的不同</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/Install-PHP-7/">Install PHP 7</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/04/11/StreamSerialzier-and-Portable-in-Hazelcast-Jet/">Serialization in Stream Processing: StreamSerializer and Portable in Hazelcast Jet</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/02/24/life-in-a-day-2020/">Life in a day 2020</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+</aside>
+
+                </div>
+            </div>
+            <footer id="footer">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://consiiii.me/2019/07/23/hyperledger-fabric-with-k8s/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://consiiii.me/2019/07/23/hyperledger-fabric-with-k8s/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://consiiii.me/2019/07/23/hyperledger-fabric-with-k8s/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png">
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'consiiiix';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+
+</html>

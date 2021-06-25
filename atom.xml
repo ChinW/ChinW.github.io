@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Consiiii</title>
+  
+  <subtitle>DISCO</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://consiiii.me/"/>
+  <updated>2021-06-25T15:24:07.330Z</updated>
+  <id>http://consiiii.me/</id>
+  
+  <author>
+    <name>Consiiii</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>crazy and stupid ideas</title>
+    <link href="http://consiiii.me/2021/06/25/crazy-and-stupid-ideas/"/>
+    <id>http://consiiii.me/2021/06/25/crazy-and-stupid-ideas/</id>
+    <published>2021-06-25T15:17:02.000Z</published>
+    <updated>2021-06-25T15:24:07.330Z</updated>
+    
+    <content type="html"><![CDATA[<p>洗澡的时候想到的一个场景，就是在那种给别人分享自己的新点子的时候，自己认为这个计划很疯狂，但是别人的表情却看起来有些黯淡，</p><p>你怀疑Ta是不是不懂什么是”Crazy Ideas“，大声地告诉Ta什么创新都是来自于”Crazy Ideas”</p><p>Ta说“我不是不接受疯狂的点子，只是觉得你的点子蠢罢了“，所以疯狂和愚蠢还是相近的</p><p>那么不被人理解也就顺理成章了，why should I care??</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;洗澡的时候想到的一个场景，就是在那种给别人分享自己的新点子的时候，自己认为这个计划很疯狂，但是别人的表情却看起来有些黯淡，&lt;/p&gt;
+&lt;p&gt;你怀疑Ta是不是不懂什么是”Crazy Ideas“，大声地告诉Ta什么创新都是来自于”Crazy Ideas”&lt;/p&gt;
+&lt;p&gt;Ta说“
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>redux-router与react-router-rdeux的不同</title>
+    <link href="http://consiiii.me/2021/06/25/redux-router%E4%B8%8Ereact-router-rdeux%E7%9A%84%E4%B8%8D%E5%90%8C/"/>
+    <id>http://consiiii.me/2021/06/25/redux-router与react-router-rdeux的不同/</id>
+    <published>2021-06-25T15:14:59.630Z</published>
+    <updated>2021-06-25T15:14:59.630Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>此文仅是<a href="https://github.com/acdlite/redux-router" target="_blank" rel="noopener">redux-router</a>页面上的部分翻译</strong></p><h2 id="react-router-redux"><a href="#react-router-redux" class="headerlink" title="react-router-redux"></a>react-router-redux</h2><p>react-router-redux(之前称为redux-simple-router)使用了一个不一样的方式去集成路由。react-router-redux让React Router去做所有沉重的任务，并同步url中的数据到store的history <a href="https://github.com/mjackson/history/blob/master/docs/Location.md#location" target="_blank" rel="noopener">location</a>对象里。这代表着用户可以直接使用React Router的API，并从这一堆<a href="https://github.com/acdlite/redux-router" target="_blank" rel="noopener">文档和例子</a>中获益。</p><p>react-router-redux的README中有一个非常有用的示意图，如下：</p><p><strong><a href="https://github.com/reactjs/redux" target="_blank" rel="noopener">redux</a> (store.routing)  ↔  <a href="https://github.com/reactjs/react-router-redux" target="_blank" rel="noopener">react-router-redux</a>  ↔  <a href="https://github.com/reactjs/history" target="_blank" rel="noopener">history</a> (history.location)  ↔  <a href="https://github.com/reactjs/react-router" target="_blank" rel="noopener">react-router</a></strong></p><p>这种方式易于理解，但有些一些需要注意的地方：</p><ol><li><p>history location对象不包含React Router的参数，它们必须被React Router组件向下传递，或被重新计算。(The history location object does not include React Router params and they must be either passed down from a React Router component or recomputed.)</p></li><li><p><strong>不鼓励（危险）</strong>将store中的数据连接到组件里，因为store中的数据在React Router的属性改变后，有潜在的更新可能性， 因此当location store data与向下传递而来的location对象(从React Router到组件）不同时，这就出现了一个互相竞争的场景。</p></li></ol><p>react-router-redux 鼓励用户在React Router中的component中直接使用props（props会向下传递到任何被渲染的component中）。 这意味着如果您想要从comonpent tree中获取location data， 您可能需要将它向下传递，亦或使用React的Context特性。</p><h2 id="redux-router"><a href="#redux-router" class="headerlink" title="redux-router"></a>redux-router</h2><p>这个项目从一方面来说，使用的方法是将<strong>完整的</strong>React Router数据存储在Redux Store中。这样做的主要好处是: 被redux-router向下传递到路由中的组件的props, 允许和存储在store中的数据不同。 因此可连接router的数据到任何您想要的component中。 您还可以直接从store中获取路由的参数。 redux-router也提供了一个API来应对从Router（React Router现在并没有提供这个东西）中进行热交换路由。</p><p>关于redux-router的示意图如下：</p><p><strong><a href="https://github.com/reactjs/redux" target="_blank" rel="noopener">redux</a> (store.routing)</strong> ↔ <a href="https://github.com/acdlite/redux-router" target="_blank" rel="noopener">redux-router</a>  ↔  <a href="https://github.com/reactjs/react-router" target="_blank" rel="noopener">react-router (via RouterContext)</a></p><p>这种方式同时也有一些限制：</p><ol><li>路由数据不全是可序列化的(serializable)(因为组件和函数不能被直接序列化)，因此对于那些帮助保存store到浏览器session中的开发工具扩展和类库，这可能会造成一些问题。但如果这些类库提供了忽略序列化store部分内容的方法，这样的问题可以被缓和，可是这并非总是可行的。</li><li>redux-router利用了RouterContext的一些好的地方，来继续使用React Router的内部逻辑。 然而，redux-router必须要在自身中实现很多React Router已经有的东西，这会造成在升级路径上的延时。</li><li>redux-router必须提供一个有细微区别的顶层API（因为第2点），即使他们的路由的逻辑/匹配模式可能是相同的。</li></ol><p>最终，您对这些库的选择取决于您和您的项目需求. React-router-redux会继续得到更多的社区支持，因为它已经进入了reactjs github组织，也有了相当的关注度。 对于react-router，和redux的集成， <strong>建议使用react-router-redux</strong>。 然而，您可能也会发现redux-router其实更符合您的项目需求。只要有这样的需求存在，那redux-router就会继续被维护。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;此文仅是&lt;a href=&quot;https://github.com/acdlite/redux-router&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;redux-router&lt;/a&gt;页面上的部分翻译&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id
+      
+    
+    </summary>
+    
+    
+      <category term="Translation" scheme="http://consiiii.me/tags/Translation/"/>
+    
+      <category term="Redux" scheme="http://consiiii.me/tags/Redux/"/>
+    
+      <category term="React" scheme="http://consiiii.me/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Install PHP 7</title>
+    <link href="http://consiiii.me/2021/06/25/Install-PHP-7/"/>
+    <id>http://consiiii.me/2021/06/25/Install-PHP-7/</id>
+    <published>2021-06-25T15:14:59.625Z</published>
+    <updated>2021-06-25T15:14:59.625Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><h4 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h4><p>Test OS: Ubuntu 15.10</p><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get install software-properties-common</span><br><span class="line">add-apt-repository ppa:ondrej/php</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install php7.0 -y --force-yes</span><br></pre></td></tr></table></figure><h4 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h4><p>Test OS: Debian 8 x64 (jessie) </p><p><strong>Edit <code>/etc/apt/sources.list</code></strong>, replacing <code>&lt;distribution&gt;</code> with either <code>sequeeze</code>, <code>wheezy</code>, <code>jessie</code>.</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">deb</span> http://packages.dotdeb.org <span class="symbol">&lt;distribution&gt;</span> <span class="keyword">all</span></span><br><span class="line"><span class="keyword">deb</span>-src http://packages.dotdeb.org <span class="symbol">&lt;distribution&gt;</span> <span class="keyword">all</span></span><br></pre></td></tr></table></figure><p>Add the GPG key:</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#download gpg</span></span><br><span class="line">wget https://www.dotdeb.org/dotdeb.gpg </span><br><span class="line"><span class="comment">#when you added it, you can delete it as you like </span></span><br><span class="line">sudo apt-key <span class="keyword">add</span><span class="bash"> dotdeb.gpg</span></span><br></pre></td></tr></table></figure><p>Install:</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install php7.0</span><br></pre></td></tr></table></figure><p>PS: If you meet some problems when you excute <code>apt-get update</code>, you may need to check <code>/etc/apt/sources.list</code>.</p><h2 id="Check"><a href="#Check" class="headerlink" title="Check"></a>Check</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@Ubuntu:~# php -v</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PHP 7.0.6-13+donate.sury.org~wily+1 (cli) ( NTS )</span><br><span class="line">Copyright (c) 1997-2016 The PHP Group</span><br><span class="line">Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies</span><br><span class="line">    with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies</span><br></pre></td></tr></table></figure><h2 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">root@Ubuntu:~# apt-cache search php7-*</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">php-radius -<span class="built_in"> radius client </span>library <span class="keyword">for</span> PHP</span><br><span class="line">php-http - PECL HTTP module <span class="keyword">for</span> PHP Extended HTTP Support</span><br><span class="line">php-uploadprogress - file upload progress<span class="built_in"> tracking </span>extension <span class="keyword">for</span> PHP</span><br><span class="line">php-mongodb - MongoDB driver <span class="keyword">for</span> PHP</span><br><span class="line">php7.0-common - documentation, examples <span class="keyword">and</span> common module <span class="keyword">for</span> PHP</span><br><span class="line">libapache2-mod-php7.0 - server-side, HTML-embedded scripting language (Apache 2 module)</span><br><span class="line">php7.0-cgi - server-side, HTML-embedded scripting language (CGI binary)</span><br><span class="line">php7.0-cli - command-line interpreter <span class="keyword">for</span> the PHP scripting language</span><br><span class="line">php7.0-phpdbg - server-side, HTML-embedded scripting language (PHPDBG binary)</span><br><span class="line">php7.0-fpm - server-side, HTML-embedded scripting language (FPM-CGI binary)</span><br><span class="line">libphp7.0-embed - HTML-embedded scripting language (Embedded SAPI library)</span><br><span class="line">php7.0-dev - Files <span class="keyword">for</span> PHP7.0 module development</span><br><span class="line">php7.0-curl - CURL module <span class="keyword">for</span> PHP</span><br><span class="line">php7.0-enchant - Enchant module <span class="keyword">for</span> PHP</span><br><span class="line">php7.0-gd - GD module <span class="keyword">for</span> PHP</span><br><span class="line"><span class="built_in">..</span>.</span><br></pre></td></tr></table></figure><p>Install specific modules with command below:</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">apt-get</span> <span class="selector-tag">install</span> <span class="selector-tag">php7</span><span class="selector-class">.0-mysql</span> <span class="selector-tag">php7</span><span class="selector-class">.0-curl</span></span><br></pre></td></tr></table></figure><h2 id="PHP-FPM-amp-Nginx"><a href="#PHP-FPM-amp-Nginx" class="headerlink" title="PHP-FPM &amp; Nginx"></a>PHP-FPM &amp; Nginx</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> install nginx</span><br><span class="line">apt-<span class="builtin-name">get</span> install php7.0-fpm</span><br></pre></td></tr></table></figure><p>Edit <code>/etc/nginx/sites-enabled/default</code>, check the configuration below for advisory optinoin purpose.</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        try_files <span class="variable">$uri</span> =404;</span><br><span class="line">        fastcgi_split_path_info ^(.+\.php)(/.+)$;</span><br><span class="line">        fastcgi_pass unix:/<span class="keyword">var</span>/<span class="keyword">run</span>/php/php7.0-fpm.sock;</span><br><span class="line">        fastcgi_index index.php;</span><br><span class="line">        fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">        <span class="keyword">include</span> fastcgi_params;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol><li><a href="http://tecadmin.net/install-php-7-on-ubuntu/" target="_blank" rel="noopener">http://tecadmin.net/install-php-7-on-ubuntu/</a></li><li><a href="https://www.colinodell.com/blog/2015-12/installing-php-7-0-0" target="_blank" rel="noopener">https://www.colinodell.com/blog/2015-12/installing-php-7-0-0</a></li><li><a href="https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-php-7-on-ubuntu-14-04" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-php-7-on-ubuntu-14-04</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h2&gt;&lt;h4 id=&quot;Ubuntu&quot;&gt;&lt;a href=&quot;#Ubuntu&quot; class=&quot;headerlink&quot; 
+      
+    
+    </summary>
+    
+    
+      <category term="PHP" scheme="http://consiiii.me/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Serialization in Stream Processing: StreamSerializer and Portable in Hazelcast Jet</title>
+    <link href="http://consiiii.me/2021/04/11/StreamSerialzier-and-Portable-in-Hazelcast-Jet/"/>
+    <id>http://consiiii.me/2021/04/11/StreamSerialzier-and-Portable-in-Hazelcast-Jet/</id>
+    <published>2021-04-11T06:25:08.000Z</published>
+    <updated>2021-06-25T15:14:59.627Z</updated>
+    
+    <content type="html"><![CDATA[<p>I am running a sample pipeline to test what’s diff between StreamSerializer and Portable, found out the StreamSerializer is not much different than Portable, or say: at quite times it is even slower.</p><p>Checked with Jet’s team, saying the <code>StreamSerializer</code> will make more sense when getting along with <code>protobuf</code> such high performance library. So tried again, use <code>protobuf</code> in <code>StreamSerializer</code>, the result is amazing!</p><h2 id="Pipeline-Cost"><a href="#Pipeline-Cost" class="headerlink" title="Pipeline Cost"></a>Pipeline Cost</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test is running locally, 1 jet node</span></span><br><span class="line"><span class="comment"># the measurement is the pipeline completion time </span></span><br><span class="line"><span class="comment"># with StreamSerializer</span></span><br><span class="line">time cost is 41503ms // just <span class="keyword">start</span> jet</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">34506</span>ms // submit job again, run <span class="number">2</span>nd <span class="built_in">time</span></span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">29617</span>ms // submit job again, run <span class="number">3</span>rd <span class="built_in">time</span></span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">32847</span>ms // submit job again, run <span class="number">4</span>th times</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">37604</span>ms // restart jet, run again</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">31349</span>ms // submit job again</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">32874</span>ms // submit job again</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">32874</span>ms // restart jet, run again</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">39657</span>ms // restart jet, run again</span><br><span class="line"><span class="comment"># with Portable</span></span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">33360</span>ms // just <span class="keyword">start</span> jet</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">31187</span>ms // submit job again</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">34705</span>ms // restart jet</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">30896</span>ms // submit job again</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">31170</span>ms // submit job again</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">32517</span>ms // restart jet</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">30114</span>ms // submit job again</span><br><span class="line"><span class="comment"># with Protobuf</span></span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">8995</span>ms // cold <span class="keyword">start</span> </span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">7715</span>ms</span><br><span class="line"><span class="built_in">time</span> <span class="keyword">cost</span> <span class="keyword">is</span> <span class="number">7398</span>ms</span><br></pre></td></tr></table></figure><p>with StreamSerialzier, I noticed when I put object into the map, it is also touching <code>read</code> function. I am only expecting it will touch <code>write</code> function, the reason is the <code>put</code> function has to return the old value if there is, so will trigger the <code>read</code> fn, can try to use <code>Set&lt;K,V&gt;</code> fn.</p><p>ref. the pipeline is like below</p><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">pipeline.readFrom(Sources.remoteMap&lt;String, Car&gt;(</span><br><span class="line">    Car, <span class="comment">// there are 10k cars</span></span><br><span class="line">    ClusterUtils.getCacheClientConfig()</span><br><span class="line">))</span><br><span class="line">    .flatMap &#123; (key, car) -&gt;</span><br><span class="line">        <span class="keyword">val</span> bomb = MutableList&lt;Tuple2&lt;Client, Car&gt;&gt;(<span class="number">1_000</span>) &#123;</span><br><span class="line">            Tuple2.tuple2(car.client, car)</span><br><span class="line">        &#125;</span><br><span class="line">        Traversers.traverseIterable(</span><br><span class="line">            bomb</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    .map &#123; (client, car) -&gt;</span><br><span class="line">        <span class="comment">// pretend to have some other process</span></span><br><span class="line">        car</span><br><span class="line">    &#125;</span><br><span class="line">    .writeTo(Sinks.remoteMap(</span><br><span class="line">        WareHouse,</span><br><span class="line">        ClusterUtils.getCacheClientConfig(),</span><br><span class="line">        &#123;it.getIdentity()&#125;</span><br><span class="line">    ) &#123;</span><br><span class="line">        it</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure><h2 id="Serialization-Cost"><a href="#Serialization-Cost" class="headerlink" title="Serialization Cost"></a>Serialization Cost</h2><p>Below log shows the time cost about putting different volume data into IMDB:</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 10k items</span></span><br><span class="line">21Apr15 13:51:24.998 INFO  [main] mock-orderA:58 - Portable: <span class="keyword">use</span> putAll() <span class="keyword">to</span> <span class="keyword">save</span> <span class="number">10000</span> items <span class="keyword">in</span> one <span class="keyword">go</span>, <span class="built_in">time</span> <span class="keyword">cost</span>: <span class="number">296</span>_524_370ns</span><br><span class="line">Portable Total: <span class="keyword">create</span> + put <span class="number">10000</span> items, <span class="keyword">cost</span> <span class="number">1</span>_160_117_414ns</span><br><span class="line"><span class="number">21</span>Apr15 <span class="number">13</span>:<span class="number">51</span>:<span class="number">25.187</span> INFO  [<span class="keyword">main</span>] mock-OrderSourceB:<span class="number">72</span> - Protobuf: <span class="keyword">use</span> putAll() <span class="keyword">to</span> <span class="keyword">save</span> <span class="number">10000</span> items <span class="keyword">in</span> one <span class="keyword">go</span>, <span class="built_in">time</span> <span class="keyword">cost</span>: <span class="number">151</span>_668_284ns</span><br><span class="line">Protobuf Total: <span class="keyword">create</span> + put <span class="number">10000</span> items, <span class="keyword">cost</span> <span class="number">185</span>_742_013ns</span><br><span class="line">Protobuf Total/Portabl Total: <span class="number">16.010621921411825</span>%</span><br><span class="line"></span><br><span class="line"><span class="comment">## 100k items</span></span><br><span class="line"><span class="number">21</span>Apr15 <span class="number">13</span>:<span class="number">53</span>:<span class="number">10.267</span> INFO  [<span class="keyword">main</span>] mock-orderA:<span class="number">58</span> - Portable: <span class="keyword">use</span> putAll() <span class="keyword">to</span> <span class="keyword">save</span> <span class="number">100000</span> items <span class="keyword">in</span> one <span class="keyword">go</span>, <span class="built_in">time</span> <span class="keyword">cost</span>: <span class="number">1</span>_394_450_550ns</span><br><span class="line">Portable Total: <span class="keyword">create</span> + put <span class="number">100000</span> items, <span class="keyword">cost</span> <span class="number">2</span>_567_479_807ns</span><br><span class="line"><span class="number">21</span>Apr15 <span class="number">13</span>:<span class="number">53</span>:<span class="number">10.993</span> INFO  [<span class="keyword">main</span>] mock-OrderSourceB:<span class="number">72</span> - Protobuf: <span class="keyword">use</span> putAll() <span class="keyword">to</span> <span class="keyword">save</span> <span class="number">100000</span> items <span class="keyword">in</span> one <span class="keyword">go</span>, <span class="built_in">time</span> <span class="keyword">cost</span>: <span class="number">612</span>_507_310ns</span><br><span class="line">Protobuf Total: <span class="keyword">create</span> + put <span class="number">100000</span> items, <span class="keyword">cost</span> <span class="number">722</span>_944_795ns</span><br><span class="line">Protobuf Total/Portabl Total: <span class="number">28.157759723327008</span>%</span><br><span class="line"></span><br><span class="line"><span class="comment">### 1mn items</span></span><br><span class="line"><span class="number">21</span>Apr15 <span class="number">13</span>:<span class="number">54</span>:<span class="number">06.720</span> INFO  [<span class="keyword">main</span>] mock-orderA:<span class="number">58</span> - Portable: <span class="keyword">use</span> putAll() <span class="keyword">to</span> <span class="keyword">save</span> <span class="number">1000000</span> items <span class="keyword">in</span> one <span class="keyword">go</span>, <span class="built_in">time</span> <span class="keyword">cost</span>: <span class="number">8</span>_669_311_873ns</span><br><span class="line">Portable Total: <span class="keyword">create</span> + put <span class="number">1000000</span> items, <span class="keyword">cost</span> <span class="number">11</span>_535_176_693ns</span><br><span class="line"><span class="number">21</span>Apr15 <span class="number">13</span>:<span class="number">54</span>:<span class="number">13.361</span> INFO  [<span class="keyword">main</span>] mock-OrderSourceB:<span class="number">72</span> - Protobuf: <span class="keyword">use</span> putAll() <span class="keyword">to</span> <span class="keyword">save</span> <span class="number">1000000</span> items <span class="keyword">in</span> one <span class="keyword">go</span>, <span class="built_in">time</span> <span class="keyword">cost</span>: <span class="number">5</span>_935_409_048ns</span><br><span class="line">Protobuf Total: <span class="keyword">create</span> + put <span class="number">1000000</span> items, <span class="keyword">cost</span> <span class="number">6</span>_636_865_991ns</span><br><span class="line">Protobuf Total/Portabl Total: <span class="number">57.53588495118165</span>%</span><br></pre></td></tr></table></figure><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://github.com/eishay/jvm-serializers/wiki" target="_blank" rel="noopener">https://github.com/eishay/jvm-serializers/wiki</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I am running a sample pipeline to test what’s diff between StreamSerializer and Portable, found out the StreamSerializer is not much diff
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Life in a day 2020</title>
+    <link href="http://consiiii.me/2021/02/24/life-in-a-day-2020/"/>
+    <id>http://consiiii.me/2021/02/24/life-in-a-day-2020/</id>
+    <published>2021-02-24T01:32:20.000Z</published>
+    <updated>2021-06-25T15:14:59.630Z</updated>
+    
+    <content type="html"><![CDATA[<p>Life in a day for 2020 版本出了，花了一点时间去看。但是没有任何感触。相反看了Life in a day for 2010 很多很多遍。<br>结构可以说是一摸一样，我觉得就是一个重复，做了一件了无新意的事情。<br>A lot of changes but nothing new.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Life in a day for 2020 版本出了，花了一点时间去看。但是没有任何感触。相反看了Life in a day for 2010 很多很多遍。&lt;br&gt;结构可以说是一摸一样，我觉得就是一个重复，做了一件了无新意的事情。&lt;br&gt;A lot of changes 
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>墙倒众人推</title>
+    <link href="http://consiiii.me/2020/12/25/%E5%A2%99%E5%80%92%E4%BC%97%E4%BA%BA%E6%8E%A8/"/>
+    <id>http://consiiii.me/2020/12/25/墙倒众人推/</id>
+    <published>2020-12-25T04:53:05.000Z</published>
+    <updated>2021-06-25T15:14:59.633Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近真的是越来越能感受到网络舆论对人们的控制问题</p><p>以前，所有的舆论提到马Y，都是放他各种挥斥方遒的视频，放他早期创业的所作所为，各个论坛上的经典语录，就算是讲出了996是福报这样的话，很多人隐隐觉得不对，但心上又被什么东西隐隐的压住了，什么也说不出来。</p><p>现在再看他的新闻，所有言论都变成嘲笑。以前还有人叫“马爸爸”，当然现在叫人“爸爸“这个行为随处可见。但是我对这种行为非常敏感，对这个称呼，起码要有一点自己的尊重。</p><p>新时代的战争就是舆论战争，还真是“口水就能把你淹死”，当食物不再是大部分人类生存的限制，需求走向马斯洛模型的上层，杀死一个人，就让他社会性死亡。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近真的是越来越能感受到网络舆论对人们的控制问题&lt;/p&gt;
+&lt;p&gt;以前，所有的舆论提到马Y，都是放他各种挥斥方遒的视频，放他早期创业的所作所为，各个论坛上的经典语录，就算是讲出了996是福报这样的话，很多人隐隐觉得不对，但心上又被什么东西隐隐的压住了，什么也说不出来。&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Flink序列化慢 | Collector.colect()?</title>
+    <link href="http://consiiii.me/2020/11/24/flink%20%E5%BA%8F%E5%88%97%E5%8C%96%E6%85%A2/"/>
+    <id>http://consiiii.me/2020/11/24/flink 序列化慢/</id>
+    <published>2020-11-24T15:01:06.000Z</published>
+    <updated>2021-06-25T15:14:59.629Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在做Processing Framework的性能比较，做到Flink时，测出的数据性能变得及其差。<br>细看之后发现瓶颈出现在 <code>Collector.collect()</code> 方法， 可能是序列化，对象的复制话费了大量的时间。<br>在我的例子中，collect(SINGLE OBJECGT)甚至要多到100ms (我这的OBJECT大概有500Bytes)</p><p>经过一番搜寻，这篇文章给了我答案</p><p><a href="https://www.ververica.com/blog/curious-case-broken-benchmark-revisiting-apache-flink-vs-databricks-runtime" target="_blank" rel="noopener">https://www.ververica.com/blog/curious-case-broken-benchmark-revisiting-apache-flink-vs-databricks-runtime</a></p><p>简单来说：</p><ol><li>数据的存储结构尽量使用平整的方式</li><li>开启flink的object resue （collect()消耗瞬间减少到 &lt; 1ms!)</li></ol><p>另有一些参考文章：</p><ol><li><a href="https://flink.apache.org/news/2020/04/15/flink-serialization-tuning-vol-1.html#performance-comparison" target="_blank" rel="noopener">https://flink.apache.org/news/2020/04/15/flink-serialization-tuning-vol-1.html#performance-comparison</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近在做Processing Framework的性能比较，做到Flink时，测出的数据性能变得及其差。&lt;br&gt;细看之后发现瓶颈出现在 &lt;code&gt;Collector.collect()&lt;/code&gt; 方法， 可能是序列化，对象的复制话费了大量的时间。&lt;br&gt;在我的例子中，
+      
+    
+    </summary>
+    
+      <category term="Flink" scheme="http://consiiii.me/categories/Flink/"/>
+    
+    
+      <category term="Flink" scheme="http://consiiii.me/tags/Flink/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flink 动态提交依赖Jar</title>
+    <link href="http://consiiii.me/2020/11/02/flink-posts/"/>
+    <id>http://consiiii.me/2020/11/02/flink-posts/</id>
+    <published>2020-11-02T10:04:19.000Z</published>
+    <updated>2021-06-25T15:14:59.629Z</updated>
+    
+    <content type="html"><![CDATA[<p>很简单，</p><p><code>flink run -C &lt;link to your dependencies jar&gt; my-flink-job.jar</code></p><p>参考：</p><p><a href="https://www.cnblogs.com/felixzh/p/10300002.html" target="_blank" rel="noopener">https://www.cnblogs.com/felixzh/p/10300002.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;很简单，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flink run -C &amp;lt;link to your dependencies jar&amp;gt; my-flink-job.jar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cnblo
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>从零道一播客在11月15日上海线下听友聚会</title>
+    <link href="http://consiiii.me/2020/10/31/shanghai-event/"/>
+    <id>http://consiiii.me/2020/10/31/shanghai-event/</id>
+    <published>2020-10-31T04:05:08.000Z</published>
+    <updated>2021-06-25T15:14:59.630Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="活动详情"><a href="#活动详情" class="headerlink" title="活动详情"></a>活动详情</h3><p>11月15日周日下午，「从零道一」播客将在上海举行首次播客听友线下聚会。届时，S2E3嘉宾陈思羽（前麦肯锡顾问，沃顿MBA在读）也会做客现场（往期节目链接: <a href="https://mp.weixin.qq.com/s/TOTOGQ2cmNttPYLU_3uJqg）。" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/TOTOGQ2cmNttPYLU_3uJqg）。</a></p><p>此次活动将帮助你接触到愿意真诚分享的嘉宾，播客主创团队，认识各行各业的优质听友。同时，从零道一也很想认识你，听听你对我们节目的想法。</p><h3 id="活动报名"><a href="#活动报名" class="headerlink" title="活动报名"></a>活动报名</h3><p>请填写报名表（<a href="https://wj.qq.com/s2/7424294/2a30" target="_blank" rel="noopener">https://wj.qq.com/s2/7424294/2a30</a>, 场地位置有限，请尽快填写）。<br>如报名成功，从零道一小助手会联系你。如有任何问题，欢迎直接联系小助手微信（id：goto_helper)。</p><p>活动时间：11月15日（周日）下午 14:00 - 16:30<br>活动地点：上海市静安区（具体地址将在报名成功后通知）</p><p>活动主要流程：</p><ul><li>开场介绍及破冰</li><li>嘉宾访谈以及Q&amp;A（陈思羽）</li><li>对话从零道一主播</li><li>自由交流 (Networking)</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;活动详情&quot;&gt;&lt;a href=&quot;#活动详情&quot; class=&quot;headerlink&quot; title=&quot;活动详情&quot;&gt;&lt;/a&gt;活动详情&lt;/h3&gt;&lt;p&gt;11月15日周日下午，「从零道一」播客将在上海举行首次播客听友线下聚会。届时，S2E3嘉宾陈思羽（前麦肯锡顾问，沃顿MBA在
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Apollo - Cannot use GraphQLSchema &quot;[object GraphQLSchema]&quot; from another module or realm</title>
+    <link href="http://consiiii.me/2020/10/13/graphql-issue/"/>
+    <id>http://consiiii.me/2020/10/13/graphql-issue/</id>
+    <published>2020-10-13T14:35:46.000Z</published>
+    <updated>2021-06-25T15:14:59.629Z</updated>
+    
+    <content type="html"><![CDATA[<p>I am keeping receiving error below in a webpack + graphql + apollo-server project, the build script is quite simple, by digging out all the internet but no results (tried resolutions – yarn resolutsion, npx force resolutions packages, read all the dependecies in apollo tree, etc)<br>Error<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">webpack://stream/./node_modules/graphql/jsutils/instanceOf.js?:27</span><br><span class="line">      throw new Error(<span class="string">"Cannot use "</span>.concat(className, <span class="string">" \""</span>).concat(value, <span class="string">"\" from another module or realm.\n\nEnsure that there is only one instance of \"graphql\" in the node_modules\ndirectory. If different versions of \"graphql\" are the dependencies of other\nrelied on modules, use \"resolutions\" to ensure only one version is installed.\n\nhttps://yarnpkg.com/en/docs/selective-version-resolutions\n\nDuplicate \"graphql\" modules cannot be used at the same time since different\nversions may have different capabilities and behavior. The data from one\nversion used in the function from another could produce confusing and\nspurious results."</span>));</span><br><span class="line">      ^</span><br><span class="line"></span><br><span class="line">Error: Cannot use GraphQLSchema <span class="string">"[object GraphQLSchema]"</span> from another module or realm.</span><br><span class="line"></span><br><span class="line">Ensure that there is only one instance of <span class="string">"graphql"</span> <span class="keyword">in</span> the node_modules</span><br><span class="line">directory. If different versions of <span class="string">"graphql"</span> are the dependencies of other</span><br><span class="line">relied on modules, use <span class="string">"resolutions"</span> to ensure only one version is installed.</span><br><span class="line"></span><br><span class="line">https://yarnpkg.com/en/docs/selective-version-resolutions</span><br><span class="line"></span><br><span class="line">Duplicate <span class="string">"graphql"</span> modules cannot be used at the same time since different</span><br><span class="line">versions may have different capabilities and behavior. The data from one</span><br><span class="line">version used <span class="keyword">in</span> the <span class="keyword">function</span> from another could produce confusing and</span><br><span class="line">spurious results.</span><br></pre></td></tr></table></figure></p><h2 id="Final-workout-in-my-case"><a href="#Final-workout-in-my-case" class="headerlink" title="Final workout in my case!"></a>Final workout in my case!</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">   rules: [</span><br><span class="line">     &#123;</span><br><span class="line">       test: <span class="regexp">/\.(j|t)sx?$/</span>,</span><br><span class="line">       <span class="keyword">include</span>: [path.resolve(__dirname, <span class="string">'./src/'</span>)],</span><br><span class="line">       <span class="keyword">exclude</span>: <span class="regexp">/node_modules/</span>,</span><br><span class="line">       use: &#123;</span><br><span class="line">         loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">         <span class="keyword">options</span>: &#123;</span><br><span class="line">           cacheDirectory: <span class="keyword">false</span>,</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;,</span><br><span class="line">     <span class="comment">// below matters!!!!</span></span><br><span class="line">     &#123;</span><br><span class="line">       test: <span class="regexp">/\.mjs$/</span>,</span><br><span class="line">       <span class="keyword">include</span>: <span class="regexp">/node_modules/</span>,</span><br><span class="line">       type: <span class="string">'javascript/auto'</span>,</span><br><span class="line">     &#125;,</span><br><span class="line">   ],</span><br><span class="line"> &#125;,</span><br><span class="line"> resolve: &#123;</span><br><span class="line">   <span class="comment">// add .mjs</span></span><br><span class="line">   extensions: [<span class="string">'.mjs'</span>, <span class="string">'.ts'</span>, <span class="string">'.tsx'</span>, <span class="string">'.js'</span>, <span class="string">'.jsx'</span>]</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure><h2 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h2><p>It works in webpack v4 but broken in webpack v5 (which is just released)</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">"dependencies": &#123;</span><br><span class="line">   "apollo-server": "^2.18.2",</span><br><span class="line">   "graphql": "^15.3.0"</span><br><span class="line"> &#125;,</span><br><span class="line"> "devDependencies": &#123;</span><br><span class="line">   "@babel/core": "^7.10.5",</span><br><span class="line">   "@babel/preset-env": "^7.11.5",</span><br><span class="line">   "@babel/preset-typescript": "^7.10.4",</span><br><span class="line">   "@types/bunyan": "^1.8.6",</span><br><span class="line">   "@types/lodash": "^4.14.161",</span><br><span class="line">   "@types/node": "^14.0.23",</span><br><span class="line">   "@types/ws": "^7.2.6",</span><br><span class="line">   "babel-loader": "^8.1.0",</span><br><span class="line">   "fork-ts-checker-webpack-plugin": "^5.0.7",</span><br><span class="line">   "nodemon-webpack-plugin": "^4.3.2",</span><br><span class="line">   "typescript": "^4.0.2",</span><br><span class="line">   "webpack": "^4.43.0",</span><br><span class="line">   "webpack-cli": "^3.3.12"</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I am keeping receiving error below in a webpack + graphql + apollo-server project, the build script is quite simple, by digging out all t
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes cheat sheet</title>
+    <link href="http://consiiii.me/2020/09/21/kubernetes-cheat-sheet/"/>
+    <id>http://consiiii.me/2020/09/21/kubernetes-cheat-sheet/</id>
+    <published>2020-09-21T10:02:40.000Z</published>
+    <updated>2021-06-25T15:14:59.630Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>Rollback deployments in Kubernetes</li></ol><p><a href="https://learnk8s.io/kubernetes-rollbacks" target="_blank" rel="noopener">https://learnk8s.io/kubernetes-rollbacks</a></p><ol start="2"><li>Cheat Sheet</li></ol><p><a href="https://kubernetes.io/zh/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">https://kubernetes.io/zh/docs/reference/kubectl/cheatsheet/</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;Rollback deployments in Kubernetes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;https://learnk8s.io/kubernetes-rollbacks&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Unable to load class ...kotlin.noarg|...KaptGradleModel</title>
+    <link href="http://consiiii.me/2020/09/17/windows-koltin-error-intellij-2020-2/"/>
+    <id>http://consiiii.me/2020/09/17/windows-koltin-error-intellij-2020-2/</id>
+    <published>2020-09-16T17:17:51.000Z</published>
+    <updated>2021-06-25T15:14:59.631Z</updated>
+    
+    <content type="html"><![CDATA[<p>花费了好半天在这个error上，给windows上的intellij从2020.1升级到2020.2.1之后，gradle build不能，出现error：</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Unable to load class org<span class="selector-class">.jetbrains</span><span class="selector-class">.klotlin</span><span class="selector-class">.noarg</span><span class="selector-class">.ide</span><span class="selector-class">.NoArgModel</span></span><br><span class="line"><span class="comment">// or</span></span><br><span class="line">Unable to load class ....KaptGradleModel</span><br><span class="line"><span class="comment">// or</span></span><br><span class="line">Unable to load class org<span class="selector-class">.jetbrains</span><span class="selector-class">.allopen</span><span class="selector-class">.ide</span><span class="selector-class">.AllOpenModel</span></span><br><span class="line"><span class="comment">// or</span></span><br><span class="line">Connection failed: connect</span><br></pre></td></tr></table></figure><p>公司内部的有网络限制，外部的镜像源不能访问，直接用gradle build项目又偏偏是ok的。</p><p>问题的来源是<strong>kotlin intellij 插件！</strong>， 关闭这个插件后，gradle 复活。</p><h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><p>double shift —&gt; plugins –&gt; 关闭 koltin –&gt; 重新run gradle</p><h4 id="后记："><a href="#后记：" class="headerlink" title="后记："></a>后记：</h4><p>在网络阉割的情况下（内网），发现2020.2版本的kotlin插件会一直出错（找不到class，或者网络问题等），最后还是用回了2020.1版本 （kotlin 插件版本是1.37）。</p><h4 id="后记2"><a href="#后记2" class="headerlink" title="后记2:"></a>后记2:</h4><p>切换到了Community版本，Community版本用的kotlin插件是1.37，复活。</p><p>ref:<br><a href="https://stackoverflow.com/questions/55774797/android-gradle-sync-failed-org-jetbrains-kotlin-kapt-idea-kaptgradlemodelorg/55780707" target="_blank" rel="noopener">https://stackoverflow.com/questions/55774797/android-gradle-sync-failed-org-jetbrains-kotlin-kapt-idea-kaptgradlemodelorg/55780707</a></p><p><a href="https://stackoverflow.com/questions/35651561/intellij-using-gradle-cant-find-kotlin-plugin-even-though-its-installed" target="_blank" rel="noopener">https://stackoverflow.com/questions/35651561/intellij-using-gradle-cant-find-kotlin-plugin-even-though-its-installed</a></p><p><a href="https://blog.csdn.net/z302766296/article/details/105763566" target="_blank" rel="noopener">https://blog.csdn.net/z302766296/article/details/105763566</a></p><p><a href="https://stackoverflow.com/questions/54323572/kotlin-multiplatform-on-intellij-is-trying-to-download-native-dependencies-every" target="_blank" rel="noopener">https://stackoverflow.com/questions/54323572/kotlin-multiplatform-on-intellij-is-trying-to-download-native-dependencies-every</a></p><p>（如果想尝试）重新下载Kotlin插件的地址：<br><a href="https://plugins.jetbrains.com/plugin/6954-kotlin/versions" target="_blank" rel="noopener">https://plugins.jetbrains.com/plugin/6954-kotlin/versions</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;花费了好半天在这个error上，给windows上的intellij从2020.1升级到2020.2.1之后，gradle build不能，出现error：&lt;/p&gt;
+&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>几种 Websocket 框架的性能测试</title>
+    <link href="http://consiiii.me/2020/08/30/websocket-benchmark/"/>
+    <id>http://consiiii.me/2020/08/30/websocket-benchmark/</id>
+    <published>2020-08-30T07:56:01.000Z</published>
+    <updated>2021-06-25T15:14:59.631Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>NodeJS 的 ws 综合表现最好，latency ~7ms 左右，轻松上到 5000 个 client 连接，TypeScript 的成熟同样给程序的编写提供了保障，同时也能利用弱类型语言本身的便利进行快速开发。</p><h2 id="测试指标"><a href="#测试指标" class="headerlink" title="测试指标"></a>测试指标</h2><p>给定一定 clients 的数量，在不 drop 任何 client 连接的前提下：</p><ul><li>单机服务器每秒能发送多少消息</li><li>客户端收到消息的延迟是多少 (ms)</li></ul><h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><ul><li><p>Host</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MacBook Pro (<span class="number">13</span>-inch, <span class="number">2020</span>, Four Thunderbolt <span class="number">3</span> ports)</span><br><span class="line"><span class="number">2</span> GHz Quad-Core Intel Core i5</span><br><span class="line"><span class="number">16</span> GB <span class="number">3733</span> MHz LPDDR4X</span><br><span class="line">Intel Iris Plus Graphics <span class="number">1536</span> MB</span><br></pre></td></tr></table></figure></li><li><p>5000个node client连接，每个client每500ms发一次小时到服务器</p></li></ul><h2 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h2><h3 id="nodejs-ws"><a href="#nodejs-ws" class="headerlink" title="nodejs ws"></a>nodejs ws</h3><p>Server: </p><ul><li>CPU 100%</li><li>completed in seconds</li><li>send message to client per 50ms</li></ul><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">1522</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">13406.5</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">2731</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">41965.01749125437</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3618</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">62558.603491271824</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">4221</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">75828.58570714643</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">4572</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">80643.14115308151</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">4844</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">86410.76769690926</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">89313.71571072319</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">91170.90184354757</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">72340.14598540145</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">82267.92828685259</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">88514.94023904382</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">87901.93164933135</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">88450.0998003992</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">89606.9825436409</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">5000</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">84441.67497507477</span></span><br></pre></td></tr></table></figure><p>Client (via NodeJS):</p><ul><li>CPU: 100%</li></ul><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">TPS: <span class="number">9828.009828009828</span></span><br><span class="line">Average latency: <span class="number">9.525885550821567</span> ms</span><br><span class="line">TPS: <span class="number">9893.44672336168</span></span><br><span class="line">Average latency: <span class="number">5.686742775410783</span> ms</span><br><span class="line">TPS: <span class="number">9980.49024512256</span></span><br><span class="line">Average latency: <span class="number">3.5819713877053916</span> ms</span><br><span class="line">TPS: <span class="number">9539.269634817409</span></span><br><span class="line">Average latency: <span class="number">2.258685693852696</span> ms</span><br><span class="line">TPS: <span class="number">9990.009990009989</span></span><br><span class="line">Average latency: <span class="number">1.637942846926348</span> ms</span><br><span class="line">TPS: <span class="number">7245.835026412028</span></span><br><span class="line">Average latency: <span class="number">14.647771423463173</span> ms</span><br><span class="line">TPS: <span class="number">10005.002501250625</span></span><br><span class="line">Average latency: <span class="number">7.350285711731586</span> ms</span><br><span class="line">TPS: <span class="number">10005.002501250625</span></span><br><span class="line">Average latency: <span class="number">3.697042855865793</span> ms</span><br></pre></td></tr></table></figure><h3 id="Java-Vert-X-v3-9-2"><a href="#Java-Vert-X-v3-9-2" class="headerlink" title="Java Vert.X v3.9.2"></a>Java Vert.X v3.9.2</h3><p>Server: </p><ul><li>CPU 130%</li><li>send message to client per <code>100ms</code> (as 50ms it makes my computer die)</li><li>takes more than 3mins (each log is under 2 seconds interval), dropped then</li></ul><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">0</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">0.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">377</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">874.1887169246131</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">993</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">5707.730673316708</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">1769</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">13499.750374438343</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">2593</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">21835.164835164836</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3003</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">27957.04295704296</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3008</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">28956.54345654346</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3166</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">30418.6626746507</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3263</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">31657.51372940589</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3453</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">33087.86819770344</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3543</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">34520.718921617576</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3620</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">35061.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3656</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">35845.30938123753</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3678</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36177.41129435282</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3707</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36575.5</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3730</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36724.637681159424</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3749</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36628.18590704648</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3769</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">35519.96007984032</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3789</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">37355.322338830585</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3807</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36828.67132867133</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3823</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">36764.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3840</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">37955.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3859</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38223.0</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3878</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">37930.5</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3889</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38040.979510244884</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3902</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38278.582126809786</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3907</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38161.5</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3911</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38794.10294852574</span> // <span class="built_in">line</span> <span class="number">34</span></span><br><span class="line">...</span><br><span class="line">client<span class="variable">s:</span> <span class="number">3951</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">37222.27772227772</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3952</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">38845.23215177235</span></span><br><span class="line">client<span class="variable">s:</span> <span class="number">3952</span>, <span class="keyword">tp</span><span class="variable">s:</span> <span class="number">37233.033932135724</span> //<span class="built_in">line</span> <span class="number">78</span></span><br></pre></td></tr></table></figure><p>Client (via NodeJS):</p><ul><li>CPU: 151%</li></ul><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">TPS: <span class="number">9055.944055944055</span></span><br><span class="line">Average latency: <span class="number">33895.241751952984</span> ms</span><br><span class="line">TPS: <span class="number">9043.5</span></span><br><span class="line">Average latency: <span class="number">34512.603531743174</span> ms</span><br><span class="line">TPS: <span class="number">9054.5</span></span><br><span class="line">Average latency: <span class="number">35110.37179017024</span> ms</span><br><span class="line">TPS: <span class="number">9053.5</span></span><br><span class="line">Average latency: <span class="number">35783.786292699435</span> ms</span><br><span class="line">TPS: <span class="number">9056</span></span><br><span class="line">Average latency: <span class="number">36455.58598929206</span> ms</span><br><span class="line">TPS: <span class="number">9058</span></span><br><span class="line">Average latency: <span class="number">37053.6221686743</span> ms</span><br><span class="line">TPS: <span class="number">9058</span></span><br><span class="line">Average latency: <span class="number">37630.76835023821</span> ms</span><br><span class="line">TPS: <span class="number">9059.5</span></span><br><span class="line">Average latency: <span class="number">38157.07903049557</span> ms</span><br></pre></td></tr></table></figure><h3 id="socket-io"><a href="#socket-io" class="headerlink" title="socket.io"></a>socket.io</h3><p><strong>node cpu: &gt;120%, die after 20s</strong></p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">clients:</span> <span class="number">200</span>, tx/<span class="string">second:</span> <span class="number">3160.2962255136167</span></span><br><span class="line"><span class="string">clients:</span> <span class="number">200</span>, tx/<span class="string">second:</span> <span class="number">2765.8108500145054</span></span><br><span class="line"><span class="string">clients:</span> <span class="number">200</span>, tx/<span class="string">second:</span> <span class="number">4459.919839679359</span></span><br></pre></td></tr></table></figure><h3 id="uwebsocket"><a href="#uwebsocket" class="headerlink" title="uwebsocket"></a>uwebsocket</h3><p>node cpu: 100%</p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">clients:</span> <span class="number">200</span>, tx/<span class="string">second:</span> <span class="number">7340</span></span><br><span class="line"><span class="string">clients:</span> <span class="number">400</span>, tx/<span class="string">second:</span> <span class="number">10720</span></span><br><span class="line"><span class="string">clients:</span> <span class="number">400</span>, tx/<span class="string">second:</span> <span class="number">8712.28771228771</span></span><br><span class="line"><span class="string">clients:</span> <span class="number">400</span>, tx/<span class="string">second:</span> <span class="number">7911.08891108891</span></span><br></pre></td></tr></table></figure><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><ul><li><a href="https://colobu.com/2015/07/14/performance-comparison-of-7-websocket-frameworks/" target="_blank" rel="noopener">https://colobu.com/2015/07/14/performance-comparison-of-7-websocket-frameworks/</a></li><li><a href="https://www.jianshu.com/p/1edea2f6fd4d" target="_blank" rel="noopener">https://www.jianshu.com/p/1edea2f6fd4d</a></li><li><a href="https://blog.jayway.com/2015/04/13/600k-concurrent-websocket-connections-on-aws-using-node-js/" target="_blank" rel="noopener">https://blog.jayway.com/2015/04/13/600k-concurrent-websocket-connections-on-aws-using-node-js/</a></li><li><a href="https://nodejs.org/api/cli.html#cli_max_old_space_size_size_in_megabytes" target="_blank" rel="noopener">https://nodejs.org/api/cli.html#cli_max_old_space_size_size_in_megabytes</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;NodeJS 的 ws 综合表现最好，latency ~7ms 左右，轻松上到 5000 个 client 连接，TypeScript 的成
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+      <category term="websocket" scheme="http://consiiii.me/tags/websocket/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React/Typescript 文章集合</title>
+    <link href="http://consiiii.me/2020/07/26/React-Posts-Collections/"/>
+    <id>http://consiiii.me/2020/07/26/React-Posts-Collections/</id>
+    <published>2020-07-26T05:25:51.000Z</published>
+    <updated>2021-06-25T15:14:59.626Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>收集一些自己觉得还不错的关于React的文章/帖子</p></blockquote><ol><li>可视化的React生命周期模拟器</li></ol><p><a href="https://reactarmory.com/guides/lifecycle-simulators" target="_blank" rel="noopener">https://reactarmory.com/guides/lifecycle-simulators</a></p><ol start="2"><li>一篇详尽的 useEffect 解析</li></ol><p><a href="https://overreacted.io/a-complete-guide-to-useeffect/" target="_blank" rel="noopener">https://overreacted.io/a-complete-guide-to-useeffect/</a></p><ol start="3"><li>Typescript tsconfig.json</li></ol><p><a href="https://medium.com/@tommedema/typescript-confusion-tsconfig-json-module-moduleresolution-target-lib-explained-65db2c44b491" target="_blank" rel="noopener">https://medium.com/@tommedema/typescript-confusion-tsconfig-json-module-moduleresolution-target-lib-explained-65db2c44b491</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;收集一些自己觉得还不错的关于React的文章/帖子&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;可视化的React生命周期模拟器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;https://reactarmory.com/guides/
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梦到了各种事情的原来面貌</title>
+    <link href="http://consiiii.me/2020/07/03/root-cause-for-everything-in-dream/"/>
+    <id>http://consiiii.me/2020/07/03/root-cause-for-everything-in-dream/</id>
+    <published>2020-07-02T22:29:55.000Z</published>
+    <updated>2021-06-25T15:14:59.630Z</updated>
+    
+    <content type="html"><![CDATA[<p>醒来的时候一直说着对不起，在梦里没有倔强，一点也不傻逼，说的好真诚，我该早点这样。现在才6点。脑子里都是过去的事情，惆怅，可是对还是太迟了。该早点做这样的梦。</p><p><img src="https://static01.imgkr.com/temp/1c600b6c1aa4467dbde6945e66465de8.png" alt=""></p><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">She lifts her skirt up <span class="keyword">to</span> her knees</span><br><span class="line">Walks through the garden rows</span><br><span class="line"><span class="keyword">With</span> her bare feet</span><br><span class="line">laughing</span><br><span class="line">I never learned <span class="keyword">to</span> count my blessings</span><br><span class="line">I choose instead <span class="keyword">to</span> dwell</span><br><span class="line"><span class="keyword">In</span> my disasters</span><br><span class="line">I walk <span class="keyword">on</span> down the hill</span><br><span class="line">Through grass grown tall</span><br><span class="line"><span class="keyword">And</span> brown <span class="keyword">and</span> still</span><br><span class="line">It<span class="comment">'s hard somehow</span></span><br><span class="line"><span class="keyword">To</span> <span class="keyword">let</span> go <span class="keyword">of</span> my pain</span><br><span class="line"><span class="keyword">On</span> past the busted back</span><br><span class="line"><span class="keyword">Of</span> that old <span class="keyword">and</span> rusted Cadillac</span><br><span class="line">That sinks <span class="keyword">into</span> this field</span><br><span class="line">Collecting rain</span><br><span class="line">Will I always feel this way</span><br><span class="line">So empty</span><br><span class="line">So estranged?</span><br><span class="line"><span class="keyword">And</span> <span class="keyword">of</span> these cut throat busted sunsets</span><br><span class="line">These cold <span class="keyword">and</span> damp white mornings</span><br><span class="line">I have grown weary</span><br><span class="line"><span class="keyword">If</span> through my cracked <span class="keyword">and</span> dusty</span><br><span class="line">Dime store lips</span><br><span class="line">I spoke these words out loud</span><br><span class="line">Would no one hear <span class="keyword">me</span>?</span><br><span class="line">Lay your blouse across the chair</span><br><span class="line"><span class="keyword">Let</span> fall the flowers</span><br><span class="line"><span class="keyword">From</span> your hair</span><br><span class="line"><span class="keyword">And</span> kiss <span class="keyword">me</span></span><br><span class="line"><span class="keyword">With</span> that country mouth</span><br><span class="line">So plain</span><br><span class="line">Outside the rain <span class="keyword">is</span> tapping</span><br><span class="line"><span class="keyword">On</span> the leaves</span><br><span class="line"><span class="keyword">To</span> <span class="keyword">me</span> it sounds <span class="keyword">like</span></span><br><span class="line">They<span class="comment">'re applauding us</span></span><br><span class="line">The quiet love</span><br><span class="line">We<span class="comment">'ve made</span></span><br><span class="line">Will I always feel this way</span><br><span class="line">So empty</span><br><span class="line">So estranged?</span><br><span class="line">Well I looked my demons <span class="keyword">in</span> the eyes</span><br><span class="line">Lay bare my chest</span><br><span class="line">Said <span class="keyword">do</span> your best</span><br><span class="line"><span class="keyword">To</span> destroy <span class="keyword">me</span></span><br><span class="line">See I<span class="comment">'ve been to hell and back</span></span><br><span class="line">So many times</span><br><span class="line">I must admit</span><br><span class="line">You kinda bore <span class="keyword">me</span></span><br><span class="line"><span class="keyword">and</span> I <span class="keyword">then</span> admit</span><br><span class="line">I bore myself</span><br><span class="line">There<span class="comment">'s a lot of things</span></span><br><span class="line">That can kill a man</span><br><span class="line">There<span class="comment">'s a lot of ways</span></span><br><span class="line"><span class="keyword">To</span> die</span><br><span class="line">Yes, <span class="keyword">and</span> some already did</span><br><span class="line"><span class="keyword">And</span> walk beside <span class="keyword">me</span></span><br><span class="line">There<span class="comment">'s a lot of things</span></span><br><span class="line">I don<span class="comment">'t understand</span></span><br><span class="line">Why so many people lie</span><br><span class="line">It<span class="comment">'s the hurt I hide that fuels</span></span><br><span class="line">The fire inside <span class="keyword">me</span></span><br><span class="line">Will I always feel this way</span><br><span class="line">So empty</span><br><span class="line">So estranged?</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;醒来的时候一直说着对不起，在梦里没有倔强，一点也不傻逼，说的好真诚，我该早点这样。现在才6点。脑子里都是过去的事情，惆怅，可是对还是太迟了。该早点做这样的梦。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://static01.imgkr.com/temp/1c600b6c
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Make dream come true</title>
+    <link href="http://consiiii.me/2020/06/29/30-years-more/"/>
+    <id>http://consiiii.me/2020/06/29/30-years-more/</id>
+    <published>2020-06-29T15:03:14.000Z</published>
+    <updated>2021-06-25T15:14:59.622Z</updated>
+    
+    <content type="html"><![CDATA[<p>在香港开始连续的住酒店且不换地点，这已经快6个月了。前几天躺在床上，1am，一直想着明天的事情要怎么做，intern program马上开始了，还有哪些事情没有定论，明天还有多少邮件要发，报告的数据要怎么获取，还有多少项目自己想写，却进度不满意，云云。</p><p>7am，睡不着，看着窗外的风景和天花板，情绪波澜。突然想到，如果我的一生要活到60岁，那我起码还得再去活个30年，才能活完这一生。</p><p>还得活那么多天呀。</p><p>–去年–，原来已经是2018年了，出了战神4，网上好多人都很期待。但是我玩到后半部们已经非常疲惫了，我觉没有心意，我觉得自己就是一个机器人，我不喜欢这个游戏。我就逼迫自己赶紧通关，努力的去打龙，努力的去拯救A，拯救B，给A送东西，给B挖草药。最后的期待的大战，我以为还是一个中等的过场boss。打完之后发现结局了，好轻松，感觉跟做完大作业一样，赶紧取出碟片，我感到空洞。</p><p>说到这里，刚才想到，什么是一个好游戏。我觉得一个好游戏，需要“装傻”，需要<strong>允许玩家作弊</strong>。游戏的世界，是一堆规则的集合，合理的让玩家利用规则，让玩家作弊，让玩家感觉的到自己很聪明，这样才会产生愉悦感， 他感觉到自己是在玩游戏，比如黑暗之魂系列， 血缘系列，马里奥，上古卷轴等等，一般来说开放世界的游戏总有很多trick的事情。</p><p>我希望我还能记得我第一次在出租屋里，用比我小的孩子的GameBoy，第一次玩勇者斗恶龙的感觉，8KB的内存，四灰阶，160*144的像素，但是带给我的脑子回味无穷的遐想和画面。</p><p>网游在我印象总是站在对立面，不停的更改规则，创造规则，来引导更多的掏钱行为，规则总是玩弄你。</p><p>一刀一刀，砍它一个月，升上10级，你的快乐在哪里，现实虐待你还不够吗。</p><p>make dream come true。</p><p><img src="https://static01.imgkr.com/temp/ad65d435baaa485185ba50d6f461d7de.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在香港开始连续的住酒店且不换地点，这已经快6个月了。前几天躺在床上，1am，一直想着明天的事情要怎么做，intern program马上开始了，还有哪些事情没有定论，明天还有多少邮件要发，报告的数据要怎么获取，还有多少项目自己想写，却进度不满意，云云。&lt;/p&gt;
+&lt;p&gt;7am
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网页里的博物馆</title>
+    <link href="http://consiiii.me/2020/06/09/museum-in-website/"/>
+    <id>http://consiiii.me/2020/06/09/museum-in-website/</id>
+    <published>2020-06-09T14:02:14.000Z</published>
+    <updated>2021-06-25T15:14:59.630Z</updated>
+    
+    <content type="html"><![CDATA[<p>网页里的博物馆，太对我的胃口了！</p><p><a href="http://www.dnbwg.com/index.html" target="_blank" rel="noopener">http://www.dnbwg.com/index.html</a></p><p><img src="https://imgkr.cn-bj.ufileos.com/66b179a3-6861-45d8-b64c-f91109c2ec60.png" alt=""></p><p>喜欢那个年代，电子数字，带来的惊喜感, 如果你也喜欢，可以看看这本书 Hackers: Heroes of the Computer Revolution这本书</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;网页里的博物馆，太对我的胃口了！&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.dnbwg.com/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.dnbwg.com/index.html&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂思：什么是Tech</title>
+    <link href="http://consiiii.me/2020/05/09/what-is-tech/"/>
+    <id>http://consiiii.me/2020/05/09/what-is-tech/</id>
+    <published>2020-05-09T13:16:55.000Z</published>
+    <updated>2021-06-25T15:14:59.631Z</updated>
+    
+    <content type="html"><![CDATA[<p>说实话今天被问到这个问题的时候确实愣了一下，以前有想过类似的问题，例如：“什么是程序”</p><p>确实是一个好问题，Tech是code吗，肯定不是，code可以是tech，tech肯定不是code</p><p>一门学科是怎么开始发展的，淘宝是为了一个系统而开始做的的吗，还是现有了业务才有一个“能跑的系统”</p><p><strong>我认为是tech就是解决一个问题的方法论</strong>，对于某一类问题，你不需要思考太多，按照一个模式，一个方法，走完步骤，就解决了问题，从一个状态走到了另一个状态, <code>f(x) = y</code>, 那就是tech</p><p>营销是一种tech，story teller也是tech，code/program只是一种tech的一种，通过计算机，来极大的提高效率地来解决某一类问题，它非常常见，因为现在每个人都有手机，每个人都手握着数台卫星微型电脑</p><p>然而最最最最常见的tech，应该就是语言了吧？说话是一门技术</p><p>我个人的童年经历，让我时常想起以前小时候在桂林的一个冬天夜晚，一个白头发白色络腮胡（长得有点像张纪中haha），身着邋遢的老头，抓着我的手说：“语文是什么，语文就是说话”</p><p>我父亲把我拉走了，先说了一句怎么被乞丐抓着说话，然后说“但是他说的有道理，语文就是说话”</p><p>从那以后，语文作文我真的就是想写什么写什么，思想乱弹，废话连篇，字数对我来说真的就不是一个问题，因为我废话太多</p><p>好了，今天的思想乱弹就到这里，晚安 :D</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;说实话今天被问到这个问题的时候确实愣了一下，以前有想过类似的问题，例如：“什么是程序”&lt;/p&gt;
+&lt;p&gt;确实是一个好问题，Tech是code吗，肯定不是，code可以是tech，tech肯定不是code&lt;/p&gt;
+&lt;p&gt;一门学科是怎么开始发展的，淘宝是为了一个系统而开始做的的吗
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>县城</title>
+    <link href="http://consiiii.me/2020/02/25/the-real-china/"/>
+    <id>http://consiiii.me/2020/02/25/the-real-china/</id>
+    <published>2020-02-24T16:00:20.000Z</published>
+    <updated>2021-06-25T15:14:59.631Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>在网上看到一句话，特此记录</p></blockquote><p>北上广深大概只占全国面积的0.33%</p><p>加上新一线城市</p><p>也只是占了全国面积的3%。</p><p>在剩下的97%的土地上</p><p>有着约300个地级市，3000个县城</p><p>40000个乡镇和66万个村庄</p><p>全国约84%的人在这里消费，生长</p><p>你以为的土味，其实是大半个中国</p><p><a href="https://www.bilibili.com/video/av83412833" target="_blank" rel="noopener">https://www.bilibili.com/video/av83412833</a></p><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">我也想杀死伤痛</span><br><span class="line">让那恩怨有始有终</span><br><span class="line">抬头望着故乡的天空</span><br><span class="line">飞来成群野外孤鸿</span><br><span class="line">敲碎我沉浸其中的</span><br><span class="line">一场场不愿醒来的梦</span><br><span class="line">不堪回首月明中</span><br><span class="line">千层山 万重浪</span><br><span class="line">比不过县城一碗汤</span><br><span class="line">多加辣 不要糖</span><br><span class="line">没事儿别看老板娘</span><br><span class="line">血过眉 眼飙泪</span><br><span class="line">不吃完夜宵不许醉</span><br><span class="line">今夜我陪你化成灰</span><br><span class="line">千层山 万重浪</span><br><span class="line">比不过县城一碗汤</span><br><span class="line">多加辣 不要糖</span><br><span class="line">没事儿别看老板娘</span><br><span class="line">血过眉 眼飙泪</span><br><span class="line">不吃完夜宵不许醉</span><br><span class="line">别追别追别追我叫你别追</span><br><span class="line">今夜我陪你化成灰</span><br><span class="line">今夜我陪你化成灰</span><br><span class="line"></span><br><span class="line">没有县城万万不能</span><br><span class="line">没有县城万万不能</span><br><span class="line">...</span><br><span class="line">没有县城万万不能</span><br><span class="line">没有县城</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;在网上看到一句话，特此记录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;北上广深大概只占全国面积的0.33%&lt;/p&gt;
+&lt;p&gt;加上新一线城市&lt;/p&gt;
+&lt;p&gt;也只是占了全国面积的3%。&lt;/p&gt;
+&lt;p&gt;在剩下的97%的土地上&lt;/p&gt;
+&lt;p&gt;有着约300个地
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一个不需要webpack的未来</title>
+    <link href="http://consiiii.me/2019/11/19/a-future-without-webpack/"/>
+    <id>http://consiiii.me/2019/11/19/a-future-without-webpack/</id>
+    <published>2019-11-19T14:45:33.000Z</published>
+    <updated>2021-06-25T15:14:59.628Z</updated>
+    
+    <content type="html"><![CDATA[<p>今年是1941年，你的名字叫Richard  Hubbell。你工作在一个CBS旗下的实验性纽约电视工作室。你马上要去给世界上最重要的电视新闻做广播，然后你有15分钟的时间去填充。你要怎么做？</p><p>在一个只知道电台的世界，你坚持你早就知道的东西。也就是说，你读这种新闻，“大多数电视新闻广告都在放映着Hubbell读新闻报纸，然后偶尔去看一下图片或者地图”</p><p>** fixme: 不好意思，wtf忘记更新了, 6月份之前更新回来，我觉得这篇文章很有意思，2020-05-09</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今年是1941年，你的名字叫Richard  Hubbell。你工作在一个CBS旗下的实验性纽约电视工作室。你马上要去给世界上最重要的电视新闻做广播，然后你有15分钟的时间去填充。你要怎么做？&lt;/p&gt;
+&lt;p&gt;在一个只知道电台的世界，你坚持你早就知道的东西。也就是说，你读这种
+      
+    
+    </summary>
+    
+      <category term="slots" scheme="http://consiiii.me/categories/slots/"/>
+    
+    
+  </entry>
+  
+</feed>
