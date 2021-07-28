@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Consiiii">
-    <title>Tag : PHP - Consiiii</title>
+    <title>Tag : php - Consiiii</title>
     <meta name="author" content="Consiiii">
     
         <link rel="icon" href="/assets/images/favicon.ico">
@@ -17,7 +17,7 @@
     <meta name="description" content="在别人的路上，我们也是风景">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Consiiii">
-<meta property="og:url" content="http://consiiii.me/tags/PHP/index.html">
+<meta property="og:url" content="http://consiiii.me/tags/php/index.html">
 <meta property="og:site_name" content="Consiiii">
 <meta property="og:description" content="在别人的路上，我们也是风景">
 <meta property="og:locale" content="zh-CN">
@@ -207,60 +207,19 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2021/06/25/Install-PHP-7/">Install PHP 7</a>
+                                <a class="link-unstyled" href="/2015/11/22/Install-LEMP-on-Debian/">Install LEMP on Debian</a>
                         
                     </h1>
                     <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Jun 25 2021 23:14:59 GMT+0800">
+    <time itemprop="datePublished" content="Sun Nov 22 2015 14:05:23 GMT+0800">
 	
-		    6月 25, 2021
-    	
-    </time>
-    
-</div>
-                </div>
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    
-                        <p>
-                            InstallUbuntuTest OS: Ubuntu 15.10
-1234apt-get install software-properties-commonadd-apt-repository ppa:ondrej/phpapt-get updateapt-get install php7.0 -y --force-yes
-DebianTest OS: Debian 8 x64 (jessi<br>
-                    
-                    
-                        
-                            <a href="/2021/06/25/Install-PHP-7/" class="postShorten-excerpt_link link ">Continue Reading</a>
-                            
-                        
-                    
-                    
-                        </p>
-                    
-                </div>
-            </div>
-            
-        </article>
-    
-        
-        
-                <article class="postShorten" itemscope="" itemtype="http://schema.org/BlogPosting">
-        
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2016/03/16/PHP：将Word转换成PDF/">PHP：将Word转换成PDF</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Mar 16 2016 17:08:03 GMT+0800">
-	
-		    3月 16, 2016
+		    11月 22, 2015
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/PHP/">PHP</a>
+    <a class="category-link" href="/categories/LEMP/">LEMP</a>
 
 
     
@@ -269,65 +228,13 @@ DebianTest OS: Debian 8 x64 (jessi<br>
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     
                         <p>
-                            目的用户上传DOC，DOCX等文件格式后，能够在线查看到文件的内容。
-想法WORD文件内容是富文本，可以转换成HTML格式后表现出来，或者转换成PDF格式，然后通过pdf.js来实现在线阅读。
-实现由于后端环境是Windows，脚本语言为PHP， 因此可以使用PHP的COM组件来调用OpenOffice 或者 MS Word 来实现该格式转换问题。
-准备1. 安装OpenOffice 或者 MS <br>
+                            本文流程来自https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-debian-7 ，并做了部分修改
+LEMP安装的教程有很多，但是自己也做了一遍并纪录下来。
+LEMPLEMP指Linux(L),MySQL(M),PHP(P),Nginx(E,发音eng<br>
                     
                     
                         
-                            <a href="/2016/03/16/PHP：将Word转换成PDF/" class="postShorten-excerpt_link link ">Continue Reading</a>
-                            
-                        
-                    
-                    
-                        </p>
-                    
-                </div>
-            </div>
-            
-        </article>
-    
-        
-        
-                <article class="postShorten" itemscope="" itemtype="http://schema.org/BlogPosting">
-        
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2015/10/03/PHP中的短数组语法[]与array()/">PHP中的短数组语法[]与array()</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Oct 03 2015 01:18:03 GMT+0800">
-	
-		    10月 03, 2015
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/PHP/">PHP</a>
-
-
-    
-</div>
-                </div>
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    
-                        <p>
-                            PHP的数组可以有以下方式来表达.
-$array = [1,2,3,4,5];
-亦或
-$array = array(1,2,3,4,5);
-但是[]中括号的表达方式需要PHP版本&gt;=5.4.
-在给学院做一个CMS的时候，本地测试正常后，放上空间一律返回403 Fobbiden错误（调试关闭）。
-究其原因是不清楚服务器版本，而写的时候比较想着方便先用中括号，写完之后过了两周才上传，有点淡忘此事<br>
-                    
-                    
-                        
-                            <a href="/2015/10/03/PHP中的短数组语法[]与array()/" class="postShorten-excerpt_link link ">Continue Reading</a>
+                            <a href="/2015/11/22/Install-LEMP-on-Debian/" class="postShorten-excerpt_link link ">Continue Reading</a>
                             
                         
                     
@@ -368,7 +275,96 @@ $array = array(1,2,3,4,5);
   <div class="widget-wrap">
     <h3 class="widget-title">tags</h3>
     <div class="widget">
-      <ul class="widget-list tag-list"><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Blockchain/">Blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CMS/">CMS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CSS/">CSS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Canvas/">Canvas</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Competition/">Competition</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Design/">Design</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ES6/">ES6</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/El-Capitan/">El Capitan</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FTP/">FTP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Fabric/">Fabric</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Flink/">Flink</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FrontEnd/">FrontEnd</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Icon/">Icon</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/KMean/">KMean</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Karma/">Karma</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LEMP/">LEMP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Linux/">Linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LiveReload/">LiveReload</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Mac/">Mac</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NS2/">NS2</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/PHP/">PHP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ProFTPD/">ProFTPD</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/React/">React</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Redux/">Redux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Regex/">Regex</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/SSL/">SSL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Sass/">Sass</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Slots/">Slots</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Swift/">Swift</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Test/">Test</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Translation/">Translation</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Webpack/">Webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/XCode/">XCode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/blockchain/">blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/datetime/">datetime</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/debian/">debian</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/frontend/">frontend</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/hyperledger/">hyperledger</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/iOS/">iOS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/lede/">lede</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/life/">life</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/linux/">linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/mysql/">mysql</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/network/">network</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/nginx/">nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/openwrt/">openwrt</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/php/">php</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/remote-login/">remote login</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ssh/">ssh</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/webpack/">webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/websocket/">websocket</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘CocoaPods’/">‘CocoaPods’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘Realm’/">‘Realm’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘XCode’/">‘XCode’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘iOS’/">‘iOS’</a></li></ul>
+      <ul class="widget-list tag-list"><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Blockchain/">Blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CMS/">CMS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/CSS/">CSS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Canvas/">Canvas</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Competition/">Competition</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Design/">Design</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ES6/">ES6</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/El-Capitan/">El Capitan</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FTP/">FTP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Fabric/">Fabric</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Flink/">Flink</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/FrontEnd/">FrontEnd</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Icon/">Icon</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/KMean/">KMean</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Karma/">Karma</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LEMP/">LEMP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Linux/">Linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/LiveReload/">LiveReload</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Mac/">Mac</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NS2/">NS2</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/PHP/">PHP</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ProFTPD/">ProFTPD</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/React/">React</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Redux/">Redux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Regex/">Regex</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/SSL/">SSL</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Sass/">Sass</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Slots/">Slots</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Swift/">Swift</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Test/">Test</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Translation/">Translation</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Webpack/">Webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/XCode/">XCode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/Xcode/">Xcode</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/blockchain/">blockchain</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/datetime/">datetime</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/debian/">debian</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/frontend/">frontend</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/hyperledger/">hyperledger</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/iOS/">iOS</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/lede/">lede</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/life/">life</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/linux/">linux</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/mysql/">mysql</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/network/">network</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/nginx/">nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/php/">php</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/remote-login/">remote login</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ssh/">ssh</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/webpack/">webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/websocket/">websocket</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘CocoaPods’/">‘CocoaPods’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘Realm’/">‘Realm’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘XCode’/">‘XCode’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘iOS’/">‘iOS’</a></li></ul>
+    </div>
+  </div>
+
+
+    
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recent_posts</h3>
+    <div class="widget">
+      <ul class="widget-list post-list">
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/crazy-and-stupid-ideas/">crazy and stupid ideas</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/redux-router与react-router-rdeux的不同/">redux-router与react-router-rdeux的不同</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/06/25/Install-PHP-7/">Install PHP 7</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/04/11/StreamSerialzier-and-Portable-in-Hazelcast-Jet/">Serialization in Stream Processing: StreamSerializer and Portable in Hazelcast Jet</a>
+          </li>
+        
+          <li class="post-list-item">
+            <a href="/2021/02/24/life-in-a-day-2020/">Life in a day 2020</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+</aside>
+
+                </div>
+            </div>
+            <footer id="footer">
+    <span class="copyrights">
+        Copyrights &copy; 2021 Consiiii. All Rights Reserved.
+    </span>
+</footer>
+
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/headicon.png">
+        
+            <h4 id="about-card-name">Consiiii</h4>
+        
+            <h5 id="about-card-bio"><p>China</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>老板，我什么都能干</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br>
+                China
+            </h5>
+        
+    </div>
+</div>
+
+        <!-- <div id="cover" style="background-image:url('/');"></div> -->
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>
+list-item"><a class="widget-list tag-list-link" href="/tags/network/">network</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/nginx/">nginx</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/php/">php</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/remote-login/">remote login</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/ssh/">ssh</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/webpack/">webpack</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/websocket/">websocket</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘CocoaPods’/">‘CocoaPods’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘Realm’/">‘Realm’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘XCode’/">‘XCode’</a></li><li class="widget-list tag-list-item"><a class="widget-list tag-list-link" href="/tags/‘iOS’/">‘iOS’</a></li></ul>
     </div>
   </div>
 
